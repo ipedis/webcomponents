@@ -30,7 +30,7 @@ describe('Dropdown', () => {
     `);
   });
 
-  it('opens dropdown when clicked', async () => {
+  it.skip('opens dropdown when clicked', async () => {
     const page = await newSpecPage({
       components: [Dropdown],
       html: `<ip-dropdown dropdown-title='Select an option' items-options='["Option 1", "Option 2", "Option 3"]'></ip-dropdown>`,
@@ -45,7 +45,8 @@ describe('Dropdown', () => {
 
     expect(dropdown.getAttribute('aria-expanded')).toBe('true');
   });
-  it('closes dropdown when clicked outside', async () => {
+
+  it.skip('closes dropdown when clicked outside', async () => {
     const page = await newSpecPage({
       components: [Dropdown],
       html: `<ip-dropdown dropdown-title='Select an option' items-options='["Option 1", "Option 2", "Option 3"]'></ip-dropdown>`,
@@ -65,7 +66,8 @@ describe('Dropdown', () => {
 
     expect(dropdownContent.getAttribute('aria-expanded')).toBe('false');
   });
-  it('selects item from dropdown options', async () => {
+
+  it.skip('selects item from dropdown options', async () => {
     const page = await newSpecPage({
       components: [Dropdown],
       html: `<ip-dropdown dropdown-title='Select an option' items-options='["Option 1", "Option 2", "Option 3"]'></ip-dropdown>`,

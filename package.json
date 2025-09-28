@@ -16,6 +16,7 @@
     "lint": "nx run-many --target=lint --all --parallel",
     "e2e": "nx run-many --target=e2e --all --parallel --exclude=demo",
     "test": "nx run-many --target=test --all --parallel",
+    "mac:e2e": "PUPPETEER_EXECUTABLE_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" nx run-many --target=e2e --all --parallel",
     "demo:ssr": "nx run demo:build:production && node dist/demo/server/server.mjs",
     "migrate": "nx migrate latest && nx migrate --run-migrations --if-exists",
     "run:ci": "npm run lint && npm run test && npm run e2e && npm run build",
