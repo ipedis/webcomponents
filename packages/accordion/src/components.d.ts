@@ -10,6 +10,9 @@ export namespace Components {
         "accordionHeaders": accordionHeadersInterface[] | string;
         "isFirstPanelOpen": boolean;
         "isSingleOpen": boolean;
+        /**
+          * @default 'h2'
+         */
         "titleTag": string;
     }
 }
@@ -29,6 +32,9 @@ declare namespace LocalJSX {
         "accordionHeaders"?: accordionHeadersInterface[] | string;
         "isFirstPanelOpen"?: boolean;
         "isSingleOpen"?: boolean;
+        /**
+          * @default 'h2'
+         */
         "titleTag"?: string;
     }
     interface IntrinsicElements {

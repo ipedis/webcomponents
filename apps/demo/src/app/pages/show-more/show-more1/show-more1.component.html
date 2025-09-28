@@ -10,12 +10,13 @@
     <div class="show-more-wrapper">
       <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
         <div slot="content" class="show-content">
-          <app-card
-            *ngFor="let card of moreCards"
-            [imageUrl]="card.imageUrl"
-            [title]="card.title"
-          >
-          </app-card>
+          @for (card of moreCards; track card) {
+            <app-card
+              [imageUrl]="card.imageUrl"
+              [title]="card.title"
+              >
+            </app-card>
+          }
         </div>
       </ip-show-more>
     </div>

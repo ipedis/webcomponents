@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-breadcrumb',
   standalone: true,
-  imports: [CommonModule, Highlight],
+  imports: [Highlight],
   templateUrl: './doc-breadcrumb.component.html',
   styleUrl: './doc-breadcrumb.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

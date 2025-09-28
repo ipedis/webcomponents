@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
 import { DocModalComponent } from '../doc-modal/doc-modal.component';
@@ -16,11 +17,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-modal1',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
     DocModalComponent,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './modal1.component.html',
   styleUrl: './modal1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

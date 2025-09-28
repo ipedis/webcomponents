@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tableElements } from '@ipedis/table/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
@@ -16,11 +17,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-table1',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
     DocTableComponent,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './table1.component.html',
   styleUrl: './table1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

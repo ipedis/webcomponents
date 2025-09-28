@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpSearchBar {
+        /**
+          * @default 'Search'
+         */
         "labelButton": string;
+        /**
+          * @default 'Search...'
+         */
         "placeholder": string;
+        /**
+          * @default '[]'
+         */
         "suggestionsData": string;
     }
 }
@@ -40,9 +49,18 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpSearchBar {
+        /**
+          * @default 'Search'
+         */
         "labelButton"?: string;
         "onButtonClicked"?: (event: IpSearchBarCustomEvent<void>) => void;
+        /**
+          * @default 'Search...'
+         */
         "placeholder"?: string;
+        /**
+          * @default '[]'
+         */
         "suggestionsData"?: string;
     }
     interface IntrinsicElements {

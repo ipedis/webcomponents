@@ -8,7 +8,13 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpDropdown {
         "dropdownTitle": string;
+        /**
+          * @default '[]'
+         */
         "itemsOptions": string;
+        /**
+          * @default 'Select an option'
+         */
         "placeholder": string;
     }
 }
@@ -41,8 +47,14 @@ declare global {
 declare namespace LocalJSX {
     interface IpDropdown {
         "dropdownTitle"?: string;
+        /**
+          * @default '[]'
+         */
         "itemsOptions"?: string;
         "onItemSelected"?: (event: IpDropdownCustomEvent<string>) => void;
+        /**
+          * @default 'Select an option'
+         */
         "placeholder"?: string;
     }
     interface IntrinsicElements {

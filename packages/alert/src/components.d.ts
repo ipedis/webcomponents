@@ -7,9 +7,21 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpAlert {
+        /**
+          * @default ''
+         */
         "alertTitle": string;
+        /**
+          * @default 'Close alert'
+         */
         "closeAriaLabel": string;
+        /**
+          * @default ''
+         */
         "message": string;
+        /**
+          * @default 'info'
+         */
         "type": 'info' | 'warning' | 'danger' | 'success';
     }
 }
@@ -41,10 +53,22 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpAlert {
+        /**
+          * @default ''
+         */
         "alertTitle"?: string;
+        /**
+          * @default 'Close alert'
+         */
         "closeAriaLabel"?: string;
+        /**
+          * @default ''
+         */
         "message"?: string;
         "onAlertClosed"?: (event: IpAlertCustomEvent<void>) => void;
+        /**
+          * @default 'info'
+         */
         "type"?: 'info' | 'warning' | 'danger' | 'success';
     }
     interface IntrinsicElements {

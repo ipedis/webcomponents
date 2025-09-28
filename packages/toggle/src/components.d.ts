@@ -9,9 +9,18 @@ export namespace Components {
     interface IpToggle {
         "activeLabel": string;
         "ariaLabel": string;
+        /**
+          * @default false
+         */
         "checked": boolean;
         "inactiveLabel": string;
+        /**
+          * @default 'medium'
+         */
         "size": 'small' | 'medium' | 'large';
+        /**
+          * @default false
+         */
         "toggleDisabled": boolean;
     }
 }
@@ -45,10 +54,19 @@ declare namespace LocalJSX {
     interface IpToggle {
         "activeLabel"?: string;
         "ariaLabel"?: string;
+        /**
+          * @default false
+         */
         "checked"?: boolean;
         "inactiveLabel"?: string;
         "onToggleChange"?: (event: IpToggleCustomEvent<boolean>) => void;
+        /**
+          * @default 'medium'
+         */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * @default false
+         */
         "toggleDisabled"?: boolean;
     }
     interface IntrinsicElements {

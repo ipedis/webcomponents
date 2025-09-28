@@ -7,14 +7,41 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpStepper {
+        /**
+          * @default 'Go back to the previous step'
+         */
         "backBtnAriaLabel": string;
+        /**
+          * @default 'Back'
+         */
         "backBtnText": string;
+        /**
+          * @default 'Continue to the next step'
+         */
         "continueBtnAriaLabel": string;
+        /**
+          * @default 'Continue'
+         */
         "continueBtnText": string;
+        /**
+          * @default 'Finish the process'
+         */
         "finishBtnAriaLabel": string;
+        /**
+          * @default 'Finish'
+         */
         "finishBtnText": string;
+        /**
+          * @default 'Step'
+         */
         "indicatorText": string;
+        /**
+          * @default 'Simulator progress'
+         */
         "simulatorAria": string;
+        /**
+          * @default 0
+         */
         "steps": number;
     }
 }
@@ -46,15 +73,42 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpStepper {
+        /**
+          * @default 'Go back to the previous step'
+         */
         "backBtnAriaLabel"?: string;
+        /**
+          * @default 'Back'
+         */
         "backBtnText"?: string;
+        /**
+          * @default 'Continue to the next step'
+         */
         "continueBtnAriaLabel"?: string;
+        /**
+          * @default 'Continue'
+         */
         "continueBtnText"?: string;
+        /**
+          * @default 'Finish the process'
+         */
         "finishBtnAriaLabel"?: string;
+        /**
+          * @default 'Finish'
+         */
         "finishBtnText"?: string;
+        /**
+          * @default 'Step'
+         */
         "indicatorText"?: string;
         "onFinishButtonClick"?: (event: IpStepperCustomEvent<void>) => void;
+        /**
+          * @default 'Simulator progress'
+         */
         "simulatorAria"?: string;
+        /**
+          * @default 0
+         */
         "steps"?: number;
     }
     interface IntrinsicElements {

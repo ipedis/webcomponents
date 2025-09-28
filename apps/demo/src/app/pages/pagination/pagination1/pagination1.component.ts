@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as paginationElements } from '@ipedis/pagination/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocPaginationComponent } from '../doc-pagination/doc-pagination.component';
@@ -17,12 +18,11 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-pagination1',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
     DocPaginationComponent,
     RouterLink,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './pagination1.component.html',
   styleUrl: './pagination1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

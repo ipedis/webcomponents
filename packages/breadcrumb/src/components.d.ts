@@ -7,9 +7,21 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpBreadcrumb {
+        /**
+          * @default '[]'
+         */
         "breadcrumbItems": string;
+        /**
+          * @default ''
+         */
         "breadcrumbTitle": string;
+        /**
+          * @default 'Link to'
+         */
         "prefixAriaLabel": string;
+        /**
+          * @default '>'
+         */
         "separatorIcon": string;
     }
 }
@@ -26,9 +38,21 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpBreadcrumb {
+        /**
+          * @default '[]'
+         */
         "breadcrumbItems"?: string;
+        /**
+          * @default ''
+         */
         "breadcrumbTitle"?: string;
+        /**
+          * @default 'Link to'
+         */
         "prefixAriaLabel"?: string;
+        /**
+          * @default '>'
+         */
         "separatorIcon"?: string;
     }
     interface IntrinsicElements {

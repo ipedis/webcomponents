@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { RouterLink } from '@angular/router';
 import { DocAccordionComponent } from '../doc-accordion/doc-accordion.component';
@@ -16,12 +17,11 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-accordion1',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
     DocAccordionComponent,
     RouterLink,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './accordion1.component.html',
   styleUrl: './accordion1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

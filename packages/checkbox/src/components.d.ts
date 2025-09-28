@@ -7,7 +7,13 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpCheckbox {
+        /**
+          * @default false
+         */
         "checked": boolean;
+        /**
+          * @default false
+         */
         "disabled": boolean;
         "identifier": string;
         "name": string;
@@ -67,7 +73,13 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpCheckbox {
+        /**
+          * @default false
+         */
         "checked"?: boolean;
+        /**
+          * @default false
+         */
         "disabled"?: boolean;
         "identifier"?: string;
         "name"?: string;

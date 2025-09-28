@@ -7,42 +7,132 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpEmail {
+        /**
+          * @default 'Email field cannot be empty'
+         */
         "emptyFieldErrorMessage": string;
         "errorMessage": string;
+        /**
+          * @default 'Email'
+         */
         "inputLabel": string;
+        /**
+          * @default 'Type your email here...'
+         */
         "inputPlaceholder": string;
+        /**
+          * @default false
+         */
         "invalid": boolean;
+        /**
+          * @default false
+         */
         "required": boolean;
     }
     interface IpLogin {
+        /**
+          * @default 'Forgot password?'
+         */
         "forgotPasswordLabel": string;
+        /**
+          * @default ''
+         */
         "forgotPasswordLink": string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel": string;
+        /**
+          * @default 'Required fields'
+         */
         "indicationLabel": string;
+        /**
+          * @default 'Login'
+         */
         "loginTitle": string;
+        /**
+          * @default 'The password must contain at least one digit'
+         */
         "passwordDigitErrorMsg": string;
+        /**
+          * @default 'Password'
+         */
         "passwordLabel": string;
+        /**
+          * @default 'The password must contain at least 8 characters'
+         */
         "passwordLengthErrorMsg": string;
+        /**
+          * @default 'The password must contain at least a lower case'
+         */
         "passwordLowercaseErrorMsg": string;
+        /**
+          * @default 'Password must contain at least one capital'
+         */
         "passwordUppercaseErrorMsg": string;
+        /**
+          * @default 'Type your password here...'
+         */
         "pwdPlaceholder": string;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel": string;
+        /**
+          * @default 'Submit the form'
+         */
         "submitBtnAriaLabel": string;
+        /**
+          * @default 'Login'
+         */
         "submitButtonLabel": string;
+        /**
+          * @default 'Username is required'
+         */
         "usernameErrorMsg": string;
+        /**
+          * @default 'The email address is invalid'
+         */
         "usernameInvalidEmailMsg": string;
+        /**
+          * @default 'Username'
+         */
         "usernameLabel": string;
+        /**
+          * @default 'Type your username here...'
+         */
         "usernamePlaceholder": string;
+        /**
+          * @default false
+         */
         "usernameRequired": boolean;
+        /**
+          * @default 'text'
+         */
         "usernameType": 'text' | 'email';
     }
     interface IpPassword {
+        /**
+          * @default 'Password field cannot be empty'
+         */
         "emptyFieldErrorMessage": string;
         "errorMessage": string;
         "forgotPasswordLink": string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel": string;
+        /**
+          * @default 'Type your password here...'
+         */
         "inputPlaceholder": string;
+        /**
+          * @default false
+         */
         "invalid": boolean;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel": string;
     }
 }
@@ -118,45 +208,135 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpEmail {
+        /**
+          * @default 'Email field cannot be empty'
+         */
         "emptyFieldErrorMessage"?: string;
         "errorMessage"?: string;
+        /**
+          * @default 'Email'
+         */
         "inputLabel"?: string;
+        /**
+          * @default 'Type your email here...'
+         */
         "inputPlaceholder"?: string;
+        /**
+          * @default false
+         */
         "invalid"?: boolean;
         "onInputChange"?: (event: IpEmailCustomEvent<string>) => void;
+        /**
+          * @default false
+         */
         "required"?: boolean;
     }
     interface IpLogin {
+        /**
+          * @default 'Forgot password?'
+         */
         "forgotPasswordLabel"?: string;
+        /**
+          * @default ''
+         */
         "forgotPasswordLink"?: string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel"?: string;
+        /**
+          * @default 'Required fields'
+         */
         "indicationLabel"?: string;
+        /**
+          * @default 'Login'
+         */
         "loginTitle"?: string;
         "onFormSubmitted"?: (event: IpLoginCustomEvent<any>) => void;
+        /**
+          * @default 'The password must contain at least one digit'
+         */
         "passwordDigitErrorMsg"?: string;
+        /**
+          * @default 'Password'
+         */
         "passwordLabel"?: string;
+        /**
+          * @default 'The password must contain at least 8 characters'
+         */
         "passwordLengthErrorMsg"?: string;
+        /**
+          * @default 'The password must contain at least a lower case'
+         */
         "passwordLowercaseErrorMsg"?: string;
+        /**
+          * @default 'Password must contain at least one capital'
+         */
         "passwordUppercaseErrorMsg"?: string;
+        /**
+          * @default 'Type your password here...'
+         */
         "pwdPlaceholder"?: string;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel"?: string;
+        /**
+          * @default 'Submit the form'
+         */
         "submitBtnAriaLabel"?: string;
+        /**
+          * @default 'Login'
+         */
         "submitButtonLabel"?: string;
+        /**
+          * @default 'Username is required'
+         */
         "usernameErrorMsg"?: string;
+        /**
+          * @default 'The email address is invalid'
+         */
         "usernameInvalidEmailMsg"?: string;
+        /**
+          * @default 'Username'
+         */
         "usernameLabel"?: string;
+        /**
+          * @default 'Type your username here...'
+         */
         "usernamePlaceholder"?: string;
+        /**
+          * @default false
+         */
         "usernameRequired"?: boolean;
+        /**
+          * @default 'text'
+         */
         "usernameType"?: 'text' | 'email';
     }
     interface IpPassword {
+        /**
+          * @default 'Password field cannot be empty'
+         */
         "emptyFieldErrorMessage"?: string;
         "errorMessage"?: string;
         "forgotPasswordLink"?: string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel"?: string;
+        /**
+          * @default 'Type your password here...'
+         */
         "inputPlaceholder"?: string;
+        /**
+          * @default false
+         */
         "invalid"?: boolean;
         "onPasswordChange"?: (event: IpPasswordCustomEvent<string>) => void;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel"?: string;
     }
     interface IntrinsicElements {

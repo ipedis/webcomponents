@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpModal {
+        /**
+          * @default 'Open modal'
+         */
         "buttonText": string;
+        /**
+          * @default 'Close the dialog'
+         */
         "closeAriaLabel": string;
+        /**
+          * @default 'black'
+         */
         "svgColor": string;
     }
 }
@@ -25,8 +34,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpModal {
+        /**
+          * @default 'Open modal'
+         */
         "buttonText"?: string;
+        /**
+          * @default 'Close the dialog'
+         */
         "closeAriaLabel"?: string;
+        /**
+          * @default 'black'
+         */
         "svgColor"?: string;
     }
     interface IntrinsicElements {

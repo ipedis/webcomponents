@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocBreadcrumbComponent } from '../doc-breadcrumb/doc-breadcrumb.component';
@@ -15,11 +16,10 @@ import { defineCustomElements as breadcrumbElements } from '@ipedis/breadcrumb/l
   selector: 'app-breadcrumb1',
   standalone: true,
   imports: [
-    CommonModule,
     AccordionComponent,
     CodeSnippetComponent,
-    DocBreadcrumbComponent,
-  ],
+    DocBreadcrumbComponent
+],
   templateUrl: './breadcrumb1.component.html',
   styleUrl: './breadcrumb1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

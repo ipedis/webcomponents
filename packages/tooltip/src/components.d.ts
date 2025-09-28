@@ -11,10 +11,16 @@ export namespace Components {
         "btn2AriaLabel": string;
         "tooltipBtn1": string;
         "tooltipBtn2": string;
+        /**
+          * @default false
+         */
         "tooltipBtnClose": boolean;
         "tooltipContent": string;
         "tooltipTitle": string;
         "tooltipTrigger": string;
+        /**
+          * @default 'hover'
+         */
         "type": 'click' | 'hover';
     }
 }
@@ -53,10 +59,16 @@ declare namespace LocalJSX {
         "onBtn2Click"?: (event: IpTooltipCustomEvent<any>) => void;
         "tooltipBtn1"?: string;
         "tooltipBtn2"?: string;
+        /**
+          * @default false
+         */
         "tooltipBtnClose"?: boolean;
         "tooltipContent"?: string;
         "tooltipTitle"?: string;
         "tooltipTrigger"?: string;
+        /**
+          * @default 'hover'
+         */
         "type"?: 'click' | 'hover';
     }
     interface IntrinsicElements {

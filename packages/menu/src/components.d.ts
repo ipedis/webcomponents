@@ -11,22 +11,64 @@ export { MenuItem } from "./components/menu-1/burger-menu";
 export { MenuItem as MenuItem1 } from "./components/menu-2/navigation-bar";
 export namespace Components {
     interface IpBurgerMenu {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel": string;
+        /**
+          * @default []
+         */
         "items": MenuItem[];
         "menuData": string;
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel": string;
+        /**
+          * @default '../../assets/images/arrow-right.svg'
+         */
         "pathToArrowRightIcon": string;
+        /**
+          * @default '../../assets/images/x-icon.svg'
+         */
         "pathToCloseIcon": string;
+        /**
+          * @default '../../assets/images/icon-list.svg'
+         */
         "pathToOpenIcon": string;
     }
     interface IpNavigationBar {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel": string;
+        /**
+          * @default 'Close'
+         */
         "closeSubmenuPrefix": string;
+        /**
+          * @default '[]'
+         */
         "menuData": string;
+        /**
+          * @default []
+         */
         "menuItems": MenuItem1[];
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel": string;
+        /**
+          * @default 'Open'
+         */
         "openSubmenuPrefix": string;
+        /**
+          * @default '../../assets/images/close-icon.svg'
+         */
         "pathToCloseIcon": string;
+        /**
+          * @default '../../assets/images/open-icon.svg'
+         */
         "pathToOpenIcon": string;
     }
 }
@@ -50,22 +92,64 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpBurgerMenu {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel"?: string;
+        /**
+          * @default []
+         */
         "items"?: MenuItem[];
         "menuData"?: string;
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel"?: string;
+        /**
+          * @default '../../assets/images/arrow-right.svg'
+         */
         "pathToArrowRightIcon"?: string;
+        /**
+          * @default '../../assets/images/x-icon.svg'
+         */
         "pathToCloseIcon"?: string;
+        /**
+          * @default '../../assets/images/icon-list.svg'
+         */
         "pathToOpenIcon"?: string;
     }
     interface IpNavigationBar {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel"?: string;
+        /**
+          * @default 'Close'
+         */
         "closeSubmenuPrefix"?: string;
+        /**
+          * @default '[]'
+         */
         "menuData"?: string;
+        /**
+          * @default []
+         */
         "menuItems"?: MenuItem1[];
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel"?: string;
+        /**
+          * @default 'Open'
+         */
         "openSubmenuPrefix"?: string;
+        /**
+          * @default '../../assets/images/close-icon.svg'
+         */
         "pathToCloseIcon"?: string;
+        /**
+          * @default '../../assets/images/open-icon.svg'
+         */
         "pathToOpenIcon"?: string;
     }
     interface IntrinsicElements {

@@ -1,11 +1,4 @@
-import {
-  Component,
-  Input,
-  ElementRef,
-  Renderer2,
-  AfterViewInit,
-  OnInit,
-} from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, AfterViewInit, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,16 +9,14 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./accordion.component.scss'],
 })
 export class AccordionComponent implements AfterViewInit, OnInit {
+  private el = inject(ElementRef);
+  private renderer = inject(Renderer2);
+
   @Input() title = '';
   @Input() alwaysOpen = false;
   isOpen = false;
   contentId = '';
   headerId = '';
-
-  constructor(
-    private el: ElementRef,
-    private renderer: Renderer2,
-  ) {}
 
   ngOnInit() {
     this.contentId = `accordion-content-${Math.random().toString(36).substr(2, 9)}`;

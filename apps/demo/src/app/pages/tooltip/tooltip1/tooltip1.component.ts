@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
@@ -17,12 +18,11 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-tooltip1',
   standalone: true,
   imports: [
-    CommonModule,
     DocTooltipComponent,
     CodeSnippetComponent,
     RouterLink,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './tooltip1.component.html',
   styleUrl: './tooltip1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

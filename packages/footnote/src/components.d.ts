@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpFootnote {
+        /**
+          * @default 'Back to main text'
+         */
         "btnAriaLabel": string;
+        /**
+          * @default 'default-id'
+         */
         "identifier": string;
+        /**
+          * @default 'grey'
+         */
         "svgColor": string;
         "text": string;
     }
@@ -26,8 +35,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpFootnote {
+        /**
+          * @default 'Back to main text'
+         */
         "btnAriaLabel"?: string;
+        /**
+          * @default 'default-id'
+         */
         "identifier"?: string;
+        /**
+          * @default 'grey'
+         */
         "svgColor"?: string;
         "text"?: string;
     }

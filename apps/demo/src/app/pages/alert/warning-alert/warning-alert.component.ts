@@ -7,8 +7,9 @@ import {
   PLATFORM_ID,
   ViewChild,
   AfterViewInit,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocAlertComponent } from '../doc-alert/doc-alert.component';
 import { RouterLink } from '@angular/router';
@@ -19,12 +20,11 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-warning-alert',
   standalone: true,
   imports: [
-    CommonModule,
     RouterLink,
     CodeSnippetComponent,
     DocAlertComponent,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './warning-alert.component.html',
   styleUrl: './warning-alert.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

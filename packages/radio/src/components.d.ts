@@ -8,6 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpRadio {
         "defaultOptionId": string | number;
+        /**
+          * @default 'after'
+         */
         "labelPosition": 'before' | 'after';
         "legend": string;
         "options": string;
@@ -42,6 +45,9 @@ declare global {
 declare namespace LocalJSX {
     interface IpRadio {
         "defaultOptionId"?: string | number;
+        /**
+          * @default 'after'
+         */
         "labelPosition"?: 'before' | 'after';
         "legend"?: string;
         "onSelectionChanged"?: (event: IpRadioCustomEvent<RadioOption>) => void;

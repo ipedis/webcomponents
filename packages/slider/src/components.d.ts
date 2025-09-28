@@ -7,13 +7,34 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpSliderSl1 {
+        /**
+          * @default 'Go to slide'
+         */
         "bulletBtnAria": string;
+        /**
+          * @default true
+         */
         "isPreviousNextNavigation": boolean;
+        /**
+          * @default true
+         */
         "isSlideBullet": boolean;
         "itemToShow": number;
+        /**
+          * @default 'Next slide'
+         */
         "nextBtnAria": string;
+        /**
+          * @default 'Previous slide'
+         */
         "previousBtnAria": string;
+        /**
+          * @default 30
+         */
         "slideGap": number;
+        /**
+          * @default 'Carousel Slider'
+         */
         "slideTitleAria": string;
     }
 }
@@ -30,13 +51,34 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpSliderSl1 {
+        /**
+          * @default 'Go to slide'
+         */
         "bulletBtnAria"?: string;
+        /**
+          * @default true
+         */
         "isPreviousNextNavigation"?: boolean;
+        /**
+          * @default true
+         */
         "isSlideBullet"?: boolean;
         "itemToShow"?: number;
+        /**
+          * @default 'Next slide'
+         */
         "nextBtnAria"?: string;
+        /**
+          * @default 'Previous slide'
+         */
         "previousBtnAria"?: string;
+        /**
+          * @default 30
+         */
         "slideGap"?: number;
+        /**
+          * @default 'Carousel Slider'
+         */
         "slideTitleAria"?: string;
     }
     interface IntrinsicElements {

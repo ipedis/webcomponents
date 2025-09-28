@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpShowMore {
+        /**
+          * @default 'Show Less'
+         */
         "showLessText": string;
+        /**
+          * @default 'Show More'
+         */
         "showMoreText": string;
+        /**
+          * @default 'white'
+         */
         "svgColor": string;
     }
 }
@@ -25,8 +34,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpShowMore {
+        /**
+          * @default 'Show Less'
+         */
         "showLessText"?: string;
+        /**
+          * @default 'Show More'
+         */
         "showMoreText"?: string;
+        /**
+          * @default 'white'
+         */
         "svgColor"?: string;
     }
     interface IntrinsicElements {
