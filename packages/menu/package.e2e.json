@@ -1,0 +1,16 @@
+{
+  "name": "menu",
+  "version": "1",
+  "main": "../../dist/packages/menu/dist/index.cjs.js",
+  "module": "../../dist/packages/menu/dist/index.js",
+  "es2015": "../../dist/packages/menu/dist/esm/index.mjs",
+  "es2017": "../../dist/packages/menu/dist/esm/index.mjs",
+  "types": "../../dist/packages/menu/dist/types/index.d.ts",
+  "collection": "../../dist/packages/menu/dist/collection/collection-manifest.json",
+  "collection:main": "../../dist/packages/menu/dist/collection/index.js",
+  "unpkg": "../../dist/packages/menu/dist/menu/menu.js",
+  "files": [
+    "../../dist/packages/menu/dist/",
+    "../../dist/packages/menu/loader/"
+  ]
+}
