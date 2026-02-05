@@ -1,9 +1,7 @@
 @import '../utilities';
 @import '../theme/colors';
 .modal-content {
-  padding-left: 20px;
   width: 100%;
-  max-width: 800px;
   margin: 0;
 
   .component-intro {
@@ -13,7 +11,6 @@
     align-items: flex-start;
     gap: 30px;
     padding-bottom: 60px;
-    width: 80%;
 
     .title {
       display: flex;
@@ -21,7 +18,7 @@
       align-items: flex-start;
 
       p {
-        color: #474747;
+        color: #2e3243;
         font-size: 13px;
         font-style: normal;
         font-weight: 400;
@@ -31,7 +28,7 @@
       }
 
       h2 {
-        color: #2e3243;
+        color: #132c54;
         font-size: 40px;
         font-style: normal;
         font-weight: 800;
@@ -42,6 +39,7 @@
     }
 
     p {
+      color: #474747;
       margin: 0;
       line-height: 27px;
       font-weight: 300;
