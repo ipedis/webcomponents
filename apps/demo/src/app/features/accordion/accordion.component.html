@@ -9,7 +9,27 @@
     [attr.aria-expanded]="isOpen || alwaysOpen ? 'true' : 'false'"
     [attr.aria-controls]="contentId"
   >
-    <h3>{{ title }}</h3>
+    <div class="title-container">
+      <img
+        *ngIf="title === 'Preview'"
+        src="../../../assets/images/eye.png"
+        alt=""
+      />
+      <img
+        *ngIf="title === 'Code'"
+        src="../../../assets/images/code.png"
+        alt=""
+      />
+      <img
+        *ngIf="title === 'Documentation'"
+        src="../../../assets/images/doc.png"
+        alt=""
+      />
+      <h3>
+        {{ title }}
+      </h3>
+    </div>
+
     <div
       class="icon"
       *ngIf="!alwaysOpen"
