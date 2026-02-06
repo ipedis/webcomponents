@@ -53,7 +53,7 @@ test.describe('ip-burger-menu', () => {
     await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
   });
 
-  test('should close the menu when the button is clicked again', async ({ page }) => {
+  test('closes the menu when the button is clicked again', async ({ page }) => {
     await page.evaluate(() => {
       document.body.innerHTML = '<ip-burger-menu></ip-burger-menu>';
     });
