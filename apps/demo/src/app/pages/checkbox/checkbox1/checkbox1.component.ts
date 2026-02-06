@@ -9,7 +9,6 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { RouterLink } from '@angular/router';
 import { Highlight } from 'ngx-highlightjs';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -17,11 +16,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-checkbox1',
   standalone: true,
   imports: [
-    RouterLink,
     CodeSnippetComponent,
     AccordionComponent,
     Highlight
-],
+  ],
   templateUrl: './checkbox1.component.html',
   styleUrl: './checkbox1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

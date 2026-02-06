@@ -5,7 +5,7 @@ import {
   Prop,
   Event,
   EventEmitter,
-} from '@stencil/core/internal';
+} from '@stencil/core';
 
 @Component({
   tag: 'ip-checkbox',

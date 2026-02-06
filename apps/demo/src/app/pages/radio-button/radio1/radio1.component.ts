@@ -10,7 +10,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
 import { DocRadioComponent } from '../doc-radio/doc-radio.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { RouterLink } from '@angular/router';
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -20,7 +19,6 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocRadioComponent,
     CodeSnippetComponent,
-    RouterLink,
     AccordionComponent
 ],
   templateUrl: './radio1.component.html',

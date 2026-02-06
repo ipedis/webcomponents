@@ -11,7 +11,6 @@ import { DocTabPanelComponent } from '../doc-tab-panel/doc-tab-panel.component';
 import { defineCustomElements as tabPanelElements } from '@ipedis/tab-panel/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
-import { RouterLink } from '@angular/router';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
@@ -20,7 +19,6 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocTabPanelComponent,
     CodeSnippetComponent,
-    RouterLink,
     AccordionComponent
 ],
   templateUrl: './tab-panel1.component.html',

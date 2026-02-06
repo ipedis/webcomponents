@@ -11,7 +11,6 @@ import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader'
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
-import { RouterLink } from '@angular/router';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
@@ -20,7 +19,6 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocTooltipComponent,
     CodeSnippetComponent,
-    RouterLink,
     AccordionComponent
 ],
   templateUrl: './tooltip2.component.html',

@@ -1,5 +1,6 @@
-@import '../utilities';
-@import '../theme/colors';
+@use '../utilities' as *;
+@use '../theme/colors' as *;
+
 .modal-content {
   width: 100%;
   margin: 0;

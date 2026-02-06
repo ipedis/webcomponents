@@ -13,7 +13,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocAlertComponent } from '../doc-alert/doc-alert.component';
 
-import { RouterLink } from '@angular/router';
 import { defineCustomElements as AlertElements } from '@ipedis/alert/loader';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -21,7 +20,6 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-success-alert',
   standalone: true,
   imports: [
-    RouterLink,
     CodeSnippetComponent,
     DocAlertComponent,
     AccordionComponent

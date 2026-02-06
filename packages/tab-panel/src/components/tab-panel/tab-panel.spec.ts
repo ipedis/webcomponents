@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { IpTabPanel } from './tap-panel';
 
 describe('ip-tab-panel', () => {

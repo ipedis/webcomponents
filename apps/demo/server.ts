@@ -1,4 +1,3 @@
-import { APP_BASE_HREF } from '@angular/common';
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
@@ -31,9 +30,9 @@ export function app(): express.Express {
   server.use((req, res, next) => {
     angularNodeAppEngine.handle(req, {
       server: 'express',
-    }).then(response => {
+    }).then((response: Response | null) => {
       return response ? writeResponseToNodeResponse(response, res) : next();
-    }).catch(err => next(err));
+    }).catch((err: unknown) => next(err));
   });
 
   return server;

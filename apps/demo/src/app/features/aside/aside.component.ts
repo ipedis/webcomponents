@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   Output,
-  OnInit,
 } from '@angular/core';
 
 import { RouterLink, RouterLinkActive } from '@angular/router';

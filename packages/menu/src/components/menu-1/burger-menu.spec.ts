@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { IpBurgerMenu } from './burger-menu';
 
 describe('ip-burger-menu', () => {

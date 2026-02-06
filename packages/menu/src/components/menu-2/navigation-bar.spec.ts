@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { IpNavigationBar } from './navigation-bar';
 
 describe('ip-navigation-bar', () => {

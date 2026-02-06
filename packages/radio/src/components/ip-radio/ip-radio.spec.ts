@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { IpRadio } from './ip-radio';
 
 describe('IpRadio Component', () => {

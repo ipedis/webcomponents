@@ -10,7 +10,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as loginElements } from '@ipedis/login/loader';
 import { DocLoginComponent } from '../doc-login/doc-login.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { RouterLink } from '@angular/router';
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -20,7 +19,6 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocLoginComponent,
     CodeSnippetComponent,
-    RouterLink,
     AccordionComponent
 ],
   templateUrl: './login1.component.html',

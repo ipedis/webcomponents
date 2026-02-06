@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { BreadcrumbComponent } from './breadcrumb';
 
 describe('ip-breadcrumb', () => {

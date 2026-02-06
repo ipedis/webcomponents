@@ -11,7 +11,6 @@ import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
-import { RouterLink } from '@angular/router';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
@@ -20,7 +19,6 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocToogleComponent,
     CodeSnippetComponent,
-    RouterLink,
     AccordionComponent
 ],
   templateUrl: './toogle1.component.html',

@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { RouterLink } from '@angular/router';
 
 import { defineCustomElements as showMoreElements } from '@ipedis/show-more/loader';
 import { DocShowMoreComponent } from '../doc-show-more/doc-show-more.component';
@@ -20,7 +19,6 @@ import { CardComponent } from '../../../features/card/card.component';
   standalone: true,
   imports: [
     CodeSnippetComponent,
-    RouterLink,
     DocShowMoreComponent,
     AccordionComponent,
     CardComponent

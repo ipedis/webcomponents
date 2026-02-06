@@ -10,7 +10,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as paginationElements } from '@ipedis/pagination/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocPaginationComponent } from '../doc-pagination/doc-pagination.component';
-import { RouterLink } from '@angular/router';
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -20,7 +19,6 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocPaginationComponent,
-    RouterLink,
     AccordionComponent
 ],
   templateUrl: './pagination1.component.html',

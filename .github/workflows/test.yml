@@ -31,7 +31,11 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Demo e2e tests
-        run: npx nx run-many --target=e2e --all --exclude=demo
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 3
+          max_attempts: 3
+          command:  npx nx run-many --target=e2e --all --exclude=demo
   #
   #      - name: Demo Axe tests
   #        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts

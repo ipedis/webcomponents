@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { IpCheckboxList } from './ip-checkbox-list';
 
 describe('ip-checkbox-list', () => {

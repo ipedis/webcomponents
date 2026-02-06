@@ -1,4 +1,4 @@
-@import '../../../assets/styles/index.scss';
+@use '../../../assets/styles/index.scss' as *;
 
 h1 {
   margin: rem(30) rem(30) rem(30) 0;

@@ -3,7 +3,7 @@ jest.mock('./icon/warning-icon.svg', () => 'warning-icon.svg');
 jest.mock('./icon/danger-icon.svg', () => 'danger-icon.svg');
 jest.mock('./icon/success-icon.svg', () => 'success-icon.svg');
 
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { Alert } from './alert';
 
 describe('ip-alert', () => {
