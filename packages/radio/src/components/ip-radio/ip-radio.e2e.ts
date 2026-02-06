@@ -1,91 +1,117 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-radio', () => {
-  it('renders correctly with default values', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>
-    `);
-
-    const element = await page.find('ip-radio');
-    expect(element).toHaveClass('hydrated');
-
-    const radioInputs = await page.findAll('ip-radio >>> input');
-    expect(radioInputs).toHaveLength(2);
-    expect(radioInputs[0]).not.toBeNull();
-    expect(radioInputs[1]).not.toBeNull();
-
-    const labels = await page.findAll('ip-radio >>> label');
-    expect(labels).toHaveLength(2);
-    expect(await labels[0].getProperty('textContent')).toBe('Option 1');
-    expect(await labels[1].getProperty('textContent')).toBe('Option 2');
-
-    expect(await radioInputs[0].getProperty('value')).toBe('1');
-    expect(await radioInputs[1].getProperty('value')).toBe('2');
+test.describe('ip-radio', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/ip-radio/test/ip-radio.e2e.html');
   });
 
-  it('emits selectionChanged event on option change', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>
-    `);
+  test('renders correctly with default values', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>
+      `;
+    });
+    await page.waitForChanges();
 
-    const radioComponent = await page.find('ip-radio');
-    const radioInput = await page.find('ip-radio >>> input');
+    const element = page.locator('ip-radio');
+    await expect(element).toHaveClass(/hydrated/);
 
-    const selectionChanged =
-      await radioComponent.spyOnEvent('selectionChanged');
+    const radioInputs = page.locator('ip-radio').locator('input');
+    await expect(radioInputs).toHaveCount(2);
 
+    const labels = page.locator('ip-radio').locator('label');
+    await expect(labels).toHaveCount(2);
+    await expect(labels.nth(0)).toHaveText('Option 1');
+    await expect(labels.nth(1)).toHaveText('Option 2');
+
+    const value0 = await radioInputs.nth(0).evaluate((el: HTMLInputElement) => el.value);
+    const value1 = await radioInputs.nth(1).evaluate((el: HTMLInputElement) => el.value);
+    expect(value0).toBe('1');
+    expect(value1).toBe('2');
+  });
+
+  test('emits selectionChanged event on option change', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>
+      `;
+    });
+    await page.waitForChanges();
+
+    const selectionChangedPromise = page.evaluate(() => {
+      return new Promise((resolve) => {
+        const radioComponent = document.querySelector('ip-radio');
+        radioComponent.addEventListener('selectionChanged', (e: any) => {
+          resolve(e.detail);
+        }, { once: true });
+      });
+    });
+
+    const radioInput = page.locator('ip-radio').locator('input').first();
     await radioInput.click();
 
-    expect(selectionChanged).toHaveReceivedEventTimes(1);
-    expect(selectionChanged).toHaveReceivedEventDetail({
+    const eventDetail = await selectionChangedPromise;
+    expect(eventDetail).toEqual({
       id: '1',
       label: 'Option 1',
     });
   });
 
-  it('disables and does not emit selectionChanged event on disabled option', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
+  test('disables and does not emit selectionChanged event on disabled option', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
         <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2", "disabled": true}]'></ip-radio>
-      `);
+      `;
+    });
+    await page.waitForChanges();
 
-    const radioComponent = await page.find('ip-radio');
-    const disabledRadioInput = await page.find('ip-radio >>> input[disabled]');
+    const disabledRadioInput = page.locator('ip-radio').locator('input[disabled]');
 
-    const selectionChanged =
-      await radioComponent.spyOnEvent('selectionChanged');
+    let eventFired = false;
+    await page.evaluate(() => {
+      const radioComponent = document.querySelector('ip-radio');
+      radioComponent.addEventListener('selectionChanged', () => {
+        (window as any).eventFired = true;
+      });
+    });
 
-    await disabledRadioInput.click();
+    await disabledRadioInput.click({ force: true });
+    await page.waitForTimeout(100);
 
-    expect(selectionChanged).toHaveReceivedEventTimes(0);
+    eventFired = await page.evaluate(() => (window as any).eventFired || false);
+    expect(eventFired).toBe(false);
 
-    expect(await disabledRadioInput.getProperty('disabled')).toBe(true);
+    const isDisabled = await disabledRadioInput.evaluate((el: HTMLInputElement) => el.disabled);
+    expect(isDisabled).toBe(true);
 
-    expect(await disabledRadioInput.getProperty('checked')).toBe(false);
+    const isChecked = await disabledRadioInput.evaluate((el: HTMLInputElement) => el.checked);
+    expect(isChecked).toBe(false);
   });
 
-  it('sets aria-checked attribute correctly', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>
-    `);
-
-    const radioInputs = await page.findAll('ip-radio >>> input');
-    expect(await radioInputs[0].getAttribute('aria-checked')).toBe('false');
-    expect(await radioInputs[1].getAttribute('aria-checked')).toBe('false');
-
-    await radioInputs[0].click();
+  test('sets aria-checked attribute correctly', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>
+      `;
+    });
     await page.waitForChanges();
 
-    expect(await radioInputs[0].getAttribute('aria-checked')).toBe('true');
-    expect(await radioInputs[1].getAttribute('aria-checked')).toBe('false');
+    const radioInputs = page.locator('ip-radio').locator('input');
+    await expect(radioInputs.nth(0)).toHaveAttribute('aria-checked', 'false');
+    await expect(radioInputs.nth(1)).toHaveAttribute('aria-checked', 'false');
 
-    await radioInputs[1].click();
+    await radioInputs.nth(0).click();
     await page.waitForChanges();
 
-    expect(await radioInputs[0].getAttribute('aria-checked')).toBe('false');
-    expect(await radioInputs[1].getAttribute('aria-checked')).toBe('true');
+    await expect(radioInputs.nth(0)).toHaveAttribute('aria-checked', 'true');
+    await expect(radioInputs.nth(1)).toHaveAttribute('aria-checked', 'false');
+
+    await radioInputs.nth(1).click();
+    await page.waitForChanges();
+
+    await expect(radioInputs.nth(0)).toHaveAttribute('aria-checked', 'false');
+    await expect(radioInputs.nth(1)).toHaveAttribute('aria-checked', 'true');
   });
 });
