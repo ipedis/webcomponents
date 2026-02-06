@@ -13,17 +13,12 @@ import { TitleService } from './core/services/title.service';
 
 @Component({
   standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    SkipLinkComponent
-],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, SkipLinkComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   private titleService = inject<TitleService>(TitleService);
