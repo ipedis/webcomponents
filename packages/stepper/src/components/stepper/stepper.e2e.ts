@@ -1,76 +1,80 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-stepper', () => {
-  it('should render and display the initial step correctly', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent('<ip-stepper steps="3"></ip-stepper>');
-
-    const stepIndicator = await page.find(
-      'ip-stepper >>> .step-indicator span',
-    );
-
-    expect(stepIndicator.textContent).toBe('Step 1 / 3');
+test.describe('ip-stepper', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/stepper/test/stepper.e2e.html');
   });
 
-  it('should update the step when clicking continue button', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent('<ip-stepper steps="3"></ip-stepper>');
-
-    const continueButton = await page.find('ip-stepper >>> .continue-button');
-    await continueButton.click();
-
+  test('should render and display the initial step correctly', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-stepper steps="3"></ip-stepper>';
+    });
     await page.waitForChanges();
 
-    const stepIndicator = await page.find(
-      'ip-stepper >>> .step-indicator span',
-    );
-    expect(stepIndicator.textContent).toBe('Step 2 / 3');
+    const stepIndicator = page.locator('ip-stepper').locator('.step-indicator span');
+    await expect(stepIndicator).toHaveText('Step 1 / 3');
   });
 
-  it('should show back button when not on the first step', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent('<ip-stepper steps="3"></ip-stepper>');
-
-    const continueButton = await page.find('ip-stepper >>> .continue-button');
-    await continueButton.click();
-
+  test('should update the step when clicking continue button', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-stepper steps="3"></ip-stepper>';
+    });
     await page.waitForChanges();
 
-    const backButton = await page.find('ip-stepper >>> .back-button');
-    expect(backButton).not.toBeNull();
-  });
-
-  it('should hide back button on the first step', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent('<ip-stepper steps="3"></ip-stepper>');
-
-    const backButton = await page.find('ip-stepper >>> .back-button');
-    expect(backButton).toBeNull();
-  });
-
-  it('should render step content correctly', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent(`
-      <ip-stepper steps="2">
-        <div slot="step1">Content for Step 1</div>
-        <div slot="step2">Content for Step 2</div>
-      </ip-stepper>
-    `);
-
-    let stepContent = await page.find('ip-stepper >>> .step-content');
-    expect(stepContent.innerHTML).toContain('<slot name="step1"></slot>');
-
-    const continueButton = await page.find('ip-stepper >>> .continue-button');
+    const continueButton = page.locator('ip-stepper').locator('.continue-button');
     await continueButton.click();
-
     await page.waitForChanges();
 
-    stepContent = await page.find('ip-stepper >>> .step-content');
-    expect(stepContent.innerHTML).toContain('<slot name="step2"></slot>');
+    const stepIndicator = page.locator('ip-stepper').locator('.step-indicator span');
+    await expect(stepIndicator).toHaveText('Step 2 / 3');
+  });
+
+  test('should show back button when not on the first step', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-stepper steps="3"></ip-stepper>';
+    });
+    await page.waitForChanges();
+
+    const continueButton = page.locator('ip-stepper').locator('.continue-button');
+    await continueButton.click();
+    await page.waitForChanges();
+
+    const backButton = page.locator('ip-stepper').locator('.back-button');
+    await expect(backButton).toBeVisible();
+  });
+
+  test('should hide back button on the first step', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-stepper steps="3"></ip-stepper>';
+    });
+    await page.waitForChanges();
+
+    const backButton = page.locator('ip-stepper').locator('.back-button');
+    await expect(backButton).not.toBeVisible();
+  });
+
+  test('should render step content correctly', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-stepper steps="2">
+          <div slot="step1">Content for Step 1</div>
+          <div slot="step2">Content for Step 2</div>
+        </ip-stepper>
+      `;
+    });
+    await page.waitForChanges();
+
+    let stepContent = page.locator('ip-stepper').locator('.step-content');
+    const innerHTML1 = await stepContent.innerHTML();
+    expect(innerHTML1).toContain('<slot name="step1"></slot>');
+
+    const continueButton = page.locator('ip-stepper').locator('.continue-button');
+    await continueButton.click();
+    await page.waitForChanges();
+
+    const innerHTML2 = await stepContent.innerHTML();
+    expect(innerHTML2).toContain('<slot name="step2"></slot>');
   });
 });

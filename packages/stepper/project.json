@@ -44,13 +44,10 @@
       }
     },
     "e2e": {
-      "executor": "@nxext/stencil:e2e",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/packages/stepper/playwright-report"],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/stepper/tsconfig.lib.json",
-        "configPath": "packages/stepper/stencil.config.ts",
-        "outputPath": "dist/packages/stepper"
+        "config": "packages/stepper/playwright.config.ts"
       }
     },
     "lint": {
