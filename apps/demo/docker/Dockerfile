@@ -1,4 +1,4 @@
-FROM node:22-alpine AS build
+FROM node:24-alpine AS build
 WORKDIR /app/src
 RUN apk add --no-cache --virtual .build-deps alpine-sdk python3
 
@@ -8,7 +8,7 @@ RUN npm ci
 COPY . ./
 RUN npm run build
 
-FROM node:22-alpine
+FROM node:24-alpine
 WORKDIR /usr/app
 COPY --from=build /app/src/dist/demo ./
 CMD node server/server.mjs

@@ -48,3 +48,4 @@ packages/*/package.e2e.json
 
 playwright-report
 test-results
+.chrome

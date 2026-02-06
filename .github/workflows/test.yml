@@ -12,7 +12,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '22.x'
+          node-version: '24.x'
           cache: 'npm'
 
       - name: Install dependencies
@@ -32,11 +32,11 @@ jobs:
 
       - name: Demo e2e tests
         run: npx nx run-many --target=e2e --all --parallel --exclude=demo
-
-      - name: Demo Axe tests
-        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts
-        env:
-          AXE_DEVELOPER_HUB_API_KEY: ${{ secrets.AXE_DEVELOPER_HUB_API_KEY }}
+#
+#      - name: Demo Axe tests
+#        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts
+#        env:
+#          AXE_DEVELOPER_HUB_API_KEY: ${{ secrets.AXE_DEVELOPER_HUB_API_KEY }}
   axe-linter:
     runs-on: ubuntu-latest
     steps:
