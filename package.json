@@ -29,10 +29,10 @@
     "ci:basic": "npm run lint && npm run test && npm run build"
   },
   "engines": {
-    "node": "^22.0.0"
+    "node": "^24.0.0"
   },
   "volta": {
-    "node": "22.20.0"
+    "node": "24.00.0"
   },
   "private": false,
   "devDependencies": {
