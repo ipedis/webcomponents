@@ -1,13 +1,12 @@
-name: release-pdf-preview-generator
+name: release-pdfa11y/webcomponents-demo
 
 on:
   push:
     branches:
-      - master
       - main
 
 jobs:
-  build-and-release-fpm-image:
+  build-release-image:
     runs-on: ubuntu-latest
     steps:
       -
@@ -30,7 +29,6 @@ jobs:
           push: true
           context: "{{defaultContext}}"
           file: ./apps/demo/docker/Dockerfile
-          target: prod
           build-args: |
             APP_VERSION=${{ github.ref_name }}
           tags: |
@@ -38,7 +36,7 @@ jobs:
 
   deploy-on-staging:
     runs-on: ubuntu-latest
-    needs: [build-and-release-fpm-image]
+    needs: [build-release-image]
     steps:
     - uses: passeidireto/trigger-external-workflow-action@main
       env:
