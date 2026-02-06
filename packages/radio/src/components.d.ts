@@ -53,15 +53,23 @@ declare namespace LocalJSX {
         "onSelectionChanged"?: (event: IpRadioCustomEvent<RadioOption>) => void;
         "options"?: string;
     }
+
+    interface IpRadioAttributes {
+        "legend": string;
+        "options": string;
+        "labelPosition": 'before' | 'after';
+        "defaultOptionId": string;
+    }
+
     interface IntrinsicElements {
-        "ip-radio": IpRadio;
+        "ip-radio": Omit<IpRadio, keyof IpRadioAttributes> & { [K in keyof IpRadio & keyof IpRadioAttributes]?: IpRadio[K] } & { [K in keyof IpRadio & keyof IpRadioAttributes as `attr:${K}`]?: IpRadioAttributes[K] } & { [K in keyof IpRadio & keyof IpRadioAttributes as `prop:${K}`]?: IpRadio[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-radio": LocalJSX.IpRadio & JSXBase.HTMLAttributes<HTMLIpRadioElement>;
+            "ip-radio": LocalJSX.IntrinsicElements["ip-radio"] & JSXBase.HTMLAttributes<HTMLIpRadioElement>;
         }
     }
 }

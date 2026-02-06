@@ -63,15 +63,22 @@ declare namespace LocalJSX {
          */
         "suggestionsData"?: string;
     }
+
+    interface IpSearchBarAttributes {
+        "labelButton": string;
+        "placeholder": string;
+        "suggestionsData": string;
+    }
+
     interface IntrinsicElements {
-        "ip-search-bar": IpSearchBar;
+        "ip-search-bar": Omit<IpSearchBar, keyof IpSearchBarAttributes> & { [K in keyof IpSearchBar & keyof IpSearchBarAttributes]?: IpSearchBar[K] } & { [K in keyof IpSearchBar & keyof IpSearchBarAttributes as `attr:${K}`]?: IpSearchBarAttributes[K] } & { [K in keyof IpSearchBar & keyof IpSearchBarAttributes as `prop:${K}`]?: IpSearchBar[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-search-bar": LocalJSX.IpSearchBar & JSXBase.HTMLAttributes<HTMLIpSearchBarElement>;
+            "ip-search-bar": LocalJSX.IntrinsicElements["ip-search-bar"] & JSXBase.HTMLAttributes<HTMLIpSearchBarElement>;
         }
     }
 }

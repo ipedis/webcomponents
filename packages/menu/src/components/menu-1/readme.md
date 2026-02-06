@@ -10,7 +10,7 @@
 | Property               | Attribute                  | Description | Type         | Default                                 |
 | ---------------------- | -------------------------- | ----------- | ------------ | --------------------------------------- |
 | `closeMenuAriaLabel`   | `close-menu-aria-label`    |             | `string`     | `'Close menu'`                          |
-| `items`                | `items`                    |             | `MenuItem[]` | `[]`                                    |
+| `items`                | --                         |             | `MenuItem[]` | `[]`                                    |
 | `menuData`             | `menu-data`                |             | `string`     | `undefined`                             |
 | `openMenuAriaLabel`    | `open-menu-aria-label`     |             | `string`     | `'Open menu'`                           |
 | `pathToArrowRightIcon` | `path-to-arrow-right-icon` |             | `string`     | `'../../assets/images/arrow-right.svg'` |

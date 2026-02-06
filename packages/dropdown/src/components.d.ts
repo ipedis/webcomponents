@@ -57,15 +57,22 @@ declare namespace LocalJSX {
          */
         "placeholder"?: string;
     }
+
+    interface IpDropdownAttributes {
+        "dropdownTitle": string;
+        "placeholder": string;
+        "itemsOptions": string;
+    }
+
     interface IntrinsicElements {
-        "ip-dropdown": IpDropdown;
+        "ip-dropdown": Omit<IpDropdown, keyof IpDropdownAttributes> & { [K in keyof IpDropdown & keyof IpDropdownAttributes]?: IpDropdown[K] } & { [K in keyof IpDropdown & keyof IpDropdownAttributes as `attr:${K}`]?: IpDropdownAttributes[K] } & { [K in keyof IpDropdown & keyof IpDropdownAttributes as `prop:${K}`]?: IpDropdown[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-dropdown": LocalJSX.IpDropdown & JSXBase.HTMLAttributes<HTMLIpDropdownElement>;
+            "ip-dropdown": LocalJSX.IntrinsicElements["ip-dropdown"] & JSXBase.HTMLAttributes<HTMLIpDropdownElement>;
         }
     }
 }

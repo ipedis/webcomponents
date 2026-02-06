@@ -37,15 +37,23 @@ declare namespace LocalJSX {
          */
         "titleTag"?: string;
     }
+
+    interface IpAccordionAttributes {
+        "accordionHeaders": accordionHeadersInterface[] | string;
+        "isFirstPanelOpen": boolean;
+        "isSingleOpen": boolean;
+        "titleTag": string;
+    }
+
     interface IntrinsicElements {
-        "ip-accordion": IpAccordion;
+        "ip-accordion": Omit<IpAccordion, keyof IpAccordionAttributes> & { [K in keyof IpAccordion & keyof IpAccordionAttributes]?: IpAccordion[K] } & { [K in keyof IpAccordion & keyof IpAccordionAttributes as `attr:${K}`]?: IpAccordionAttributes[K] } & { [K in keyof IpAccordion & keyof IpAccordionAttributes as `prop:${K}`]?: IpAccordion[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-accordion": LocalJSX.IpAccordion & JSXBase.HTMLAttributes<HTMLIpAccordionElement>;
+            "ip-accordion": LocalJSX.IntrinsicElements["ip-accordion"] & JSXBase.HTMLAttributes<HTMLIpAccordionElement>;
         }
     }
 }

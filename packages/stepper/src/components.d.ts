@@ -111,15 +111,28 @@ declare namespace LocalJSX {
          */
         "steps"?: number;
     }
+
+    interface IpStepperAttributes {
+        "steps": number;
+        "backBtnText": string;
+        "continueBtnText": string;
+        "finishBtnText": string;
+        "backBtnAriaLabel": string;
+        "continueBtnAriaLabel": string;
+        "finishBtnAriaLabel": string;
+        "indicatorText": string;
+        "simulatorAria": string;
+    }
+
     interface IntrinsicElements {
-        "ip-stepper": IpStepper;
+        "ip-stepper": Omit<IpStepper, keyof IpStepperAttributes> & { [K in keyof IpStepper & keyof IpStepperAttributes]?: IpStepper[K] } & { [K in keyof IpStepper & keyof IpStepperAttributes as `attr:${K}`]?: IpStepperAttributes[K] } & { [K in keyof IpStepper & keyof IpStepperAttributes as `prop:${K}`]?: IpStepper[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-stepper": LocalJSX.IpStepper & JSXBase.HTMLAttributes<HTMLIpStepperElement>;
+            "ip-stepper": LocalJSX.IntrinsicElements["ip-stepper"] & JSXBase.HTMLAttributes<HTMLIpStepperElement>;
         }
     }
 }

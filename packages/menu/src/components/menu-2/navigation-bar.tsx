@@ -12,7 +12,7 @@ export interface MenuItem {
   shadow: true,
 })
 export class IpNavigationBar {
-  @Prop() menuItems: MenuItem[] = [];
+  @Prop({ mutable: true }) menuItems: MenuItem[] = [];
   @Prop() menuData = '[]';
   @Prop() openSubmenuPrefix = 'Open';
   @Prop() closeSubmenuPrefix = 'Close';
@@ -39,7 +39,6 @@ export class IpNavigationBar {
 
   _handleKeyDown(event: KeyboardEvent, item: MenuItem) {
     const target = event.target as HTMLElement;
-
     if (event.key === 'Tab') {
       this._handleTabNavigation(event, target, item);
     } else if (event.key === 'Enter' || event.key === ' ') {
@@ -179,6 +178,7 @@ export class IpNavigationBar {
                   {item.submenus ? (
                     <button
                       class="menu-item-btn"
+                      onKeyDown={(event) => this._handleKeyDown(event, item)}
                       onClick={() =>
                         (this.openSubmenu =
                           this.openSubmenu === item.label ? null : item.label)
@@ -229,11 +229,16 @@ export class IpNavigationBar {
                     </a>
                   )}
 
-                  {item.submenus && this.openSubmenu === item.label && (
+                  {item.submenus && (
                     <div
                       id={`submenu-${item.label}`}
                       class="submenu-container"
                       part="submenu-container"
+                      style={
+                        this.openSubmenu === item.label
+                          ? { display: 'block' }
+                          : { display: 'none' }
+                      }
                       aria-hidden={
                         this.openSubmenu === item.label ? 'false' : 'true'
                       }

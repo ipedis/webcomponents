@@ -81,15 +81,27 @@ declare namespace LocalJSX {
          */
         "slideTitleAria"?: string;
     }
+
+    interface IpSliderSl1Attributes {
+        "slideTitleAria": string;
+        "slideGap": number;
+        "isSlideBullet": boolean;
+        "isPreviousNextNavigation": boolean;
+        "itemToShow": number;
+        "previousBtnAria": string;
+        "nextBtnAria": string;
+        "bulletBtnAria": string;
+    }
+
     interface IntrinsicElements {
-        "ip-slider-sl-1": IpSliderSl1;
+        "ip-slider-sl-1": Omit<IpSliderSl1, keyof IpSliderSl1Attributes> & { [K in keyof IpSliderSl1 & keyof IpSliderSl1Attributes]?: IpSliderSl1[K] } & { [K in keyof IpSliderSl1 & keyof IpSliderSl1Attributes as `attr:${K}`]?: IpSliderSl1Attributes[K] } & { [K in keyof IpSliderSl1 & keyof IpSliderSl1Attributes as `prop:${K}`]?: IpSliderSl1[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-slider-sl-1": LocalJSX.IpSliderSl1 & JSXBase.HTMLAttributes<HTMLIpSliderSl1Element>;
+            "ip-slider-sl-1": LocalJSX.IntrinsicElements["ip-slider-sl-1"] & JSXBase.HTMLAttributes<HTMLIpSliderSl1Element>;
         }
     }
 }

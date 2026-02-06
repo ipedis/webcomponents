@@ -22,16 +22,16 @@ jobs:
         run: npm run build
 
       - name: Lint all packages
-        run: npx nx run-many --target=lint --all --parallel
+        run: npm run lint
 
       - name: Test all packages
-        run: npx nx run-many --target=test --all --parallel
+        run: npm run test
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Demo e2e tests
-        run: npx nx run-many --target=e2e --all --parallel --exclude=demo
+        run: npx nx run-many --target=e2e --all --exclude=demo
   #
   #      - name: Demo Axe tests
   #        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts

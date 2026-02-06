@@ -12,7 +12,7 @@
 | `closeMenuAriaLabel` | `close-menu-aria-label` |             | `string`     | `'Close menu'`                         |
 | `closeSubmenuPrefix` | `close-submenu-prefix`  |             | `string`     | `'Close'`                              |
 | `menuData`           | `menu-data`             |             | `string`     | `'[]'`                                 |
-| `menuItems`          | `menu-items`            |             | `MenuItem[]` | `[]`                                   |
+| `menuItems`          | --                      |             | `MenuItem[]` | `[]`                                   |
 | `openMenuAriaLabel`  | `open-menu-aria-label`  |             | `string`     | `'Open menu'`                          |
 | `openSubmenuPrefix`  | `open-submenu-prefix`   |             | `string`     | `'Open'`                               |
 | `pathToCloseIcon`    | `path-to-close-icon`    |             | `string`     | `'../../assets/images/close-icon.svg'` |

@@ -152,17 +152,36 @@ declare namespace LocalJSX {
          */
         "pathToOpenIcon"?: string;
     }
+
+    interface IpBurgerMenuAttributes {
+        "openMenuAriaLabel": string;
+        "closeMenuAriaLabel": string;
+        "pathToCloseIcon": string;
+        "pathToOpenIcon": string;
+        "pathToArrowRightIcon": string;
+        "menuData": string;
+    }
+    interface IpNavigationBarAttributes {
+        "menuData": string;
+        "openSubmenuPrefix": string;
+        "closeSubmenuPrefix": string;
+        "closeMenuAriaLabel": string;
+        "openMenuAriaLabel": string;
+        "pathToCloseIcon": string;
+        "pathToOpenIcon": string;
+    }
+
     interface IntrinsicElements {
-        "ip-burger-menu": IpBurgerMenu;
-        "ip-navigation-bar": IpNavigationBar;
+        "ip-burger-menu": Omit<IpBurgerMenu, keyof IpBurgerMenuAttributes> & { [K in keyof IpBurgerMenu & keyof IpBurgerMenuAttributes]?: IpBurgerMenu[K] } & { [K in keyof IpBurgerMenu & keyof IpBurgerMenuAttributes as `attr:${K}`]?: IpBurgerMenuAttributes[K] } & { [K in keyof IpBurgerMenu & keyof IpBurgerMenuAttributes as `prop:${K}`]?: IpBurgerMenu[K] };
+        "ip-navigation-bar": Omit<IpNavigationBar, keyof IpNavigationBarAttributes> & { [K in keyof IpNavigationBar & keyof IpNavigationBarAttributes]?: IpNavigationBar[K] } & { [K in keyof IpNavigationBar & keyof IpNavigationBarAttributes as `attr:${K}`]?: IpNavigationBarAttributes[K] } & { [K in keyof IpNavigationBar & keyof IpNavigationBarAttributes as `prop:${K}`]?: IpNavigationBar[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-burger-menu": LocalJSX.IpBurgerMenu & JSXBase.HTMLAttributes<HTMLIpBurgerMenuElement>;
-            "ip-navigation-bar": LocalJSX.IpNavigationBar & JSXBase.HTMLAttributes<HTMLIpNavigationBarElement>;
+            "ip-burger-menu": LocalJSX.IntrinsicElements["ip-burger-menu"] & JSXBase.HTMLAttributes<HTMLIpBurgerMenuElement>;
+            "ip-navigation-bar": LocalJSX.IntrinsicElements["ip-navigation-bar"] & JSXBase.HTMLAttributes<HTMLIpNavigationBarElement>;
         }
     }
 }

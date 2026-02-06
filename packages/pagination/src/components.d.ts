@@ -95,15 +95,26 @@ declare namespace LocalJSX {
          */
         "visiblePages"?: number;
     }
+
+    interface IpPaginationAttributes {
+        "totalPages": number;
+        "currentPage": number;
+        "visiblePages": number;
+        "firstPageAriaLabel": string;
+        "prevPageAriaLabel": string;
+        "nextPageAriaLabel": string;
+        "lastPageAriaLabel": string;
+    }
+
     interface IntrinsicElements {
-        "ip-pagination": IpPagination;
+        "ip-pagination": Omit<IpPagination, keyof IpPaginationAttributes> & { [K in keyof IpPagination & keyof IpPaginationAttributes]?: IpPagination[K] } & { [K in keyof IpPagination & keyof IpPaginationAttributes as `attr:${K}`]?: IpPaginationAttributes[K] } & { [K in keyof IpPagination & keyof IpPaginationAttributes as `prop:${K}`]?: IpPagination[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-pagination": LocalJSX.IpPagination & JSXBase.HTMLAttributes<HTMLIpPaginationElement>;
+            "ip-pagination": LocalJSX.IntrinsicElements["ip-pagination"] & JSXBase.HTMLAttributes<HTMLIpPaginationElement>;
         }
     }
 }

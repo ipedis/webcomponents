@@ -71,15 +71,28 @@ declare namespace LocalJSX {
          */
         "type"?: 'click' | 'hover';
     }
+
+    interface IpTooltipAttributes {
+        "tooltipContent": string;
+        "tooltipTrigger": string;
+        "tooltipBtn1": string;
+        "btn1AriaLabel": string;
+        "tooltipBtn2": string;
+        "btn2AriaLabel": string;
+        "tooltipBtnClose": boolean;
+        "tooltipTitle": string;
+        "type": 'click' | 'hover';
+    }
+
     interface IntrinsicElements {
-        "ip-tooltip": IpTooltip;
+        "ip-tooltip": Omit<IpTooltip, keyof IpTooltipAttributes> & { [K in keyof IpTooltip & keyof IpTooltipAttributes]?: IpTooltip[K] } & { [K in keyof IpTooltip & keyof IpTooltipAttributes as `attr:${K}`]?: IpTooltipAttributes[K] } & { [K in keyof IpTooltip & keyof IpTooltipAttributes as `prop:${K}`]?: IpTooltip[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-tooltip": LocalJSX.IpTooltip & JSXBase.HTMLAttributes<HTMLIpTooltipElement>;
+            "ip-tooltip": LocalJSX.IntrinsicElements["ip-tooltip"] & JSXBase.HTMLAttributes<HTMLIpTooltipElement>;
         }
     }
 }
