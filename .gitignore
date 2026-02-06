@@ -5,6 +5,9 @@ dist
 tmp
 /out-tsc
 
+# Stencil www output
+packages/*/www
+
 # dependencies
 node_modules
 
