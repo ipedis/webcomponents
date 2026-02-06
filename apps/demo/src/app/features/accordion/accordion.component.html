@@ -8,50 +8,54 @@
     role="button"
     [attr.aria-expanded]="isOpen || alwaysOpen ? 'true' : 'false'"
     [attr.aria-controls]="contentId"
-  >
+    >
     <div class="title-container">
-      <img
-        *ngIf="title === 'Preview'"
-        src="../../../assets/images/eye.png"
-        alt=""
-      />
-      <img
-        *ngIf="title === 'Code'"
-        src="../../../assets/images/code.png"
-        alt=""
-      />
-      <img
-        *ngIf="title === 'Documentation'"
-        src="../../../assets/images/doc.png"
-        alt=""
-      />
+      @if (title === 'Preview') {
+        <img
+          src="../../../assets/images/eye.png"
+          alt=""
+          />
+      }
+      @if (title === 'Code') {
+        <img
+          src="../../../assets/images/code.png"
+          alt=""
+          />
+      }
+      @if (title === 'Documentation') {
+        <img
+          src="../../../assets/images/doc.png"
+          alt=""
+          />
+      }
       <h3>
         {{ title }}
       </h3>
     </div>
 
-    <div
-      class="icon"
-      *ngIf="!alwaysOpen"
-      [ngClass]="{ open: isOpen }"
-      aria-hidden="true"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-      >
-        <path
-          d="M4.5 15L12 7.5L19.5 15"
-          stroke="#2E3243"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </div>
+    @if (!alwaysOpen) {
+      <div
+        class="icon"
+        [ngClass]="{ open: isOpen }"
+        aria-hidden="true"
+        >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          >
+          <path
+            d="M4.5 15L12 7.5L19.5 15"
+            stroke="#2E3243"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            />
+        </svg>
+      </div>
+    }
   </div>
   <div
     class="content"
@@ -60,7 +64,7 @@
     [id]="contentId"
     [attr.aria-labelledby]="headerId"
     [attr.aria-hidden]="!(isOpen || alwaysOpen)"
-  >
+    >
     <ng-content></ng-content>
   </div>
 </div>

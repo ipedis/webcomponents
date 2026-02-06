@@ -12,9 +12,4 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   private router = inject(Router);
-
-
-  goToTooltip() {
-    this.router.navigate(['/tooltip']);
-  }
 }
