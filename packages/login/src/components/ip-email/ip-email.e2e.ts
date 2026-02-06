@@ -1,26 +1,35 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-email', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent('<ip-email></ip-email>');
-    const email = await page.find('ip-email');
-    const input = await page.find('ip-email >>> input');
-
-    expect(email).toHaveClass('hydrated');
-    expect(input).toEqualAttribute('type', 'string');
+test.describe('ip-email', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/ip-email/test/ip-email.e2e.html');
   });
 
-  it('renders with values', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-email input-label="Username" required></ip-email>',
-    );
-    const email = await page.find('ip-email');
-    const label = await page.find('ip-email >>> label');
+  test('renders', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-email></ip-email>';
+    });
+    await page.waitForChanges();
 
-    expect(email).toHaveClass('hydrated');
-    expect(label.textContent).toEqual('Username*');
+    const element = page.locator('ip-email');
+    await expect(element).toHaveClass(/hydrated/);
+
+    const input = element.locator('input');
+    await expect(input).toHaveAttribute('type', 'string');
+  });
+
+  test('renders with values', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-email input-label="Username" required></ip-email>';
+    });
+    await page.waitForChanges();
+
+    const element = page.locator('ip-email');
+    await expect(element).toHaveClass(/hydrated/);
+
+    const label = element.locator('label');
+    await expect(label).toHaveText('Username*');
   });
 });
