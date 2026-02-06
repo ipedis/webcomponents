@@ -12,17 +12,18 @@ test.describe('ip-alert', () => {
       document.body.innerHTML = '<ip-alert></ip-alert>';
     });
     await page.waitForChanges();
-    
+
     const element = page.locator('ip-alert');
     await expect(element).toHaveClass(/hydrated/);
   });
 
   test('should render with the correct title and message', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-alert alert-title="Test Title" message="Test Message"></ip-alert>';
+      document.body.innerHTML =
+        '<ip-alert alert-title="Test Title" message="Test Message"></ip-alert>';
     });
     await page.waitForChanges();
-    
+
     const title = page.locator('ip-alert').locator('.title');
     const message = page.locator('ip-alert').locator('.message');
     await expect(title).toHaveText(' Test Title');
@@ -34,7 +35,7 @@ test.describe('ip-alert', () => {
       document.body.innerHTML = '<ip-alert type="info"></ip-alert>';
     });
     await page.waitForChanges();
-    
+
     const alert = page.locator('ip-alert').locator('.alert');
     await expect(alert).toHaveClass(/alert-info/);
   });
@@ -44,14 +45,14 @@ test.describe('ip-alert', () => {
       document.body.innerHTML = '<ip-alert></ip-alert>';
     });
     await page.waitForChanges();
-    
+
     const closeButton = page.locator('ip-alert').locator('.close-button');
     await closeButton.click();
     await page.waitForChanges();
-    
+
     const alert = page.locator('ip-alert');
     await expect(alert).toHaveClass(/hydrated/);
-    
+
     const hasContent = await page.evaluate(() => {
       const shadowRootElement = document.querySelector('ip-alert').shadowRoot;
       return shadowRootElement && shadowRootElement.querySelector('*') !== null;
@@ -59,4 +60,3 @@ test.describe('ip-alert', () => {
     expect(hasContent).toBe(false);
   });
 });
-

@@ -12,14 +12,15 @@ test.describe('ip-search-bar', () => {
       document.body.innerHTML = '<ip-search-bar></ip-search-bar>';
     });
     await page.waitForChanges();
-    
+
     const element = page.locator('ip-search-bar');
     await expect(element).toHaveClass(/hydrated/);
   });
 
   test('handles keyboard navigation', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-search-bar suggestions-data=\'["Apple", "Banana", "Cherry"]\' placeholder="Search..." label-button="Search"></ip-search-bar>';
+      document.body.innerHTML =
+        '<ip-search-bar suggestions-data=\'["Apple", "Banana", "Cherry"]\' placeholder="Search..." label-button="Search"></ip-search-bar>';
     });
     await page.waitForChanges();
 
@@ -30,7 +31,9 @@ test.describe('ip-search-bar', () => {
     await input.press('ArrowDown');
     await page.waitForChanges();
 
-    const highlightedItem = page.locator('ip-search-bar').locator('.highlighted');
+    const highlightedItem = page
+      .locator('ip-search-bar')
+      .locator('.highlighted');
     await expect(highlightedItem).toHaveText('Apple');
 
     await input.press('Enter');
@@ -39,7 +42,9 @@ test.describe('ip-search-bar', () => {
     const inputValue = await input.evaluate((el: HTMLInputElement) => el.value);
     expect(inputValue).toBe('Apple');
 
-    const suggestionList = page.locator('ip-search-bar').locator('#suggestion-list');
+    const suggestionList = page
+      .locator('ip-search-bar')
+      .locator('#suggestion-list');
     await expect(suggestionList).not.toBeVisible();
   });
 });

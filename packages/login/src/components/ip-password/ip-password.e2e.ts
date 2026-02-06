@@ -8,9 +8,11 @@ test.describe('ip-password', () => {
   });
 
   test('renders', async ({ page }) => {
+    /* eslint-disable no-undef */
     await page.evaluate(() => {
       document.body.innerHTML = '<ip-password></ip-password>';
     });
+    /* eslint-enable no-undef */
     await page.waitForChanges();
 
     const element = page.locator('ip-password');
@@ -21,9 +23,11 @@ test.describe('ip-password', () => {
   });
 
   test('toggles password visibility', async ({ page }) => {
+    /* eslint-disable no-undef */
     await page.evaluate(() => {
       document.body.innerHTML = '<ip-password></ip-password>';
     });
+    /* eslint-enable no-undef */
     await page.waitForChanges();
 
     const element = page.locator('ip-password');

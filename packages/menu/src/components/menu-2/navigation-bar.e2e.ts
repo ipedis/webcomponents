@@ -31,14 +31,18 @@ test.describe('ip-navigation-bar', () => {
     });
     await page.waitForChanges();
 
-    const menuItem = page.locator('ip-navigation-bar').locator('.menu-items button');
+    const menuItem = page
+      .locator('ip-navigation-bar')
+      .locator('.menu-items button');
     await expect(menuItem).toBeVisible();
 
     await menuItem.focus();
     await menuItem.press('Enter');
     await page.waitForChanges();
 
-    let submenuContainer = page.locator('ip-navigation-bar').locator('.submenu-container');
+    const submenuContainer = page
+      .locator('ip-navigation-bar')
+      .locator('.submenu-container');
     await expect(submenuContainer).toHaveAttribute('aria-hidden', 'false');
 
     await menuItem.press('Escape');

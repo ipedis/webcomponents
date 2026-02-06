@@ -11,7 +11,7 @@ test.describe('ip-burger-menu', () => {
       document.body.innerHTML = '<ip-burger-menu></ip-burger-menu>';
     });
     await page.waitForChanges();
-    
+
     const element = page.locator('ip-burger-menu');
     await expect(element).toHaveClass(/hydrated/);
   });
@@ -22,7 +22,9 @@ test.describe('ip-burger-menu', () => {
     });
     await page.waitForChanges();
 
-    const menuButton = page.locator('ip-burger-menu').locator('.burger-menu-btn');
+    const menuButton = page
+      .locator('ip-burger-menu')
+      .locator('.burger-menu-btn');
     await expect(menuButton).toBeVisible();
     await expect(menuButton).toHaveAttribute('aria-label', 'Open menu');
     await expect(menuButton).toHaveAttribute('aria-controls', 'burger-menu');
@@ -44,7 +46,9 @@ test.describe('ip-burger-menu', () => {
     });
     await page.waitForChanges();
 
-    const menuButton = page.locator('ip-burger-menu').locator('.burger-menu-btn');
+    const menuButton = page
+      .locator('ip-burger-menu')
+      .locator('.burger-menu-btn');
     await menuButton.click();
     await page.waitForChanges();
 
@@ -59,7 +63,9 @@ test.describe('ip-burger-menu', () => {
     });
     await page.waitForChanges();
 
-    const menuButton = page.locator('ip-burger-menu').locator('.burger-menu-btn');
+    const menuButton = page
+      .locator('ip-burger-menu')
+      .locator('.burger-menu-btn');
     await menuButton.click();
     await page.waitForChanges();
 

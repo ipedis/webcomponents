@@ -11,7 +11,7 @@ test.describe('ip-breadcrumb', () => {
       document.body.innerHTML = '<ip-breadcrumb></ip-breadcrumb>';
     });
     await page.waitForChanges();
-    
+
     const element = page.locator('ip-breadcrumb');
     await expect(element).toHaveClass(/hydrated/);
   });
@@ -31,7 +31,9 @@ test.describe('ip-breadcrumb', () => {
     });
     await page.waitForChanges();
 
-    const breadcrumbTitle = page.locator('ip-breadcrumb').locator('h1[part="title"]');
+    const breadcrumbTitle = page
+      .locator('ip-breadcrumb')
+      .locator('h1[part="title"]');
     await expect(breadcrumbTitle).toHaveText('Bread');
     await expect(breadcrumbTitle).toHaveAttribute('part', 'title');
   });
@@ -51,7 +53,10 @@ test.describe('ip-breadcrumb', () => {
     });
     await page.waitForChanges();
 
-    const breadcrumbItems = page.locator('ip-breadcrumb').locator('.breadcrumb-item').all();
+    const breadcrumbItems = page
+      .locator('ip-breadcrumb')
+      .locator('.breadcrumb-item')
+      .all();
     expect((await breadcrumbItems).length).toBe(3);
 
     const firstItem = (await breadcrumbItems)[0].locator('a');
@@ -66,4 +71,3 @@ test.describe('ip-breadcrumb', () => {
     await expect(thirdItem).toHaveText('Item');
   });
 });
-

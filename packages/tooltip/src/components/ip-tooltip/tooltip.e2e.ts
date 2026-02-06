@@ -8,10 +8,11 @@ test.describe('ip-tooltip', () => {
 
   test('renders and toggles on click', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="Tooltip content"></ip-tooltip>';
+      document.body.innerHTML =
+        '<ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="Tooltip content"></ip-tooltip>';
     });
     await page.waitForChanges();
-    
+
     const tooltip = page.locator('ip-tooltip');
     const trigger = page.locator('ip-tooltip').locator('.tooltip-trigger');
 
@@ -40,7 +41,9 @@ test.describe('ip-tooltip', () => {
     await trigger.hover();
     await page.waitForChanges();
 
-    const tooltipContent = page.locator('ip-tooltip').locator('.tooltip-content');
+    const tooltipContent = page
+      .locator('ip-tooltip')
+      .locator('.tooltip-content');
 
     await expect(tooltipContent).toBeVisible();
     await expect(tooltipContent).toHaveText('Content of tooltip');
@@ -81,12 +84,16 @@ test.describe('ip-tooltip', () => {
     });
     await page.waitForChanges();
 
-    const tooltipTrigger = page.locator('ip-tooltip').locator('.tooltip-trigger');
+    const tooltipTrigger = page
+      .locator('ip-tooltip')
+      .locator('.tooltip-trigger');
 
     await tooltipTrigger.hover();
     await page.waitForChanges();
 
-    const tooltipContent = page.locator('ip-tooltip').locator('.tooltip-content');
+    const tooltipContent = page
+      .locator('ip-tooltip')
+      .locator('.tooltip-content');
 
     await expect(tooltipContent).toBeVisible();
   });

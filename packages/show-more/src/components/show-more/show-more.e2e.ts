@@ -9,7 +9,8 @@ test.describe('ip-show-more', () => {
 
   test('should display "Show More" initially', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
+      document.body.innerHTML =
+        '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
     });
     await page.waitForChanges();
 
@@ -19,7 +20,8 @@ test.describe('ip-show-more', () => {
 
   test('should display "Show Less" after clicking', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
+      document.body.innerHTML =
+        '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
     });
     await page.waitForChanges();
 
@@ -31,13 +33,14 @@ test.describe('ip-show-more', () => {
 
   test('should toggle content visibility on button click', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
+      document.body.innerHTML =
+        '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
     });
     await page.waitForChanges();
 
     const button = page.locator('ip-show-more').locator('button');
 
-    let content = page.locator('ip-show-more').locator('.content');
+    const content = page.locator('ip-show-more').locator('.content');
     await expect(content).not.toBeVisible();
 
     await button.click();

@@ -11,7 +11,7 @@ test.describe('ip-table', () => {
       document.body.innerHTML = '<ip-table></ip-table>';
     });
     await page.waitForChanges();
-    
+
     const element = page.locator('ip-table');
     await expect(element).toHaveClass(/hydrated/);
   });
@@ -63,12 +63,16 @@ test.describe('ip-table', () => {
     });
     await page.waitForChanges();
 
-    const nameHeaderButton = page.locator('ip-table').locator('th').nth(0).locator('button');
+    const nameHeaderButton = page
+      .locator('ip-table')
+      .locator('th')
+      .nth(0)
+      .locator('button');
     await expect(nameHeaderButton).toBeVisible();
     await nameHeaderButton.click();
     await page.waitForChanges();
 
-    let sortedRows = page.locator('ip-table').locator('tbody tr');
+    const sortedRows = page.locator('ip-table').locator('tbody tr');
     await expect(sortedRows.nth(0)).toContainText('Alice');
     await expect(sortedRows.nth(1)).toContainText('Bob');
 
@@ -97,12 +101,16 @@ test.describe('ip-table', () => {
     });
     await page.waitForChanges();
 
-    const ageHeaderButton = page.locator('ip-table').locator('th').nth(1).locator('button');
+    const ageHeaderButton = page
+      .locator('ip-table')
+      .locator('th')
+      .nth(1)
+      .locator('button');
     await expect(ageHeaderButton).toBeVisible();
     await ageHeaderButton.click();
     await page.waitForChanges();
 
-    let sortedRows = page.locator('ip-table').locator('tbody tr');
+    const sortedRows = page.locator('ip-table').locator('tbody tr');
     await expect(sortedRows.nth(0)).toContainText('Charlie');
     await expect(sortedRows.nth(1)).toContainText('Alice');
     await expect(sortedRows.nth(2)).toContainText('Bob');

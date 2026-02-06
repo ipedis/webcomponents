@@ -11,27 +11,31 @@ test.describe('ip-checkbox', () => {
       document.body.innerHTML = '<ip-checkbox></ip-checkbox>';
     });
     await page.waitForChanges();
-    
+
     const element = page.locator('ip-checkbox');
     await expect(element).toHaveClass(/hydrated/);
   });
 
-  test("should have a type attribute with value 'checkbox'", async ({ page }) => {
+  test("should have a type attribute with value 'checkbox'", async ({
+    page,
+  }) => {
     await page.evaluate(() => {
       document.body.innerHTML = '<ip-checkbox></ip-checkbox>';
     });
     await page.waitForChanges();
-    
+
     const input = page.locator('ip-checkbox').locator('input');
     await expect(input).toHaveAttribute('type', 'checkbox');
   });
 
-  test('should have attribute checked when clicked and should drop attribute checked when clicked again', async ({ page }) => {
+  test('should have attribute checked when clicked and should drop attribute checked when clicked again', async ({
+    page,
+  }) => {
     await page.evaluate(() => {
       document.body.innerHTML = '<ip-checkbox></ip-checkbox>';
     });
     await page.waitForChanges();
-    
+
     const input = page.locator('ip-checkbox').locator('input');
     await expect(input).not.toHaveAttribute('checked');
 
@@ -44,12 +48,14 @@ test.describe('ip-checkbox', () => {
     await expect(input).not.toHaveAttribute('checked');
   });
 
-  test('should toggle the checked attribute when the space keyboard is pressed', async ({ page }) => {
+  test('should toggle the checked attribute when the space keyboard is pressed', async ({
+    page,
+  }) => {
     await page.evaluate(() => {
       document.body.innerHTML = '<ip-checkbox></ip-checkbox>';
     });
     await page.waitForChanges();
-    
+
     const input = page.locator('ip-checkbox').locator('input');
     await expect(input).not.toHaveAttribute('checked');
 
@@ -62,7 +68,8 @@ test.describe('ip-checkbox', () => {
 
   test('should render label properly', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-checkbox identifier="firstCheckbox">Check me !</ip-checkbox>';
+      document.body.innerHTML =
+        '<ip-checkbox identifier="firstCheckbox">Check me !</ip-checkbox>';
     });
     await page.waitForChanges();
 
@@ -73,4 +80,3 @@ test.describe('ip-checkbox', () => {
     await expect(label).toHaveAttribute('for', 'firstCheckbox');
   });
 });
-

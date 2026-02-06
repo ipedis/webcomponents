@@ -9,29 +9,31 @@ test.describe('ip-tab-panel', () => {
 
   test('renders', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-tab-panel title-tag="h1" selected-tab="tab-content-1" tab-panel-title="Audit RGAA" tab-panel-headers=\'[{"title":"Accessibilité"}, {"title":"Pdf Document"}, {"title":"Statistical"}, {"title":"Certification"}, {"title":"Legislation"}]\'> </ip-tab-panel>';
+      document.body.innerHTML =
+        '<ip-tab-panel title-tag="h1" selected-tab="tab-content-1" tab-panel-title="Audit RGAA" tab-panel-headers=\'[{"title":"Accessibilité"}, {"title":"Pdf Document"}, {"title":"Statistical"}, {"title":"Certification"}, {"title":"Legislation"}]\'> </ip-tab-panel>';
     });
     await page.waitForChanges();
-    
+
     const tabPanel = page.locator('ip-tab-panel');
     await expect(tabPanel).toHaveClass(/hydrated/);
   });
 
   test('renders changes when tabPanelTitle change', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-tab-panel title-tag="h1" selected-tab="tab-content-1" tab-panel-title="Audit RGAA" tab-panel-headers=\'[{"title":"Accessibilité"}, {"title":"Pdf Document"}, {"title":"Statistical"}, {"title":"Certification"}, {"title":"Legislation"}]\'> </ip-tab-panel>';
+      document.body.innerHTML =
+        '<ip-tab-panel title-tag="h1" selected-tab="tab-content-1" tab-panel-title="Audit RGAA" tab-panel-headers=\'[{"title":"Accessibilité"}, {"title":"Pdf Document"}, {"title":"Statistical"}, {"title":"Certification"}, {"title":"Legislation"}]\'> </ip-tab-panel>';
     });
     await page.waitForChanges();
-    
+
     const tabPanel = page.locator('ip-tab-panel');
     const title = page.locator('ip-tab-panel').locator('h1');
     await expect(title).toHaveText('Audit RGAA');
-    
+
     await tabPanel.evaluate((el: any) => {
       el.tabPanelTitle = 'New Title';
     });
     await page.waitForChanges();
-    
+
     await expect(title).toHaveText('New Title');
   });
 });

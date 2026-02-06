@@ -3,9 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/toggle/src",
   "projectType": "library",
-  "tags": [
-    "type:webcomponent"
-  ],
+  "tags": ["type:webcomponent"],
   "generators": {
     "@nxext/stencil:component": {
       "style": "scss"
@@ -14,18 +12,14 @@
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "packages/toggle/jest.config.js"
       }
     },
     "build": {
       "executor": "@nxext/stencil:build",
-      "outputs": [
-        "{workspaceRoot}/packages/toggle/playwright-report"
-      ],
+      "outputs": ["{workspaceRoot}/packages/toggle/playwright-report"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/toggle/tsconfig.lib.json",
@@ -41,9 +35,7 @@
     },
     "serve": {
       "executor": "@nxext/stencil:serve",
-      "outputs": [
-        "{workspaceRoot}/packages/toggle/playwright-report"
-      ],
+      "outputs": ["{workspaceRoot}/packages/toggle/playwright-report"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/toggle/tsconfig.lib.json",
@@ -53,18 +45,14 @@
     },
     "e2e": {
       "executor": "@nx/playwright:playwright",
-      "outputs": [
-        "{workspaceRoot}/packages/toggle/playwright-report"
-      ],
+      "outputs": ["{workspaceRoot}/packages/toggle/playwright-report"],
       "options": {
         "config": "packages/toggle/playwright.config.ts"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "packages/toggle/src/**/*.{ts,tsx,json}",

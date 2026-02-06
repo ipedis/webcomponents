@@ -9,7 +9,8 @@ test.describe('ip-footnote', () => {
 
   test('renders correctly', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-footnote identifier="1" text="This is a footnote."></ip-footnote>';
+      document.body.innerHTML =
+        '<ip-footnote identifier="1" text="This is a footnote."></ip-footnote>';
     });
     await page.waitForChanges();
 

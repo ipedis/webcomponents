@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { expect } from '@playwright/test';
 import { matchers, createConfig } from '@stencil/playwright';
 

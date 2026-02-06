@@ -12,14 +12,15 @@ test.describe('ip-modal', () => {
       document.body.innerHTML = '<ip-modal></ip-modal>';
     });
     await page.waitForChanges();
-    
+
     const element = page.locator('ip-modal');
     await expect(element).toHaveClass(/hydrated/);
   });
 
   test('should open modal when button is clicked', async ({ page }) => {
     await page.evaluate(() => {
-      document.body.innerHTML = '<ip-modal button-text="open"><div slot="content">The content</div></ip-modal>';
+      document.body.innerHTML =
+        '<ip-modal button-text="open"><div slot="content">The content</div></ip-modal>';
     });
     await page.waitForChanges();
 
@@ -36,4 +37,3 @@ test.describe('ip-modal', () => {
     await expect(modal).not.toHaveAttribute('open');
   });
 });
-

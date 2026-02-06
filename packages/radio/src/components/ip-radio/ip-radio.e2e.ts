@@ -26,8 +26,12 @@ test.describe('ip-radio', () => {
     await expect(labels.nth(0)).toHaveText('Option 1');
     await expect(labels.nth(1)).toHaveText('Option 2');
 
-    const value0 = await radioInputs.nth(0).evaluate((el: HTMLInputElement) => el.value);
-    const value1 = await radioInputs.nth(1).evaluate((el: HTMLInputElement) => el.value);
+    const value0 = await radioInputs
+      .nth(0)
+      .evaluate((el: HTMLInputElement) => el.value);
+    const value1 = await radioInputs
+      .nth(1)
+      .evaluate((el: HTMLInputElement) => el.value);
     expect(value0).toBe('1');
     expect(value1).toBe('2');
   });
@@ -43,9 +47,13 @@ test.describe('ip-radio', () => {
     const selectionChangedPromise = page.evaluate(() => {
       return new Promise((resolve) => {
         const radioComponent = document.querySelector('ip-radio');
-        radioComponent.addEventListener('selectionChanged', (e: any) => {
-          resolve(e.detail);
-        }, { once: true });
+        radioComponent.addEventListener(
+          'selectionChanged',
+          (e: any) => {
+            resolve(e.detail);
+          },
+          { once: true },
+        );
       });
     });
 
@@ -59,7 +67,9 @@ test.describe('ip-radio', () => {
     });
   });
 
-  test('disables and does not emit selectionChanged event on disabled option', async ({ page }) => {
+  test('disables and does not emit selectionChanged event on disabled option', async ({
+    page,
+  }) => {
     await page.evaluate(() => {
       document.body.innerHTML = `
         <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2", "disabled": true}]'></ip-radio>
@@ -67,7 +77,9 @@ test.describe('ip-radio', () => {
     });
     await page.waitForChanges();
 
-    const disabledRadioInput = page.locator('ip-radio').locator('input[disabled]');
+    const disabledRadioInput = page
+      .locator('ip-radio')
+      .locator('input[disabled]');
 
     let eventFired = false;
     await page.evaluate(() => {
@@ -83,10 +95,14 @@ test.describe('ip-radio', () => {
     eventFired = await page.evaluate(() => (window as any).eventFired || false);
     expect(eventFired).toBe(false);
 
-    const isDisabled = await disabledRadioInput.evaluate((el: HTMLInputElement) => el.disabled);
+    const isDisabled = await disabledRadioInput.evaluate(
+      (el: HTMLInputElement) => el.disabled,
+    );
     expect(isDisabled).toBe(true);
 
-    const isChecked = await disabledRadioInput.evaluate((el: HTMLInputElement) => el.checked);
+    const isChecked = await disabledRadioInput.evaluate(
+      (el: HTMLInputElement) => el.checked,
+    );
     expect(isChecked).toBe(false);
   });
 
