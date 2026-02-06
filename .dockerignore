@@ -1,0 +1,10 @@
+.env
+README.md
+node_modules
+.angular
+.nx
+dist
+.git
+.vscode
+playwright-report
+tools

@@ -6,6 +6,8 @@ COPY package*.json ./
 RUN npm install
 
 COPY . ./
+RUN npm run build || true
+RUN ./node_modules/.bin/nx repair
 RUN npm run build
 
 FROM node:24-alpine
