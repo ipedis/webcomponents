@@ -1,11 +1,10 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": ["dom", "es2015"],
+    "lib": ["dom", "es2015", "ESNext.Disposable"],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
@@ -14,9 +13,6 @@
     "jsx": "react",
     "jsxFactory": "h"
   },
-  "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    }
-  ]
+  "include": ["src"],
+  "exclude": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.e2e.ts"]
 }
