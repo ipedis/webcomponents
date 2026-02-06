@@ -2,18 +2,13 @@
 import { expect, defineConfig } from '@playwright/test';
 import { matchers } from '@stencil/playwright';
 import * as path from 'path';
-import {
-  getPortFromPackageName,
-  getPackageNameFromPath,
-} from '../../playwright.utils';
 
 // Add custom Stencil matchers to Playwright assertions
 expect.extend(matchers);
 
-// Derive unique port from package name for parallel e2e testing
+// Unique port for this package (enables parallel e2e testing)
+const PORT = 3333;
 const packageDir = path.resolve(__dirname);
-const packageName = getPackageNameFromPath(packageDir);
-const PORT = getPortFromPackageName(packageName);
 
 export default defineConfig({
   testDir: './src',
