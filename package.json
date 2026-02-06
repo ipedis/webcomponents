@@ -13,9 +13,7 @@
     "build": "nx run-many --target=build --all --projects=tag:type:webcomponent --parallel && nx run demo:build:production",
     "lint": "nx run-many --target=lint --all --parallel",
     "e2e": "nx run-many --target=e2e --all --parallel --exclude=demo",
-    "e2e:start-server": "cd packages/accordion && npx stencil build --dev --watch --serve --no-open",
     "test": "nx run-many --target=test --all --parallel",
-    "mac:e2e": "PUPPETEER_EXECUTABLE_PATH=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" nx run-many --target=e2e --all --parallel",
     "demo:ssr": "nx run demo:build:production && node dist/demo/server/server.mjs",
     "migrate": "nx migrate latest && nx migrate --run-migrations --if-exists",
     "run:ci": "npm run lint && npm run test && npm run e2e && npm run build",
@@ -57,7 +55,6 @@
     "@typescript-eslint/eslint-plugin": "7.17.0",
     "@typescript-eslint/parser": "7.17.0",
     "@typescript-eslint/utils": "7.17.0",
-    "concurrently": "^9.2.1",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jest": "^28.6.0",
@@ -74,8 +71,7 @@
     "prettier": "^3.3.2",
     "ts-jest": "^29.2.5",
     "ts-node": "10.9.1",
-    "typescript": "5.9.2",
-    "wait-on": "^9.0.3"
+    "typescript": "5.9.2"
   },
   "workspaces": [
     "packages/*",

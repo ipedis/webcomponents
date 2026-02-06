@@ -1,28 +1,27 @@
 /* eslint-disable no-undef */
-import { expect } from '@playwright/test';
+import { expect, defineConfig } from '@playwright/test';
 import { matchers } from '@stencil/playwright';
-import { defineConfig } from '@playwright/test';
+import * as path from 'path';
 
 // Add custom Stencil matchers to Playwright assertions
 expect.extend(matchers);
 
+// Unique port for this package (enables parallel e2e testing)
+const PORT = 3340;
+const packageDir = path.resolve(__dirname);
+
 export default defineConfig({
   testDir: './src',
   testMatch: '**/*.e2e.ts',
-  fullyParallel: true,
-  forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
-  timeout: 30000,
   use: {
-    baseURL: 'http://localhost:3333',
-    trace: 'on-first-retry',
+    baseURL: `http://localhost:${PORT}`,
   },
-  projects: [
-    {
-      name: 'chromium',
-      use: {},
-    },
-  ],
+  webServer: {
+    command: `npx stencil build --dev --watch --serve --no-open --port ${PORT}`,
+    cwd: packageDir,
+    url: `http://localhost:${PORT}/ping`,
+    reuseExistingServer: !process.env.CI,
+  },
 });

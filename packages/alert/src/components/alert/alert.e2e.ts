@@ -50,13 +50,8 @@ test.describe('ip-alert', () => {
     await closeButton.click();
     await page.waitForChanges();
 
-    const alert = page.locator('ip-alert');
-    await expect(alert).toHaveClass(/hydrated/);
-
-    const hasContent = await page.evaluate(() => {
-      const shadowRootElement = document.querySelector('ip-alert').shadowRoot;
-      return shadowRootElement && shadowRootElement.querySelector('*') !== null;
-    });
-    expect(hasContent).toBe(false);
+    // After closing, the .alert div should no longer exist (render returns null)
+    const alertDiv = page.locator('ip-alert').locator('.alert');
+    await expect(alertDiv).toHaveCount(0);
   });
 });
