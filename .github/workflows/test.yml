@@ -35,7 +35,7 @@ jobs:
         with:
           timeout_minutes: 3
           max_attempts: 3
-          command:  npx nx run-many --target=e2e --all --exclude=demo
+          command: npx nx run-many --target=e2e --all --exclude=demo
   #
   #      - name: Demo Axe tests
   #        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts

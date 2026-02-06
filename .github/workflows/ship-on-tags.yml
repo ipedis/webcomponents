@@ -1,7 +1,9 @@
 name: release-pdfa11y/webcomponents-demo
+
 on:
   push:
     tags:
+      - release*
       - v*
 jobs:
   build-and-release-fpm-image:
@@ -23,6 +25,7 @@ jobs:
           push: true
           context: '{{defaultContext}}'
           file: ./apps/demo/docker/Dockerfile
+          target: prod
           build-args: |
             APP_VERSION=${{ github.ref_name }}
           tags: |

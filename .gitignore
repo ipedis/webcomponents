@@ -52,5 +52,6 @@ packages/*/package.e2e.json
 playwright-report
 test-results
 .chrome
+.chrome
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
