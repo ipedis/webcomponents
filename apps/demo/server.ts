@@ -41,7 +41,7 @@ export function app(): express.Express {
 const server = app();
 
 if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] ? parseInt(process.env['PORT']) : 4001;
+  const port = process.env['PORT'] ? parseInt(process.env['PORT']) : 4000;
   const ip = process.env['IP'] || '0.0.0.0';
 
   server.listen(port,ip, () => {
