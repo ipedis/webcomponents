@@ -44,13 +44,10 @@
       }
     },
     "e2e": {
-      "executor": "@nxext/stencil:e2e",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/packages/accordion/playwright-report"],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/accordion/tsconfig.lib.json",
-        "configPath": "packages/accordion/stencil.config.ts",
-        "outputPath": "dist/packages/accordion"
+        "config": "packages/accordion/playwright.config.ts"
       }
     },
     "lint": {
