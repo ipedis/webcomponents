@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-tooltip',
   standalone: true,
-  imports: [CommonModule, Highlight],
+  imports: [Highlight],
   templateUrl: './doc-tooltip.component.html',
   styleUrl: './doc-tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

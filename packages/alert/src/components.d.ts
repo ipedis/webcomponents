@@ -7,9 +7,21 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpAlert {
+        /**
+          * @default ''
+         */
         "alertTitle": string;
+        /**
+          * @default 'Close alert'
+         */
         "closeAriaLabel": string;
+        /**
+          * @default ''
+         */
         "message": string;
+        /**
+          * @default 'info'
+         */
         "type": 'info' | 'warning' | 'danger' | 'success';
     }
 }
@@ -41,21 +53,41 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpAlert {
+        /**
+          * @default ''
+         */
         "alertTitle"?: string;
+        /**
+          * @default 'Close alert'
+         */
         "closeAriaLabel"?: string;
+        /**
+          * @default ''
+         */
         "message"?: string;
         "onAlertClosed"?: (event: IpAlertCustomEvent<void>) => void;
+        /**
+          * @default 'info'
+         */
         "type"?: 'info' | 'warning' | 'danger' | 'success';
     }
+
+    interface IpAlertAttributes {
+        "alertTitle": string;
+        "type": 'info' | 'warning' | 'danger' | 'success';
+        "message": string;
+        "closeAriaLabel": string;
+    }
+
     interface IntrinsicElements {
-        "ip-alert": IpAlert;
+        "ip-alert": Omit<IpAlert, keyof IpAlertAttributes> & { [K in keyof IpAlert & keyof IpAlertAttributes]?: IpAlert[K] } & { [K in keyof IpAlert & keyof IpAlertAttributes as `attr:${K}`]?: IpAlertAttributes[K] } & { [K in keyof IpAlert & keyof IpAlertAttributes as `prop:${K}`]?: IpAlert[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-alert": LocalJSX.IpAlert & JSXBase.HTMLAttributes<HTMLIpAlertElement>;
+            "ip-alert": LocalJSX.IntrinsicElements["ip-alert"] & JSXBase.HTMLAttributes<HTMLIpAlertElement>;
         }
     }
 }

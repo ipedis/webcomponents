@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpShowMore {
+        /**
+          * @default 'Show Less'
+         */
         "showLessText": string;
+        /**
+          * @default 'Show More'
+         */
         "showMoreText": string;
+        /**
+          * @default 'white'
+         */
         "svgColor": string;
     }
 }
@@ -25,19 +34,35 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpShowMore {
+        /**
+          * @default 'Show Less'
+         */
         "showLessText"?: string;
+        /**
+          * @default 'Show More'
+         */
         "showMoreText"?: string;
+        /**
+          * @default 'white'
+         */
         "svgColor"?: string;
     }
+
+    interface IpShowMoreAttributes {
+        "svgColor": string;
+        "showMoreText": string;
+        "showLessText": string;
+    }
+
     interface IntrinsicElements {
-        "ip-show-more": IpShowMore;
+        "ip-show-more": Omit<IpShowMore, keyof IpShowMoreAttributes> & { [K in keyof IpShowMore & keyof IpShowMoreAttributes]?: IpShowMore[K] } & { [K in keyof IpShowMore & keyof IpShowMoreAttributes as `attr:${K}`]?: IpShowMoreAttributes[K] } & { [K in keyof IpShowMore & keyof IpShowMoreAttributes as `prop:${K}`]?: IpShowMore[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-show-more": LocalJSX.IpShowMore & JSXBase.HTMLAttributes<HTMLIpShowMoreElement>;
+            "ip-show-more": LocalJSX.IntrinsicElements["ip-show-more"] & JSXBase.HTMLAttributes<HTMLIpShowMoreElement>;
         }
     }
 }

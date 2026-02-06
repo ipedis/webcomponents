@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-search-bar',
   standalone: true,
-  imports: [CommonModule, Highlight],
+  imports: [Highlight],
   templateUrl: './doc-search-bar.component.html',
   styleUrl: './doc-search-bar.component.scss',
 })

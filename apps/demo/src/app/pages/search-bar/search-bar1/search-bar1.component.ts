@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
 import { DocSearchBarComponent } from '../doc-search-bar/doc-search-bar.component';
@@ -16,11 +17,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-search-bar1',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
     DocSearchBarComponent,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './search-bar1.component.html',
   styleUrl: './search-bar1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

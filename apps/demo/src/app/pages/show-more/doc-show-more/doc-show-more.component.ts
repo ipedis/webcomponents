@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-show-more',
   standalone: true,
-  imports: [CommonModule, Highlight],
+  imports: [Highlight],
   templateUrl: './doc-show-more.component.html',
   styleUrl: './doc-show-more.component.scss',
 })

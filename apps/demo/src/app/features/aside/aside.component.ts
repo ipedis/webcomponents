@@ -3,15 +3,14 @@ import {
   Component,
   EventEmitter,
   Output,
-  OnInit,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-demo-aside',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './aside.component.html',
   styleUrls: ['./aside.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

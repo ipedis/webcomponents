@@ -4,25 +4,23 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { DocTabPanelComponent } from '../doc-tab-panel/doc-tab-panel.component';
 import { defineCustomElements as tabPanelElements } from '@ipedis/tab-panel/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
-import { RouterLink } from '@angular/router';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-tab-panel1',
   standalone: true,
   imports: [
-    CommonModule,
     DocTabPanelComponent,
     CodeSnippetComponent,
-    RouterLink,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './tab-panel1.component.html',
   styleUrl: './tab-panel1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

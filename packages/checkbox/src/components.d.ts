@@ -7,7 +7,13 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpCheckbox {
+        /**
+          * @default false
+         */
         "checked": boolean;
+        /**
+          * @default false
+         */
         "disabled": boolean;
         "identifier": string;
         "name": string;
@@ -67,7 +73,13 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpCheckbox {
+        /**
+          * @default false
+         */
         "checked"?: boolean;
+        /**
+          * @default false
+         */
         "disabled"?: boolean;
         "identifier"?: string;
         "name"?: string;
@@ -78,17 +90,29 @@ declare namespace LocalJSX {
         "onSelectionChanged"?: (event: IpCheckboxListCustomEvent<string[]>) => void;
         "options"?: string;
     }
+
+    interface IpCheckboxAttributes {
+        "identifier": string;
+        "disabled": boolean;
+        "checked": boolean;
+        "name": string;
+    }
+    interface IpCheckboxListAttributes {
+        "options": string;
+        "legend": string;
+    }
+
     interface IntrinsicElements {
-        "ip-checkbox": IpCheckbox;
-        "ip-checkbox-list": IpCheckboxList;
+        "ip-checkbox": Omit<IpCheckbox, keyof IpCheckboxAttributes> & { [K in keyof IpCheckbox & keyof IpCheckboxAttributes]?: IpCheckbox[K] } & { [K in keyof IpCheckbox & keyof IpCheckboxAttributes as `attr:${K}`]?: IpCheckboxAttributes[K] } & { [K in keyof IpCheckbox & keyof IpCheckboxAttributes as `prop:${K}`]?: IpCheckbox[K] };
+        "ip-checkbox-list": Omit<IpCheckboxList, keyof IpCheckboxListAttributes> & { [K in keyof IpCheckboxList & keyof IpCheckboxListAttributes]?: IpCheckboxList[K] } & { [K in keyof IpCheckboxList & keyof IpCheckboxListAttributes as `attr:${K}`]?: IpCheckboxListAttributes[K] } & { [K in keyof IpCheckboxList & keyof IpCheckboxListAttributes as `prop:${K}`]?: IpCheckboxList[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-checkbox": LocalJSX.IpCheckbox & JSXBase.HTMLAttributes<HTMLIpCheckboxElement>;
-            "ip-checkbox-list": LocalJSX.IpCheckboxList & JSXBase.HTMLAttributes<HTMLIpCheckboxListElement>;
+            "ip-checkbox": LocalJSX.IntrinsicElements["ip-checkbox"] & JSXBase.HTMLAttributes<HTMLIpCheckboxElement>;
+            "ip-checkbox-list": LocalJSX.IntrinsicElements["ip-checkbox-list"] & JSXBase.HTMLAttributes<HTMLIpCheckboxListElement>;
         }
     }
 }

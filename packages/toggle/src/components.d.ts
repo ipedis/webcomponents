@@ -9,9 +9,18 @@ export namespace Components {
     interface IpToggle {
         "activeLabel": string;
         "ariaLabel": string;
+        /**
+          * @default false
+         */
         "checked": boolean;
         "inactiveLabel": string;
+        /**
+          * @default 'medium'
+         */
         "size": 'small' | 'medium' | 'large';
+        /**
+          * @default false
+         */
         "toggleDisabled": boolean;
     }
 }
@@ -45,21 +54,40 @@ declare namespace LocalJSX {
     interface IpToggle {
         "activeLabel"?: string;
         "ariaLabel"?: string;
+        /**
+          * @default false
+         */
         "checked"?: boolean;
         "inactiveLabel"?: string;
         "onToggleChange"?: (event: IpToggleCustomEvent<boolean>) => void;
+        /**
+          * @default 'medium'
+         */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * @default false
+         */
         "toggleDisabled"?: boolean;
     }
+
+    interface IpToggleAttributes {
+        "activeLabel": string;
+        "inactiveLabel": string;
+        "ariaLabel": string;
+        "toggleDisabled": boolean;
+        "size": 'small' | 'medium' | 'large';
+        "checked": boolean;
+    }
+
     interface IntrinsicElements {
-        "ip-toggle": IpToggle;
+        "ip-toggle": Omit<IpToggle, keyof IpToggleAttributes> & { [K in keyof IpToggle & keyof IpToggleAttributes]?: IpToggle[K] } & { [K in keyof IpToggle & keyof IpToggleAttributes as `attr:${K}`]?: IpToggleAttributes[K] } & { [K in keyof IpToggle & keyof IpToggleAttributes as `prop:${K}`]?: IpToggle[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-toggle": LocalJSX.IpToggle & JSXBase.HTMLAttributes<HTMLIpToggleElement>;
+            "ip-toggle": LocalJSX.IntrinsicElements["ip-toggle"] & JSXBase.HTMLAttributes<HTMLIpToggleElement>;
         }
     }
 }

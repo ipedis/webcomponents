@@ -7,9 +7,21 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpBreadcrumb {
+        /**
+          * @default '[]'
+         */
         "breadcrumbItems": string;
+        /**
+          * @default ''
+         */
         "breadcrumbTitle": string;
+        /**
+          * @default 'Link to'
+         */
         "prefixAriaLabel": string;
+        /**
+          * @default '>'
+         */
         "separatorIcon": string;
     }
 }
@@ -26,20 +38,40 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpBreadcrumb {
+        /**
+          * @default '[]'
+         */
         "breadcrumbItems"?: string;
+        /**
+          * @default ''
+         */
         "breadcrumbTitle"?: string;
+        /**
+          * @default 'Link to'
+         */
         "prefixAriaLabel"?: string;
+        /**
+          * @default '>'
+         */
         "separatorIcon"?: string;
     }
+
+    interface IpBreadcrumbAttributes {
+        "breadcrumbTitle": string;
+        "breadcrumbItems": string;
+        "prefixAriaLabel": string;
+        "separatorIcon": string;
+    }
+
     interface IntrinsicElements {
-        "ip-breadcrumb": IpBreadcrumb;
+        "ip-breadcrumb": Omit<IpBreadcrumb, keyof IpBreadcrumbAttributes> & { [K in keyof IpBreadcrumb & keyof IpBreadcrumbAttributes]?: IpBreadcrumb[K] } & { [K in keyof IpBreadcrumb & keyof IpBreadcrumbAttributes as `attr:${K}`]?: IpBreadcrumbAttributes[K] } & { [K in keyof IpBreadcrumb & keyof IpBreadcrumbAttributes as `prop:${K}`]?: IpBreadcrumb[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-breadcrumb": LocalJSX.IpBreadcrumb & JSXBase.HTMLAttributes<HTMLIpBreadcrumbElement>;
+            "ip-breadcrumb": LocalJSX.IntrinsicElements["ip-breadcrumb"] & JSXBase.HTMLAttributes<HTMLIpBreadcrumbElement>;
         }
     }
 }

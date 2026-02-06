@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpModal {
+        /**
+          * @default 'Open modal'
+         */
         "buttonText": string;
+        /**
+          * @default 'Close the dialog'
+         */
         "closeAriaLabel": string;
+        /**
+          * @default 'black'
+         */
         "svgColor": string;
     }
 }
@@ -25,19 +34,35 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpModal {
+        /**
+          * @default 'Open modal'
+         */
         "buttonText"?: string;
+        /**
+          * @default 'Close the dialog'
+         */
         "closeAriaLabel"?: string;
+        /**
+          * @default 'black'
+         */
         "svgColor"?: string;
     }
+
+    interface IpModalAttributes {
+        "buttonText": string;
+        "svgColor": string;
+        "closeAriaLabel": string;
+    }
+
     interface IntrinsicElements {
-        "ip-modal": IpModal;
+        "ip-modal": Omit<IpModal, keyof IpModalAttributes> & { [K in keyof IpModal & keyof IpModalAttributes]?: IpModal[K] } & { [K in keyof IpModal & keyof IpModalAttributes as `attr:${K}`]?: IpModalAttributes[K] } & { [K in keyof IpModal & keyof IpModalAttributes as `prop:${K}`]?: IpModal[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-modal": LocalJSX.IpModal & JSXBase.HTMLAttributes<HTMLIpModalElement>;
+            "ip-modal": LocalJSX.IntrinsicElements["ip-modal"] & JSXBase.HTMLAttributes<HTMLIpModalElement>;
         }
     }
 }

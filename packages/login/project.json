@@ -13,15 +13,12 @@
   },
   "targets": {
     "test": {
-      "executor": "@nxext/stencil:test",
+      "executor": "@nx/jest:jest",
       "outputs": [
-        "{options.outputPath}"
+        "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/login/tsconfig.lib.json",
-        "configPath": "packages/login/stencil.config.ts",
-        "outputPath": "dist/packages/login"
+        "jestConfig": "packages/login/jest.config.js"
       }
     },
     "build": {

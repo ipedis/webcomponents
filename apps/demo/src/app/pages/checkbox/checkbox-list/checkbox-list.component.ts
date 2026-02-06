@@ -4,12 +4,12 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
-import { RouterLink } from '@angular/router';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 import { Highlight } from 'ngx-highlightjs';
 
@@ -17,12 +17,10 @@ import { Highlight } from 'ngx-highlightjs';
   selector: 'app-checkbox-list',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
-    RouterLink,
     AccordionComponent,
-    Highlight,
-  ],
+    Highlight
+],
   templateUrl: './checkbox-list.component.html',
   styleUrl: './checkbox-list.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

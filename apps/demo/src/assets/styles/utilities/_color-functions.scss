@@ -1,0 +1,17 @@
+@use 'sass:color';
+
+/*______________________________________________________________________
+  ------------------------- Color Functions ---------------------------
+  ______________________________________________________________________ */
+
+/* Darken a color by a percentage
+----------------------------------*/
+@function darken($color, $amount) {
+  @return color.adjust($color, $lightness: -$amount * 1%);
+}
+
+/* Lighten a color by a percentage
+----------------------------------*/
+@function lighten($color, $amount) {
+  @return color.adjust($color, $lightness: $amount * 1%);
+}

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-stepper',
   standalone: true,
-  imports: [CommonModule, Highlight],
+  imports: [Highlight],
   templateUrl: './doc-stepper.component.html',
   styleUrl: './doc-stepper.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

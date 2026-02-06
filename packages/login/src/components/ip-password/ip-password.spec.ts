@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { IpPassword } from './ip-password';
 
 describe('ip-password', () => {

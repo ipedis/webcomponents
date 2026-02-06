@@ -1,4 +1,4 @@
-@import './colors';
-@import './breakpoints';
-@import './sizes';
-@import './transitions';
+@forward './colors';
+@forward './breakpoints';
+@forward './sizes';
+@forward './transitions';

@@ -4,10 +4,10 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { RouterLink } from '@angular/router';
 
 import { defineCustomElements as showMoreElements } from '@ipedis/show-more/loader';
 import { DocShowMoreComponent } from '../doc-show-more/doc-show-more.component';
@@ -18,13 +18,11 @@ import { CardComponent } from '../../../features/card/card.component';
   selector: 'app-show-more1',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
-    RouterLink,
     DocShowMoreComponent,
     AccordionComponent,
-    CardComponent,
-  ],
+    CardComponent
+],
   templateUrl: './show-more1.component.html',
   styleUrl: './show-more1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

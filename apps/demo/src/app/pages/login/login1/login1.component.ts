@@ -4,12 +4,12 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as loginElements } from '@ipedis/login/loader';
 import { DocLoginComponent } from '../doc-login/doc-login.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { RouterLink } from '@angular/router';
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -17,12 +17,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-login1',
   standalone: true,
   imports: [
-    CommonModule,
     DocLoginComponent,
     CodeSnippetComponent,
-    RouterLink,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './login1.component.html',
   styleUrl: './login1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

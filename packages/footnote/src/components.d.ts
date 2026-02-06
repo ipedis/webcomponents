@@ -7,8 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpFootnote {
+        /**
+          * @default 'Back to main text'
+         */
         "btnAriaLabel": string;
+        /**
+          * @default 'default-id'
+         */
         "identifier": string;
+        /**
+          * @default 'grey'
+         */
         "svgColor": string;
         "text": string;
     }
@@ -26,20 +35,37 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpFootnote {
+        /**
+          * @default 'Back to main text'
+         */
         "btnAriaLabel"?: string;
+        /**
+          * @default 'default-id'
+         */
         "identifier"?: string;
+        /**
+          * @default 'grey'
+         */
         "svgColor"?: string;
         "text"?: string;
     }
+
+    interface IpFootnoteAttributes {
+        "identifier": string;
+        "btnAriaLabel": string;
+        "text": string;
+        "svgColor": string;
+    }
+
     interface IntrinsicElements {
-        "ip-footnote": IpFootnote;
+        "ip-footnote": Omit<IpFootnote, keyof IpFootnoteAttributes> & { [K in keyof IpFootnote & keyof IpFootnoteAttributes]?: IpFootnote[K] } & { [K in keyof IpFootnote & keyof IpFootnoteAttributes as `attr:${K}`]?: IpFootnoteAttributes[K] } & { [K in keyof IpFootnote & keyof IpFootnoteAttributes as `prop:${K}`]?: IpFootnote[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-footnote": LocalJSX.IpFootnote & JSXBase.HTMLAttributes<HTMLIpFootnoteElement>;
+            "ip-footnote": LocalJSX.IntrinsicElements["ip-footnote"] & JSXBase.HTMLAttributes<HTMLIpFootnoteElement>;
         }
     }
 }

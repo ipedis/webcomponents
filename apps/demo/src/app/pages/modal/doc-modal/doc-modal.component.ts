@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-modal',
   standalone: true,
-  imports: [CommonModule, Highlight],
+  imports: [Highlight],
   templateUrl: './doc-modal.component.html',
   styleUrl: './doc-modal.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

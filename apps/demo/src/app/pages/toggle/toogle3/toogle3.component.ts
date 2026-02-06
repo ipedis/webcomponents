@@ -4,25 +4,23 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
-import { RouterLink } from '@angular/router';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-toogle3',
   standalone: true,
   imports: [
-    CommonModule,
     DocToogleComponent,
     CodeSnippetComponent,
-    RouterLink,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './toogle3.component.html',
   styleUrl: './toogle3.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

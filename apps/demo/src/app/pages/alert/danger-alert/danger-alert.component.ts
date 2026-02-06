@@ -7,12 +7,12 @@ import {
   PLATFORM_ID,
   ViewChild,
   AfterViewInit,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocAlertComponent } from '../doc-alert/doc-alert.component';
 
-import { RouterLink } from '@angular/router';
 import { defineCustomElements as AlertElements } from '@ipedis/alert/loader';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -20,12 +20,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-danger-alert',
   standalone: true,
   imports: [
-    CommonModule,
-    RouterLink,
     CodeSnippetComponent,
     DocAlertComponent,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './danger-alert.component.html',
   styleUrl: './danger-alert.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

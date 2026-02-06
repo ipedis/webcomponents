@@ -8,7 +8,7 @@
         (click)="selectTab('html')"
         (keydown)="handleKeyDown($event, 'html')"
         [class.active]="selectedTab === 'html'"
-      >
+        >
         HTML
       </button>
       <button
@@ -18,7 +18,7 @@
         (click)="selectTab('css')"
         (keydown)="handleKeyDown($event, 'css')"
         [class.active]="selectedTab === 'css'"
-      >
+        >
         CSS
       </button>
     </div>
@@ -32,7 +32,7 @@
           viewBox="0 0 24 25"
           fill="none"
           aria-hidden="true"
-        >
+          >
           <g clip-path="url(#clip0_436_419)">
             <path
               d="M15.75 16.25H20.25V4.25H8.25V8.75"
@@ -40,14 +40,14 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-            />
+              />
             <path
               d="M15.75 8.75H3.75V20.75H15.75V8.75Z"
               stroke="#EFEFEF"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-            />
+              />
           </g>
           <defs>
             <clipPath id="clip0_436_419">
@@ -56,7 +56,7 @@
                 height="24"
                 fill="white"
                 transform="translate(0 0.5)"
-              />
+                />
             </clipPath>
           </defs>
         </svg>
@@ -64,21 +64,23 @@
     </div>
   </div>
   <div class="tab-content">
-    <div
-      id="html-tab"
-      role="tabpanel"
-      *ngIf="selectedTab === 'html'"
-      class="code-container"
-    >
-      <pre><code [highlight]="htmlCode" language="html" HighlightLineNumbers></code></pre>
-    </div>
-    <div
-      id="css-tab"
-      role="tabpanel"
-      *ngIf="selectedTab === 'css'"
-      class="code-container"
-    >
-      <pre><code [highlight]="cssCode" language="css" HighlightLineNumbers></code></pre>
-    </div>
+    @if (selectedTab === 'html') {
+      <div
+        id="html-tab"
+        role="tabpanel"
+        class="code-container"
+        >
+        <pre><code [highlight]="htmlCode" language="html" highlightLineNumbers></code></pre>
+      </div>
+    }
+    @if (selectedTab === 'css') {
+      <div
+        id="css-tab"
+        role="tabpanel"
+        class="code-container"
+        >
+        <pre><code [highlight]="cssCode" language="css" highlightLineNumbers></code></pre>
+      </div>
+    }
   </div>
 </div>

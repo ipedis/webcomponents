@@ -7,42 +7,132 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpEmail {
+        /**
+          * @default 'Email field cannot be empty'
+         */
         "emptyFieldErrorMessage": string;
         "errorMessage": string;
+        /**
+          * @default 'Email'
+         */
         "inputLabel": string;
+        /**
+          * @default 'Type your email here...'
+         */
         "inputPlaceholder": string;
+        /**
+          * @default false
+         */
         "invalid": boolean;
+        /**
+          * @default false
+         */
         "required": boolean;
     }
     interface IpLogin {
+        /**
+          * @default 'Forgot password?'
+         */
         "forgotPasswordLabel": string;
+        /**
+          * @default ''
+         */
         "forgotPasswordLink": string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel": string;
+        /**
+          * @default 'Required fields'
+         */
         "indicationLabel": string;
+        /**
+          * @default 'Login'
+         */
         "loginTitle": string;
+        /**
+          * @default 'The password must contain at least one digit'
+         */
         "passwordDigitErrorMsg": string;
+        /**
+          * @default 'Password'
+         */
         "passwordLabel": string;
+        /**
+          * @default 'The password must contain at least 8 characters'
+         */
         "passwordLengthErrorMsg": string;
+        /**
+          * @default 'The password must contain at least a lower case'
+         */
         "passwordLowercaseErrorMsg": string;
+        /**
+          * @default 'Password must contain at least one capital'
+         */
         "passwordUppercaseErrorMsg": string;
+        /**
+          * @default 'Type your password here...'
+         */
         "pwdPlaceholder": string;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel": string;
+        /**
+          * @default 'Submit the form'
+         */
         "submitBtnAriaLabel": string;
+        /**
+          * @default 'Login'
+         */
         "submitButtonLabel": string;
+        /**
+          * @default 'Username is required'
+         */
         "usernameErrorMsg": string;
+        /**
+          * @default 'The email address is invalid'
+         */
         "usernameInvalidEmailMsg": string;
+        /**
+          * @default 'Username'
+         */
         "usernameLabel": string;
+        /**
+          * @default 'Type your username here...'
+         */
         "usernamePlaceholder": string;
+        /**
+          * @default false
+         */
         "usernameRequired": boolean;
+        /**
+          * @default 'text'
+         */
         "usernameType": 'text' | 'email';
     }
     interface IpPassword {
+        /**
+          * @default 'Password field cannot be empty'
+         */
         "emptyFieldErrorMessage": string;
         "errorMessage": string;
         "forgotPasswordLink": string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel": string;
+        /**
+          * @default 'Type your password here...'
+         */
         "inputPlaceholder": string;
+        /**
+          * @default false
+         */
         "invalid": boolean;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel": string;
     }
 }
@@ -118,60 +208,215 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpEmail {
+        /**
+          * If `true`, the user cannot interact with the element.
+         */
+        "disabled"?: boolean;
+        /**
+          * @default 'Email field cannot be empty'
+         */
         "emptyFieldErrorMessage"?: string;
         "errorMessage"?: string;
+        /**
+          * The `id` of a `<form>` element to associate this element with.
+         */
+        "form"?: string;
+        /**
+          * @default 'Email'
+         */
         "inputLabel"?: string;
+        /**
+          * @default 'Type your email here...'
+         */
         "inputPlaceholder"?: string;
+        /**
+          * @default false
+         */
         "invalid"?: boolean;
+        /**
+          * The name of the element, used when submitting an HTML form.
+         */
+        "name"?: string;
         "onInputChange"?: (event: IpEmailCustomEvent<string>) => void;
+        /**
+          * @default false
+         */
         "required"?: boolean;
     }
     interface IpLogin {
+        /**
+          * @default 'Forgot password?'
+         */
         "forgotPasswordLabel"?: string;
+        /**
+          * @default ''
+         */
         "forgotPasswordLink"?: string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel"?: string;
+        /**
+          * @default 'Required fields'
+         */
         "indicationLabel"?: string;
+        /**
+          * @default 'Login'
+         */
         "loginTitle"?: string;
         "onFormSubmitted"?: (event: IpLoginCustomEvent<any>) => void;
+        /**
+          * @default 'The password must contain at least one digit'
+         */
         "passwordDigitErrorMsg"?: string;
+        /**
+          * @default 'Password'
+         */
         "passwordLabel"?: string;
+        /**
+          * @default 'The password must contain at least 8 characters'
+         */
         "passwordLengthErrorMsg"?: string;
+        /**
+          * @default 'The password must contain at least a lower case'
+         */
         "passwordLowercaseErrorMsg"?: string;
+        /**
+          * @default 'Password must contain at least one capital'
+         */
         "passwordUppercaseErrorMsg"?: string;
+        /**
+          * @default 'Type your password here...'
+         */
         "pwdPlaceholder"?: string;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel"?: string;
+        /**
+          * @default 'Submit the form'
+         */
         "submitBtnAriaLabel"?: string;
+        /**
+          * @default 'Login'
+         */
         "submitButtonLabel"?: string;
+        /**
+          * @default 'Username is required'
+         */
         "usernameErrorMsg"?: string;
+        /**
+          * @default 'The email address is invalid'
+         */
         "usernameInvalidEmailMsg"?: string;
+        /**
+          * @default 'Username'
+         */
         "usernameLabel"?: string;
+        /**
+          * @default 'Type your username here...'
+         */
         "usernamePlaceholder"?: string;
+        /**
+          * @default false
+         */
         "usernameRequired"?: boolean;
+        /**
+          * @default 'text'
+         */
         "usernameType"?: 'text' | 'email';
     }
     interface IpPassword {
+        /**
+          * If `true`, the user cannot interact with the element.
+         */
+        "disabled"?: boolean;
+        /**
+          * @default 'Password field cannot be empty'
+         */
         "emptyFieldErrorMessage"?: string;
         "errorMessage"?: string;
         "forgotPasswordLink"?: string;
+        /**
+          * The `id` of a `<form>` element to associate this element with.
+         */
+        "form"?: string;
+        /**
+          * @default 'Hide password'
+         */
         "hidePasswordAriaLabel"?: string;
+        /**
+          * @default 'Type your password here...'
+         */
         "inputPlaceholder"?: string;
+        /**
+          * @default false
+         */
         "invalid"?: boolean;
+        /**
+          * The name of the element, used when submitting an HTML form.
+         */
+        "name"?: string;
         "onPasswordChange"?: (event: IpPasswordCustomEvent<string>) => void;
+        /**
+          * @default 'Show password'
+         */
         "showPasswordAriaLabel"?: string;
     }
+
+    interface IpEmailAttributes {
+        "errorMessage": string;
+        "invalid": boolean;
+        "inputLabel": string;
+        "emptyFieldErrorMessage": string;
+        "required": boolean;
+        "inputPlaceholder": string;
+    }
+    interface IpLoginAttributes {
+        "usernameLabel": string;
+        "passwordLabel": string;
+        "submitButtonLabel": string;
+        "usernameErrorMsg": string;
+        "usernameInvalidEmailMsg": string;
+        "passwordLengthErrorMsg": string;
+        "passwordUppercaseErrorMsg": string;
+        "passwordLowercaseErrorMsg": string;
+        "passwordDigitErrorMsg": string;
+        "usernameType": 'text' | 'email';
+        "showPasswordAriaLabel": string;
+        "hidePasswordAriaLabel": string;
+        "usernameRequired": boolean;
+        "pwdPlaceholder": string;
+        "usernamePlaceholder": string;
+        "forgotPasswordLink": string;
+        "forgotPasswordLabel": string;
+        "loginTitle": string;
+        "indicationLabel": string;
+        "submitBtnAriaLabel": string;
+    }
+    interface IpPasswordAttributes {
+        "errorMessage": string;
+        "invalid": boolean;
+        "forgotPasswordLink": string;
+        "emptyFieldErrorMessage": string;
+        "inputPlaceholder": string;
+        "hidePasswordAriaLabel": string;
+        "showPasswordAriaLabel": string;
+    }
+
     interface IntrinsicElements {
-        "ip-email": IpEmail;
-        "ip-login": IpLogin;
-        "ip-password": IpPassword;
+        "ip-email": Omit<IpEmail, keyof IpEmailAttributes> & { [K in keyof IpEmail & keyof IpEmailAttributes]?: IpEmail[K] } & { [K in keyof IpEmail & keyof IpEmailAttributes as `attr:${K}`]?: IpEmailAttributes[K] } & { [K in keyof IpEmail & keyof IpEmailAttributes as `prop:${K}`]?: IpEmail[K] };
+        "ip-login": Omit<IpLogin, keyof IpLoginAttributes> & { [K in keyof IpLogin & keyof IpLoginAttributes]?: IpLogin[K] } & { [K in keyof IpLogin & keyof IpLoginAttributes as `attr:${K}`]?: IpLoginAttributes[K] } & { [K in keyof IpLogin & keyof IpLoginAttributes as `prop:${K}`]?: IpLogin[K] };
+        "ip-password": Omit<IpPassword, keyof IpPasswordAttributes> & { [K in keyof IpPassword & keyof IpPasswordAttributes]?: IpPassword[K] } & { [K in keyof IpPassword & keyof IpPasswordAttributes as `attr:${K}`]?: IpPasswordAttributes[K] } & { [K in keyof IpPassword & keyof IpPasswordAttributes as `prop:${K}`]?: IpPassword[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-email": LocalJSX.IpEmail & JSXBase.HTMLAttributes<HTMLIpEmailElement>;
-            "ip-login": LocalJSX.IpLogin & JSXBase.HTMLAttributes<HTMLIpLoginElement>;
-            "ip-password": LocalJSX.IpPassword & JSXBase.HTMLAttributes<HTMLIpPasswordElement>;
+            "ip-email": LocalJSX.IntrinsicElements["ip-email"] & JSXBase.HTMLAttributes<HTMLIpEmailElement>;
+            "ip-login": LocalJSX.IntrinsicElements["ip-login"] & JSXBase.HTMLAttributes<HTMLIpLoginElement>;
+            "ip-password": LocalJSX.IntrinsicElements["ip-password"] & JSXBase.HTMLAttributes<HTMLIpPasswordElement>;
         }
     }
 }

@@ -11,22 +11,64 @@ export { MenuItem } from "./components/menu-1/burger-menu";
 export { MenuItem as MenuItem1 } from "./components/menu-2/navigation-bar";
 export namespace Components {
     interface IpBurgerMenu {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel": string;
+        /**
+          * @default []
+         */
         "items": MenuItem[];
         "menuData": string;
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel": string;
+        /**
+          * @default '../../assets/images/arrow-right.svg'
+         */
         "pathToArrowRightIcon": string;
+        /**
+          * @default '../../assets/images/x-icon.svg'
+         */
         "pathToCloseIcon": string;
+        /**
+          * @default '../../assets/images/icon-list.svg'
+         */
         "pathToOpenIcon": string;
     }
     interface IpNavigationBar {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel": string;
+        /**
+          * @default 'Close'
+         */
         "closeSubmenuPrefix": string;
+        /**
+          * @default '[]'
+         */
         "menuData": string;
+        /**
+          * @default []
+         */
         "menuItems": MenuItem1[];
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel": string;
+        /**
+          * @default 'Open'
+         */
         "openSubmenuPrefix": string;
+        /**
+          * @default '../../assets/images/close-icon.svg'
+         */
         "pathToCloseIcon": string;
+        /**
+          * @default '../../assets/images/open-icon.svg'
+         */
         "pathToOpenIcon": string;
     }
 }
@@ -50,35 +92,96 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpBurgerMenu {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel"?: string;
+        /**
+          * @default []
+         */
         "items"?: MenuItem[];
         "menuData"?: string;
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel"?: string;
+        /**
+          * @default '../../assets/images/arrow-right.svg'
+         */
         "pathToArrowRightIcon"?: string;
+        /**
+          * @default '../../assets/images/x-icon.svg'
+         */
         "pathToCloseIcon"?: string;
+        /**
+          * @default '../../assets/images/icon-list.svg'
+         */
         "pathToOpenIcon"?: string;
     }
     interface IpNavigationBar {
+        /**
+          * @default 'Close menu'
+         */
         "closeMenuAriaLabel"?: string;
+        /**
+          * @default 'Close'
+         */
         "closeSubmenuPrefix"?: string;
+        /**
+          * @default '[]'
+         */
         "menuData"?: string;
+        /**
+          * @default []
+         */
         "menuItems"?: MenuItem1[];
+        /**
+          * @default 'Open menu'
+         */
         "openMenuAriaLabel"?: string;
+        /**
+          * @default 'Open'
+         */
         "openSubmenuPrefix"?: string;
+        /**
+          * @default '../../assets/images/close-icon.svg'
+         */
         "pathToCloseIcon"?: string;
+        /**
+          * @default '../../assets/images/open-icon.svg'
+         */
         "pathToOpenIcon"?: string;
     }
+
+    interface IpBurgerMenuAttributes {
+        "openMenuAriaLabel": string;
+        "closeMenuAriaLabel": string;
+        "pathToCloseIcon": string;
+        "pathToOpenIcon": string;
+        "pathToArrowRightIcon": string;
+        "menuData": string;
+    }
+    interface IpNavigationBarAttributes {
+        "menuData": string;
+        "openSubmenuPrefix": string;
+        "closeSubmenuPrefix": string;
+        "closeMenuAriaLabel": string;
+        "openMenuAriaLabel": string;
+        "pathToCloseIcon": string;
+        "pathToOpenIcon": string;
+    }
+
     interface IntrinsicElements {
-        "ip-burger-menu": IpBurgerMenu;
-        "ip-navigation-bar": IpNavigationBar;
+        "ip-burger-menu": Omit<IpBurgerMenu, keyof IpBurgerMenuAttributes> & { [K in keyof IpBurgerMenu & keyof IpBurgerMenuAttributes]?: IpBurgerMenu[K] } & { [K in keyof IpBurgerMenu & keyof IpBurgerMenuAttributes as `attr:${K}`]?: IpBurgerMenuAttributes[K] } & { [K in keyof IpBurgerMenu & keyof IpBurgerMenuAttributes as `prop:${K}`]?: IpBurgerMenu[K] };
+        "ip-navigation-bar": Omit<IpNavigationBar, keyof IpNavigationBarAttributes> & { [K in keyof IpNavigationBar & keyof IpNavigationBarAttributes]?: IpNavigationBar[K] } & { [K in keyof IpNavigationBar & keyof IpNavigationBarAttributes as `attr:${K}`]?: IpNavigationBarAttributes[K] } & { [K in keyof IpNavigationBar & keyof IpNavigationBarAttributes as `prop:${K}`]?: IpNavigationBar[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-burger-menu": LocalJSX.IpBurgerMenu & JSXBase.HTMLAttributes<HTMLIpBurgerMenuElement>;
-            "ip-navigation-bar": LocalJSX.IpNavigationBar & JSXBase.HTMLAttributes<HTMLIpNavigationBarElement>;
+            "ip-burger-menu": LocalJSX.IntrinsicElements["ip-burger-menu"] & JSXBase.HTMLAttributes<HTMLIpBurgerMenuElement>;
+            "ip-navigation-bar": LocalJSX.IntrinsicElements["ip-navigation-bar"] & JSXBase.HTMLAttributes<HTMLIpNavigationBarElement>;
         }
     }
 }

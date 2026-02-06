@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { IpSliderSl1 } from './slider';
 
 describe('ip-slider-sl-1', () => {

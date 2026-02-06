@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { Footnote } from './footnote';
 
 describe('ip-footnote', () => {

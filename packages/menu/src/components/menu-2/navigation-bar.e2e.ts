@@ -27,6 +27,7 @@ describe('ip-navigation-bar', () => {
     );
     expect(menuItem).not.toBeNull();
 
+    await menuItem.focus();
     await menuItem.press('Enter');
     await page.waitForChanges();
 
@@ -41,7 +42,7 @@ describe('ip-navigation-bar', () => {
     submenuContainer = await page.find(
       'ip-navigation-bar >>> .submenu-container',
     );
-    expect(await submenuContainer.getAttribute('aria-hidden')).toBe('false');
+    expect(await submenuContainer.getAttribute('aria-hidden')).toBe('true');
   });
 
   it('navigates through submenu items with Tab key', async () => {

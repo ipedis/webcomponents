@@ -11,13 +11,10 @@
   },
   "targets": {
     "test": {
-      "executor": "@nxext/stencil:test",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/slider/tsconfig.lib.json",
-        "configPath": "packages/slider/stencil.config.ts",
-        "outputPath": "dist/packages/slider"
+        "jestConfig": "packages/slider/jest.config.js"
       }
     },
     "build": {

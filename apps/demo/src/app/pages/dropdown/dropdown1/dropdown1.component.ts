@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocDropdownComponent } from '../doc-dropdown/doc-dropdown.component';
@@ -16,11 +17,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-dropdown1',
   standalone: true,
   imports: [
-    CommonModule,
     CodeSnippetComponent,
     DocDropdownComponent,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './dropdown1.component.html',
   styleUrl: './dropdown1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

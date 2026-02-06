@@ -1,4 +1,4 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from 'jest-stencil-runner';
 import { ShowMoreButton } from './show-more';
 
 describe('ip-show-more', () => {

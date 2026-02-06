@@ -1,4 +1,4 @@
-@import '../../../../assets/styles/index.scss';
+@use '../../../../assets/styles/index.scss' as *;
 .preview {
   margin: rem(150) rem(100) rem(50);
   display: flex;

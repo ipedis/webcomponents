@@ -11,13 +11,10 @@
   },
   "targets": {
     "test": {
-      "executor": "@nxext/stencil:test",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/modal/tsconfig.lib.json",
-        "configPath": "packages/modal/stencil.config.ts",
-        "outputPath": "dist/packages/modal"
+        "jestConfig": "packages/modal/jest.config.js"
       }
     },
     "build": {

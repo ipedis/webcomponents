@@ -31,15 +31,23 @@ declare namespace LocalJSX {
         "tabPanelTitle"?: string;
         "titleTag"?: string;
     }
+
+    interface IpTabPanelAttributes {
+        "tabPanelHeaders": TabPanelInterface[] | string;
+        "tabPanelTitle": string;
+        "titleTag": string;
+        "selectedTab": string;
+    }
+
     interface IntrinsicElements {
-        "ip-tab-panel": IpTabPanel;
+        "ip-tab-panel": Omit<IpTabPanel, keyof IpTabPanelAttributes> & { [K in keyof IpTabPanel & keyof IpTabPanelAttributes]?: IpTabPanel[K] } & { [K in keyof IpTabPanel & keyof IpTabPanelAttributes as `attr:${K}`]?: IpTabPanelAttributes[K] } & { [K in keyof IpTabPanel & keyof IpTabPanelAttributes as `prop:${K}`]?: IpTabPanel[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-tab-panel": LocalJSX.IpTabPanel & JSXBase.HTMLAttributes<HTMLIpTabPanelElement>;
+            "ip-tab-panel": LocalJSX.IntrinsicElements["ip-tab-panel"] & JSXBase.HTMLAttributes<HTMLIpTabPanelElement>;
         }
     }
 }

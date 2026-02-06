@@ -4,8 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as stepperElements } from '@ipedis/stepper/loader';
 import { DocStepperComponent } from '../doc-stepper/doc-stepper.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
@@ -15,11 +16,10 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   selector: 'app-stepper1',
   standalone: true,
   imports: [
-    CommonModule,
     DocStepperComponent,
     CodeSnippetComponent,
-    AccordionComponent,
-  ],
+    AccordionComponent
+],
   templateUrl: './stepper1.component.html',
   styleUrl: './stepper1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

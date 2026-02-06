@@ -27,15 +27,21 @@ declare namespace LocalJSX {
         "columns"?: string;
         "rows"?: string;
     }
+
+    interface IpTableAttributes {
+        "columns": string;
+        "rows": string;
+    }
+
     interface IntrinsicElements {
-        "ip-table": IpTable;
+        "ip-table": Omit<IpTable, keyof IpTableAttributes> & { [K in keyof IpTable & keyof IpTableAttributes]?: IpTable[K] } & { [K in keyof IpTable & keyof IpTableAttributes as `attr:${K}`]?: IpTableAttributes[K] } & { [K in keyof IpTable & keyof IpTableAttributes as `prop:${K}`]?: IpTable[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-table": LocalJSX.IpTable & JSXBase.HTMLAttributes<HTMLIpTableElement>;
+            "ip-table": LocalJSX.IntrinsicElements["ip-table"] & JSXBase.HTMLAttributes<HTMLIpTableElement>;
         }
     }
 }

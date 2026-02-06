@@ -7,14 +7,41 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpStepper {
+        /**
+          * @default 'Go back to the previous step'
+         */
         "backBtnAriaLabel": string;
+        /**
+          * @default 'Back'
+         */
         "backBtnText": string;
+        /**
+          * @default 'Continue to the next step'
+         */
         "continueBtnAriaLabel": string;
+        /**
+          * @default 'Continue'
+         */
         "continueBtnText": string;
+        /**
+          * @default 'Finish the process'
+         */
         "finishBtnAriaLabel": string;
+        /**
+          * @default 'Finish'
+         */
         "finishBtnText": string;
+        /**
+          * @default 'Step'
+         */
         "indicatorText": string;
+        /**
+          * @default 'Simulator progress'
+         */
         "simulatorAria": string;
+        /**
+          * @default 0
+         */
         "steps": number;
     }
 }
@@ -46,26 +73,66 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpStepper {
+        /**
+          * @default 'Go back to the previous step'
+         */
         "backBtnAriaLabel"?: string;
+        /**
+          * @default 'Back'
+         */
         "backBtnText"?: string;
+        /**
+          * @default 'Continue to the next step'
+         */
         "continueBtnAriaLabel"?: string;
+        /**
+          * @default 'Continue'
+         */
         "continueBtnText"?: string;
+        /**
+          * @default 'Finish the process'
+         */
         "finishBtnAriaLabel"?: string;
+        /**
+          * @default 'Finish'
+         */
         "finishBtnText"?: string;
+        /**
+          * @default 'Step'
+         */
         "indicatorText"?: string;
         "onFinishButtonClick"?: (event: IpStepperCustomEvent<void>) => void;
+        /**
+          * @default 'Simulator progress'
+         */
         "simulatorAria"?: string;
+        /**
+          * @default 0
+         */
         "steps"?: number;
     }
+
+    interface IpStepperAttributes {
+        "steps": number;
+        "backBtnText": string;
+        "continueBtnText": string;
+        "finishBtnText": string;
+        "backBtnAriaLabel": string;
+        "continueBtnAriaLabel": string;
+        "finishBtnAriaLabel": string;
+        "indicatorText": string;
+        "simulatorAria": string;
+    }
+
     interface IntrinsicElements {
-        "ip-stepper": IpStepper;
+        "ip-stepper": Omit<IpStepper, keyof IpStepperAttributes> & { [K in keyof IpStepper & keyof IpStepperAttributes]?: IpStepper[K] } & { [K in keyof IpStepper & keyof IpStepperAttributes as `attr:${K}`]?: IpStepperAttributes[K] } & { [K in keyof IpStepper & keyof IpStepperAttributes as `prop:${K}`]?: IpStepper[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-stepper": LocalJSX.IpStepper & JSXBase.HTMLAttributes<HTMLIpStepperElement>;
+            "ip-stepper": LocalJSX.IntrinsicElements["ip-stepper"] & JSXBase.HTMLAttributes<HTMLIpStepperElement>;
         }
     }
 }

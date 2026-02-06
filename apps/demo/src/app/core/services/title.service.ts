@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
@@ -7,10 +7,9 @@ import { filter, map, mergeMap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class TitleService {
-  constructor(
-    private router: Router,
-    private titleService: Title,
-  ) {}
+  private router = inject(Router);
+  private titleService = inject(Title);
+
 
   init() {
     this.router.events
