@@ -1,16 +1,19 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-footnote', () => {
-  it('renders correctly', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-footnote identifier="1" text="This is a footnote."></ip-footnote>',
-    );
+test.describe('ip-footnote', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/footnote/test/footnote.e2e.html');
+  });
 
-    const component = await page.find('ip-footnote');
-    expect(component).toBeTruthy();
+  test('renders correctly', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-footnote identifier="1" text="This is a footnote."></ip-footnote>';
+    });
+    await page.waitForChanges();
 
-    await page.waitForSelector('ip-footnote');
-    expect(await component.getAttribute('class')).toContain('hydrated');
+    const component = page.locator('ip-footnote');
+    await expect(component).toHaveClass(/hydrated/);
   });
 });
