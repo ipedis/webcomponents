@@ -1,38 +1,50 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-search-bar', () => {
-  it('renders and responds to user input', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-search-bar></ip-search-bar>');
-
-    const element = await page.find('ip-search-bar');
-    expect(element).toHaveClass('hydrated');
+test.describe('ip-search-bar', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/search-bar/test/search-bar.e2e.html');
   });
 
-  it('handles keyboard navigation', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-search-bar suggestions-data=\'["Apple", "Banana", "Cherry"]\' placeholder="Search..." label-button="Search"></ip-search-bar>',
-    );
+  test('renders and responds to user input', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-search-bar></ip-search-bar>';
+    });
+    await page.waitForChanges();
 
-    const input = await page.find('ip-search-bar >>> input');
+    const element = page.locator('ip-search-bar');
+    await expect(element).toHaveClass(/hydrated/);
+  });
+
+  test('handles keyboard navigation', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-search-bar suggestions-data=\'["Apple", "Banana", "Cherry"]\' placeholder="Search..." label-button="Search"></ip-search-bar>';
+    });
+    await page.waitForChanges();
+
+    const input = page.locator('ip-search-bar').locator('input');
     await input.type('a');
     await page.waitForChanges();
 
     await input.press('ArrowDown');
     await page.waitForChanges();
 
-    const highlightedItem = await page.find('ip-search-bar >>> .highlighted');
-    expect(highlightedItem.textContent).toBe('Apple');
+    const highlightedItem = page
+      .locator('ip-search-bar')
+      .locator('.highlighted');
+    await expect(highlightedItem).toHaveText('Apple');
 
     await input.press('Enter');
     await page.waitForChanges();
 
-    expect(await input.getProperty('value')).toBe('Apple');
+    const inputValue = await input.evaluate((el: HTMLInputElement) => el.value);
+    expect(inputValue).toBe('Apple');
 
-    const suggestionList = await page.find(
-      'ip-search-bar >>> #suggestion-list',
-    );
-    expect(suggestionList).toBeNull();
+    const suggestionList = page
+      .locator('ip-search-bar')
+      .locator('#suggestion-list');
+    await expect(suggestionList).not.toBeVisible();
   });
 });

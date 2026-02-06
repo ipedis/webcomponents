@@ -1,36 +1,42 @@
-import { newE2EPage } from '@stencil/core/testing';
+/* eslint-disable no-undef */
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-login', () => {
-  it('renders and interacts correctly', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-login></ip-login>');
+test.describe('ip-login', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/ip-login-form/test/login-form.e2e.html');
+  });
 
-    const element = await page.find('ip-login');
-    expect(element).not.toBeNull();
+  test('renders and interacts correctly', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-login></ip-login>';
+    });
+    await page.waitForChanges();
 
-    const title = await page.find('ip-login >>> .title p');
-    expect(title).not.toBeNull();
-    expect(title.textContent).toBe('Login');
+    const element = page.locator('ip-login');
+    await expect(element).toBeDefined();
 
-    const usernameInput = await page.find(
-      'ip-login >>> input[name="username"]',
-    );
-    expect(usernameInput).not.toBeNull();
-    await usernameInput.type('testuser');
-    expect(await usernameInput.getProperty('value')).toBe('testuser');
+    const title = element.locator('.title p');
+    await expect(title).toBeDefined();
+    await expect(title).toHaveText('Login');
 
-    const passwordInput = await page.find(
-      'ip-login >>> input[name="password"]',
-    );
-    expect(passwordInput).not.toBeNull();
-    await passwordInput.type('TestPassword1');
-    expect(await passwordInput.getProperty('value')).toBe('TestPassword1');
+    const usernameInput = element.locator('input[name="username"]');
+    await expect(usernameInput).toBeDefined();
+    await usernameInput.fill('testuser');
+    await expect(usernameInput).toHaveValue('testuser');
 
-    const submitButton = await page.find('ip-login >>> button[type="submit"]');
-    expect(submitButton).not.toBeNull();
+    const passwordInput = element.locator('input[name="password"]');
+    await expect(passwordInput).toBeDefined();
+    await passwordInput.fill('TestPassword1');
+    await expect(passwordInput).toHaveValue('TestPassword1');
+
+    const submitButton = element.locator('button[type="submit"]');
+    await expect(submitButton).toBeDefined();
     await submitButton.click();
+    await page.waitForChanges();
 
-    expect(await usernameInput.getProperty('value')).toBe('');
-    expect(await passwordInput.getProperty('value')).toBe('');
+    await expect(usernameInput).toHaveValue('');
+    await expect(passwordInput).toHaveValue('');
   });
 });

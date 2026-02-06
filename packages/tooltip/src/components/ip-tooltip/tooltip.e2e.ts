@@ -1,84 +1,100 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-tooltip', () => {
-  it('renders and toggles on click', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      `<ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="Tooltip content"></ip-tooltip>`,
-    );
-    const tooltip = await page.find('ip-tooltip');
-    const trigger = await page.find('ip-tooltip >>> .tooltip-trigger');
+test.describe('ip-tooltip', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/components/ip-tooltip/test/ip-tooltip.e2e.html');
+  });
+
+  test('renders and toggles on click', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="Tooltip content"></ip-tooltip>';
+    });
+    await page.waitForChanges();
+
+    const tooltip = page.locator('ip-tooltip');
+    const trigger = page.locator('ip-tooltip').locator('.tooltip-trigger');
 
     await trigger.click();
 
-    expect(tooltip).toHaveClass('hydrated');
+    await expect(tooltip).toHaveClass(/hydrated/);
   });
 
-  it('renders tooltip trigger and content', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent(`
+  test('renders tooltip trigger and content', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
         <ip-tooltip
           tooltip-content="Content of tooltip"
           tooltip-trigger="Trigger"
         ></ip-tooltip>
-      `);
+      `;
+    });
+    await page.waitForChanges();
 
-    const tooltip = await page.find('ip-tooltip');
-    const trigger = await page.find('ip-tooltip >>> .tooltip-trigger');
+    const tooltip = page.locator('ip-tooltip');
+    const trigger = page.locator('ip-tooltip').locator('.tooltip-trigger');
 
-    expect(tooltip).toHaveClass('hydrated');
-    expect(trigger).toEqualText('Trigger');
+    await expect(tooltip).toHaveClass(/hydrated/);
+    await expect(trigger).toHaveText('Trigger');
 
     await trigger.hover();
     await page.waitForChanges();
 
-    const tooltipContent = await page.find('ip-tooltip >>> .tooltip-content');
+    const tooltipContent = page
+      .locator('ip-tooltip')
+      .locator('.tooltip-content');
 
-    expect(tooltipContent).toBeTruthy();
-    expect(tooltipContent).toEqualText('Content of tooltip');
+    await expect(tooltipContent).toBeVisible();
+    await expect(tooltipContent).toHaveText('Content of tooltip');
   });
 
-  it('displays tooltip title if provided', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent(`
+  test('displays tooltip title if provided', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
         <ip-tooltip
           tooltip-content="Content of tooltip"
           tooltip-trigger="Trigger"
           tooltip-title="Tooltip Title"
           type="click"
         ></ip-tooltip>
-      `);
+      `;
+    });
+    await page.waitForChanges();
 
-    const trigger = await page.find('ip-tooltip >>> .tooltip-trigger');
+    const trigger = page.locator('ip-tooltip').locator('.tooltip-trigger');
     await trigger.click();
     await page.waitForChanges();
 
-    const tooltipTitle = await page.find('ip-tooltip >>> .tooltip-title');
+    const tooltipTitle = page.locator('ip-tooltip').locator('.tooltip-title');
 
-    expect(tooltipTitle).toBeTruthy();
-    expect(tooltipTitle).toEqualText('Tooltip Title');
+    await expect(tooltipTitle).toBeVisible();
+    await expect(tooltipTitle).toHaveText('Tooltip Title');
   });
 
-  it('shows tooltip on hover', async () => {
-    const page = await newE2EPage();
+  test('shows tooltip on hover', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-tooltip
+          tooltip-content="Tooltip Content"
+          tooltip-trigger="Trigger"
+          tooltip-title="Title"
+        ></ip-tooltip>
+      `;
+    });
+    await page.waitForChanges();
 
-    await page.setContent(`
-      <ip-tooltip
-        tooltip-content="Tooltip Content"
-        tooltip-trigger="Trigger"
-        tooltip-title="Title"
-      ></ip-tooltip>
-    `);
-
-    const tooltipTrigger = await page.find('ip-tooltip >>> .tooltip-trigger');
+    const tooltipTrigger = page
+      .locator('ip-tooltip')
+      .locator('.tooltip-trigger');
 
     await tooltipTrigger.hover();
     await page.waitForChanges();
 
-    const tooltipContent = await page.find('ip-tooltip >>> .tooltip-content');
+    const tooltipContent = page
+      .locator('ip-tooltip')
+      .locator('.tooltip-content');
 
-    expect(tooltipContent).toBeTruthy();
+    await expect(tooltipContent).toBeVisible();
   });
 });

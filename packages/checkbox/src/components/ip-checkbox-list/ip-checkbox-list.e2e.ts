@@ -1,12 +1,20 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-checkbox-list', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
+test.describe('ip-checkbox-list', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(
+      '/components/ip-checkbox-list/test/ip-checkbox-list.e2e.html',
+    );
+  });
 
-    await page.setContent('<ip-checkbox-list ></ip-checkbox-list>');
-    const element = await page.find('ip-checkbox-list');
+  test('renders', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-checkbox-list ></ip-checkbox-list>';
+    });
+    await page.waitForChanges();
 
-    expect(element).toHaveClass('hydrated');
+    const element = page.locator('ip-checkbox-list');
+    await expect(element).toHaveClass(/hydrated/);
   });
 });

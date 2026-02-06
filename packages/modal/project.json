@@ -44,13 +44,10 @@
       }
     },
     "e2e": {
-      "executor": "@nxext/stencil:e2e",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/packages/modal/playwright-report"],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/modal/tsconfig.lib.json",
-        "configPath": "packages/modal/stencil.config.ts",
-        "outputPath": "dist/packages/modal"
+        "config": "packages/modal/playwright.config.ts"
       }
     },
     "lint": {

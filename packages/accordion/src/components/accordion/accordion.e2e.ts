@@ -1,76 +1,100 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-accordion', () => {
-  it('renders without errors', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-accordion></ip-accordion>');
-
-    const element = await page.find('ip-accordion');
-    expect(element).toHaveClass('hydrated');
+test.describe('ip-accordion', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/accordion/test/accordion.e2e.html');
   });
 
-  it('opens the first panel when isFirstPanelOpen is true', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <ip-accordion is-first-panel-open='true' accordion-headers='[{"title":"Panel 1","ariaText":"panel-1"}]'>
-        <div slot="accordion-1">Content 1</div>
-      </ip-accordion>
-    `);
+  test('should render without errors', async ({ page }) => {
+    // Set the component HTML in the body
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-accordion></ip-accordion>';
+    });
+    await page.waitForChanges();
 
-    const firstPanel = await page.find('ip-accordion >>> .js-panel');
-    const style = await firstPanel.getComputedStyle();
-
-    expect(style.display).toBe('block');
+    const element = page.locator('ip-accordion');
+    await expect(element).toHaveClass(/hydrated/);
   });
 
-  it('sets aria-expanded attribute correctly when toggling panels', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <ip-accordion accordion-headers='[{"title":"Panel 1","ariaText":"panel-1"}]'>
-        <div slot="accordion-1">Content 1</div>
-      </ip-accordion>
-    `);
+  test('should open the first panel when isFirstPanelOpen is true', async ({
+    page,
+  }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-accordion is-first-panel-open='true' accordion-headers='[{"title":"Panel 1","ariaText":"panel-1"}]'>
+          <div slot="accordion-1">Content 1</div>
+        </ip-accordion>
+      `;
+    });
+    await page.waitForChanges();
 
-    const headerButton = await page.find(
-      'ip-accordion >>> .js-acc-button button',
-    );
+    const firstPanel = page
+      .locator('ip-accordion')
+      .locator('.js-panel')
+      .first();
+    await expect(firstPanel).toBeVisible();
+    await expect(firstPanel).toHaveCSS('display', 'block');
+  });
 
-    expect(await headerButton.getAttribute('aria-expanded')).toBe('false');
+  test('should set aria-expanded attribute correctly when toggling panels', async ({
+    page,
+  }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-accordion accordion-headers='[{"title":"Panel 1","ariaText":"panel-1"}]'>
+          <div slot="accordion-1">Content 1</div>
+        </ip-accordion>
+      `;
+    });
+    await page.waitForChanges();
+
+    const headerButton = page
+      .locator('ip-accordion')
+      .locator('.js-acc-button button')
+      .first();
+
+    await expect(headerButton).toHaveAttribute('aria-expanded', 'false');
 
     await headerButton.click();
     await page.waitForChanges();
 
-    expect(await headerButton.getAttribute('aria-expanded')).toBe('true');
+    await expect(headerButton).toHaveAttribute('aria-expanded', 'true');
 
     await headerButton.click();
     await page.waitForChanges();
 
-    expect(await headerButton.getAttribute('aria-expanded')).toBe('false');
+    await expect(headerButton).toHaveAttribute('aria-expanded', 'false');
   });
 
-  it('toggles panel visibility when a header button is clicked', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <ip-accordion accordion-headers='[{"title":"Panel 1","ariaText":"panel-1"}]'>
-        <div slot="accordion-1">Content 1</div>
-      </ip-accordion>
-    `);
-
-    const headerButton = await page.find(
-      'ip-accordion >>> .js-acc-button button',
-    );
-    const panel = await page.find('ip-accordion >>> .js-panel');
-
-    await headerButton?.click();
+  test('should toggle panel visibility when a header button is clicked', async ({
+    page,
+  }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
+        <ip-accordion accordion-headers='[{"title":"Panel 1","ariaText":"panel-1"}]'>
+          <div slot="accordion-1">Content 1</div>
+        </ip-accordion>
+      `;
+    });
     await page.waitForChanges();
 
-    const visibleStyle = await panel?.getComputedStyle();
-    expect(visibleStyle?.display).toBe('block');
+    const headerButton = page
+      .locator('ip-accordion')
+      .locator('.js-acc-button button')
+      .first();
+    const panel = page.locator('ip-accordion').locator('.js-panel').first();
 
-    await headerButton?.click();
+    await headerButton.click();
     await page.waitForChanges();
 
-    const hiddenStyle = await panel?.getComputedStyle();
-    expect(hiddenStyle?.display).toBe('none');
+    await expect(panel).toBeVisible();
+    await expect(panel).toHaveCSS('display', 'block');
+
+    await headerButton.click();
+    await page.waitForChanges();
+
+    await expect(panel).toHaveCSS('display', 'none');
   });
 });

@@ -1,35 +1,51 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-password', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent('<ip-password></ip-password>');
-    const password = await page.find('ip-password');
-    const input = await page.find('ip-password >>> input');
-
-    expect(password).toHaveClass('hydrated');
-    expect(input).toEqualAttribute('type', 'password');
+test.describe('ip-password', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/ip-password/test/ip-password.e2e.html');
   });
 
-  it('toogles password visibility', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-password></ip-password>');
-    const password = await page.find('ip-password');
-    const input = await page.find('ip-password >>> input');
-    const button = await page.find('ip-password >>> button');
+  test('renders', async ({ page }) => {
+    /* eslint-disable no-undef */
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-password></ip-password>';
+    });
+    /* eslint-enable no-undef */
+    await page.waitForChanges();
 
-    expect(password).toHaveClass('hydrated');
-    expect(input).toEqualAttribute('type', 'password');
+    const element = page.locator('ip-password');
+    await expect(element).toHaveClass(/hydrated/);
+
+    const input = element.locator('input');
+    await expect(input).toHaveAttribute('type', 'password');
+  });
+
+  test('toggles password visibility', async ({ page }) => {
+    /* eslint-disable no-undef */
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-password></ip-password>';
+    });
+    /* eslint-enable no-undef */
+    await page.waitForChanges();
+
+    const element = page.locator('ip-password');
+    await expect(element).toHaveClass(/hydrated/);
+
+    const input = element.locator('input');
+    const button = element.locator('button');
+
+    await expect(input).toHaveAttribute('type', 'password');
 
     await button.click();
     await page.waitForChanges();
 
-    expect(input).toEqualAttribute('type', 'text');
+    await expect(input).toHaveAttribute('type', 'text');
 
     await button.click();
     await page.waitForChanges();
 
-    expect(input).toEqualAttribute('type', 'password');
+    await expect(input).toHaveAttribute('type', 'password');
   });
 });

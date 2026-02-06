@@ -1,16 +1,24 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-breadcrumb', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-breadcrumb></ip-breadcrumb>');
-    const element = await page.find('ip-breadcrumb');
-    expect(element).toHaveClass('hydrated');
+test.describe('ip-breadcrumb', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/components/breadcrumb/test/breadcrumb.e2e.html');
   });
 
-  it('renders breadcrumb title with correct attributes', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
+  test('renders', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-breadcrumb></ip-breadcrumb>';
+    });
+    await page.waitForChanges();
+
+    const element = page.locator('ip-breadcrumb');
+    await expect(element).toHaveClass(/hydrated/);
+  });
+
+  test('renders breadcrumb title with correct attributes', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
         <ip-breadcrumb
           breadcrumb-title="Bread"
           breadcrumb-items='[
@@ -19,18 +27,20 @@ describe('ip-breadcrumb', () => {
             {"label": "Item"}
           ]'
         ></ip-breadcrumb>
-      `);
+      `;
+    });
+    await page.waitForChanges();
 
-    const breadcrumbTitle = await page.find(
-      'ip-breadcrumb >>> h1[part="title"]',
-    );
-    expect(breadcrumbTitle).toEqualText('Bread');
-    expect(breadcrumbTitle).toEqualAttribute('part', 'title');
+    const breadcrumbTitle = page
+      .locator('ip-breadcrumb')
+      .locator('h1[part="title"]');
+    await expect(breadcrumbTitle).toHaveText('Bread');
+    await expect(breadcrumbTitle).toHaveAttribute('part', 'title');
   });
 
-  it('renders breadcrumb items correctly', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
+  test('renders breadcrumb items correctly', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = `
         <ip-breadcrumb
           breadcrumb-title="Bread"
           breadcrumb-items='[
@@ -39,22 +49,25 @@ describe('ip-breadcrumb', () => {
             {"label": "Item"}
           ]'
         ></ip-breadcrumb>
-      `);
+      `;
+    });
+    await page.waitForChanges();
 
-    const breadcrumbItems = await page.findAll(
-      'ip-breadcrumb >>> .breadcrumb-item',
-    );
-    expect(breadcrumbItems.length).toBe(3);
+    const breadcrumbItems = page
+      .locator('ip-breadcrumb')
+      .locator('.breadcrumb-item')
+      .all();
+    expect((await breadcrumbItems).length).toBe(3);
 
-    const firstItem = await breadcrumbItems[0].find('a');
-    expect(firstItem).toEqualText('Home');
-    expect(firstItem).toEqualAttribute('href', '/home');
+    const firstItem = (await breadcrumbItems)[0].locator('a');
+    await expect(firstItem).toHaveText('Home');
+    await expect(firstItem).toHaveAttribute('href', '/home');
 
-    const secondItem = await breadcrumbItems[1].find('a');
-    expect(secondItem).toEqualText('Category');
-    expect(secondItem).toEqualAttribute('href', '/Category');
+    const secondItem = (await breadcrumbItems)[1].locator('a');
+    await expect(secondItem).toHaveText('Category');
+    await expect(secondItem).toHaveAttribute('href', '/Category');
 
-    const thirdItem = await breadcrumbItems[2].find('span');
-    expect(thirdItem).toEqualText('Item');
+    const thirdItem = (await breadcrumbItems)[2].locator('span');
+    await expect(thirdItem).toHaveText('Item');
   });
 });

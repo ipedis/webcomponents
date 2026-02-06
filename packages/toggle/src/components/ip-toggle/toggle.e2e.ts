@@ -1,59 +1,74 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-toggle', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-
-    await page.setContent('<ip-toggle></ip-toggle>');
-    const toggle = await page.find('ip-toggle');
-    const button = await page.find("ip-toggle >>> input[type='checkbox']");
-
-    expect(toggle).toHaveClass('hydrated');
-    expect(button).toEqualAttribute('role', 'switch');
+test.describe('ip-toggle', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/components/ip-toggle/test/ip-toggle.e2e.html');
   });
 
-  it('renders changes when label change', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>',
-    );
-    const toggle = await page.find('ip-toggle');
-    const paragraph = await page.find('ip-toggle >>> p');
-
-    expect(paragraph.textContent).toEqual(`Non`);
-
-    toggle.setProperty('inactiveLabel', 'Nop');
+  test('renders', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-toggle></ip-toggle>';
+    });
     await page.waitForChanges();
 
-    expect(paragraph.textContent).toEqual('Nop');
+    const toggle = page.locator('ip-toggle');
+    const button = page.locator('ip-toggle').locator("input[type='checkbox']");
+
+    await expect(toggle).toHaveClass(/hydrated/);
+    await expect(button).toHaveAttribute('role', 'switch');
   });
 
-  it('should be unchecked by default', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>',
-    );
-    const button = await page.find("ip-toggle >>> input[type='checkbox']");
-    const paragraph = await page.find('ip-toggle >>> p');
+  test('renders changes when label change', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>';
+    });
+    await page.waitForChanges();
 
-    expect(button).toEqualAttribute('aria-checked', 'false');
-    expect(button).not.toHaveClass('active');
-    expect(paragraph.textContent).toEqual(`Non`);
+    const toggle = page.locator('ip-toggle');
+    const paragraph = page.locator('ip-toggle').locator('p');
+
+    await expect(paragraph).toHaveText('Non');
+
+    await toggle.evaluate((el: any) => {
+      el.inactiveLabel = 'Nop';
+    });
+    await page.waitForChanges();
+
+    await expect(paragraph).toHaveText('Nop');
   });
 
-  it('should be checked when clicked', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>',
-    );
-    const button = await page.find("ip-toggle >>> input[type='checkbox']");
-    const paragraph = await page.find('ip-toggle >>> p');
+  test('should be unchecked by default', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>';
+    });
+    await page.waitForChanges();
+
+    const button = page.locator('ip-toggle').locator("input[type='checkbox']");
+    const paragraph = page.locator('ip-toggle').locator('p');
+
+    await expect(button).toHaveAttribute('aria-checked', 'false');
+    await expect(button).not.toHaveClass('active');
+    await expect(paragraph).toHaveText('Non');
+  });
+
+  test('should be checked when clicked', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>';
+    });
+    await page.waitForChanges();
+
+    const button = page.locator('ip-toggle').locator("input[type='checkbox']");
+    const paragraph = page.locator('ip-toggle').locator('p');
 
     await button.click();
     await page.waitForChanges();
 
-    expect(button).toEqualAttribute('aria-checked', 'true');
-    expect(button).toHaveClass('active');
-    expect(paragraph.textContent).toEqual(`Oui`);
+    await expect(button).toHaveAttribute('aria-checked', 'true');
+    await expect(button).toHaveClass(/active/);
+    await expect(paragraph).toHaveText('Oui');
   });
 });

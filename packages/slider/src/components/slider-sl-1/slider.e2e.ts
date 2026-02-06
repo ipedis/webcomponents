@@ -1,38 +1,48 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-slider-sl-1', () => {
-  it('renders and initializes correctly', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-slider-sl-1 item-to-show="1"><div class="slot-content" slot="slide-1"><h2>Slot 1 Title</h2><p>Content for Slot 1</p></div><div class="slot-content" slot="slide-2"></div><div class="slot-content" slot="slide-3"><p>Content for Slot 3</p></div></ip-slider-sl-1>',
-    );
-
-    const element = await page.find('ip-slider-sl-1');
-    expect(element).not.toBeNull();
-
-    const sliderItems = await page.findAll('ip-slider-sl-1 >>> .slider__li');
-    expect(sliderItems.length).toBe(3);
-
-    const sliderBullets = await page.findAll(
-      'ip-slider-sl-1 >>> .slider-bullets__li',
-    );
-    expect(sliderBullets.length).toBe(3);
+test.describe('ip-slider-sl-1', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/slider-sl-1/test/slider.e2e.html');
   });
 
-  it('navigates to the next slide', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-slider-sl-1 item-to-show="1"><div class="slot-content" slot="slide-1"><h2>Slot 1 Title</h2><p>Content for Slot 1</p></div><div class="slot-content" slot="slide-2"></div><div class="slot-content" slot="slide-3"><p>Content for Slot 3</p></div></ip-slider-sl-1>',
-    );
+  test('renders and initializes correctly', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-slider-sl-1 item-to-show="1"><div class="slot-content" slot="slide-1"><h2>Slot 1 Title</h2><p>Content for Slot 1</p></div><div class="slot-content" slot="slide-2"></div><div class="slot-content" slot="slide-3"><p>Content for Slot 3</p></div></ip-slider-sl-1>';
+    });
+    await page.waitForChanges();
 
-    const nextButton = await page.find('ip-slider-sl-1 >>> .btn-next');
-    expect(nextButton).not.toBeNull();
+    const element = page.locator('ip-slider-sl-1');
+    await expect(element).toBeVisible();
+
+    const sliderItems = page.locator('ip-slider-sl-1').locator('.slider__li');
+    await expect(sliderItems).toHaveCount(3);
+
+    const sliderBullets = page
+      .locator('ip-slider-sl-1')
+      .locator('.slider-bullets__li');
+    await expect(sliderBullets).toHaveCount(3);
+  });
+
+  test('navigates to the next slide', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-slider-sl-1 item-to-show="1"><div class="slot-content" slot="slide-1"><h2>Slot 1 Title</h2><p>Content for Slot 1</p></div><div class="slot-content" slot="slide-2"></div><div class="slot-content" slot="slide-3"><p>Content for Slot 3</p></div></ip-slider-sl-1>';
+    });
+    await page.waitForChanges();
+
+    const nextButton = page.locator('ip-slider-sl-1').locator('.btn-next');
+    await expect(nextButton).toBeVisible();
 
     await nextButton.click();
     await page.waitForChanges();
 
-    const sliderUl = await page.find('ip-slider-sl-1 >>> .slider__ul');
-    const leftPosition = await sliderUl.getComputedStyle('left');
+    const sliderUl = page.locator('ip-slider-sl-1').locator('.slider__ul');
+    const leftPosition = await sliderUl.evaluate(
+      (el) => getComputedStyle(el).left,
+    );
     expect(leftPosition).not.toBe('0px');
   });
 });

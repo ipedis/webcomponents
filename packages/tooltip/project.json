@@ -19,7 +19,7 @@
     },
     "build": {
       "executor": "@nxext/stencil:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/packages/tooltip/playwright-report"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/tooltip/tsconfig.lib.json",
@@ -35,7 +35,7 @@
     },
     "serve": {
       "executor": "@nxext/stencil:serve",
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/packages/tooltip/playwright-report"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/tooltip/tsconfig.lib.json",
@@ -44,13 +44,10 @@
       }
     },
     "e2e": {
-      "executor": "@nxext/stencil:e2e",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/packages/tooltip/playwright-report"],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/tooltip/tsconfig.lib.json",
-        "configPath": "packages/tooltip/stencil.config.ts",
-        "outputPath": "dist/packages/tooltip"
+        "config": "packages/tooltip/playwright.config.ts"
       }
     },
     "lint": {

@@ -1,62 +1,79 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-burger-menu', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-burger-menu></ip-burger-menu>');
-
-    const element = await page.find('ip-burger-menu');
-    expect(element).toHaveClass('hydrated');
+test.describe('ip-burger-menu', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/components/menu-1/test/burger-menu.e2e.html');
   });
 
-  it('has correct ARIA attributes on the menu button', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-burger-menu></ip-burger-menu>');
+  test('renders', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-burger-menu></ip-burger-menu>';
+    });
+    await page.waitForChanges();
 
-    const menuButton = await page.find('ip-burger-menu >>> .burger-menu-btn');
-    expect(menuButton).toBeTruthy();
-    expect(await menuButton.getAttribute('aria-label')).toBe('Open menu');
-    expect(await menuButton.getAttribute('aria-controls')).toBe('burger-menu');
+    const element = page.locator('ip-burger-menu');
+    await expect(element).toHaveClass(/hydrated/);
   });
 
-  it('hides the menu initially', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-burger-menu></ip-burger-menu>');
+  test('has correct ARIA attributes on the menu button', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-burger-menu></ip-burger-menu>';
+    });
+    await page.waitForChanges();
 
-    const menu = await page.find('ip-burger-menu >>> #burger-menu');
-    expect(menu).toBeFalsy();
+    const menuButton = page
+      .locator('ip-burger-menu')
+      .locator('.burger-menu-btn');
+    await expect(menuButton).toBeVisible();
+    await expect(menuButton).toHaveAttribute('aria-label', 'Open menu');
+    await expect(menuButton).toHaveAttribute('aria-controls', 'burger-menu');
   });
 
-  it('should show the menu when the button is clicked', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-burger-menu></ip-burger-menu>');
+  test('hides the menu initially', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-burger-menu></ip-burger-menu>';
+    });
+    await page.waitForChanges();
 
-    const menuButton = await page.find('ip-burger-menu >>> .burger-menu-btn');
+    const menu = page.locator('ip-burger-menu').locator('#burger-menu');
+    await expect(menu).not.toBeVisible();
+  });
+
+  test('should show the menu when the button is clicked', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-burger-menu></ip-burger-menu>';
+    });
+    await page.waitForChanges();
+
+    const menuButton = page
+      .locator('ip-burger-menu')
+      .locator('.burger-menu-btn');
     await menuButton.click();
     await page.waitForChanges();
 
-    const menu = await page.waitForSelector('ip-burger-menu >>> #burger-menu');
-    expect(menu).toBeTruthy();
-    expect(await menuButton.getAttribute('aria-expanded')).toBe('true');
+    const menu = page.locator('ip-burger-menu').locator('#burger-menu');
+    await expect(menu).toBeVisible();
+    await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
   });
 
-  it('hides the menu when the button is clicked again', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-burger-menu></ip-burger-menu>');
+  test('closes the menu when the button is clicked again', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-burger-menu></ip-burger-menu>';
+    });
+    await page.waitForChanges();
 
-    const menuButton = await page.find('ip-burger-menu >>> .burger-menu-btn');
+    const menuButton = page
+      .locator('ip-burger-menu')
+      .locator('.burger-menu-btn');
     await menuButton.click();
     await page.waitForChanges();
 
-    const menuOpen = await page.find('ip-burger-menu >>> #burger-menu');
-    expect(menuOpen).toBeTruthy();
-    expect(await menuButton.getAttribute('aria-expanded')).toBe('true');
-
     await menuButton.click();
     await page.waitForChanges();
 
-    const menuClosed = await page.find('ip-burger-menu >>> #burger-menu');
-    expect(menuClosed).toBeFalsy();
-    expect(await menuButton.getAttribute('aria-expanded')).toBe('false');
+    const menu = page.locator('ip-burger-menu').locator('#burger-menu');
+    await expect(menu).not.toBeVisible();
+    await expect(menuButton).toHaveAttribute('aria-expanded', 'false');
   });
 });

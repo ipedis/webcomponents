@@ -1,55 +1,75 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-pagination', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-pagination></ip-pagination>');
-
-    const element = await page.find('ip-pagination');
-    expect(element).toHaveClass('hydrated');
+test.describe('ip-pagination', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/pagination/test/pagination.e2e.html');
   });
 
-  it('should navigate to the next page', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-pagination></ip-pagination>');
+  test('renders', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-pagination></ip-pagination>';
+    });
+    await page.waitForChanges();
 
-    const element = await page.find('ip-pagination');
-    const nextButton = await page.find('ip-pagination >>> .next');
+    const element = page.locator('ip-pagination');
+    await expect(element).toHaveClass(/hydrated/);
+  });
+
+  test('should navigate to the next page', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-pagination></ip-pagination>';
+    });
+    await page.waitForChanges();
+
+    const element = page.locator('ip-pagination');
+    const nextButton = page.locator('ip-pagination').locator('.next');
 
     await nextButton.click();
     await page.waitForChanges();
 
-    const currentPage = await element.getProperty('currentPage');
+    const currentPage = await element.evaluate((el: any) => el.currentPage);
     expect(currentPage).toBe(2);
   });
-  it('should navigate to the previous page', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-pagination current-page=3></ip-pagination>');
-    const element = await page.find('ip-pagination');
-    const prevButton = await page.find('ip-pagination >>> .previous');
+
+  test('should navigate to the previous page', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-pagination current-page=3></ip-pagination>';
+    });
+    await page.waitForChanges();
+
+    const element = page.locator('ip-pagination');
+    const prevButton = page.locator('ip-pagination').locator('.previous');
 
     await prevButton.click();
     await page.waitForChanges();
 
-    const currentPage = await element.getProperty('currentPage');
+    const currentPage = await element.evaluate((el: any) => el.currentPage);
     expect(currentPage).toBe(2);
   });
 
-  it('should navigate to the last page and the first page', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-pagination></ip-pagination>');
-    const element = await page.find('ip-pagination');
-    const lastButton = await page.find('ip-pagination >>> .last');
-    const firstButton = await page.find('ip-pagination >>> .first');
+  test('should navigate to the last page and the first page', async ({
+    page,
+  }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-pagination></ip-pagination>';
+    });
+    await page.waitForChanges();
+
+    const element = page.locator('ip-pagination');
+    const lastButton = page.locator('ip-pagination').locator('.last');
+    const firstButton = page.locator('ip-pagination').locator('.first');
 
     await lastButton.click();
     await page.waitForChanges();
-    const currentPage = await element.getProperty('currentPage');
+    const currentPage = await element.evaluate((el: any) => el.currentPage);
     expect(currentPage).toBe(10);
 
     await firstButton.click();
     await page.waitForChanges();
-    const currentPage2 = await element.getProperty('currentPage');
+    const currentPage2 = await element.evaluate((el: any) => el.currentPage);
     expect(currentPage2).toBe(1);
   });
 });

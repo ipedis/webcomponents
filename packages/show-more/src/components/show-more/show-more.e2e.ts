@@ -1,48 +1,56 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-show-more', () => {
-  it('should display "Show More" initially', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>',
-    );
-
-    const button = await page.find('ip-show-more >>> button');
-    expect(await button.textContent).toBe('Show More');
+test.describe('ip-show-more', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/show-more/test/show-more.e2e.html');
   });
 
-  it('should display "Show Less" after clicking', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>',
-    );
-
-    const button = await page.find('ip-show-more >>> button');
-    await button.click();
+  test('should display "Show More" initially', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
+    });
     await page.waitForChanges();
-    expect(await button.textContent).toBe('Show Less');
+
+    const button = page.locator('ip-show-more').locator('button');
+    await expect(button).toHaveText('Show More');
   });
-  it('should toggle content visibility on button click', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>',
-    );
 
-    const button = await page.find('ip-show-more >>> button');
+  test('should display "Show Less" after clicking', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
+    });
+    await page.waitForChanges();
 
-    let content = await page.find('ip-show-more >>> .content');
-    expect(content).toBeNull();
+    const button = page.locator('ip-show-more').locator('button');
+    await button.click();
+    await page.waitForChanges();
+    await expect(button).toHaveText('Show Less');
+  });
+
+  test('should toggle content visibility on button click', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>';
+    });
+    await page.waitForChanges();
+
+    const button = page.locator('ip-show-more').locator('button');
+
+    const content = page.locator('ip-show-more').locator('.content');
+    await expect(content).not.toBeVisible();
 
     await button.click();
     await page.waitForChanges();
 
-    content = await page.find('ip-show-more >>> .content');
-    expect(content).not.toBeNull();
+    await expect(content).toBeVisible();
 
     await button.click();
     await page.waitForChanges();
 
-    content = await page.find('ip-show-more >>> .content');
-    expect(content).toBeNull();
+    await expect(content).not.toBeVisible();
   });
 });

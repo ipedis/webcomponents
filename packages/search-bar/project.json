@@ -44,13 +44,10 @@
       }
     },
     "e2e": {
-      "executor": "@nxext/stencil:e2e",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/packages/search-bar/playwright-report"],
       "options": {
-        "projectType": "library",
-        "tsConfig": "packages/search-bar/tsconfig.lib.json",
-        "configPath": "packages/search-bar/stencil.config.ts",
-        "outputPath": "dist/packages/search-bar"
+        "config": "packages/search-bar/playwright.config.ts"
       }
     },
     "lint": {

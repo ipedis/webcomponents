@@ -1,42 +1,57 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ip-alert', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-alert></ip-alert>');
-    const element = await page.find('ip-alert');
-    expect(element).toHaveClass('hydrated');
-  });
-  it('should render with the correct title and message', async () => {
-    const page = await newE2EPage();
-    await page.setContent(
-      '<ip-alert alert-title="Test Title" message="Test Message"></ip-alert>',
-    );
-    const title = await page.find('ip-alert >>> .title');
-    const message = await page.find('ip-alert >>> .message');
-    expect(title.textContent).toEqual(' Test Title');
-    expect(message.textContent).toEqual('Test Message');
-  });
-  it('should have a type attribute with value "info"', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-alert type="info"></ip-alert>');
-    const alert = await page.find('ip-alert >>> .alert');
-    const alertClass = await alert.getAttribute('class');
-    expect(alertClass).toContain('alert-info');
+test.describe('ip-alert', () => {
+  test.beforeEach(async ({ page }) => {
+    // Load the HTML template which includes the Stencil entry scripts
+    await page.goto('/components/alert/test/alert.e2e.html');
   });
 
-  it('should hide when the close button is clicked', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-alert></ip-alert>');
-    const closeButton = await page.find('ip-alert >>> .close-button');
+  test('renders', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-alert></ip-alert>';
+    });
+    await page.waitForChanges();
+
+    const element = page.locator('ip-alert');
+    await expect(element).toHaveClass(/hydrated/);
+  });
+
+  test('should render with the correct title and message', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML =
+        '<ip-alert alert-title="Test Title" message="Test Message"></ip-alert>';
+    });
+    await page.waitForChanges();
+
+    const title = page.locator('ip-alert').locator('.title');
+    const message = page.locator('ip-alert').locator('.message');
+    await expect(title).toHaveText(' Test Title');
+    await expect(message).toHaveText('Test Message');
+  });
+
+  test('should have a type attribute with value "info"', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-alert type="info"></ip-alert>';
+    });
+    await page.waitForChanges();
+
+    const alert = page.locator('ip-alert').locator('.alert');
+    await expect(alert).toHaveClass(/alert-info/);
+  });
+
+  test('should hide when the close button is clicked', async ({ page }) => {
+    await page.evaluate(() => {
+      document.body.innerHTML = '<ip-alert></ip-alert>';
+    });
+    await page.waitForChanges();
+
+    const closeButton = page.locator('ip-alert').locator('.close-button');
     await closeButton.click();
     await page.waitForChanges();
-    const alert = await page.find('ip-alert');
-    expect(alert).toHaveClass('hydrated');
-    const hasContent = await page.evaluate(() => {
-      const shadowRootElement = document.querySelector('ip-alert').shadowRoot;
-      return shadowRootElement && shadowRootElement.querySelector('*') !== null;
-    });
-    expect(hasContent).toBe(false);
+
+    // After closing, the .alert div should no longer exist (render returns null)
+    const alertDiv = page.locator('ip-alert').locator('.alert');
+    await expect(alertDiv).toHaveCount(0);
   });
 });
