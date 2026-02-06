@@ -70,6 +70,20 @@ describe('ip-navigation-bar', () => {
                   ></span>
                 </div>
               </button>
+               <div aria-hidden="true" class="submenu-container" id="submenu-Services" part="submenu-container" style="display: none;">
+                 <ul class="sub-menu" part="submenu-items">
+                   <li class="submenu-item" part="submenu-item">
+                     <a class="submenu-item-link" href="/services/web-design">
+                       Web Design
+                     </a>
+                   </li>
+                   <li class="submenu-item" part="submenu-item">
+                     <a class="submenu-item-link" href="/services/seo">
+                       SEO
+                     </a>
+                   </li>
+                 </ul>
+               </div>
             </li>
             <li part="menu-item" class="menu-items">
               <a part="menu-items-link" href="/contact">Contact</a>
