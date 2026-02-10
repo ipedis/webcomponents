@@ -6,7 +6,7 @@
         aria-label="Back to Ipedis Design system"
       >
         <img src="assets/images/back-arrow.png" alt="" />
-        <span>Back</span>
+        <span>{{ 'common.label.back' | transloco }}</span>
       </a>
     </div>
 
@@ -18,5 +18,13 @@
     >
       <img class="logo" src="assets/logo/logoIpedis.png" alt="Logo Ipedis" />
     </a>
+
+    <ul class="lang-list">
+      @for (lang of availableLangs; track lang) {
+        <li>
+          <button (click)="onChangeLang(lang)">{{ lang }}</button>
+        </li>
+      }
+    </ul>
   </div>
 </header>

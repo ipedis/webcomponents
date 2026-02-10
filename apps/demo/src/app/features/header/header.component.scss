@@ -55,3 +55,9 @@ header {
     padding: rem(5) rem(20);
   }
 }
+
+.lang-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
