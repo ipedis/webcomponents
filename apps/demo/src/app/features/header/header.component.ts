@@ -11,9 +11,17 @@ import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 })
 export class HeaderComponent {
   private readonly translocoService = inject(TranslocoService);
-  readonly availableLangs = this.translocoService.getAvailableLangs() as string[];
 
-  protected onChangeLang(lang: string) {
-    this.translocoService.setActiveLang(lang);
+  get activeLang(): string {
+    return this.translocoService.getActiveLang();
+  }
+
+  get nextLang(): string {
+    return this.activeLang === 'fr' ? 'Anglais' : 'French';
+  }
+
+  toggleLang(): void {
+    const newLang = this.activeLang === 'fr' ? 'en' : 'fr';
+    this.translocoService.setActiveLang(newLang);
   }
 }

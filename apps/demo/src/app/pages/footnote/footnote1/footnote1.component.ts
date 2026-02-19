@@ -4,7 +4,7 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
@@ -12,6 +12,7 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
 import { DocFootnoteComponent } from '../doc-footnote/doc-footnote.component';
 import { defineCustomElements as footnoteElements } from '@ipedis/footnote/loader';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-footnote1',
@@ -19,14 +20,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocFootnoteComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './footnote1.component.html',
   styleUrl: './footnote1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footnote1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   codeSnippet = `
     <p>
       Here is a sentence with a footnote reference

@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { Highlight } from 'ngx-highlightjs';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-doc-footnote',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-footnote.component.html',
   styleUrl: './doc-footnote.component.scss',
 })
 export class DocFootnoteComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   installationScript = `npm install ip-footnote`;
   import = `import '../node_modules/ip-footnote/dist/ip-footnote/ip-footnote.esm';`;
   example = `<p>

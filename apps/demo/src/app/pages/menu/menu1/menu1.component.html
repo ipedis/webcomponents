@@ -1,17 +1,17 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Burger Menu</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'menu.title' | transloco }}</h2>
     </div>
     <p>
-      A burger main menu is usually represented by three stacked lines, forming
-      an icon that signifies a hidden menu. When users click or tap on these
-      lines, a menu slides into view or a drawer appears, revealing a list of
-      navigation items or other elements that users can interact with.
+      {{ 'menu.intro1' | transloco }}
+    </p>
+    <p>
+      {{ 'menu.intro2' | transloco }}
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="menu-wrapper">
       <ip-burger-menu
         menu-data='[

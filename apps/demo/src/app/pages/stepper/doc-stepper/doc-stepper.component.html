@@ -1,149 +1,206 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-stepper</code> component in your project.
+    {{ 'stepper.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'stepper.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-stepper</code> component as a dependency in your
-    project:
+    {{ 'stepper.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'stepper.docs.step2' | transloco }}</h4>
+  <p>{{ 'stepper.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">{{ 'stepper.docs.usage' | transloco }}</h3>
   <p>
-    The ip-stepper component facilitates step-by-step navigation. To use this
-    component, configure it by setting the properties as attributes and use slot
-    attribute for the content for each step.
+    {{ 'stepper.docs.usageDesc1' | transloco
+    }}{{ 'stepper.docs.usageDesc2' | transloco }}
   </p>
-  <h4>Properties</h4>
+  <h4>{{ 'stepper.docs.Properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'stepper.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'stepper.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'stepper.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'stepper.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">{{ 'stepper.docs.propertyTable.type' | transloco }}</th>
+        <th scope="col">
+          {{ 'stepper.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>steps</td>
-        <td>steps</td>
-        <td>Required</td>
-        <td>Total number of steps in the stepper</td>
-        <td>number</td>
-        <td>0</td>
+        <td>{{ 'stepper.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'stepper.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>backBtnAriaLabel</td>
-        <td>back-btn-aria-label</td>
-        <td>Optional</td>
-        <td>ARIA label for the back button</td>
-        <td>string</td>
-        <td>'Go back to the previous step'</td>
+        <td>
+          {{ 'stepper.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'stepper.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>backBtnText</td>
-        <td>back-btn-text</td>
-        <td>Optional</td>
-        <td>Text displayed on the back button</td>
-        <td>string</td>
-        <td>'Back'</td>
+        <td>{{ 'stepper.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine3.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>continueBtnAriaLabel</td>
-        <td>continue-btn-aria-label</td>
-        <td>Optional</td>
-        <td>ARIA label for the continue button</td>
-        <td>string</td>
-        <td>'Continue to the next step'</td>
+        <td>{{ 'stepper.docs.tableLine4.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine4.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine4.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine4.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine4.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>continueBtnText</td>
-        <td>continue-btn-text</td>
-        <td>Optional</td>
-        <td>Text displayed on the continue button</td>
-        <td>string</td>
-        <td>'Continue'</td>
+        <td>{{ 'stepper.docs.tableLine5.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine5.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine5.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine5.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine5.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine5.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>finishBtnAriaLabel</td>
-        <td>finish-btn-aria-label</td>
-        <td>Optional</td>
-        <td>ARIA label for the finish button</td>
-        <td>string</td>
-        <td>'Finish the process'</td>
+        <td>{{ 'stepper.docs.tableLine6.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine6.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine6.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine6.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine6.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine6.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>finishBtnText</td>
-        <td>finish-btn-text</td>
-        <td>Optional</td>
-        <td>Text displayed on the finish button</td>
-        <td>string</td>
-        <td>'Finish'</td>
+        <td>{{ 'stepper.docs.tableLine7.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine7.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine7.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine7.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine7.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine7.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>indicatorText</td>
-        <td>indicator-text</td>
-        <td>Optional</td>
-        <td>Text displayed before the step indicator</td>
-        <td>string</td>
-        <td>'Step'</td>
+        <td>{{ 'stepper.docs.tableLine8.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine8.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine8.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine8.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine8.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine8.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>simulatorAria</td>
-        <td>simulator-aria</td>
-        <td>Optional</td>
-        <td>The aria label is used for the list of step indicators</td>
-        <td>string</td>
-        <td>'Simulator progress'</td>
+        <td>{{ 'stepper.docs.tableLine9.property' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine9.attribute' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine9.necessity' | transloco }}</td>
+        <td>{{ 'stepper.docs.tableLine9.description' | transloco }}</td>
+        <td>
+          {{ 'stepper.docs.tableLine9.type' | transloco }}
+        </td>
+        <td>{{ 'stepper.docs.tableLine9.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
-  <h4>Step Content</h4>
+  <h4>{{ 'stepper.docs.content' | transloco }}</h4>
   <p>
-    To provide content for each step, use the slot attribute with the
-    corresponding step name:
+    {{ 'stepper.docs.contentDesc' | transloco }}
   </p>
   <ul>
-    <li><code>slot="step1"</code>: content for step 1</li>
-    <li><code>slot="step2"</code>: content for step 2</li>
-    <li><code>slot="step3"</code>: content for step 3</li>
-    <li><code>slot="step4"</code>: content for step 4</li>
+    <li>
+      <code>slot="step1"</code>: {{ 'stepper.docs.slot1Desc' | transloco }}
+    </li>
+    <li>
+      <code>slot="step2"</code>: {{ 'stepper.docs.slot2Desc' | transloco }}
+    </li>
+    <li>
+      <code>slot="step3"</code>: {{ 'stepper.docs.slot3Desc' | transloco }}
+    </li>
+    <li>
+      <code>slot="step4"</code>: {{ 'stepper.docs.slot4Desc' | transloco }}
+    </li>
   </ul>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'stepper.docs.example' | transloco }}</em>
+  </p>
   <pre class="example">
     <code [highlight]="example" language="html"></code>
   </pre>
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variable used to customisation the stepper:</p>
+  <h3 class="under-title">{{ 'stepper.docs.personnalisation' | transloco }}</h3>
+  <p>{{ 'stepper.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--secondary-color</code></li>
     <li><code>--indicator-text-color</code></li>
   </ul>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'stepper.docs.example' | transloco }}</em>
+  </p>
 
-  <p>To update the values, use the following CSS code:</p>
+  <p>{{ 'stepper.docs.introClasses' | transloco }}</p>
   <pre class="example">
         <code [highlight]="custom" language="css"></code>
        </pre>
-  <h3 class="under-title">Event</h3>
+  <h3 class="under-title">{{ 'stepper.docs.event' | transloco }}</h3>
   <p>
-    The <code>ip-stepper</code>component emits a custom event when the "Finish"
-    button is clicked. The event is named <code>finishButtonClick</code>
+    {{ 'stepper.docs.eventDesc1' | transloco }}
+    {{ 'stepper.docs.eventDesc2' | transloco }}
   </p>
   <p>
-    You can listen for this event to perform specific actions when the `Finish`
-    button is clicked:
+    {{ 'stepper.docs.eventDesc3' | transloco }}
   </p>
   <pre class="javascript">
     <code [highlight]="event" language="typescript"></code>

@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-accordion',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-accordion.component.html',
   styleUrl: './doc-accordion.component.scss',
 })
 export class DocAccordionComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   code = `import '../node_modules/ip-accordion/dist/ip-accordion/ip-accordion.esm';`;
   example = `<ip-accordion
   accordion-headers='[

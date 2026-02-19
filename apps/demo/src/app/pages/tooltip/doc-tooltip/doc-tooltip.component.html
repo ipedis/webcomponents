@@ -1,139 +1,206 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-tooltip</code> component in your project.
+    {{ 'tooltip.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'tooltip.docs.step1' | transloco }}</h4>
   <p>
-    Install the
-    <code>ip-tooltip</code> component as a dependency in your project:
+    {{ 'tooltip.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="typescript"></code></pre>
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'tooltip.docs.step2' | transloco }}</h4>
+  <p>{{ 'tooltip.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
-  <p>To use these components, you must add the properties as attributes.</p>
+  <h3 class="under-title">{{ 'tooltip.docs.usage' | transloco }}</h3>
+  <p>{{ 'tooltip.docs.usageDesc' | transloco }}</p>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'tooltip.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tooltip.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tooltip.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tooltip.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">{{ 'tooltip.docs.propertyTable.type' | transloco }}</th>
+        <th scope="col">
+          {{ 'tooltip.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>tooltipTrigger</code></td>
-        <td><code>tooltip-trigger</code></td>
-        <td>Yes</td>
-        <td>The button that will display the tooltip</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>{{ 'tooltip.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'tooltip.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>tooltipContent</code></td>
-        <td><code>tooltip-content</code></td>
-        <td>Yes</td>
-        <td>The text that will be displayed in the tooltip</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>
+          {{ 'tooltip.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'tooltip.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'tooltip.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>type</code></td>
-        <td><code>type</code></td>
-        <td>No</td>
-        <td>Determines if the tooltip should appear on click or hover</td>
-        <td><code>"click" \| "hover"</code></td>
-        <td><code>"hover"</code></td>
+        <td>{{ 'tooltip.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'tooltip.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine3.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>tooltipBtnClose</code></td>
-        <td><code>tooltip-btn-close</code></td>
-        <td>No</td>
-        <td>If you need to add a close button in the tooltip</td>
-        <td><code>boolean</code></td>
-        <td><code>false</code></td>
+        <td>{{ 'tooltip.docs.tableLine4.property' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine4.attribute' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'tooltip.docs.tableLine4.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine4.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine4.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>tooltipTitle</code></td>
-        <td><code>tooltip-title</code></td>
-        <td>No</td>
-        <td>The title of the tooltip if you want to add a title</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>{{ 'tooltip.docs.tableLine5.property' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine5.attribute' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine5.necessity' | transloco }}</td>
+        <td>{{ 'tooltip.docs.tableLine5.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine5.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine5.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>tooltipBtn1</code></td>
-        <td><code>tooltip-btn-1</code></td>
-        <td>No</td>
-        <td>If you need to add a button in the tooltip</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>{{ 'tooltip.docs.tableLine6.property' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine6.attribute' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine6.necessity' | transloco }}</td>
+        <td>{{ 'tooltip.docs.tableLine6.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine6.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine6.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>tooltipBtn2</code></td>
-        <td><code>tooltip-btn-2</code></td>
-        <td>No</td>
-        <td>If you need to add a second button in the tooltip</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>{{ 'tooltip.docs.tableLine7.property' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine7.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'tooltip.docs.tableLine7.necessity' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine7.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine7.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine7.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>btn1AriaLabel</code></td>
-        <td><code>btn-1-aria-label</code></td>
-        <td>No</td>
-        <td>ARIA label for the first button, required for accessibility</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>
+          {{ 'tooltip.docs.tableLine8.property' | transloco }}
+        </td>
+        <td>
+          {{ 'tooltip.docs.tableLine8.attribute' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine8.necessity' | transloco }}</td>
+        <td>{{ 'tooltip.docs.tableLine8.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine8.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine8.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>btn2AriaLabel</code></td>
-        <td><code>btn-2-aria-label</code></td>
-        <td>No</td>
-        <td>ARIA label for the second button, required for accessibility</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>{{ 'tooltip.docs.tableLine9.property' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine9.attribute' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine9.necessity' | transloco }}</td>
+        <td>{{ 'tooltip.docs.tableLine9.description' | transloco }}</td>
+        <td>
+          {{ 'tooltip.docs.tableLine9.type' | transloco }}
+        </td>
+        <td>{{ 'tooltip.docs.tableLine9.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'stepper.docs.example' | transloco }}</em>
+  </p>
   <div class="code-example">
     <pre><code [highlight]="example" language="html"></code></pre>
   </div>
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variables used to customize the tooltip:</p>
+  <h3 class="under-title">{{ 'tooltip.docs.personnalisation' | transloco }}</h3>
+  <p>{{ 'tooltip.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--secondary-color</code></li>
   </ul>
 
   <p>
-    Also, We have a set of parts that could be used to customize accordingly:
+    {{ 'tooltip.docs.parts.intro' | transloco }}
   </p>
   <ul>
-    <li><code>close-btn</code>: for the close button if it exist</li>
-    <li><code>tooltip-btn1</code>: for the first button if it exist</li>
-    <li><code>tooltip-btn2</code>: for the second button if it exist</li>
-    <li><code>tooltip-content</code>: for tooltip-content</li>
-    <li><code>tooltip-trigger</code>: for the trigger button</li>
+    <li>
+      <code>close-btn</code>: {{ 'tooltip.docs.parts.part1Desc' | transloco }}
+    </li>
+    <li>
+      <code>tooltip-btn1</code>:
+      {{ 'tooltip.docs.parts.part2Desc' | transloco }}
+    </li>
+    <li>
+      <code>tooltip-btn2</code>:
+      {{ 'tooltip.docs.parts.part3Desc' | transloco }}
+    </li>
+    <li>
+      <code>tooltip-content</code>:
+      {{ 'tooltip.docs.parts.part4Desc' | transloco }}
+    </li>
+    <li>
+      <code>tooltip-trigger</code>:
+      {{ 'tooltip.docs.parts.part5Desc' | transloco }}
+    </li>
   </ul>
-  <p>To update the values use the following:</p>
+  <p>{{ 'tooltip.docs.parts.exampleDesc' | transloco }}</p>
   <pre>
     <pre><code [highlight]="custom" language="css"></code></pre>
   </pre>
 
-  <h3 class="under-title">Listening to Events</h3>
+  <h3 class="under-title">{{ 'tooltip.docs.event' | transloco }}</h3>
   <p>
-    To listen to events emitted by <code>ip-tooltip</code>, open your browser's
-    console. Event details will be displayed in the console when the buttons are
-    interacted with.
+    {{ 'tooltip.docs.eventDesc1' | transloco
+    }}{{ 'tooltip.docs.eventDesc2' | transloco }}
   </p>
   <pre><code [highlight]="eventHandlingExample" language="typescript"></code></pre>
 </section>

@@ -4,10 +4,11 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { DocModalComponent } from '../doc-modal/doc-modal.component';
 import { defineCustomElements as modalElements } from '@ipedis/modal/loader';
@@ -19,14 +20,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocModalComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './modal1.component.html',
   styleUrl: './modal1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Modal1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   ModalCodeSnippet = `
   <ip-modal button-text="Open Custom Modal">
     <div slot="content" class="modal-content">

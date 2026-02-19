@@ -1,86 +1,121 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-search-bar</code> component in your project.
+    {{ 'searchBar.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'searchBar.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-search-bar</code> component as a dependency in your
-    project:
+    {{ 'searchBar.docs.step1desc' | transloco }}
   </p>
   <pre><code>npm install ip-search-bar</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'searchBar.docs.step2' | transloco }}</h4>
+  <p>{{ 'searchBar.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
-  <h3 class="under-title">Usage</h3>
-  <p>To use this component, add the properties as attributes.</p>
-  <h4>Properties</h4>
+  <h3 class="under-title">{{ 'searchBar.docs.Usage' | transloco }}</h3>
+  <p>{{ 'searchBar.docs.usageDesc' | transloco }}</p>
+  <h4>{{ 'searchBar.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'searchBar.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'searchBar.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'searchBar.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'searchBar.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'searchBar.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'searchBar.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
+      <tr></tr>
       <tr>
-        <td>suggestionsData</td>
-        <td>suggestions-data</td>
-        <td>Required</td>
-        <td>JSON string of suggestions used for autocomplete</td>
-        <td>string</td>
-        <td>'[]'</td>
+        <td>{{ 'searchBar.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'searchBar.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'searchBar.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'searchBar.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'searchBar.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'searchBar.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>labelButton</td>
-        <td>label-button</td>
-        <td>Optional</td>
-        <td>Label for the search button</td>
-        <td>string</td>
-        <td>'Search'</td>
+        <td>
+          {{ 'searchBar.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'searchBar.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'searchBar.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'searchBar.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'searchBar.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'searchBar.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>Optional</td>
-        <td>Placeholder text for the input field</td>
-        <td>string</td>
-        <td>'Search...'</td>
+        <td>{{ 'searchBar.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'searchBar.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'searchBar.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'searchBar.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'searchBar.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'searchBar.docs.tableLine3.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'searchBar.docs.example' | transloco }}</em>
+  </p>
   <pre class="example">
     <code [highlight]="example" language="html"></code>
     </pre>
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variables used to customize the search-bar:</p>
+  <h3 class="under-title">
+    {{ 'searchBar.docs.personnalisation' | transloco }}
+  </h3>
+  <p>{{ 'searchBar.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--bg-btn-color</code></li>
     <li><code>--bg-btn-color-hover</code></li>
     <li><code>--text-btn-color</code></li>
     <li><code>--font-size</code></li>
   </ul>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'searchBar.docs.introClasses' | transloco }}</em>
+  </p>
 
-  <p>To update the values, use the following CSS code:</p>
+  <p>{{ 'searchBar.docs.example' | transloco }}</p>
   <pre class="example">
         <code [highlight]="custom1" language="css"></code>
        </pre>
 
-  <h3 class="under-title">Event</h3>
-  <p>The ip-search-bar component emits the following event:</p>
+  <h3 class="under-title">{{ 'searchBar.docs.event' | transloco }}</h3>
+  <p>{{ 'searchBar.docs.eventDesc1' | transloco }}</p>
   <p>
-    <code>buttonClicked</code> Fired when the search button is clicked. To
-    listen to this event, add an event listener to your component:
+    <code>buttonClicked</code> {{ 'searchBar.docs.eventDesc2' | transloco }}
+    {{ 'searchBar.docs.eventDesc3' | transloco }}
   </p>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'searchBar.docs.example' | transloco }}</em>
+  </p>
   <pre class="javascript">
     <code [highlight]="event" language="typescript"></code>
    </pre>

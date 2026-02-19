@@ -1,112 +1,139 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-accordion</code> component in your project.
+    {{ 'accordion.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'accordion.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-accordion</code> component as a dependency in your
-    project:
+    {{ 'accordion.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'accordion.docs.step2' | transloco }}</h4>
+  <p>{{ 'accordion.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="code" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">{{ 'accordion.docs.usage' | transloco }}</h3>
 
   <p>
-    To use the ip-accordion component, you need to define the properties as
-    attributes and provide slot content for each accordion item.
+    {{ 'accordion.docs.usageDesc' | transloco }}
   </p>
-  <h4>Properties</h4>
+  <h4>{{ 'accordion.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'accordion.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'accordion.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'accordion.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'accordion.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'accordion.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'accordion.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>accordionHeaders</td>
         <td>accordion-headers</td>
-        <td>Required</td>
-        <td>Defines headers for each accordion item using a JSON array</td>
+        <td>{{ 'accordion.docs.tableLine1.necessity' | transloco }}</td>
+        <td>{{ 'accordion.docs.tableLine1.description' | transloco }}</td>
         <td>accordionHeadersInterface[] | string</td>
-        <td>undefined</td>
+        <td>{{ 'accordion.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
         <td>isFirstPanelOpen</td>
         <td>is-first-panel-open</td>
-        <td>Optional</td>
-        <td>Controls whether the first panel is open by default</td>
+        <td>{{ 'accordion.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'accordion.docs.tableLine2.description' | transloco }}</td>
         <td>boolean</td>
-        <td>undefined</td>
+        <td>{{ 'accordion.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
         <td>isSingleOpen</td>
         <td>is-single-open</td>
-        <td>Optional</td>
-        <td>Determines if only one panel can be open at a time</td>
+        <td>{{ 'accordion.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'accordion.docs.tableLine3.description' | transloco }}</td>
         <td>boolean</td>
-        <td>undefined</td>
+        <td>{{ 'accordion.docs.tableLine3.default' | transloco }}</td>
       </tr>
       <tr>
         <td>titleTag</td>
         <td>title-tag</td>
-        <td>Optional</td>
-        <td>Specifies the HTML tag to use for the accordion headers</td>
+        <td>{{ 'accordion.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'accordion.docs.tableLine4.description' | transloco }}</td>
         <td>string</td>
-        <td>'h2'</td>
+        <td>{{ 'accordion.docs.tableLine4.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
   <h4>accordion-headers</h4>
   <p>
-    This attribute sets the accordion header details. Each header object can
-    have the following properties:
+    {{ 'accordion.docs.property1.desc' | transloco }}
   </p>
   <ul>
     <li>
-      <strong>title</strong> :The title of the accordion header (optional)
+      <strong>title</strong> :
+      {{ 'accordion.docs.property1.prop1.description' | transloco }}
     </li>
-    <li><strong>iconPath</strong> :Path to the icon image (optional)</li>
+    <li>
+      <strong>iconPath</strong> :
+      {{ 'accordion.docs.property1.prop2.description' | transloco }}
+    </li>
     <li>
       <strong>iconActivePath</strong>
-      :Path to the icon image when the header is active (optional)
-    </li>
-    <li><strong>subtitle</strong>:A subtitle for the header (optional)</li>
-    <li>
-      <strong>btnAlt</strong>: Alt text for the button when closed (optional)
+      : {{ 'accordion.docs.property1.prop3.description' | transloco }}
     </li>
     <li>
-      <strong>btnAltClose</strong>:Alt text for the button when open (optional)
+      <strong>subtitle</strong>:
+      {{ 'accordion.docs.property1.prop4.description' | transloco }}
     </li>
-    <li><strong>id</strong>:Unique ID for the button (optional)</li>
-    <li><strong>ariaText</strong>:Accessible name for the panel (required)</li>
+    <li>
+      <strong>btnAlt</strong>:
+      {{ 'accordion.docs.property1.prop5.description' | transloco }}
+    </li>
+    <li>
+      <strong>btnAltClose</strong>:
+      {{ 'accordion.docs.property1.prop6.description' | transloco }}
+    </li>
+    <li>
+      <strong>id</strong>:
+      {{ 'accordion.docs.property1.prop7.description' | transloco }}
+    </li>
+    <li>
+      <strong>ariaText</strong>:
+      {{ 'accordion.docs.property1.prop8.description' | transloco }}
+    </li>
   </ul>
 
-  <h4>Panels Content</h4>
+  <h4>
+    {{ 'accordion.docs.property2.title' | transloco }}
+  </h4>
 
   <p>
-    The contents of each panel should be placed inside
-    <code>&lt;div&gt;</code> elements with slot attributes matching accordion-1,
-    accordion-2, etc.
+    {{ 'accordion.docs.property2.desc' | transloco }}
   </p>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em> {{ 'accordion.docs.example' | transloco }} </em>
+  </p>
   <pre><code [highlight]="example" language="html"></code></pre>
 
-  <h3 class="under-title">Customization</h3>
+  <h3 class="under-title">
+    {{ 'accordion.docs.personnalisation' | transloco }}
+  </h3>
   <p>
-    We have a set of predefined variable used to customize the accordion-panel:
+    {{ 'accordion.docs.personnalisationDesc' | transloco }}
   </p>
   <ul>
     <li><code>--ip-acc-primary-color</code></li>
@@ -114,20 +141,37 @@
     <li><code>--ip-acc-font</code></li>
     <li><code>--ip-acc-icon-size</code></li>
   </ul>
-  <p>To update the values use the following:</p>
+  <p>
+    {{ 'accordion.docs.introClasses' | transloco }}
+  </p>
   <pre class="code-block">
     <code [highlight]="custom" language="css"></code>
   </pre>
 
   <h4>Class</h4>
-  <p>We have a set of classes that could be used to customise accordingly:</p>
+  <p>
+    {{ 'accordion.docs.classes.classesIntro' | transloco }}
+  </p>
   <ul>
-    <li><code>ip-accordion</code>: for the container of the panels</li>
-    <li><code>acc-content</code>: for the content of the panel</li>
-    <li><code>acc-header</code>:for the header of the panel</li>
-    <li><code>acc-panel</code>: for each panel div</li>
+    <li>
+      <code>ip-accordion</code>:
+      {{ 'accordion.docs.classes.class1desc' | transloco }}
+    </li>
+    <li>
+      <code>acc-content</code>:
+      {{ 'accordion.docs.classes.class2desc' | transloco }}
+    </li>
+    <li>
+      <code>acc-header</code>:{{
+        'accordion.docs.classes.class3desc' | transloco
+      }}
+    </li>
+    <li>
+      <code>acc-panel</code>:
+      {{ 'accordion.docs.classes.class4desc' | transloco }}
+    </li>
   </ul>
-  <p>Example:</p>
+  <p>{{ 'accordion.docs.example' | transloco }}</p>
   <!-- TODO: Combine with a comment on each block -->
   <pre
     class="code-block"

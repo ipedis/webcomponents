@@ -1,20 +1,16 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Show-more button</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'showMore.title' | transloco }}</h2>
     </div>
-    <p></p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="show-more-wrapper">
       <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
         <div slot="content" class="show-content">
           @for (card of moreCards; track card) {
-            <app-card
-              [imageUrl]="card.imageUrl"
-              [title]="card.title"
-              >
+            <app-card [imageUrl]="card.imageUrl" [title]="card.title">
             </app-card>
           }
         </div>

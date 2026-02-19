@@ -1,74 +1,98 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-show-more</code> component in your project.
+    {{ 'showMore.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'showMore.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-show-more</code> component as a dependency in your
-    project:
+    {{ 'showMore.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'showMore.docs.step2' | transloco }}</h4>
+  <p>{{ 'showMore.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">{{ 'showMore.docs.usage' | transloco }}</h3>
 
   <p>
-    To use the <code>ip-show-more</code> component, use this tag
-    <code>&lt;ip-show-more&gt;&lt;/ip-show-more&gt;</code> and use a slot for
-    the content.
+    {{ 'showMore.docs.usageDesc1' | transloco }}
+    <code>&lt;ip-show-more&gt;&lt;/ip-show-more&gt;</code>
+    {{ 'showMore.docs.usageDesc2' | transloco }}
   </p>
 
-  <h4>Properties</h4>
+  <h4>{{ 'showMore.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'showMore.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'showMore.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'showMore.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'showMore.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'showMore.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'showMore.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>showLessText</td>
-        <td>show-less-text</td>
-        <td>Optional</td>
-        <td>The text for "Show Less"</td>
-        <td>string</td>
-        <td>'Show Less'</td>
+        <td>{{ 'showMore.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'showMore.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'showMore.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'showMore.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'showMore.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'showMore.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>showMoreText</td>
-        <td>show-more-text</td>
-        <td>Optional</td>
-        <td>The text for "Show More"</td>
-        <td>string</td>
-        <td>'Show More'</td>
+        <td>
+          {{ 'showMore.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'showMore.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'showMore.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'showMore.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'showMore.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'showMore.docs.tableLine2.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
   <h4>Slot</h4>
   <p>
-    The component uses a slot named <code>content</code> for the expanded
-    content.
+    {{ 'showMore.docs.slotDesc' | transloco }}
   </p>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'showMore.docs.example' | transloco }}</em>
+  </p>
   <pre class="example">
     <code [highlight]="example" language="html"></code>
   </pre>
-  <h3 class="under-title">Customization</h3>
+  <h3 class="under-title">
+    {{ 'showMore.docs.personnalisation' | transloco }}
+  </h3>
 
   <p>
-    We have a set of predefined variables used to customize the
-    <code>show-more</code> button:
+    {{ 'showMore.docs.personnalisationDesc' | transloco }}
   </p>
   <ul>
     <li><code>--ip-primary-color</code></li>
@@ -79,8 +103,10 @@
     <li><code>--ip-svg-color</code></li>
   </ul>
 
-  <p><em>e.g:</em></p>
-  <p>To update the values, use the following CSS code:</p>
+  <p>
+    <em>{{ 'showMore.docs.introClasses' | transloco }}</em>
+  </p>
+  <p>{{ 'showMore.docs.example' | transloco }}</p>
   <pre class="example">
     <code [highlight]="custom" language="css"></code>
  </pre>

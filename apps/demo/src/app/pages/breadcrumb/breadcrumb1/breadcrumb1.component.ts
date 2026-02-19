@@ -4,13 +4,14 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocBreadcrumbComponent } from '../doc-breadcrumb/doc-breadcrumb.component';
 import { defineCustomElements as breadcrumbElements } from '@ipedis/breadcrumb/loader';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-breadcrumb1',
@@ -18,14 +19,17 @@ import { defineCustomElements as breadcrumbElements } from '@ipedis/breadcrumb/l
   imports: [
     AccordionComponent,
     CodeSnippetComponent,
-    DocBreadcrumbComponent
-],
+    DocBreadcrumbComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './breadcrumb1.component.html',
   styleUrl: './breadcrumb1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Breadcrumb1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   codeSnippet = `<ip-breadcrumb
   breadcrumb-title="LIST OF COMPONENTS"
   breadcrumb-items='[

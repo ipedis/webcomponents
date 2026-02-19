@@ -4,28 +4,27 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { Highlight } from 'ngx-highlightjs';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-checkbox1',
   standalone: true,
-  imports: [
-    CodeSnippetComponent,
-    AccordionComponent,
-    Highlight
-  ],
+  imports: [CodeSnippetComponent, AccordionComponent, Highlight, TranslocoPipe],
   templateUrl: './checkbox1.component.html',
   styleUrl: './checkbox1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Checkbox1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   checkboxCode = `
     <ip-checkbox default-checked="true" id="check me"> Check me ! </ip-checkbox>
   `;

@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-menu',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-menu.component.html',
   styleUrl: './doc-menu.component.scss',
 })
 export class DocMenuComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   installationScript = `install ip-burger-menu`;
   example = `<ip-burger-menu
   open-menu-aria-label="Ouvrir le menu"

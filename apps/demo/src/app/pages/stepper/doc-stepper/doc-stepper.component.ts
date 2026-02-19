@@ -1,16 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, inject, Component } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-stepper',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-stepper.component.html',
   styleUrl: './doc-stepper.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocStepperComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   installationScript = `npm install ip-stepper`;
   import = `import '../node_modules/ip-stepper/dist/ip-stepper/ip-stepper.esm';`;
   example = `<ip-stepper

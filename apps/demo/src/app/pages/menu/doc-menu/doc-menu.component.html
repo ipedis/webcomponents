@@ -1,129 +1,170 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-burger-menu</code> component in your project.
+    {{ 'menu.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'menu.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-burger-menu</code> component as a dependency in your
-    project:
+    {{ 'menu.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash"></code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'menu.docs.step2' | transloco }}</h4>
+  <p>{{ 'menu.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">{{ 'menu.docs.usage' | transloco }}</h3>
 
   <p>
-    To use the ip-burger-menu component, you need to set the properties as
-    attributes and use slots for additional content.
+    {{ 'menu.docs.usageDesc' | transloco }}
   </p>
-  <h4>Properties</h4>
+  <h4>{{ 'menu.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'menu.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'menu.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'menu.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'menu.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">{{ 'menu.docs.propertyTable.type' | transloco }}</th>
+        <th scope="col">
+          {{ 'menu.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>menuData</td>
-        <td>menu-data</td>
-        <td>Required</td>
-        <td>JSON string to define menu items.</td>
-        <td>string</td>
-        <td>undefined</td>
+        <td>{{ 'menu.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'menu.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>closeMenuAriaLabel</td>
-        <td>close-menu-aria-label</td>
-        <td>Optional</td>
-        <td>ARIA label for the button that closes the menu.</td>
-        <td>string</td>
-        <td>'Close menu'</td>
+        <td>
+          {{ 'menu.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'menu.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'menu.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>openMenuAriaLabel</td>
-        <td>open-menu-aria-label</td>
-        <td>Optional</td>
-        <td>ARIA label for the button that opens the menu.</td>
-        <td>string</td>
-        <td>'Open menu'</td>
+        <td>{{ 'menu.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'menu.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine3.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>pathToArrowRightIcon</td>
-        <td>path-to-arrow-right-icon</td>
-        <td>Optional</td>
-        <td>Path to the icon image used for menu item arrows.</td>
-        <td>string</td>
-        <td>'../../assets/images/arrow-right.svg'</td>
+        <td>{{ 'menu.docs.tableLine4.property' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine4.attribute' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'menu.docs.tableLine4.description' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine4.type' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine4.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>pathToCloseIcon</td>
-        <td>path-to-close-icon</td>
-        <td>Optional</td>
-        <td>Path to the icon image used to close the menu.</td>
-        <td>string</td>
-        <td>'../../assets/images/x-icon.svg'</td>
+        <td>{{ 'menu.docs.tableLine5.property' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine5.attribute' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine5.necessity' | transloco }}</td>
+        <td>{{ 'menu.docs.tableLine5.description' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine5.type' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine5.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>pathToOpenIcon</td>
-        <td>path-to-open-icon</td>
-        <td>Optional</td>
-        <td>Path to the icon image used to open the menu.</td>
-        <td>string</td>
-        <td>'../../assets/images/icon-list.svg'</td>
+        <td>{{ 'menu.docs.tableLine6.property' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine6.attribute' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine6.necessity' | transloco }}</td>
+        <td>{{ 'menu.docs.tableLine6.description' | transloco }}</td>
+        <td>
+          {{ 'menu.docs.tableLine6.type' | transloco }}
+        </td>
+        <td>{{ 'menu.docs.tableLine6.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
-  <h5>Menu-item Interface</h5>
-  <p>
-    The items property is an array of MenuItem objects with the following
-    structure:
-  </p>
+  <h5>{{ 'menu.docs.interface.title' | transloco }}</h5>
+  <p>{{ 'menu.docs.interface.desc' | transloco }}</p>
   <ul>
-    <li><code>label</code>: The text label of the menu item.</li>
-    <li><code>href</code>:URL to navigate to when the item is clicked.</li>
-    <li><code>disabled</code>: Optional boolean to disable the menu item.</li>
+    <li>
+      <code>label</code>: {{ 'menu.docs.interface.item1desc' | transloco }}
+    </li>
+    <li><code>href</code>:{{ 'menu.docs.interface.item2desc' | transloco }}</li>
+    <li>
+      <code>disabled</code>: {{ 'menu.docs.interface.item3desc' | transloco }}
+    </li>
   </ul>
-  <h4>Slot</h4>
+  <h4>{{ 'menu.docs.slots.title' | transloco }}</h4>
   <p>
-    The ip-burger-menu component supports the following slots for additional
-    content:
+    {{ 'menu.docs.slots.desc' | transloco }}
   </p>
   <ul>
     <li>
-      <code>left-head-content</code>: Content to be displayed on the left side
-      of the header.
+      <code>left-head-content</code>:
+      {{ 'menu.docs.slots.slot1desc' | transloco }}
     </li>
     <li>
-      <code>before-toggle-menu-content</code>: Content to be displayed before
-      the toggle menu button.
+      <code>before-toggle-menu-content</code>:
+      {{ 'menu.docs.slots.slot2desc' | transloco }}
     </li>
     <li>
-      <code>left-menu-content</code>: Content to be displayed on the left side
-      of the menu.
+      <code>left-menu-content</code>:
+      {{ 'menu.docs.slots.slot3desc' | transloco }}
     </li>
   </ul>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em>
+      {{ 'accordion.docs.example' | transloco }}
+    </em>
+  </p>
   <pre class="example">
       <code [highlight]="example" language="html"></code>
       </pre>
 
-  <h3 class="under-title">Customization</h3>
+  <h3 class="under-title">
+    {{ 'menu.docs.personnalisation' | transloco }}
+  </h3>
   <h4>Style</h4>
   <p>
-    We have a set of predefined CSS variables used to customize the burger-menu:
+    {{ 'menu.docs.docs.introClasses' | transloco }}
   </p>
   <ul>
     <li><code>--primary-color</code></li>
@@ -132,16 +173,31 @@
     <li><code>--menu-item-color</code></li>
   </ul>
 
-  <h4>Part</h4>
-  <p>We have a set of classes that could be used to customise accordingly:</p>
+  <h4>
+    {{ 'menu.docs.parts.title' | transloco }}
+  </h4>
+  <p>
+    {{ 'menu.docs.parts.desc' | transloco }}
+  </p>
   <ul>
-    <li><code>nav-bar</code>: the nav for the menu content</li>
-    <li><code>toggle-menu-btn</code>: The button that toggles the menu</li>
-    <li><code>menu-content</code>: The content of the menu</li>
-    <li><code>menu-list</code>: The list of elements in the menu</li>
+    <li><code>nav-bar</code>: {{ 'menu.docs.parts.part1desc' | transloco }}</li>
+    <li>
+      <code>toggle-menu-btn</code>:
+      {{ 'menu.docs.parts.part2desc' | transloco }}
+    </li>
+    <li>
+      <code>menu-content</code>: {{ 'menu.docs.parts.part3desc' | transloco }}
+    </li>
+    <li>
+      <code>menu-list</code>: {{ 'menu.docs.parts.part4desc' | transloco }}
+    </li>
   </ul>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em>
+      {{ 'accordion.docs.example' | transloco }}
+    </em>
+  </p>
   <pre class="example">
       <code [highlight]="css" language="css"></code>
       </pre>

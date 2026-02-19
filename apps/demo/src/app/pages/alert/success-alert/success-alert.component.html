@@ -1,16 +1,16 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Alert Success</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'alert.titleSuccess' | transloco }}</h2>
     </div>
     <p>
-      Alerts are used to inform users of important information. They can be used
-      to provide feedback on user actions, inform users of system updates, or
+      {{ 'alert.intro' | transloco }}
+
       provide important information.
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="alert-wrapper">
       @if (isAlertVisible) {
         <ip-alert

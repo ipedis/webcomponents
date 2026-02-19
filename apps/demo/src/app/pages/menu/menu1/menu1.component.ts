@@ -4,13 +4,14 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocMenuComponent } from '../doc-menu/doc-menu.component';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 import { defineCustomElements as menuElements } from '@ipedis/menu/loader';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-menu1',
@@ -18,14 +19,17 @@ import { defineCustomElements as menuElements } from '@ipedis/menu/loader';
   imports: [
     CodeSnippetComponent,
     DocMenuComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './menu1.component.html',
   styleUrl: './menu1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Menu1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   codeSnippet = `<ip-burger-menu
   menu-data='[
       {"label": "Home", "href": "#home"},

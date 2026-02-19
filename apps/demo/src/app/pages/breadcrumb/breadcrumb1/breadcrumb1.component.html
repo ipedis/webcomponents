@@ -1,18 +1,14 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Breadcrumb</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'breadcrumb.title' | transloco }}</h2>
     </div>
     <p>
-      A breadcrumb is a navigation aid used in web interfaces that provides
-      users with a clear path of their journey through a website. It typically
-      appears as a horizontal row of textual links, with each link separated by
-      symbols such as greater than signs (>), indicating the hierarchy of the
-      content.
+      {{ 'breadcrumb.intro' | transloco }}
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="breadcrumb-wrapper">
       <ip-breadcrumb
         breadcrumb-title="LIST OF COMPONENTS"

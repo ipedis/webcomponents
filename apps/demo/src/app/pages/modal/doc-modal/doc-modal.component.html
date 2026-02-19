@@ -1,81 +1,121 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the <code>ip-modal</code> component in
-    your project.
+    {{ 'modale.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>
+    {{ 'modale.docs.step1' | transloco }}
+  </h4>
   <p>
-    Install the <code>ip-modal</code> component as a dependency in your project:
+    {{ 'modale.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'modale.docs.step2' | transloco }}</h4>
+  <p>
+    {{ 'modale.docs.step2desc' | transloco }}
+  </p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">
+    {{ 'modale.docs.usage' | transloco }}
+  </h3>
 
-  <p>To use this input, you must add the following properties as attributes.</p>
-  <h4>Properties</h4>
+  <p>
+    {{ 'modale.docs.usageDesc' | transloco }}
+  </p>
+  <h4>
+    {{ 'modale.docs.properties' | transloco }}
+  </h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'modale.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'modale.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'modale.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'modale.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">{{ 'modale.docs.propertyTable.type' | transloco }}</th>
+        <th scope="col">
+          {{ 'modale.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>buttonText</td>
-        <td>button-text</td>
-        <td>Required</td>
-        <td>The text to display on the trigger button</td>
-        <td>string</td>
-        <td>Open modal</td>
+        <td>{{ 'modale.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'modale.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'modale.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'modale.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'modale.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'modale.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>closeAriaLabel</td>
-        <td>close-aria-label</td>
-        <td>Required</td>
-        <td>The aria-label text for the close button</td>
-        <td>string</td>
-        <td>Close the dialog</td>
+        <td>
+          {{ 'modale.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'modale.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'modale.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'modale.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'modale.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'modale.docs.tableLine2.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
-  <h4>Content</h4>
+  <h4>{{ 'modale.docs.content' | transloco }}</h4>
   <p>
-    The content of the modal should be inserted with the
-    <code>slot="content"</code> attribute.
+    {{ 'modale.docs.contentDesc' | transloco }}
   </p>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'accordion.docs.example' | transloco }}</em>
+  </p>
   <pre class="example">
     <code [highlight]="content" language="html"></code>
     </pre>
 
-  <h3 class="under-title">Customization</h3>
-  <h4>Style</h4>
-  <p>We have a set of predefined CSS variables used to customize the modal:</p>
+  <h3 class="under-title">{{ 'modale.docs.personnalisation' | transloco }}</h3>
+  <h4>
+    {{ 'modale.docs.varCSS' | transloco }}
+  </h4>
+  <p>{{ 'modale.docs.varCSSDesc' | transloco }}</p>
   <ul>
     <li><code>--svg-color</code></li>
     <li><code>--svg-size</code></li>
   </ul>
 
-  <h4>Class</h4>
-  <p>We have a set of classes that can be used for further customization:</p>
+  <h4>{{ 'modale.docs.classes' | transloco }}</h4>
+  <p>{{ 'modale.docs.introClasses' | transloco }}</p>
   <ul>
-    <li><code>dialog-content</code>: for the container of the modal</li>
-    <li><code>trigger-button</code>: for the trigger button</li>
+    <li>
+      <code>dialog-content</code>: {{ 'modale.docs.class1Desc' | transloco }}
+    </li>
+    <li>
+      <code>trigger-button</code>: {{ 'modale.docs.class2Desc' | transloco }}
+    </li>
   </ul>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'accordion.docs.example' | transloco }}</em>
+  </p>
   <pre class="example">
     <code [highlight]="example1" language="css"></code>
     </pre>

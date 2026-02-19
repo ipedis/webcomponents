@@ -1,17 +1,12 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Hover tooltip</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'tooltip.title1' | transloco }}</h2>
     </div>
-    <p>
-      A tooltip is a brief, informative message that appears when a user hovers
-      over or focuses on an element within a graphical user interface. It
-      provides explanations or extra context for the item, enhancing usability
-      and guidance.
-    </p>
+    <p>{{ 'tooltip.intro1' | transloco }}{{ 'tooltip.intro2' | transloco }}</p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="preview">
       <ip-tooltip
         tooltip-trigger="Hover Me!"

@@ -1,18 +1,16 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Modal</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'modale.title' | transloco }}</h2>
     </div>
     <p>
-      A modal window, also known as a dialog, is a pop-up window that appears on
-      top of the main content of a website or application. It typically requires
-      user interaction before the user can return to the main content. Modal
-      windows are commonly used for displaying important messages, alerts, or
-      interactive forms.
+      {{ 'modale.intro1' | transloco }}
+      {{ 'modale.intro2' | transloco }}
+      {{ 'modale.intro3' | transloco }}
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="modal-wrapper">
       <ip-modal button-text="Open Custom Modal">
         <div slot="content" class="modal-content">

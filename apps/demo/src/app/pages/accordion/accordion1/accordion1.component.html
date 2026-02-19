@@ -1,17 +1,14 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Accordion</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'accordion.title' | transloco }}</h2>
     </div>
     <p>
-      An accordion is an interactive element used on websites and applications
-      to organize content in a compact way. It allows users to click on titles
-      or buttons to show or hide sections of content, saving screen space and
-      making information easily accessible.
+      {{ 'accordion.intro' | transloco }}
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="preview">
       <div class="accordion-wrapper">
         <ip-accordion

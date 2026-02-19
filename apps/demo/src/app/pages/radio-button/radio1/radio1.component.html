@@ -1,17 +1,14 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Radio Button</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'boutonRadio.title' | transloco }}</h2>
     </div>
     <p>
-      Radio buttons allow users to select one option from a set of mutually
-      exclusive choices. They're ideal for forms where users must make a single
-      choice; they're easily navigable via mouse or keyboard and are
-      screen-reader friendly with proper labeling.
+      {{ 'boutonRadio.intro' | transloco }}
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="radio-wrapper">
       <ip-radio
         id="radio"
