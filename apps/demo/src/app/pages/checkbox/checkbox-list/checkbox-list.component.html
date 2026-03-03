@@ -1,21 +1,16 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Checkbox-list</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'checkboxList.title' | transloco }}</h2>
     </div>
     <p>
-      A checkbox is a component that allows users to make a selection from a set
-      of options. Typically presented as a small square box, it can be either
-      checked (selected) or unchecked (not selected). Checkboxes are commonly
-      used in forms and settings where users can indicate their choices or
-      preferences. They are particularly useful for options that are not
-      mutually exclusive, allowing multiple selections from a group of choices.
-      When a checkbox is selected, a checkmark or a tick appears inside the box,
-      visually indicating the user's choice.
+      {{ 'checkboxList.introPart1' | transloco }}
+      {{ 'checkboxList.introPart2' | transloco }}
+      {{ 'checkboxList.introPart3' | transloco }}
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="checkbox-wrapper">
       <div class="checkbox-list">
         <ip-checkbox-list
@@ -41,80 +36,168 @@
     <section id="documentation">
       <h3 class="under-title">Installation</h3>
       <p>
-        Follow these steps to install and use the
-        <code>ip-checkbox-list</code> component in your project.
+        {{ 'checkboxList.docs.installation' | transloco }}
       </p>
-      <h4>Step 1</h4>
+      <h4>{{ 'checkboxList.docs.step1' | transloco }}</h4>
       <p>
-        Install the
-        <code>ip-checkbox-list</code> component as a dependency in your project:
+        {{ 'checkboxList.docs.step1desc' | transloco }}
       </p>
       <pre><code>npm install ip-checkbox-list</code></pre>
-      <h4>Step 2</h4>
-      <p>Import the module into your script file:</p>
+      <h4>{{ 'checkboxList.docs.step2' | transloco }}</h4>
+      <p>{{ 'checkboxList.docs.step2desc' | transloco }}</p>
       <pre><code [highlight]="import" language="typescript"> </code></pre>
       <h3 class="under-title">Usage</h3>
-      <p>To use these components, you must add the properties as attributes.</p>
-      <h4>Properties</h4>
+      <p>{{ 'checkboxList.docs.usageDesc' | transloco }}</p>
+      <h4>{{ 'checkboxList.docs.properties' | transloco }}</h4>
       <table>
         <thead>
           <tr>
-            <th scope="col">Property</th>
-            <th scope="col">Attribute</th>
-            <th scope="col">Necessity</th>
-            <th scope="col">Description</th>
-            <th scope="col">Type</th>
-            <th scope="col">Default</th>
+            <th scope="col">
+              {{ 'checkboxList.docs.propertyTable.property' | transloco }}
+            </th>
+            <th scope="col">
+              {{ 'checkboxList.docs.propertyTable.attribute' | transloco }}
+            </th>
+            <th scope="col">
+              {{ 'checkboxList.docs.propertyTable.necessity' | transloco }}
+            </th>
+            <th scope="col">
+              {{ 'checkboxList.docs.propertyTable.description' | transloco }}
+            </th>
+            <th scope="col">
+              {{ 'checkboxList.docs.propertyTable.type' | transloco }}
+            </th>
+            <th scope="col">
+              {{ 'checkboxList.docs.propertyTable.default' | transloco }}
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><code>options</code></td>
-            <td><code>options</code></td>
-            <td>Yes</td>
-            <td>An array of objects used to pass options as checkboxes</td>
-            <td><code>string</code></td>
-            <td><code>undefined</code></td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine2.property' | transloco
+              }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine2.attribute' | transloco
+              }}</code>
+            </td>
+            <td>{{ 'checkboxList.docs.tableLine2.necessity' | transloco }}</td>
+            <td>
+              {{ 'checkboxList.docs.tableLine2.description' | transloco }}
+            </td>
+            <td>
+              <code>{{ 'checkboxList.docs.tableLine2.type' | transloco }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine2.default' | transloco
+              }}</code>
+            </td>
           </tr>
           <tr>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine1.property' | transloco
+              }}</code>
+            </td>
             <td><code>id</code></td>
-            <td><code>id</code></td>
-            <td>Yes</td>
-            <td>ID of the input for accessibility</td>
-            <td><code>string</code></td>
-            <td><code>undefined</code></td>
+            <td>{{ 'checkboxList.docs.tableLine1.necessity' | transloco }}</td>
+            <td>
+              {{ 'checkboxList.docs.tableLine1.description' | transloco }}
+            </td>
+            <td>
+              <code>{{ 'checkboxList.docs.tableLine1.type' | transloco }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine1.default' | transloco
+              }}</code>
+            </td>
           </tr>
           <tr>
-            <td><code>defaultChecked</code></td>
-            <td><code>default-checked</code></td>
-            <td>No</td>
-            <td>When you need to set the checkbox to checked by default</td>
-            <td><code>boolean</code></td>
-            <td><code>false</code></td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine3.property' | transloco
+              }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine3.attribute' | transloco
+              }}</code>
+            </td>
+            <td>{{ 'checkboxList.docs.tableLine3.necessity' | transloco }}</td>
+            <td>
+              {{ 'checkboxList.docs.tableLine3.description' | transloco }}
+            </td>
+            <td>
+              <code>{{ 'checkboxList.docs.tableLine3.type' | transloco }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine3.default' | transloco
+              }}</code>
+            </td>
           </tr>
           <tr>
-            <td><code>disabled</code></td>
-            <td><code>disabled</code></td>
-            <td>No</td>
-            <td>When you need to set the checkbox to disabled</td>
-            <td><code>boolean</code></td>
-            <td><code>false</code></td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine4.property' | transloco
+              }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine4.attribute' | transloco
+              }}</code>
+            </td>
+            <td>{{ 'checkboxList.docs.tableLine4.necessity' | transloco }}</td>
+            <td>
+              {{ 'checkboxList.docs.tableLine4.description' | transloco }}
+            </td>
+            <td>
+              <code>{{ 'checkboxList.docs.tableLine4.type' | transloco }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine4.default' | transloco
+              }}</code>
+            </td>
           </tr>
           <tr>
-            <td><code>legend</code></td>
-            <td><code>legend</code></td>
-            <td>No</td>
-            <td>The legend for the list of checkboxes</td>
-            <td><code>string</code></td>
-            <td><code>undefined</code></td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine5.property' | transloco
+              }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine5.attribute' | transloco
+              }}</code>
+            </td>
+            <td>{{ 'checkboxList.docs.tableLine5.necessity' | transloco }}</td>
+            <td>
+              {{ 'checkboxList.docs.tableLine5.description' | transloco }}
+            </td>
+            <td>
+              <code>{{ 'checkboxList.docs.tableLine5.type' | transloco }}</code>
+            </td>
+            <td>
+              <code>{{
+                'checkboxList.docs.tableLine5.default' | transloco
+              }}</code>
+            </td>
           </tr>
         </tbody>
       </table>
-      <h4>Example:</h4>
+      <h4>{{ 'checkboxList.docs.example' | transloco }}:</h4>
       <pre><code [highlight]="example" language="html"></code></pre>
-      <h3 class="under-title">Customization</h3>
+      <h3 class="under-title">
+        {{ 'checkboxList.docs.personnalisation' | transloco }}
+      </h3>
       <p>
-        We have a set of predefined variables used to customize the checkbox:
+        {{ 'checkboxList.docs.personnalisationDesc' | transloco }}
       </p>
       <ul>
         <li><code>--primary-color</code></li>
@@ -122,16 +205,17 @@
         <li><code>--font-size</code></li>
         <li><code>--checkbox-size</code></li>
       </ul>
-      <p>To update the values, use the following CSS:</p>
+      {{ 'checkboxList.docs.exampleDesc' | transloco }}
+      <p></p>
       <pre><code [highlight]="customCSS" language="css"></code></pre>
-      <h3 class="under-title">Listening to Events</h3>
+      <h3 class="under-title">
+        {{ 'checkboxList.docs.event' | transloco }}
+      </h3>
       <p>
-        To listen to events emitted by the
-        <code>ip-checkbox-list</code> components, open your browser's console.
-        Event details will be displayed in the console when checkboxes are
-        modified.
+        {{ 'checkboxList.docs.eventDesc1' | transloco }}
+        {{ 'checkboxList.docs.eventDesc2' | transloco }}
       </p>
-      <h4>Example JavaScript Code:</h4>
+      <h4>{{ 'checkboxList.docs.jsExample' | transloco }}</h4>
       <pre><code [highlight]="event" language="typescript">
               </code></pre>
     </section>

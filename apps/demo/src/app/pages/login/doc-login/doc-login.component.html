@@ -1,240 +1,354 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the <code>ip-login</code> component in
-    your project.
+    {{ 'login.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>
+    {{ 'login.docs.step1' | transloco }}
+  </h4>
   <p>
-    Install the <code>ip-login</code> component as a dependency in your project:
+    {{ 'login.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="typescript"></code></pre>
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>
+    {{ 'login.docs.step2' | transloco }}
+  </h4>
+  <p>{{ 'login.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">{{ 'login.docs.usage' | transloco }}</h3>
 
   <p>
-    To use this component, add it to your HTML and configure it with the desired
-    properties.
+    {{ 'login.docs.usageDesc' | transloco }}
   </p>
-  <h4>Properties</h4>
+  <h4>{{ 'login.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'login.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'login.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'login.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'login.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">{{ 'login.docs.propertyTable.type' | transloco }}</th>
+        <th scope="col">
+          {{ 'login.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>usernameLabel</td>
-        <td>username-label</td>
-        <td>Optional</td>
-        <td>Label for the username input field</td>
-        <td>string</td>
-        <td>Username</td>
+        <td>{{ 'login.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'login.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>passwordLabel</td>
-        <td>forgot-password-link</td>
-        <td>Optional</td>
-        <td>Label for the password input field</td>
-        <td>string</td>
-        <td>Password</td>
+        <td>
+          {{ 'login.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'login.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>submitButtonLabel</td>
-        <td>submit-button-label</td>
-        <td>Optional</td>
-        <td>Label for the submit button</td>
-        <td>string</td>
-        <td>Login</td>
+        <td>{{ 'login.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine3.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>usernameErrorMsg</td>
-        <td>username-error-msg</td>
-        <td>Optional</td>
-        <td>Error message for empty username field</td>
-        <td>string</td>
-        <td>Username is required</td>
+        <td>{{ 'login.docs.tableLine4.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine4.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine4.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine4.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine4.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>usernameInvalidEmailMsg</td>
-        <td>username-invalid-email-msg</td>
-        <td>Optional</td>
-        <td>Error message for invalid email format</td>
-        <td>string</td>
-        <td>The email address is invalid</td>
+        <td>{{ 'login.docs.tableLine5.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine5.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine5.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine5.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine5.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine5.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>passwordLengthErrorMsg</td>
-        <td>password-length-error-msg</td>
-        <td>Optional</td>
-        <td>Error message for insufficient password length</td>
-        <td>string</td>
-        <td>The password must contain at least 8 characters</td>
+        <td>{{ 'login.docs.tableLine6.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine6.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine6.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine6.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine6.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine6.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>passwordUppercaseErrorMsg</td>
-        <td>password-uppercase-error-msg</td>
-        <td>Optional</td>
-        <td>Error message for missing uppercase letter in password</td>
-        <td>string</td>
-        <td>Password must contain at least one capital</td>
+        <td>{{ 'login.docs.tableLine7.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine7.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine7.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine7.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine7.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine7.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>passwordLowercaseErrorMsg</td>
-        <td>password-lower-error-msg</td>
-        <td>Optional</td>
-        <td>Error message for missing lowercase letter in password</td>
-        <td>string</td>
-        <td>The password must contain at least a lower case</td>
+        <td>{{ 'login.docs.tableLine8.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine8.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine8.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine8.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine8.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine8.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>passwordDigitErrorMsg</td>
-        <td>password-digit-error-msg</td>
-        <td>Optional</td>
-        <td>Error message for missing digit in password</td>
-        <td>string</td>
-        <td>The password must contain at least one digit</td>
+        <td>{{ 'login.docs.tableLine9.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine9.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine9.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine9.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine9.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine9.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>usernameType</td>
-        <td>username-type</td>
-        <td>Optional</td>
-        <td>Type of the username input field (text or email)</td>
-        <td>text / email</td>
-        <td>text</td>
+        <td>{{ 'login.docs.tableLine10.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine10.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine10.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine10.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine10.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine10.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>showPasswordAriaLabel</td>
-        <td>show-password-aria-label</td>
-        <td>Optional</td>
-        <td>Aria label for the button to show password</td>
-        <td>string</td>
-        <td>Show password</td>
+        <td>{{ 'login.docs.tableLine11.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine11.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine11.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine11.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine11.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine11.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>hidePasswordAriaLabel</td>
-        <td>hide-password-aria-label</td>
-        <td>Optional</td>
-        <td>Aria label for the button to hide password</td>
-        <td>string</td>
-        <td>Hide password</td>
+        <td>{{ 'login.docs.tableLine12.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine12.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine12.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine12.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine12.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine12.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>usernameRequired</td>
-        <td>username-required</td>
-        <td>Optional</td>
-        <td>Whether the username field is required</td>
-        <td>boolean</td>
-        <td>false</td>
+        <td>{{ 'login.docs.tableLine13.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine13.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine13.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine13.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine13.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine13.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>pwdPlaceholder</td>
-        <td>pwd-placeholder</td>
-        <td>Optional</td>
-        <td>Placeholder text for the password field</td>
-        <td>string</td>
-        <td>Type your password here...</td>
+        <td>{{ 'login.docs.tableLine14.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine14.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine14.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine14.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine14.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine14.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>usernamePlaceholder</td>
-        <td>username-placeholder</td>
-        <td>Optional</td>
-        <td>Placeholder text for the username field</td>
-        <td>string</td>
-        <td>Type your username here...</td>
+        <td>{{ 'login.docs.tableLine15.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine15.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine15.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine15.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine15.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine15.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>forgotPasswordLink</td>
-        <td>forgot-password-link</td>
-        <td>Optional</td>
-        <td>URL for the forgot password link</td>
-        <td>string</td>
-        <td>''</td>
+        <td>{{ 'login.docs.tableLine16.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine16.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine16.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine16.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine16.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine16.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>forgotPasswordLabel</td>
-        <td>forgot-password-label</td>
-        <td>Optional</td>
-        <td>Label text for the forgot password link</td>
-        <td>string</td>
-        <td>Forgot password?</td>
+        <td>{{ 'login.docs.tableLine17.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine17.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine17.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine17.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine17.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine17.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>loginTitle</td>
-        <td>login-title</td>
-        <td>Optional</td>
-        <td>Title of the login form</td>
-        <td>string</td>
-        <td>Login</td>
+        <td>{{ 'login.docs.tableLine18.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine18.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine18.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine18.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine18.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine18.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>indicationLabel</td>
-        <td>indication-label</td>
-        <td>Optional</td>
-        <td>Label indicating required fields</td>
-        <td>string</td>
-        <td>Required fields</td>
+        <td>{{ 'login.docs.tableLine19.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine19.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine19.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine19.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine19.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine19.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>submitBtnAriaLabel</td>
-        <td>submit-btn-aria-label</td>
-        <td>Optional</td>
-        <td>Aria-label of submit button</td>
-        <td>string</td>
-        <td>Submit the form</td>
+        <td>{{ 'login.docs.tableLine20.property' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine20.attribute' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine20.necessity' | transloco }}</td>
+        <td>{{ 'login.docs.tableLine20.description' | transloco }}</td>
+        <td>
+          {{ 'login.docs.tableLine20.type' | transloco }}
+        </td>
+        <td>{{ 'login.docs.tableLine20.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'login.docs.example' | transloco }}</em>
+  </p>
   <pre><code [highlight]="example" language="html"></code></pre>
 
-  <h3 class="under-title">Customization</h3>
+  <h3 class="under-title">{{ 'login.docs.personnalisation' | transloco }}</h3>
   <p>
-    You can customize the appearance of the login-form component using CSS
-    variables and part selectors:
+    {{ 'login.docs.personnalisationDesc' | transloco }}
   </p>
 
-  <h4>CSS variables</h4>
+  <h4>{{ 'login.docs.varCSS' | transloco }}</h4>
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--secondary-color</code></li>
     <li><code>--focus-color</code></li>
   </ul>
 
-  <h4>Parts Selectors</h4>
+  <h4>{{ 'login.docs.selectors' | transloco }}</h4>
 
   <ul>
-    <li><code>title</code>: For the title section</li>
-    <li><code>indication</code>: For the required indication label</li>
-    <li><code>username-label</code>: For the username label</li>
-    <li><code>username-input</code>: For the username input field</li>
-    <li><code>passsword-label</code>: For the password label</li>
-    <li><code>passsword-input</code>: For the password input field</li>
+    <li><code>title</code>: {{ 'login.docs.selector1Desc' | transloco }}</li>
     <li>
-      <code>toggle-password</code>: For the button to toggle password visibility
+      <code>indication</code>: {{ 'login.docs.selector2Desc' | transloco }}
     </li>
-    <li><code>error-message</code>: For error message</li>
-    <li><code>forgot-password</code>: For the forgot password link</li>
-    <li><code>submit-btn</code>: For the submit button</li>
+    <li>
+      <code>username-label</code>: {{ 'login.docs.selector3Desc' | transloco }}
+    </li>
+    <li>
+      <code>username-input</code>: {{ 'login.docs.selector4Desc' | transloco }}
+    </li>
+    <li>
+      <code>passsword-label</code>: {{ 'login.docs.selector5Desc' | transloco }}
+    </li>
+    <li>
+      <code>passsword-input</code>: {{ 'login.docs.selector6Desc' | transloco }}
+    </li>
+    <li>
+      <code>toggle-password</code>: {{ 'login.docs.selector7Desc' | transloco }}
+    </li>
+    <li>
+      <code>error-message</code>: {{ 'login.docs.selector8Desc' | transloco }}
+    </li>
+    <li>
+      <code>forgot-password</code>: {{ 'login.docs.selector9Desc' | transloco }}
+    </li>
+    <li>
+      <code>submit-btn</code>: {{ 'login.docs.selector10Desc' | transloco }}
+    </li>
   </ul>
 
-  <p>To update the values, use the following CSS:</p>
+  <p>{{ 'login.docs.introClasses' | transloco }}</p>
   <pre><code [highlight]="custom" language="css"></code></pre>
 
-  <h3 class="under-title">Listening to Events</h3>
+  <h3 class="under-title">{{ 'login.docs.event' | transloco }}</h3>
   <p>
-    The login-form component emits a <code>formSubmitted`</code> event when the
-    form is successfully submitted. You can listen to this event in your
-    JavaScript code:
+    {{ 'login.docs.eventDesc1' | transloco }}
+    {{ 'login.docs.eventDesc2' | transloco }}
   </p>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'login.docs.example' | transloco }} </em>
+  </p>
   <pre><code [highlight]="eventListener" language="typescript"></code></pre>
 </section>

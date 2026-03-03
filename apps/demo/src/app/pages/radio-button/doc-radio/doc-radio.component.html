@@ -1,63 +1,88 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
+  <p>{{ 'boutonRadio.docs.installation' | transloco }}</p>
+  <h4>{{ 'boutonRadio.docs.step1' | transloco }}</h4>
 
-  <h4>Step 1:</h4>
-
-  <p>Install the ip-radio component as a dependency in the project:</p>
+  <p>{{ 'boutonRadio.docs.step1desc' | transloco }}</p>
 
   <pre><code>npm install ip-radio
 </code></pre>
 
-  <h4>Step 2:</h4>
-
-  <p>Import module in script file:</p>
+  <h4>{{ 'boutonRadio.docs.step2' | transloco }}</h4>
+  <p>{{ 'boutonRadio.docs.step2desc' | transloco }}</p>
 
   <pre><code [highlight]="import" language="typescript">
 </code></pre>
 
-  <h3 class="under-title">Usage:</h3>
+  <h3 class="under-title">{{ 'boutonRadio.docs.usage' | transloco }}</h3>
 
-  <p>To use this component, we must add the properties as attributes.</p>
+  <p>{{ 'boutonRadio.docs.usageDesc' | transloco }}</p>
 
-  <h4>Properties</h4>
+  <h4>{{ 'boutonRadio.docs.properties' | transloco }}</h4>
 
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'boutonRadio.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'boutonRadio.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'boutonRadio.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'boutonRadio.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'boutonRadio.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'boutonRadio.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>options</code></td>
-        <td><code>options</code></td>
-        <td>Required</td>
-        <td>This is a stringifird JSON array of radio options</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
-      </tr>
-      <tr>
-        <td><code>labelPosition</code></td>
-        <td><code>label-position</code></td>
-        <td>Optional</td>
+        <td>{{ 'boutonRadio.docs.tableLine1.property' | transloco }}</td>
         <td>
-          To determine where the label of the radio button will be positioned.
+          {{ 'boutonRadio.docs.tableLine1.attribute' | transloco }}
         </td>
-        <td><code>"after" | "before"</code></td>
-        <td><code>"after"</code></td>
+        <td>
+          {{ 'boutonRadio.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'boutonRadio.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'boutonRadio.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'boutonRadio.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>defaultOptionId</code></td>
-        <td><code>default-option-id</code></td>
-        <td>Optional</td>
-        <td>If we need to set an option checked as default</td>
-        <td><code>string | number</code></td>
-        <td><code>undefined</code></td>
+        <td>
+          {{ 'boutonRadio.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'boutonRadio.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'boutonRadio.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'boutonRadio.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'boutonRadio.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'boutonRadio.docs.tableLine2.default' | transloco }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'boutonRadio.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'boutonRadio.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'boutonRadio.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'boutonRadio.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'boutonRadio.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'boutonRadio.docs.tableLine3.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
@@ -65,31 +90,32 @@
   <h5>Options</h5>
 
   <p>
-    This is a stringified JSON arary of option. Each option is an object with an
-    <code>id</code>, a <code>label</code>, and an optional
-    <code>disabled</code> property.
+    {{ 'boutonRadio.docs.prop1desc' | transloco }}
   </p>
 
   <ul>
-    <li><strong>id</strong>: this is the id of the input</li>
-    <li><strong>label</strong>: this is the label for radio option</li>
+    <li><strong>id</strong>: {{ 'boutonRadio.docs.opt1Desc' | transloco }}</li>
     <li>
-      <strong>disabled</strong>: when we need to set the option to disable, this
-      is boolean and as default it's false
+      <strong>label</strong>: {{ 'boutonRadio.docs.opt2Desc' | transloco }}
+    </li>
+    <li>
+      <strong>disabled</strong>: {{ 'boutonRadio.docs.opt3Desc' | transloco }}
     </li>
   </ul>
 
-  <p>Example:</p>
+  <p>{{ 'boutonRadio.docs.example' | transloco }}</p>
 
   <pre><code [highlight]="example" language="html">
 </code></pre>
 
-  <h3 class="under-title">Customization</h3>
+  <h3 class="under-title">
+    {{ 'boutonRadio.docs.personnalisation' | transloco }}
+  </h3>
 
-  <p>The elements are encapsulated in a fieldset.</p>
+  <p>{{ 'boutonRadio.docs.personnalisationDesc' | transloco }}</p>
 
   <p>
-    We have a set of predefined variable used to customisation the checkbox:
+    {{ 'boutonRadio.docs.introClasses' | transloco }}
   </p>
 
   <ul>
@@ -99,21 +125,21 @@
     <li><strong>--fieldset-border</strong></li>
   </ul>
 
-  <p>To update the values use the following:</p>
+  <p>{{ 'boutonRadio.docs.classDesc' | transloco }}</p>
 
   <pre><code [highlight]="customCSS" language="css">
 </code></pre>
 
-  <h3 class="under-title">Event</h3>
+  <h3 class="under-title">{{ 'boutonRadio.docs.event' | transloco }}</h3>
 
   <ul>
     <li>
-      <code>selectionChanged</code>: This event is emitted when a radio button
-      is selected. The event detail is the selected option.
+      {{ 'boutonRadio.docs.eventDesc1' | transloco }}
+      {{ 'boutonRadio.docs.eventDesc2' | transloco }}
     </li>
   </ul>
 
-  <p>e.g:</p>
+  <p>{{ 'boutonRadio.docs.example' | transloco }}</p>
 
   <pre><code [highlight]="event" language="typescript">
     

@@ -1,88 +1,117 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-breadcrumb</code> component in your project.
+    {{ 'breadcrumb.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>
+    {{ 'breadcrumb.docs.step1' | transloco }}
+  </h4>
   <p>
-    Install the <code>ip-breadcrumb</code> component as a dependency in your
-    project:
+    {{ 'breadcrumb.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash"></code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>
+    {{ 'breadcrumb.docs.step2' | transloco }}
+  </h4>
+  <p>
+    {{ 'breadcrumb.docs.step2desc' | transloco }}
+  </p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">
+    {{ 'breadcrumb.docs.usage' | transloco }}
+  </h3>
 
-  <p>To use this input, you must add the following properties as attributes.</p>
-  <h4>Properties</h4>
+  <p>
+    {{ 'breadcrumb.docs.usageDesc' | transloco }}
+  </p>
+  <h4>
+    {{ 'breadcrumb.docs.properties' | transloco }}
+  </h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'breadcrumb.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'breadcrumb.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'breadcrumb.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'breadcrumb.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'breadcrumb.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'breadcrumb.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>breadcrumbItems</td>
-        <td>breadcrumb-items</td>
-        <td>Required</td>
+        <td>{{ 'breadcrumb.docs.tableLine1.property' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine1.attribute' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine1.necessity' | transloco }}</td>
         <td>
-          A JSON string of an array of breadcrumb items, each with a label and
-          optional link
+          {{ 'breadcrumb.docs.tableLine1.description' | transloco }}
         </td>
-        <td>string</td>
-        <td>'[]'</td>
+        <td>{{ 'breadcrumb.docs.tableLine1.type' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>breadcrumbTitle</td>
-        <td>breadcrumb-title</td>
-        <td>Optional</td>
-        <td>Title of the breadcrumb navigation</td>
-        <td>string</td>
-        <td>''</td>
+        <td>{{ 'breadcrumb.docs.tableLine2.property' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine2.attribute' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine2.description' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine2.type' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>prefixAriaLabel</td>
-        <td>prefix-aria-label</td>
-        <td>Optional</td>
-        <td>Aria label prefix for the links</td>
-        <td>string</td>
-        <td>'Link to'</td>
+        <td>{{ 'breadcrumb.docs.tableLine3.property' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine3.attribute' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine3.description' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine3.type' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine3.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>separatorIcon</td>
-        <td>separator-icon</td>
-        <td>Optional</td>
-        <td>The icon or text used to separate breadcrumb items</td>
-        <td>string</td>
-        <td>'&gt;'</td>
+        <td>{{ 'breadcrumb.docs.tableLine4.property' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine4.attribute' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine4.description' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine4.type' | transloco }}</td>
+        <td>{{ 'breadcrumb.docs.tableLine4.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'breadcrumb.docs.example' | transloco }}</em>
+  </p>
   <pre class="example">
       <code [highlight]="example" language="html"></code>
       </pre>
 
-  <h3 class="under-title">Customization</h3>
+  <h3 class="under-title">
+    {{ 'breadcrumb.docs.personnalisation' | transloco }}
+  </h3>
 
-  <p>We have a set of classes that can be used for further customization:</p>
+  <p>{{ 'breadcrumb.docs.personnalisationDesc' | transloco }}</p>
   <ul>
-    <li><code>title</code>:for the breadcrumb title</li>
-    <li><code>breadcrumb</code>: for breadcrumb item</li>
-    <li><code>icon</code>: for the separator icon</li>
+    <li><code>title</code>: {{ 'breadcrumb.docs.prop1desc' | transloco }}</li>
+    <li>
+      <code>breadcrumb</code>: {{ 'breadcrumb.docs.prop2desc' | transloco }}
+    </li>
+    <li><code>icon</code>: {{ 'breadcrumb.docs.prop3desc' | transloco }}</li>
   </ul>
-  <p>To update the values use the following:</p>
+  <p>
+    {{ 'breadcrumb.docs.modifdesc' | transloco }}
+  </p>
   <pre class="example">
       <code [highlight]="css" language="css"></code>
       </pre>

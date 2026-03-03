@@ -4,11 +4,12 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tableElements } from '@ipedis/table/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { DocTableComponent } from '../doc-table/doc-table.component';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
@@ -19,14 +20,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocTableComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './table1.component.html',
   styleUrl: './table1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Table1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   codeSnippet = `
 <ip-table
     columns='[

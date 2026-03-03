@@ -4,7 +4,7 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
@@ -12,21 +12,20 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 import { Highlight } from 'ngx-highlightjs';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-checkbox-list',
   standalone: true,
-  imports: [
-    CodeSnippetComponent,
-    AccordionComponent,
-    Highlight
-],
+  imports: [CodeSnippetComponent, AccordionComponent, Highlight, TranslocoPipe],
   templateUrl: './checkbox-list.component.html',
   styleUrl: './checkbox-list.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CheckboxListComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   checkboxListCode = `
     <ip-checkbox-list
       legend="Select the options below:"

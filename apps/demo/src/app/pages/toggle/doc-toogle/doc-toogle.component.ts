@@ -1,16 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, inject, Component } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-toogle',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-toogle.component.html',
   styleUrl: './doc-toogle.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocToogleComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   import = `import '../node_modules/ip-toggle/dist/ip-toggle/ip-toggle.esm';`;
   example = `
   <ip-toggle 

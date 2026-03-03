@@ -1,16 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, inject, Component } from '@angular/core';
 
 import { Highlight } from 'ngx-highlightjs';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-doc-login',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-login.component.html',
   styleUrl: './doc-login.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocLoginComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   installationScript = `npm install ip-login`;
 
   import = `import '../node_modules/ip-login/dist/ip-login/ip-login.esm';`;

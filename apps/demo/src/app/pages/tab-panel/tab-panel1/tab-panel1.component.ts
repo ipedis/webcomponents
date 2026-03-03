@@ -4,12 +4,13 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DocTabPanelComponent } from '../doc-tab-panel/doc-tab-panel.component';
 import { defineCustomElements as tabPanelElements } from '@ipedis/tab-panel/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -19,14 +20,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocTabPanelComponent,
     CodeSnippetComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './tab-panel1.component.html',
   styleUrl: './tab-panel1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class TabPanel1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   tabPanelCode = `
   <ip-tab-panel
       selected-tab="tab-content-2"

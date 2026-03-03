@@ -4,10 +4,11 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { DocSearchBarComponent } from '../doc-search-bar/doc-search-bar.component';
 import { defineCustomElements as SearchBarElements } from '@ipedis/combobox/loader';
@@ -19,14 +20,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocSearchBarComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './search-bar1.component.html',
   styleUrl: './search-bar1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SearchBar1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   switcherTitle = 'Search-bar 1';
 
   searchCode = `   

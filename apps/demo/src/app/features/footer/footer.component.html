@@ -1,9 +1,9 @@
 <footer role="contentinfo">
   <div class="menu">
-    <nav aria-label="Secondary navigation">
+    <nav [attr.aria-label]="'footer.navAria' | transloco">
       <div class="wrapper components">
         <div class="title">
-          <span>Web Components</span>
+          <span>{{ 'footer.components.title' | transloco }}</span>
         </div>
         <div class="list">
           <ul class="two-columns">
@@ -24,55 +24,83 @@
       </div>
       <div class="wrapper disability">
         <div class="title">
-          <span>Disability Guide</span>
+          <span>{{ 'footer.disability.title' | transloco }}</span>
         </div>
         <div class="list">
           <ul>
-            <li><a href="#">Visual</a></li>
-            <li><a href="#">Anosmia</a></li>
-            <li><a href="#">Deafness</a></li>
-            <li><a href="#">Motor</a></li>
-            <li><a href="#">Cognitive Disorder</a></li>
-            <li><a href="#">Psychic</a></li>
+            <li>
+              <a href="#">{{ 'footer.disability.visual' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.disability.anosmia' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.disability.deafness' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.disability.motor' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.disability.cognitive' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.disability.physic' | transloco }}</a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="wrapper pdf">
         <div class="title">
-          <span>PDF Accessibility</span>
+          <span>{{ 'footer.pdf.title' | transloco }}</span>
         </div>
         <div class="list">
           <ul>
-            <li><a href="#">Tagging Evaluation</a></li>
-            <li><a href="#">Tags</a></li>
-            <li><a href="#">Interactive Form</a></li>
-            <li><a href="#">Document Completion</a></li>
-            <li><a href="#">PDF Quality Check</a></li>
+            <li>
+              <a href="#">{{ 'footer.pdf.tagging' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.pdf.tags' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.pdf.form' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.pdf.completion' | transloco }}</a>
+            </li>
+            <li>
+              <a href="#">{{ 'footer.pdf.quality' | transloco }}</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
   <div class="footer">
-    <nav aria-label="Footer navigation">
+    <nav [attr.aria-label]="'footer.navFooter' | transloco">
       <ul class="list">
-        <li><a href="#">Accessibility Statement : Totally Compliant</a></li>
-        <li><a href="#">License</a></li>
-        <li><a href="#">Sitemap</a></li>
+        <li>
+          <a href="#">{{ 'footer.accessibiliy' | transloco }}</a>
+        </li>
+        <li>
+          <a href="#">{{ 'footer.license' | transloco }}</a>
+        </li>
+        <li>
+          <a href="#">{{ 'footer.sitemap' | transloco }}</a>
+        </li>
         <li class="new-window">
           <a href="#" target="_blank"
-            >Privacy and cookie policy
+            >{{ 'footer.cookie' | transloco }}
             <img
               src="../../../assets/images/new-window-icon.png"
-              alt="Opens in a new window"
+              [attr.alt]="'common.label.newWindow' | transloco"
           /></a>
         </li>
         <li class="new-window">
           <a href="#" target="_blank"
-            >Legal Notice
+            >{{ 'footer.legal' | transloco }}
             <img
               src="../../../assets/images/new-window-icon.png"
-              alt="Opens in a new window"
+              [attr.alt]="'common.label.newWindow' | transloco"
           /></a>
         </li>
         <li class="new-window">
@@ -80,7 +108,7 @@
             >Ipedis.com
             <img
               src="../../../assets/images/new-window-icon.png"
-              alt="Opens in a new window"
+              [attr.alt]="'common.label.newWindow' | transloco"
           /></a>
         </li>
       </ul>

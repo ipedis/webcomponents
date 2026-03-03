@@ -1,88 +1,101 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
-  <h4>Step 1</h4>
+  <h4>{{ 'table.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-table</code> component as a dependency in your project:
+    {{ 'table.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module in your script file:</p>
+  <h4>{{ 'table.docs.step2' | transloco }}</h4>
+  <p>{{ 'table.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
+  <h3 class="under-title">{{ 'table.docs.usage' | transloco }}</h3>
 
-  <p>To use this component, we must add the properties as attributes.</p>
+  <p>
+    {{ 'table.docs.usageDesc1' | transloco }}
+  </p>
 
-  <h4>Properties</h4>
+  <h4>{{ 'table.docs.properties' | transloco }}</h4>
+
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'table.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'table.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'table.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'table.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">{{ 'table.docs.propertyTable.type' | transloco }}</th>
+        <th scope="col">
+          {{ 'table.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>columns</code></td>
-        <td><code>columns</code></td>
-        <td>Required</td>
+        <td>{{ 'table.docs.tableLine1.property' | transloco }}</td>
         <td>
-          This is a JSON string representing an array of objects for
-          <code>thead</code>
+          {{ 'table.docs.tableLine1.attribute' | transloco }}
         </td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>
+          {{ 'table.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'table.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'table.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'table.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td><code>rows</code></td>
-        <td><code>rows</code></td>
-        <td>Required</td>
         <td>
-          This is a JSON string representing an array of objects for
-          <code>tbody</code>
+          {{ 'table.docs.tableLine2.property' | transloco }}
         </td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>
+          {{ 'table.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'table.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'table.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'table.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'table.docs.tableLine2.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
-  <h4>Columns Property</h4>
+  <h4>{{ 'table.docs.prop1.title' | transloco }}</h4>
   <p>
-    The <code>columns</code> property is a JSON string representing an array of
-    column definitions. Each column must have a <code>header</code> and a
-    <code>type</code>:
+    {{ 'table.docs.prop1.desc1' | transloco }}
+    {{ 'table.docs.prop1.desc2' | transloco }}
   </p>
   <ul>
     <li>
-      <strong>header</strong>: A string that represents the name of the column.
-      This will be displayed as the column header in the table.
+      <strong>header</strong>: {{ 'table.docs.prop1.element1Desc' | transloco }}
     </li>
     <li>
-      <strong>type</strong>: A string that represents the type of data in the
-      column. This should be either 'string' or 'number'. This is used to
-      determine how to sort the column. 'string' type columns are sorted
-      alphabetically, while 'number' type columns are sorted numerically.
+      <strong>type</strong>:{{ 'table.docs.prop1.element2Desc' | transloco }}
     </li>
   </ul>
 
-  <h4>Rows Property</h4>
+  <h4>{{ 'table.docs.prop2.title' | transloco }}</h4>
   <p>
-    The <code>rows</code> property is a JSON string representing an array of row
-    objects. Each row object should contain key-value pairs where keys
-    correspond to the column headers and values represent the cell data.
+    {{ 'table.docs.prop2.desc1' | transloco
+    }}{{ 'table.docs.prop2.desc2' | transloco }}
   </p>
   <div class="code-example">
     <pre><code [highlight]="example" language="html"></code></pre>
   </div>
 
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variables used to customize the table:</p>
+  <h3 class="under-title">{{ 'table.docs.personnalisation' | transloco }}</h3>
+  <p>{{ 'table.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--secondary-color</code></li>
@@ -91,7 +104,7 @@
     <li><code>--font-size</code></li>
     <li><code>--font-family</code></li>
   </ul>
-  <p>To update the values use the following:</p>
+  <p>{{ 'table.docs.introClasses' | transloco }}</p>
   <div class="code-example">
     <pre><code [highlight]="custom" language="css"></code></pre>
   </div>

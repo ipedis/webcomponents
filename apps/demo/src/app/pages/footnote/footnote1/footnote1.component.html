@@ -1,12 +1,12 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Footnote</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'footnote.title' | transloco }}</h2>
     </div>
-    <p></p>
+    <p>{{ 'footnote.intro' | transloco }}</p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="footnote-wrapper">
       <p>
         Here is a sentence with a footnote reference

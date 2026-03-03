@@ -1,16 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { Highlight } from 'ngx-highlightjs';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-doc-dropdown',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-dropdown.component.html',
   styleUrl: './doc-dropdown.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocDropdownComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   import = `import '../node_modules/ip-dropdown/dist/ip-dropdown/ip-dropdown.esm';`;
 
   customCSS = `

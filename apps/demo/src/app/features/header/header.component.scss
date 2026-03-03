@@ -8,7 +8,30 @@ header {
   border-radius: 0px 0px 20px 20px;
   box-shadow: 0px 0px 8px 0px rgba(32, 114, 183, 0.1);
   background-color: #eff7ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
+.lang {
+  margin: 25px;
+  button {
+    padding: 8px 14px;
+    border: #1967a9 1px solid;
+    border-radius: 30px;
+    gap: 8px;
+    height: 40px;
+
+    background-color: #eff7ff;
+    size: 20px;
+    font-weight: bold;
+    color: #1967a9;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
 .back-wrapper {
   margin-bottom: rem(10);
   a {
@@ -50,8 +73,17 @@ header {
     gap: rem(25);
   }
 }
+
 @media (max-width: 768px) {
   .head {
     padding: rem(5) rem(20);
+    .title-link {
+      display: none;
+    }
+  }
+
+  .lang button {
+    font-size: 14px;
+    padding: 6px 10px;
   }
 }

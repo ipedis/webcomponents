@@ -4,10 +4,11 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { defineCustomElements as showMoreElements } from '@ipedis/show-more/loader';
 import { DocShowMoreComponent } from '../doc-show-more/doc-show-more.component';
@@ -21,14 +22,17 @@ import { CardComponent } from '../../../features/card/card.component';
     CodeSnippetComponent,
     DocShowMoreComponent,
     AccordionComponent,
-    CardComponent
-],
+    CardComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './show-more1.component.html',
   styleUrl: './show-more1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowMore1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   showMoreCode = `
     <ip-show-more
       show-less-text="Voir moins"

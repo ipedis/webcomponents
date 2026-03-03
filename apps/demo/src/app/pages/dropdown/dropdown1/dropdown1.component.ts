@@ -4,12 +4,13 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocDropdownComponent } from '../doc-dropdown/doc-dropdown.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -19,14 +20,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocDropdownComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './dropdown1.component.html',
   styleUrl: './dropdown1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Dropdown1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   codeSnippet = `
   <ip-dropdown
     dropdown-title="Country"

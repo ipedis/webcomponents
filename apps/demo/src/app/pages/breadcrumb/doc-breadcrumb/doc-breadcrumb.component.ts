@@ -1,16 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { Highlight } from 'ngx-highlightjs';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-doc-breadcrumb',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-breadcrumb.component.html',
   styleUrl: './doc-breadcrumb.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocBreadcrumbComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   import = `import '../node_modules/ip-breadcrumb/dist/ip-breadcrumb/ip-breadcrumb.esm';
 `;
   installationScript = `npm install ip-breadcrumb`;

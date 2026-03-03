@@ -4,12 +4,13 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
 import { DocRadioComponent } from '../doc-radio/doc-radio.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
@@ -19,14 +20,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocRadioComponent,
     CodeSnippetComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './radio1.component.html',
   styleUrl: './radio1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Radio1ButtonComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   radioCode = `
   <div class="radio-wrapper">
     <ip-radio

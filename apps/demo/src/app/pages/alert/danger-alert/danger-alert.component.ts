@@ -7,7 +7,7 @@ import {
   PLATFORM_ID,
   ViewChild,
   AfterViewInit,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
@@ -15,6 +15,7 @@ import { DocAlertComponent } from '../doc-alert/doc-alert.component';
 
 import { defineCustomElements as AlertElements } from '@ipedis/alert/loader';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-danger-alert',
@@ -22,14 +23,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocAlertComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './danger-alert.component.html',
   styleUrl: './danger-alert.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DangerAlertComponent implements AfterViewInit {
+  private readonly translocoService = inject(TranslocoService);
+
   @ViewChild('showAlertButton') showAlertButton:
     | ElementRef<HTMLButtonElement>
     | undefined;

@@ -1,63 +1,91 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-pagination</code> component in your project.
+    {{ 'pagination.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'pagination.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-pagination</code> component as a dependency in your
-    project:
+    {{ 'pagination.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'pagination.docs.step2' | transloco }}</h4>
+  <p>{{ 'pagination.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
-  <p>To use this component, add the properties as attributes.</p>
-  <h4>Properties</h4>
+  <h3 class="under-title">{{ 'pagination.docs.usage' | transloco }}</h3>
+  <p>{{ 'pagination.docs.usageDesc' | transloco }}</p>
+  <h4>{{ 'pagination.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'pagination.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'pagination.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'pagination.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'pagination.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'pagination.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'pagination.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>totalPages</td>
-        <td>total-pages</td>
-        <td>Required</td>
-        <td>The total number of pages.</td>
-        <td>number</td>
-        <td>10</td>
+        <td>{{ 'pagination.docs.tableLine1.property' | transloco }}</td>
+        <td>
+          {{ 'pagination.docs.tableLine1.attribute' | transloco }}
+        </td>
+        <td>
+          {{ 'pagination.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'pagination.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'pagination.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'pagination.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>currentPage</td>
-        <td>current-page</td>
-        <td>Optional</td>
-        <td>The current active page.</td>
-        <td>number</td>
-        <td>1</td>
+        <td>
+          {{ 'pagination.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'pagination.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'pagination.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'pagination.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'pagination.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'pagination.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>visiblePages</td>
-        <td>visible-pages</td>
-        <td>Optional</td>
-        <td>The number of pages to display in the pagination controls.</td>
-        <td>number</td>
-        <td>5</td>
+        <td>{{ 'pagination.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'pagination.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'pagination.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'pagination.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'pagination.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'pagination.docs.tableLine3.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variables used to customize the dropdown:</p>
+  <h3 class="under-title">
+    {{ 'pagination.docs.personnalisation' | transloco }}
+  </h3>
+  <p>{{ 'pagination.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--pagination-button-color</code></li>
     <li><code>--pagination-button-background</code></li>
@@ -66,19 +94,18 @@
     <li><code>--pagination-button-active-background</code></li>
     <li><code>--pagination-button-disabled-color</code></li>
   </ul>
-  <p>To update the values, use the following CSS:</p>
+  <p>{{ 'pagination.docs.introClasses' | transloco }}</p>
   <pre>
     <code [highlight]="custom" language="css"></code>
   </pre>
 
-  <h3 class="under-title">Event</h3>
+  <h3 class="under-title">{{ 'pagination.docs.event' | transloco }}</h3>
   <p>
-    To listen this event emitted,we have definied
-    <code>pageChanged</code> event in this component.
+    {{ 'pagination.docs.eventDesc1' | transloco }}
   </p>
   <p>
-    The <code>pageChanged</code> event is fired when the current page changes.
-    You can listen to this event to handle page changes.
+    {{ 'pagination.docs.eventDesc2' | transloco }}
+    {{ 'pagination.docs.eventDesc3' | transloco }}
   </p>
   <pre>
     <code [highlight]="handlingEventExample" language="typescript"></code>

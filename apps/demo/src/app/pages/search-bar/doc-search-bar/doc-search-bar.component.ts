@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-search-bar',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-search-bar.component.html',
   styleUrl: './doc-search-bar.component.scss',
 })
 export class DocSearchBarComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   import = `import '../node_modules/ip-search-bar/dist/ip-search-bar/ip-search-bar.esm';`;
 
   example = `<ip-search-bar

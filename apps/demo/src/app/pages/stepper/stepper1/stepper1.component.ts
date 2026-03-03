@@ -4,13 +4,14 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as stepperElements } from '@ipedis/stepper/loader';
 import { DocStepperComponent } from '../doc-stepper/doc-stepper.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-stepper1',
@@ -18,14 +19,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     DocStepperComponent,
     CodeSnippetComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './stepper1.component.html',
   styleUrl: './stepper1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Stepper1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   stepperHtml = `
   <ip-stepper steps="4">
   <div slot="step1">

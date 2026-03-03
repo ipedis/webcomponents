@@ -1,16 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, inject, Component } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-tab-panel',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-tab-panel.component.html',
   styleUrl: './doc-tab-panel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocTabPanelComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   installationScript = `npm install ip-tab-panel`;
   import = `import '../node_modules/ip-tab-panel/dist/ip-tab-panel/ip-tab-panel.esm';`;
   example = `<ip-tab-panel

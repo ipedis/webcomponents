@@ -1,16 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, inject, Component } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-modal',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-modal.component.html',
   styleUrl: './doc-modal.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocModalComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   import = `import '../node_modules/ip-modal/dist/ip-modal/ip-modal.esm';`;
   installationScript = `npm install ip-modal`;
   content = `<ip-modal button-text="Open Modal">

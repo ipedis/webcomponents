@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-doc-alert',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-alert.component.html',
   styleUrl: './doc-alert.component.scss',
 })
 export class DocAlertComponent {
+  private readonly translocoService = inject(TranslocoService);
+
   example = `<ip-alert
   message="Your message has been sent successfully"
   type="success"

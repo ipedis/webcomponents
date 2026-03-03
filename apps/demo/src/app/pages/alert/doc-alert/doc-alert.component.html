@@ -1,74 +1,97 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-alert</code> component in your project.
+    {{ 'alert.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>
+    {{ 'alert.docs.step1' | transloco }}
+  </h4>
   <p>
-    Install the <code>ip-alert</code> component as a dependency in your project:
+    {{ 'alert.docs.step1desc' | transloco }}
   </p>
   <pre><code>npm install ip-alert</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>
+    {{ 'alert.docs.step2' | transloco }}
+  </h4>
+  <p>{{ 'alert.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage</h3>
-  <p>To use this component, add the properties as attributes.</p>
-  <h4>Properties</h4>
+  <h3 class="under-title">
+    {{ 'alert.docs.usage' | transloco }}
+  </h3>
+  <p>{{ 'alert.docs.usageDesc' | transloco }}</p>
+  <h4>
+    {{ 'alert.docs.properties' | transloco }}
+  </h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'alert.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'alert.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'alert.docs.propertyTable.required' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'alert.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'alert.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'alert.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>message</td>
-        <td>message</td>
-        <td>Required</td>
-        <td>the message for the alert</td>
-        <td>string</td>
-        <td>''</td>
+        <td>{{ 'alert.docs.tableLine1.property' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine1.attribute' | transloco }}</td>
+        <td>
+          {{ 'alert.docs.tableLine1.necessity' | transloco }}
+        </td>
+        <td>{{ 'alert.docs.tableLine1.description' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine1.type' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>type</td>
-        <td>type</td>
-        <td>Required</td>
-        <td>the type of the alert</td>
-        <td>"danger" | "info" | "success" | "warning"</td>
-        <td>'info'</td>
+        <td>{{ 'alert.docs.tableLine2.property' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine2.attribute' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine2.description' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine2.type' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>alertTitle</td>
-        <td>alert-title</td>
-        <td>Optional</td>
-        <td>the title of alert if it exists</td>
-        <td>string</td>
-        <td>''</td>
+        <td>{{ 'alert.docs.tableLine3.property' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine3.attribute' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine3.description' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine3.type' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine3.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>closeAriaLabel</td>
-        <td>close-aria-label</td>
-        <td>Optional</td>
-        <td>the aria-label of the close button</td>
-        <td>string</td>
-        <td>'Close alert'</td>
+        <td>{{ 'alert.docs.tableLine4.property' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine4.attribute' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine4.description' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine4.type' | transloco }}</td>
+        <td>{{ 'alert.docs.tableLine4.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'alert.docs.example' | transloco }}:</em>
+  </p>
   <pre class="example">
       <code [highlight]="example" language="html"></code>
       </pre>
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variables used to customize the alert:</p>
+  <h3 class="under-title">{{ 'alert.docs.personnalisation' | transloco }}</h3>
+  <p>{{ 'alert.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--alert-font-size</code></li>
     <li><code>--alert-message-color</code></li>
@@ -76,9 +99,11 @@
     <li><code>--alert-font-title-size</code></li>
   </ul>
 
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'alert.docs.example' | transloco }}:</em>
+  </p>
 
-  <p>To update the values, use the following CSS code:</p>
+  <p>{{ 'alert.docs.exampleDesc' | transloco }}</p>
   <pre class="example">
         <code [highlight]="custom1" language="css"></code>
        </pre>

@@ -1,19 +1,16 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <p>COMPONENTS</p>
-      <h2>Toggle with indication</h2>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'toggle.title3' | transloco }}</h2>
     </div>
     <p>
-      Used in digital interfaces to switch a single setting or option on and
-      off. Resembling a physical switch, it provides a clear visual cue of its
-      state, making it intuitive for users. Toggles are commonly employed for
-      binary settings like turning options on or off in applications and
-      websites, offering a simpler alternative to checkboxes for immediate,
-      single-action settings.
+      {{ 'toggle.intro1' | transloco }}
+      {{ 'toggle.intro2' | transloco }}
     </p>
   </div>
-  <app-accordion title="Preview" [alwaysOpen]="true">
+
+  <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="toggle">
       <ip-toggle size="small">
         <!-- eslint-disable-next-line -->

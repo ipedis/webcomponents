@@ -1,143 +1,169 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
-
-  <h4>Step 1:</h4>
+  {{ 'tabpanel.docs.installation' | transloco }}
+  <p></p>
+  <h4>{{ 'tabpanel.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-tab-panel</code> component as a dependency in the
-    project:
+    {{ 'tabpanel.docs.step1desc' | transloco }}
   </p>
   <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
-  <h4>Step 2:</h4>
-  <p>Import module in script file:</p>
+  <h4>{{ 'tabpanel.docs.step2' | transloco }}</h4>
+  <p>{{ 'tabpanel.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
 
-  <h3 class="under-title">Usage:</h3>
+  <h3 class="under-title">{{ 'tabpanel.docs.usage' | transloco }}</h3>
   <p>
-    To use this component, we must add the properties as attributes and use slot
-    for each content of tab.
+    {{ 'tabpanel.docs.usageDesc1' | transloco }}
   </p>
 
-  <h4>Properties</h4>
+  <h4>{{ 'tabpanel.docs.usageDesc1' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'tabpanel.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tabpanel.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tabpanel.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tabpanel.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tabpanel.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'tabpanel.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><code>tabPanelHeaders</code></td>
-        <td><code>tab-panel-headers</code></td>
-        <td>Required</td>
+        <td>{{ 'tabpanel.docs.tableLine1.property' | transloco }}</td>
         <td>
-          It defines headers for each tab in the IP Tab Panel component using a
-          JSON array
+          {{ 'tabpanel.docs.tableLine1.attribute' | transloco }}
         </td>
-        <td><code>TabPanelInterface[] | string</code></td>
-        <td><code>undefined</code></td>
-      </tr>
-      <tr>
-        <td><code>selectedTab</code></td>
-        <td><code>selected-tab</code></td>
-        <td>Optional</td>
-        <td>This is the tab that displayed by default</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
-      </tr>
-      <tr>
-        <td><code>tabPanelTitle</code></td>
-        <td><code>tab-panel-title</code></td>
-        <td>Optional</td>
-        <td>This is the title of the tap-panel</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
-      </tr>
-      <tr>
-        <td><code>titleTag</code></td>
-        <td><code>title-tag</code></td>
-        <td>Optional</td>
         <td>
-          It represents the tag we want to use for the tab-panel-title; it's
-          required if you add title
+          {{ 'tabpanel.docs.tableLine1.necessity' | transloco }}
         </td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>{{ 'tabpanel.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'tabpanel.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'tabpanel.docs.tableLine1.default' | transloco }}</td>
+      </tr>
+      <tr>
+        <td>
+          {{ 'tabpanel.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'tabpanel.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'tabpanel.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'tabpanel.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'tabpanel.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'tabpanel.docs.tableLine2.default' | transloco }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'tabpanel.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'tabpanel.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'tabpanel.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'tabpanel.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'tabpanel.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'tabpanel.docs.tableLine3.default' | transloco }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'tabpanel.docs.tableLine4.property' | transloco }}</td>
+        <td>
+          {{ 'tabpanel.docs.tableLine4.attribute' | transloco }}
+        </td>
+        <td>{{ 'tabpanel.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'tabpanel.docs.tableLine4.description' | transloco }}</td>
+        <td>
+          {{ 'tabpanel.docs.tableLine4.type' | transloco }}
+        </td>
+        <td>{{ 'tabpanel.docs.tableLine4.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
   <h4>tab-panel-headers</h4>
-  <p>This is used to set the tab-panel header title. It has 4 properties:</p>
+  <p>{{ 'tabpanel.docs.slot1Desc' | transloco }}</p>
   <ul>
-    <li><strong>title</strong>: this is optional for the content title</li>
+    <li><strong>title</strong>: {{ 'tabpanel.docs.prop1desc' | transloco }}</li>
     <li>
-      <strong>imagePath</strong>: this is optional if you want to add an image
-      with or as a title
+      <strong>imagePath</strong>: {{ 'tabpanel.docs.prop2desc' | transloco }}
     </li>
     <li>
-      <strong>imgPathActive</strong>: this is optional for the image that will
-      be displayed when it is selected
+      <strong>imgPathActive</strong>:
+      {{ 'tabpanel.docs.prop3desc' | transloco }}
     </li>
-    <li>
-      <strong>alt</strong>: this is the <code>alt</code> of the image that is
-      required for accessibility if you add image
-    </li>
+    <li><strong>alt</strong>: {{ 'tabpanel.docs.prop4desc' | transloco }}</li>
   </ul>
 
-  <h3 class="under-title">Panels content</h3>
+  <h3 class="under-title">{{ 'tabpanel.docs.content' | transloco }}</h3>
   <p>
-    The contents of the panel should have as attribute
-    <code>slot="tab-content-1"</code> and value of
-    <code>tab-content-*</code> incremented accordingly
+    {{ 'tabpanel.docs.contentDesc1' | transloco }}
+    <code>slot="tab-content-1"</code>
+    {{ 'tabpanel.docs.contentDesc2' | transloco }}
   </p>
-  <p><em>e.g:</em></p>
+  <p>
+    <em>{{ 'tabpanel.docs.example' | transloco }}</em>
+  </p>
   <pre><code [highlight]="example" language="html"></code></pre>
 
-  <h3 class="under-title">Customization</h3>
+  <h3 class="under-title">
+    {{ 'tabpanel.docs.personnalisation' | transloco }}
+  </h3>
 
   <h4>Style</h4>
-  <p>We have a set of predefined variable used to customize the tab-panel:</p>
+  <p>{{ 'tabpanel.docs.styleDesc' | transloco }}</p>
   <ul>
     <li><code>--ip-tab-primary-color</code></li>
     <li><code>--ip-tab-secondary-color</code></li>
     <li><code>--ip-tab-font</code></li>
     <li><code>--ip-tab-icon</code></li>
   </ul>
-  <p>To update the values use the following:</p>
+  <p>{{ 'tabpanel.docs.introCss' | transloco }}</p>
   <pre class="code-block">
     <code [highlight]="custom1" language="css"></code>
   </pre>
 
-  <h4>Class</h4>
-  <p>We have a set of classes that could be used to customise accordingly:</p>
+  <h4>{{ 'tabpanel.docs.classes' | transloco }}</h4>
+  <p>{{ 'tabpanel.docs.introClasses' | transloco }}</p>
   <ul>
-    <li><code>tab-container</code>: for the container of the panels</li>
-    <li><code>tab-panel-title</code>: for the title of the panel</li>
     <li>
-      <code>tab-btn-list</code>: for the list of the button in the header of the
-      panel
-    </li>
-    <li><code>tab-btn</code>: for button in the header</li>
-    <li>
-      <code>tab-btn-active</code>: for button in the header if its content is
-      displayed
+      <code>tab-container</code>: {{ 'tabpanel.docs.class1Desc' | transloco }}
     </li>
     <li>
-      <code>tab-icon</code>: for the image or icon in the header of the panel
+      <code>tab-panel-title</code>: {{ 'tabpanel.docs.class2Desc' | transloco }}
     </li>
     <li>
-      <code>tab-icon-active</code>: for the image or icon in the header if its
-      content is displayed
+      <code>tab-btn-list</code>: {{ 'tabpanel.docs.class3Desc' | transloco }}
     </li>
-    <li><code>tab-text</code>: for the text in the header</li>
+    <li><code>tab-btn</code>: {{ 'tabpanel.docs.class4Desc' | transloco }}</li>
+    <li>
+      <code>tab-btn-active</code>: {{ 'tabpanel.docs.class5Desc' | transloco }}
+    </li>
+    <li><code>tab-icon</code>: {{ 'tabpanel.docs.class6Desc' | transloco }}</li>
+    <li>
+      <code>tab-icon-active</code>: f{{
+        'tabpanel.docs.class7Desc' | transloco
+      }}
+    </li>
+    <li><code>tab-text</code>: {{ 'tabpanel.docs.class8Desc' | transloco }}</li>
   </ul>
-  <p>Example:</p>
+  <p>{{ 'tabpanel.docs.example' | transloco }}</p>
   <!-- TODO: combine and add comment -->
   <pre class="code-block">
     <code [highlight]="custom2" language="css"></code>

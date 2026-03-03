@@ -1,126 +1,158 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-toggle</code> component in your project.
+    {{ 'toggle.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>{{ 'toggle.docs.step1' | transloco }}</h4>
   <p>
-    Install the <code>ip-toggle</code> component as a dependency in your
-    project:
+    {{ 'toggle.docs.step1desc' | transloco }}
   </p>
   <pre><code>npm install ip-toggle</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'toggle.docs.step2' | transloco }}</h4>
+  <p>{{ 'toggle.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript"
     ></code></pre>
 
-  <h3 class="under-title">Usage</h3>
-  <p>To use this component, add the properties as attributes.</p>
-  <h4>Properties</h4>
+  <h3 class="under-title">{{ 'toggle.docs.usage' | transloco }}</h3>
+
+  <p>
+    {{ 'toggle.docs.usageDesc' | transloco }}
+  </p>
+  <h4>{{ 'toggle.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'toggle.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'toggle.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'toggle.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'toggle.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">{{ 'toggle.docs.propertyTable.type' | transloco }}</th>
+        <th scope="col">
+          {{ 'toggle.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>ariaLabel</td>
-        <td>aria-label</td>
-        <td>Required</td>
-        <td>It is the aria-label of content for accessibility.</td>
-        <td>string</td>
-        <td>undefined</td>
-      </tr>
-      <tr>
-        <td>checked</td>
-        <td>checked</td>
-        <td>Optional</td>
-        <td>It is the initial state of checked.</td>
-        <td>boolean</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>activeLabel</td>
-        <td>active-label</td>
-        <td>Optional</td>
+        <td>{{ 'toggle.docs.tableLine1.property' | transloco }}</td>
         <td>
-          This is the text that will be displayed when the toggle is active.
+          {{ 'toggle.docs.tableLine1.attribute' | transloco }}
         </td>
-        <td>string</td>
-        <td>undefined</td>
-      </tr>
-      <tr>
-        <td>inactiveLabel</td>
-        <td>inactive-label</td>
-        <td>Optional</td>
         <td>
-          This is the text that will be displayed when the toggle is inactive.
+          {{ 'toggle.docs.tableLine1.necessity' | transloco }}
         </td>
-        <td>string</td>
-        <td>undefined</td>
+        <td>{{ 'toggle.docs.tableLine1.description' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine1.type' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>toggleDisabled</td>
-        <td>toggle-disabled</td>
-        <td>Optional</td>
-        <td>When we need to set the toggle to disabled.</td>
-        <td>boolean</td>
-        <td>false</td>
+        <td>
+          {{ 'toggle.docs.tableLine2.property' | transloco }}
+        </td>
+        <td>
+          {{ 'toggle.docs.tableLine2.attribute' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'toggle.docs.tableLine2.description' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine2.type' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>size</td>
-        <td>size</td>
-        <td>Optional</td>
-        <td>We have three predefined sizes: large, medium, small.</td>
-        <td>string</td>
-        <td>medium</td>
+        <td>{{ 'toggle.docs.tableLine3.property' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine3.attribute' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'toggle.docs.tableLine3.description' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine3.type' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine3.default' | transloco }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'toggle.docs.tableLine4.property' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine4.attribute' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine4.necessity' | transloco }}</td>
+        <td>{{ 'toggle.docs.tableLine4.description' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine4.type' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine4.default' | transloco }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'toggle.docs.tableLine5.property' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine5.attribute' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine5.necessity' | transloco }}</td>
+        <td>{{ 'toggle.docs.tableLine5.description' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine5.type' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine5.default' | transloco }}</td>
+      </tr>
+      <tr>
+        <td>{{ 'toggle.docs.tableLine6.property' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine6.attribute' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine6.necessity' | transloco }}</td>
+        <td>{{ 'toggle.docs.tableLine6.description' | transloco }}</td>
+        <td>
+          {{ 'toggle.docs.tableLine6.type' | transloco }}
+        </td>
+        <td>{{ 'toggle.docs.tableLine6.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
-  <h4>Toggle Content</h4>
+  <h4>{{ 'toggle.docs.content' | transloco }}</h4>
   <p>
-    We have predefined a slot for the label before the switch of the toggle if
-    necessary:
+    {{ 'toggle.docs.contentDesc' | transloco }}
   </p>
   <ul>
     <li>
-      <code>slot="switch-label"</code>: This descriptive text informs the user
-      about the function of the checkbox.
+      <code>slot="switch-label"</code>: {{ 'toggle.docs.slotDesc' | transloco }}
     </li>
   </ul>
   <pre><code
     [highlight]="example" language="html">
     </code></pre>
 
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variables used to customize the toggle:</p>
+  <h3 class="under-title">{{ 'toggle.docs.personnalisation' | transloco }}</h3>
+  <p>{{ 'toggle.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--secondary-color</code></li>
     <li><code>--font-family</code></li>
     <li><code>--text-color</code></li>
   </ul>
-  <p>To update the values, use the following CSS:</p>
+  <p>{{ 'toggle.docs.introClasses' | transloco }}</p>
   <pre><code [highlight]="custom" language="css">
   </code></pre>
-  <h3 class="under-title">Event</h3>
+  <h3 class="under-title">{{ 'toggle.docs.event' | transloco }}</h3>
 
   <ul>
     <li>
-      <code>toggleChange</code>: This event is emitted when the toggle state
-      changes. The event detail is the state of checked.
+      <code>toggleChange</code>: {{ 'toggle.docs.eventDesc' | transloco }}
     </li>
   </ul>
 
-  <p>e.g:</p>
+  <p>{{ 'stepper.docs.example' | transloco }}</p>
 
   <pre><code [highlight]="event" language="typescript">
     

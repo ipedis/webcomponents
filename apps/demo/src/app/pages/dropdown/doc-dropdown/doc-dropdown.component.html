@@ -1,65 +1,81 @@
 <section id="documentation">
   <h3 class="under-title">Installation</h3>
   <p>
-    Follow these steps to install and use the
-    <code>ip-dropdown</code> component in your project.
+    {{ 'dropdown.docs.installation' | transloco }}
   </p>
-  <h4>Step 1</h4>
+  <h4>
+    {{ 'dropdown.docs.step1' | transloco }}
+  </h4>
   <p>
-    Install the <code>ip-dropdown</code> component as a dependency in your
-    project:
+    {{ 'dropdown.docs.step1desc' | transloco }}
   </p>
   <pre><code>npm install ip-dropdown</code></pre>
 
-  <h4>Step 2</h4>
-  <p>Import the module into your script file:</p>
+  <h4>{{ 'dropdown.docs.step2' | transloco }}</h4>
+  <p>{{ 'dropdown.docs.step2desc' | transloco }}</p>
   <pre><code [highlight]="import" language="typescript">
 </code></pre>
 
-  <h3 class="under-title">Usage</h3>
-  <p>To use this component, add the properties as attributes.</p>
-  <h4>Properties</h4>
+  <h3 class="under-title">
+    {{ 'dropdown.docs.usage' | transloco }}
+  </h3>
+  <p>{{ 'dropdown.docs.usageDesc' | transloco }}</p>
+  <h4>{{ 'dropdown.docs.properties' | transloco }}</h4>
   <table>
     <thead>
       <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
+        <th scope="col">
+          {{ 'dropdown.docs.propertyTable.property' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'dropdown.docs.propertyTable.attribute' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'dropdown.docs.propertyTable.necessity' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'dropdown.docs.propertyTable.description' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'dropdown.docs.propertyTable.type' | transloco }}
+        </th>
+        <th scope="col">
+          {{ 'dropdown.docs.propertyTable.default' | transloco }}
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>itemsOptions</td>
-        <td>items-options</td>
-        <td>Required</td>
-        <td>It is an array of strings used for items in the dropdown menu.</td>
-        <td>string</td>
-        <td>"[]"</td>
+        <td>{{ 'dropdown.docs.tableLine1.property' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine1.attribute' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine1.necessity' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine1.description' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine1.type' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine1.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>dropdownTitle</td>
-        <td>dropdown-title</td>
-        <td>Optional</td>
-        <td>Title of dropdown menu.</td>
-        <td>string</td>
-        <td>undefined</td>
+        <td>{{ 'dropdown.docs.tableLine2.property' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine2.attribute' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine2.necessity' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine2.description' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine2.type' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine2.default' | transloco }}</td>
       </tr>
       <tr>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>Optional</td>
-        <td>The placeholder of dropdown.</td>
-        <td>string</td>
-        <td>"Select an option"</td>
+        <td>{{ 'dropdown.docs.tableLine3.property' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine3.attribute' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine3.necessity' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine3.description' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine3.type' | transloco }}</td>
+        <td>{{ 'dropdown.docs.tableLine3.default' | transloco }}</td>
       </tr>
     </tbody>
   </table>
 
-  <h3 class="under-title">Customization</h3>
-  <p>We have a set of predefined variables used to customize the dropdown:</p>
+  <h3 class="under-title">
+    {{ 'dropdown.docs.personnalisation' | transloco }}
+  </h3>
+  <p>{{ 'dropdown.docs.personnalisationDesc' | transloco }}</p>
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--color-hover</code></li>
@@ -67,19 +83,17 @@
     <li><code>--selected-bg-color</code></li>
     <li><code>--font-size</code></li>
   </ul>
-  <p>To update the values, use the following CSS:</p>
+  <p>{{ 'dropdown.docs.introClasses' | transloco }}</p>
   <pre> <code [highlight]="customCSS" language="css"></code></pre>
 
-  <h3 class="under-title">Event</h3>
+  <h3 class="under-title">{{ 'dropdown.docs.event' | transloco }}</h3>
   <p>
-    To listen this event emitted,we have definied
-    <code>itemSelected</code> event in this component.
+    {{ 'dropdown.docs.eventDesc1' | transloco }}
   </p>
 
   <p>
-    The <code>itemSelected</code> event is fired when a user selects an item in
-    the dropdown. You can listen to this event in your application to handle the
-    selection.
+    {{ 'dropdown.docs.eventDesc2' | transloco }}
+    {{ 'dropdown.docs.eventDesc3' | transloco }}
   </p>
   <pre><code [highlight]="event" language="typescript"></code></pre>
 </section>

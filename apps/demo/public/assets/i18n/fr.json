@@ -1,0 +1,1504 @@
+{
+  "common": {
+    "label": {
+      "back": "Retour",
+      "backAria": "Retour sur le site du design system Ipedis",
+      "ipedisAria": "Aller sur le site web d’Ipedis - Nouvel onglet",
+      "languageSwitcher": "Voir le site en anglais",
+      "newWindow": "Ouvre dans un nouvel onglet"
+    },
+    "components": "COMPOSANTS"
+  },
+
+  "app": {
+    "title": "Composants Web",
+    "intro1": "Explorez une nouvelle dimension de la conception web où l’accessibilité est au cœur de chaque composant. Avec 20 ans d’expertise inégalée, nous sommes fiers chez Ipedis de présenter un système de design conçu pour créer des expériences numériques inclusives pour tous.",
+    "intro2": "Notre plateforme a été minutieusement conçue pour vous aider à développer des composants complexes tout en respectant les normes d’accessibilité les plus strictes. Chaque composant que vous découvrez ici est conçu pour fournir un design accessible, accompagné de directives détaillées sur son utilisation optimale.",
+    "intro3": "Chez Ipedis, nous croyons fermement en « l’accessibilité par la conception ». Cela signifie intégrer les principes d’accessibilité dès le départ, en assurant une expérience utilisateur supérieure et inclusive.",
+    "intro4": "Plongez dans notre démo interactive et voyez comment nos composants peuvent enrichir votre projet web tout en répondant aux besoins de chacun. Que vous soyez un développeur chevronné ou un novice, notre système de conception est là pour vous guider vers des solutions accessibles sans compromettre la qualité ou l’innovation.",
+    "intro5": "Prêt à créer des expériences web accessibles qui font la différence ? Explorez notre système de conception aujourd’hui et commencez à façonner un web plus inclusif pour tous.",
+    "question": "Vous avez des questions ?",
+    "contact": "Contactez nous à"
+  },
+  "footer": {
+    "components": {
+      "title": "Composants Web",
+      "": ""
+    },
+    "disability": {
+      "title": "Guide d'handicap",
+      "visual": "Visuel",
+      "anosmia": "Anosmie",
+      "deafness": "Malentendant",
+      "motor": "Moteur",
+      "cognitive": "Trouble cognitif",
+      "physic": "Physique"
+    },
+    "pdf": {
+      "title": "Accessibilité des PDF",
+      "tagging": "Évaluation du marquage",
+      "tags": "Balisages",
+      "form": "Formulaire interactif",
+      "completion": "Complétion du document",
+      "quality": "Vérification de la qualité PDF"
+    },
+    "accessibiliy": "Déclaration d’accessibilité : Totalement conforme",
+    "license": "Licene",
+    "sitemap": "Plan du site",
+    "cookie": "Politique de confidentialité et cookies",
+    "legal": "Mentions légales",
+    "navAria": "Navigation secondaire",
+    "navFooter": "Navigation du pied de page"
+  },
+  "accordion": {
+    "title": "Accordéon",
+    "intro": "Un accordéon est un élément interactif utilisé sur les sites web et les applications pour organiser du contenu de manière compacte. Il permet aux utilisateurs de cliquer sur des titres ou des boutons afin d’afficher ou de masquer des sections de contenu, ce qui permet de gagner de l’espace à l’écran et de rendre l’information facilement accessible.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-accordion dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-accordion en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser le composant ip-accordion, vous devez définir les propriétés sous forme d’attributs et fournir du contenu dans les slots pour chaque élément de l’accordéon.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "accordionHeaders",
+        "attribute": "accordion-headers",
+        "necessity": "Requise",
+        "description": "Définit les en-têtes de chaque élément de l’accordéon à l’aide d’un tableau JSON.",
+        "type": "accordionHeadersInterface[] | string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "isFirstPanelOpen",
+        "attribute": "is-first-panel-open",
+        "necessity": "Optionnel",
+        "description": "Contrôle si le premier panneau est ouvert par défaut.",
+        "type": "boolean",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "isSingleOpen",
+        "attribute": "is-single-open",
+        "necessity": "Optionnel",
+        "description": "Détermine si un seul panneau peut être ouvert à la fois.",
+        "type": "boolean",
+        "default": "Non défini"
+      },
+      "tableLine4": {
+        "property": "titleTag",
+        "attribute": "title-tag",
+        "necessity": "Optionnel",
+        "description": "Spécifie la balise HTML à utiliser pour les en-têtes de l’accordéon.",
+        "type": "string",
+        "default": "h2"
+      },
+
+      "property1": {
+        "title": "accordionHeaders",
+        "desc": "Cet attribut permet de définir les informations des en-têtes de l’accordéon. Chaque objet d’en-tête peut contenir les propriétés suivantes :",
+        "prop1": {
+          "name": "title",
+          "description": "le titre de l’en-tête de l’accordéon (optionnel)."
+        },
+        "prop2": {
+          "name": "iconPath",
+          "description": "chemin vers l’icône affichée par défaut (optionnel)."
+        },
+        "prop3": {
+          "name": "iconActivePath",
+          "description": "chemin vers l’icône affichée lorsque l’en-tête est ouvert/actif (optionnel)."
+        },
+        "prop4": {
+          "name": "subtitle",
+          "description": "un sous-titre pour l’en-tête (optionnel)."
+        },
+        "prop5": {
+          "name": "btnAlt",
+          "description": "texte alternatif du bouton lorsque le panneau est fermé (optionnel)."
+        },
+        "prop6": {
+          "name": "btnAltClose",
+          "description": "texte alternatif du bouton lorsque le panneau est ouvert (optionnel)."
+        },
+        "prop7": {
+          "name": "id",
+          "description": "identifiant unique associé au bouton (optionnel)."
+        },
+        "prop8": {
+          "name": "ariaText ",
+          "description": "nom accessible du panneau (obligatoire)."
+        }
+      },
+      "property2": {
+        "title": "Contenu des panneaux",
+        "desc": "Le contenu de chaque panneau doit être placé dans des éléments <div> comportant un attribut slot, dont la valeur correspond à accordion-1, accordion-2, etc."
+      },
+      "example": "Exemple",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Un ensemble de variables prédéfinies permet de personnaliser le composant accordion-panel :",
+      "introClasses": "Pour modifier ces valeurs, utilisez l’exemple suivant :",
+      "classes": {
+        "classesIntro": "Un ensemble de classes est disponible pour personnaliser le composant selon vos besoins :",
+        "class1desc": "pour le conteneur des panneaux.",
+        "class2desc": "pour le contenu du panneau.",
+        "class3desc": "pour l’en-tête du panneau.",
+        "class4desc": "pour chaque élément <div> représentant un panneau."
+      }
+    }
+  },
+  "alert": {
+    "titleDanger": "Alerte de Danger",
+    "titleSuccess": "Alerte de succès",
+    "titleInfo": "Alerte d'Information",
+    "titleWarning": "Alerte d'avertissement",
+    "intro": "Les alertes sont utilisées pour informer les utilisateurs d’une information importante. Elles peuvent servir à fournir un retour sur une action de l’utilisateur, à signaler une mise à jour du système ou à transmettre une information essentielle.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-alert dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-alert en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "message",
+        "attribute": "message",
+        "necessity": "Requise",
+        "description": "Le message affiché dans l’alerte.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "type",
+        "attribute": "type",
+        "necessity": "Requise",
+        "description": "Le type d’alerte, qui peut être 'success', 'error', 'warning' ou 'info'.",
+        "type": "string",
+        "default": "info"
+      },
+      "tableLine3": {
+        "property": "alertTitle",
+        "attribute": "alert-title",
+        "necessity": "Optionnel",
+        "description": "Le titre de l’alerte si présent.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine4": {
+        "property": "closeAriaLabel",
+        "attribute": "close-aria-label",
+        "necessity": "Optionnel",
+        "description": "L’aria-label du bouton de fermeture.",
+        "type": "string",
+        "default": "Close alert"
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Un ensemble de variables prédéfinies permet de personnaliser le composant ip-alert :",
+      "example": "Exemple",
+      "exampleDesc": "Pour modifier ces valeurs, utilisez le code CSS suivant :"
+    }
+  },
+  "breadcrumb": {
+    "title": "Fil d’Ariane",
+    "intro": "Un fil d’Ariane est un outil de navigation utilisé dans les interfaces web pour indiquer à l’utilisateur le chemin parcouru au sein d’un site. Il se présente généralement sous la forme d’une ligne horizontale de liens textuels, séparés par des symboles — souvent des chevrons (>) — représentant la hiérarchie des pages.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-breadcrumb dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-breadcrumb en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "breadcrumbItems",
+        "attribute": "breadcrumb-items",
+        "necessity": "Requise",
+        "description": "Une chaîne JSON contenant un tableau d’éléments du fil d’Ariane, chacun avec un libellé et éventuellement un lien.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "breadcrumbTitle",
+        "attribute": "breadcrumb-title",
+        "necessity": "Optionnel",
+        "description": "Titre de la navigation du fil d’Ariane.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "prefixAriaLabel",
+        "attribute": "prefix-aria-label",
+        "necessity": "Optionnel",
+        "description": "Préfixe de l’aria-label pour les liens.",
+        "type": "string",
+        "default": "Link to"
+      },
+      "tableLine4": {
+        "property": "separatorIcon",
+        "attribute": "separator-icon",
+        "necessity": "Optionnel",
+        "description": "L’icône utilisée comme séparateur entre les éléments du fil d’Ariane.",
+        "type": "string",
+        "default": ">"
+      },
+      "example": "Exemple",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Un ensemble de classes est disponible pour permettre une personnalisation avancée :",
+      "prop1desc": "pour le titre du fil d’Ariane.",
+      "prop2desc": "pour chaque élément du fil d’Ariane.",
+      "prop3desc": "pour l’icône de séparation.",
+      "modifdesc": "Pour modifier les valeurs, utilisez l’exemple suivant :"
+    }
+  },
+  "simpleCheckbox": {
+    "title": "Case à cocher Simple",
+    "introPart1": "Une case à cocher est un composant qui permet aux utilisateurs de sélectionner une ou plusieurs options dans un ensemble. Généralement présentée sous la forme d’un petit carré, elle peut être cochée (sélectionnée) ou décochée (non sélectionnée).",
+    "introPart2": "Les cases à cocher sont couramment utilisées dans les formulaires et les paramètres pour permettre aux utilisateurs d’indiquer leurs choix ou préférences.",
+    "introPart3": "Elles sont particulièrement utiles lorsque les options ne sont pas exclusives, car elles autorisent plusieurs sélections au sein d’un même groupe. Lorsqu’une case est cochée, un symbole de validation (✓) apparaît à l’intérieur du carré, indiquant visuellement la sélection de l’utilisateur.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-checkbox dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-checkbox en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "id",
+        "attribute": "id",
+        "necessity": "Requise",
+        "description": "L'identifiant du champ pour l’accessibilité.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "name",
+        "attribute": "name",
+        "necessity": "Requise",
+        "description": "Le nom du champ pour l’accessibilité.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "defaultChecked",
+        "attribute": "default-checked",
+        "necessity": "Optionnel",
+        "description": "Définit la case comme cochée par défaut.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine4": {
+        "property": "disabled",
+        "attribute": "disabled",
+        "necessity": "Optionnel",
+        "description": "Désactive la case à cocher, empêchant toute interaction.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "content": "Contenu",
+      "contentDesc": "Un emplacement (slot) de libellé prédéfini est disponible pour afficher le texte du label avant la case à cocher. Le contenu placé dans ce slot sera rendu à l’intérieur de la balise du composant.",
+      "example": "Exemple",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Un ensemble de variables prédéfinies permet de personnaliser la case à cocher :",
+      "exampleDesc": "Pour modifier ces valeurs, utilisez le code CSS suivant :",
+      "event": "Écoute des événements",
+      "eventDesc1": "Pour écouter les événements émis par les composants ip-checkbox et ip-checkbox-list, ouvrez la console de votre navigateur.",
+      "eventDesc2": "Les détails des événements s’afficheront automatiquement lorsque les cases seront modifiées.",
+      "jsExample": "Exemple de code Javascript"
+    }
+  },
+  "checkboxList": {
+    "title": "Liste de Case à cocher",
+    "introPart1": "Une case à cocher est un composant qui permet aux utilisateurs de sélectionner une ou plusieurs options dans un ensemble. Généralement présentée sous la forme d’un petit carré, elle peut être cochée (sélectionnée) ou décochée (non sélectionnée).",
+    "introPart2": "Les cases à cocher sont souvent utilisées dans des formulaires ou des paramètres pour permettre aux utilisateurs d’exprimer leurs choix ou préférences.",
+    "intropart3": "Elles sont particulièrement adaptées lorsque les options ne sont pas exclusives, car elles autorisent plusieurs sélections au sein d’un même groupe. Lorsqu’une case est cochée, un symbole de validation apparaît à l’intérieur du carré, indiquant visuellement la sélection de l’utilisateur.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-checkbox-list dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-checkbox-list  en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "id",
+        "attribute": "id",
+        "necessity": "Requise",
+        "description": "L'identifiant du champ pour l’accessibilité.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "options",
+        "attribute": "options",
+        "necessity": "Requise",
+        "description": "Un tableau d’objets utilisés pour passer des options comme cases à cocher",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "defaultChecked",
+        "attribute": "default-checked",
+        "necessity": "Optionnel",
+        "description": "Définit la case comme cochée par défaut.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine4": {
+        "property": "disabled",
+        "attribute": "disabled",
+        "necessity": "Optionnel",
+        "description": "Désactive la case à cocher, empêchant toute interaction.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine5": {
+        "property": "legend",
+        "attribute": "legend",
+        "necessity": "Optionnel",
+        "description": "La légende de la liste de cases à cocher.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "content": "Contenu",
+      "contentDesc": "Un emplacement (slot) de libellé prédéfini est disponible pour afficher le texte du label avant la case à cocher. Le contenu placé dans ce slot sera rendu à l’intérieur de la balise du composant.",
+      "example": "Exemple",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Un ensemble de variables prédéfinies permet de personnaliser la case à cocher :",
+      "exampleDesc": "Pour modifier ces valeurs, utilisez le code CSS suivant :",
+      "event": "Événement",
+      "eventDesc1": "Pour écouter les événements émis par le composant ip-checkbox-list, ouvrez la console de votre navigateur.",
+      "eventDesc2": "Les détails des événements s’afficheront lorsque les cases à cocher seront modifiées.",
+      "jsExample": "Exemple de code Javascript"
+    }
+  },
+  "dropdown": {
+    "title": "Menu déroulant",
+    "intro": "Un menu déroulant est un composant d’interface utilisateur qui permet aux utilisateurs de sélectionner une option parmi une liste d’options. Il se présente généralement sous la forme d’un champ de saisie ou d’un bouton qui, lorsqu’il est cliqué, affiche une liste d’options parmi lesquelles l’utilisateur peut choisir.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-dropdown dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-dropdown en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "itemsOptions",
+        "attribute": "items-options",
+        "necessity": "Requise",
+        "description": "Un tableau de chaînes utilisé pour générer les éléments du menu déroulant.",
+        "type": "string",
+        "default": "[]"
+      },
+      "tableLine2": {
+        "property": "dropdownTitle",
+        "attribute": "dropdown-title",
+        "necessity": "Optionnel",
+        "description": "Le titre du menu déroulant.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "placeholder",
+        "attribute": "placeholder",
+        "necessity": "Optionnel",
+        "description": "Le texte d’aide affiché dans le menu déroulant.",
+        "type": "string",
+        "default": "Select an option"
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Un ensemble de variables prédéfinies permet de personnaliser le menu déroulant :",
+      "introClasses": "Pour modifier ces valeurs, utilisez le code CSS suivant :",
+      "event": "Écoute des événement",
+      "eventDesc1": "Pour écouter l’événement émis par ce composant, nous avons défini l’événement itemSelected.",
+      "eventDesc2": "L’événement itemSelected est déclenché lorsqu’un utilisateur sélectionne un élément dans le menu déroulant.",
+      "eventDesc3": "Vous pouvez écouter cet événement dans votre application afin de gérer la sélection."
+    }
+  },
+  "footnote": {
+    "title": "Note de bas de page",
+    "intro": "Une note de bas de page est une référence ou une explication supplémentaire placée au bas d’une page. Elle est généralement utilisée pour fournir des informations complémentaires, des citations, des références bibliographiques ou des commentaires qui ne sont pas essentiels au corps principal du texte, mais qui peuvent être utiles pour les lecteurs souhaitant approfondir le sujet.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-footnote dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-footnote en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, vous devez ajouter les propriétés sous forme d’attributs.",
+      "usageDesc2": "Le texte dans lequel vous insérez l’ID de la note de bas de page doit comporter un attribut id=\"ref{this.identifier}\" afin de permettre le retour vers le texte d’origine lorsque l’on consulte la note de bas de page.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "identifier",
+        "attribute": "identifier",
+        "necessity": "Requise",
+        "description": "L’identifiant unique de la note de bas de page.",
+        "type": "string",
+        "default": "default-id"
+      },
+      "tableLine2": {
+        "property": "text",
+        "attribute": "text",
+        "necessity": "Requise",
+        "description": "Le texte de la note de bas de page.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "btnAriaLabel",
+        "attribute": "btn-aria-label",
+        "necessity": "Requise",
+        "description": "L’aria-label du bouton permettant de revenir au texte.",
+        "type": "string",
+        "default": "Back to main text"
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Un ensemble de variables prédéfinies permet de personnaliser la note de bas de page :",
+      "example": "Exemple",
+      "exampleDesc": "Pour modifier ces valeurs, utilisez le code CSS suivant :"
+    }
+  },
+  "login": {
+    "title1": "Connexion avec e-mail",
+    "title2": "Connexion avec nom d'utilisateur",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-login dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-login en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez-le à votre HTML et configurez-le avec les propriétés souhaitées.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "usernameLabel",
+        "attribute": "username-label",
+        "necessity": "Optionnel",
+        "description": "Le libellé du champ de saisie du nom d'utilisateur.",
+        "type": "string",
+        "default": "Username"
+      },
+      "tableLine2": {
+        "property": "passwordLabel",
+        "attribute": "password-label",
+        "necessity": "Optionnel",
+        "description": "Libellé du champ mot de passe.",
+        "type": "string",
+        "default": "Password"
+      },
+      "tableLine3": {
+        "property": "submitButtonLabel",
+        "attribute": "submit-button-label",
+        "necessity": "Optionnel",
+        "description": "Le libellé du bouton de soumission.",
+        "type": "string",
+        "default": "Login"
+      },
+      "tableLine4": {
+        "property": "usernameErrorMessage",
+        "attribute": "username-error-message",
+        "necessity": "Optionnel",
+        "description": "Message d’erreur si le nom d’utilisateur est vide.",
+        "type": "string",
+        "default": "Username is required"
+      },
+      "tableLine5": {
+        "property": "usernameInvalidEmailMsg",
+        "attribute": "username-invalid-email-message",
+        "necessity": "Optionnel",
+        "description": "Message d’erreur si le nom d’utilisateur n’est pas un email valide.",
+        "type": "string",
+        "default": "The email address is invalid"
+      },
+      "tableLine6": {
+        "property": "passwordLengthErrorMsg",
+        "attribute": "password-length-error-msg",
+        "necessity": "Optionnel",
+        "description": "Message d’erreur si le mot de passe est trop court.",
+        "type": "string",
+        "default": "The password must contain at least 8 characters"
+      },
+      "tableLine7": {
+        "property": "passwordUppercaseErrorMsg",
+        "attribute": "password-uppercase-error-msg",
+        "necessity": "Optionnel",
+        "description": "Message d’erreur si le mot de passe ne contient pas de majuscule.",
+        "type": "string",
+        "default": "The Password must contain at least one capital"
+      },
+      "tableLine8": {
+        "property": "passwordLowercaseErrorMsg",
+        "attribute": "password-lowercase-error-msg",
+        "necessity": "Optionnel",
+        "description": "Message d’erreur si le mot de passe ne contient pas de minuscule.",
+        "type": "string",
+        "default": "The Password must contain at least one lowercase"
+      },
+      "tableLine9": {
+        "property": "passwordDigitErrorMsg",
+        "attribute": "password-digit-error-msg",
+        "necessity": "Optionnel",
+        "description": "Message d’erreur si le mot de passe ne contient pas de chiffre.",
+        "type": "string",
+        "default": "The Password must contain at least one digit"
+      },
+      "tableLine10": {
+        "property": "usernameType",
+        "attribute": "username-type",
+        "necessity": "Optionnel",
+        "description": "Type du champ nom d’utilisateur.",
+        "type": "text/email",
+        "default": "text"
+      },
+      "tableLine11": {
+        "property": "showPasswordAriaLabel",
+        "attribute": "show-password-aria-label",
+        "necessity": "Optionnel",
+        "description": "Aria-label du bouton afficher le mot de passe.",
+        "type": "string",
+        "default": "Show password"
+      },
+      "tableLine12": {
+        "property": "hidePasswordAriaLabel",
+        "attribute": "hide-password-aria-label",
+        "necessity": "Optionnel",
+        "description": "Aria-label du bouton masquer le mot de passe.",
+        "type": "string",
+        "default": "Hide password"
+      },
+      "tableLine13": {
+        "property": "usernameRequired",
+        "attribute": "username-required",
+        "necessity": "Optionnel",
+        "description": "Indique si le nom d’utilisateur est requis.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine14": {
+        "property": "pwdPlaceholder",
+        "attribute": "pwd-placeholder",
+        "necessity": "Optionnel",
+        "description": "Texte d’aide du champ mot de passe.",
+        "type": "string",
+        "default": "Type your password here..."
+      },
+      "tableLine15": {
+        "property": "usernamePlaceholder",
+        "attribute": "username-placeholder",
+        "necessity": "Optionnel",
+        "description": "Texte d’aide du champ nom d’utilisateur.",
+        "type": "string",
+        "default": "Type your username here..."
+      },
+      "tableLine16": {
+        "property": "forgotPasswordLink",
+        "attribute": "forgot-password-link",
+        "necessity": "Optionnel",
+        "description": "URL du lien mot de passe oublié.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine17": {
+        "property": "forgotPasswordLabel",
+        "attribute": "forgot-password-label",
+        "necessity": "Optionnel",
+        "description": "Libellé du lien mot de passe oublié.",
+        "type": "string",
+        "default": "Forgot password?"
+      },
+      "tableLine18": {
+        "property": "loginTitle",
+        "attribute": "login-title",
+        "necessity": "Optionnel",
+        "description": "Titre du formulaire de connexion.",
+        "type": "string",
+        "default": "Login"
+      },
+      "tableLine19": {
+        "property": "indicationLabel",
+        "attribute": "indication-label",
+        "necessity": "Optionnel",
+        "description": "Libellé indiquant les champs requis.",
+        "type": "string",
+        "default": "Required fields"
+      },
+      "tableLine20": {
+        "property": "submitBtnAriaLabel",
+        "attribute": "submit-btn-aria-label",
+        "necessity": "Optionnel",
+        "description": "Aria-label du bouton de soumission du formulaire.",
+        "type": "string",
+        "default": "Submit the form"
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Vous pouvez personnaliser l’apparence du composant login-form en utilisant des variables CSS et des part selectors.",
+      "varCSS": "Variables CSS",
+      "selectors": "Selecteur de parties (Part selectors)",
+      "selector1Desc": "pour la section du titre.",
+      "selector2Desc": "pour le libellé indiquant les champs requis.",
+      "selector3Desc": "pour le label du nom d’utilisateur.",
+      "selector4Desc": "pour le champ de saisie du nom d’utilisateur.",
+      "selector5Desc": "pour le label du mot de passe.",
+      "selector6Desc": "pour le champ de saisie du mot de passe.",
+      "selector7Desc": "pour le bouton permettant d’afficher/masquer le mot de passe",
+      "selector8Desc": "pour le message d’erreur",
+      "selector9Desc": "pour le lien « mot de passe oublié »",
+      "selector10Desc": "pour le bouton de soumission du formulaire.",
+      "example": "Exemple",
+      "introClasses": "Pour mettre à jour les valeurs, utilisez le CSS suivant :",
+      "event": "Écoute des événements",
+      "eventDesc1": "Le composant login-form émet un événement formSubmitted lorsque le formulaire est soumis avec succès.",
+      "eventDesc2": "Vous pouvez écouter cet événement dans votre code JavaScript :"
+    }
+  },
+  "menu": {
+    "title": "Menu burger",
+    "intro1": "Un menu burger est généralement représenté par trois lignes superposées formant une icône qui indique la présence d’un menu caché.",
+    "intro2": "Lorsque l’utilisateur clique ou appuie sur cette icône, un menu s’affiche — soit en glissant depuis le côté, soit sous forme de panneau — révélant une liste d’éléments de navigation ou d’autres options avec lesquelles il peut interagir.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-burger-menu  dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-burger-menu en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser le composant ip-burger-menu, vous devez définir les propriétés sous forme d’attributs et utiliser des slots pour ajouter du contenu supplémentaire.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "string",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "menuData",
+        "attribute": "menu-data",
+        "necessity": "Requise",
+        "description": "Chaîne JSON pour définir les éléments du menu",
+        "type": "string",
+        "default": "[ ]"
+      },
+      "tableLine2": {
+        "property": "closeMenuAriaLabel",
+        "attribute": "close-menu-aria-label",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA du bouton qui ferme le menu",
+        "type": "string",
+        "default": "Close menu"
+      },
+      "tableLine3": {
+        "property": "openMenuAriaLabel",
+        "attribute": "open-menu-aria-label",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA du bouton qui ouvre le menu",
+        "type": "string",
+        "default": "Open menu"
+      },
+      "tableLine4": {
+        "property": "pathToArrowRightIcon",
+        "attribute": "path-to-arrow-right-icon",
+        "necessity": "Optionnel",
+        "description": "Chemin vers l’icône utilisée pour les flèches du menu",
+        "type": "string",
+        "default": "../../assets/images/arrow-right.svg"
+      },
+      "tableLine5": {
+        "property": "pathToCloseIcon",
+        "attribute": "path-to-close-icon",
+        "necessity": "Optionnel",
+        "description": "Chemin vers l’icône utilisée pour fermer le menu",
+        "type": "string",
+        "default": "../../assets/images/x-icon.svg"
+      },
+      "tableLine6": {
+        "property": "pathToOpenIcon",
+        "attribute": "path-to-open-icon",
+        "necessity": "Optionnel",
+        "description": "Chemin vers l’icône utilisée pour ouvrir le menu",
+        "type": "string",
+        "default": "../../assets/images/icon-list.svg"
+      },
+      "interface": {
+        "title": "Interface des éléments du menu",
+        "desc": "La propriété items est un tableau d’objets MenuItem ayant la structure suivante :",
+        "item1desc": "le libellé textuel de l’élément de menu.",
+        "item2desc": "l’URL vers laquelle naviguer lorsque l’élément est cliqué.",
+        "item3desc": "booléen permettant de désactiver l’élément de menu. (optionnel)."
+      },
+      "slots": {
+        "title": "Slots",
+        "desc": "Le composant ip-burger-menu prend en charge les slots suivants pour ajouter du contenu personnalisé :",
+        "slot1desc": "contenu affiché à gauche de l’en-tête.",
+        "slot2desc": "contenu affiché avant le bouton d’ouverture/fermeture du menu.",
+        "slot3desc": "contenu affiché à gauche du menu."
+      },
+      "personnalisation": "Personnalisation",
+      "introClasses": "Nous disposons d’un ensemble de variables CSS prédéfinies permettant de personnaliser le menu burger :",
+      "parts": {
+        "title": "Part selectors (Classes CSS)",
+        "desc": "Plusieurs classes peuvent être utilisées pour personnaliser le composant :",
+        "part1desc": "la barre de navigation contenant le menu burger.",
+        "part2desc": "le bouton permettant d’ouvrir ou de fermer le menu",
+        "part3desc": "le contenu du menu",
+        "part4desc": "la liste des éléments du menu"
+      }
+    }
+  },
+  "modale": {
+    "title": "Fenêtre modale",
+    "intro1": "Une fenêtre modale, également appelée dialogue, est une fenêtre pop-up qui apparaît au-dessus du contenu principal d’un site ou d’une application.",
+    "intro2": "Elle nécessite généralement une action de l’utilisateur avant que celui-ci puisse retourner au contenu principal.",
+    "intro3": "Les fenêtres modales sont couramment utilisées pour afficher des messages importants, des alertes, des formulaires interactifs.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-modal dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-modal en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "string",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "buttonText",
+        "attribute": "button-text",
+        "necessity": "Requise",
+        "description": "Le texte à afficher sur le bouton de déclenchement",
+        "type": "string",
+        "default": "Open modal"
+      },
+      "tableLine2": {
+        "property": "closeAriaLabel",
+        "attribute": "close-aria-label",
+        "necessity": "Requise",
+        "description": "Le texte aria-label pour le bouton de fermeture",
+        "type": "string",
+        "default": "Close the dialog"
+      },
+      "content": "Contenu",
+      "contentDesc": "Le contenu de la fenêtre modale doit être inséré en utilisant l’attribut slot=\"content\" ",
+      "varCSS": "Variables CSS",
+      "personnalisation": "Personnalisation",
+      "varCSSDesc": "Nous disposons d’un ensemble de variables CSS prédéfinies permettant de personnaliser la modale :",
+      "classes": "Class",
+      "introClasses": "Plusieurs classes peuvent être utilisées pour personnaliser davantage l'apparence :",
+      "class1Desc": "pour le conteneur de la fenêtre modale",
+      "class2Desc": "pour le bouton d’ouverture de la modale"
+    }
+  },
+  "pagination": {
+    "title": "Pagination",
+    "intro": "Pagination est un outil utilisé pour naviguer à travers un contenu étendu sur plusieurs pages. Généralement placé en bas de page, il offre des liens pour se déplacer entre les pages suivantes, précédentes, numérotées et parfois la première ou la dernière, rendant ainsi les grands ensembles de contenu plus accessibles et gérables, améliorant ainsi l’expérience utilisateur et l'utilisation.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-pagination dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-pagination en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "totalPages",
+        "attribute": "total-pages",
+        "necessity": "Requise",
+        "description": "Le nombre total de pages.",
+        "type": "Nombre",
+        "default": "10"
+      },
+      "tableLine2": {
+        "property": "currentPage",
+        "attribute": "current-page",
+        "necessity": "Optionnel",
+        "description": "La page active actuelle.",
+        "type": "Nombre",
+        "default": "1"
+      },
+      "tableLine3": {
+        "property": "visiblePages",
+        "attribute": "visible-pages",
+        "necessity": "Optionnel",
+        "description": "Le nombre de pages visibles dans la pagination.",
+        "type": "Nombre",
+        "default": "5"
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser la pagination :",
+      "introClasses": "Pour mettre à jour ces valeurs, utilisez le CSS suivant :",
+      "event": "Écoute des événements",
+      "eventDesc1": "Pour écouter l’événement émis par ce composant, un événement pageChanged a été défini.",
+      "eventDesc2": "L’événement pageChanged est déclenché lorsque la page actuelle change.",
+      "eventDesc3": "Vous pouvez écouter cet événement afin de gérer les changements de page."
+    }
+  },
+  "boutonRadio": {
+    "title": "Bouton radio",
+    "intro": "Les boutons radio permettent aux utilisateurs de sélectionner une seule option parmi un ensemble de choix mutuellement exclusifs.Ils sont particulièrement adaptés aux formulaires où une décision unique doit être prise.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-radio dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-radio en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "options",
+        "attribute": "options",
+        "necessity": "Requise",
+        "description": "Chaîne JSON contenant la liste des options radio.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "labelPosition",
+        "attribute": "label-position",
+        "necessity": "Optionnel",
+        "description": "Définit la position du libellé par rapport au bouton radio.",
+        "type": "before | after",
+        "default": "after"
+      },
+      "tableLine3": {
+        "property": "defaultOptionId",
+        "attribute": "default-option-id",
+        "necessity": "Optionnel",
+        "description": "ID de l’option sélectionnée par défaut, si nécessaire.",
+        "type": "string | nombre",
+        "default": "Non défini"
+      },
+      "prop1desc": "Il s’agit d’un tableau JSON sérialisé représentant la liste des options.Chaque option est un objet contenant un id, un label, et éventuellement une propriété disabled.",
+      "opt1Desc": "identifiant unique de l’input radio.",
+      "opt2Desc": "texte affiché pour l’option radio.",
+      "opt3Desc": "permet de désactiver l’option (valeur booléenne, false par défaut).",
+      "example": "Exemple",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Les éléments sont encapsulés dans un fieldset.",
+      "introClasses": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser la case d’option (radio) :",
+      "classDesc": "Pour mettre à jour ces valeurs, utilisez le code suivant :",
+      "event": "Écoute des événements",
+      "eventDesc1": "Cet événement est émis lorsqu’un bouton radio est sélectionné.",
+      "eventDesc2": "Le détail de l’événement correspond à l’option sélectionnée."
+    }
+  },
+  "searchBar": {
+    "title": "Barre de recherche",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-search-bar  dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-search-bar  en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "suggestionsData",
+        "attribute": "suggestions-data",
+        "necessity": "Requise",
+        "description": "Chaîne JSON de suggestions utilisée pour l’autocomplétion.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "labelButton",
+        "attribute": "label-button",
+        "necessity": "Optionnel",
+        "description": "Libellé du bouton de recherche.",
+        "type": "string",
+        "default": "Search"
+      },
+      "tableLine3": {
+        "property": "placeholder",
+        "attribute": "placeholder",
+        "necessity": "Optionnel",
+        "description": "Texte d'indication réservé pour le champ de saisie.",
+        "type": "string",
+        "default": "Search..."
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser la barre de recherche :",
+      "example": "Exemple",
+      "introClasses": "Pour modifier les valeurs, utilisez le code CSS suivant :",
+      "event": "Écoute des événements",
+      "eventDesc1": "Le composant ip-search-bar émet l’événement suivant :",
+      "eventDesc2": "déclenché lorsque le bouton de recherche est cliqué.",
+      "eventDesc3": "Pour écouter cet événement, ajoutez un écouteur sur votre composant :"
+    }
+  },
+  "showMore": {
+    "title": "Bouton Afficher plus",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-show-more  dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-show-more  en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc1": "Pour utiliser le composant ip-show-more, utilisez la balise suivante :",
+      "usageDesc2": "et placez le contenu à afficher dans un slot.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "showLessText",
+        "attribute": "show-less-text",
+        "necessity": "Optionnel",
+        "description": "Le texte pour /'Afficher moins'/",
+        "type": "string",
+        "default": "Show Less"
+      },
+      "tableLine2": {
+        "property": "showMoreText",
+        "attribute": "show-more-text",
+        "necessity": "Optionnel",
+        "description": "Le texte pour /'Afficher plus'/",
+        "type": "string",
+        "default": "Show More"
+      },
+      "slotDesc": "Le composant utilise un slot nommé « content »  pour afficher le contenu développé.",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser le bouton « show-more » :",
+      "example": "Exemple",
+      "introClasses": "Pour mettre à jour les valeurs, utilisez le code CSS suivant :"
+    }
+  },
+  "stepper": {
+    "title": "Indicateur d'étapes",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-stepper  dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-stepper  en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc1": "Le composant ip-stepper facilite une navigation étape par étape. ",
+      "usageDesc2": "Pour l’utiliser, configurez-le en définissant les propriétés sous forme d’attributs et utilisez l’attribut slot pour le contenu de chaque étape.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "steps",
+        "attribute": "steps",
+        "necessity": "Requise",
+        "description": "Nombre total d’étapes dans le stepper.",
+        "type": "nombre",
+        "default": "0"
+      },
+      "tableLine2": {
+        "property": "backBtnAriaLabel",
+        "attribute": "back-btn-aria-label",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA pour le bouton Retour.",
+        "type": "string",
+        "default": "Go back to the previous step"
+      },
+      "tableLine3": {
+        "property": "backBtnText",
+        "attribute": "back-btn-text",
+        "necessity": "Optionnel",
+        "description": "Texte affiché sur le bouton Retour.",
+        "type": "string",
+        "default": "Back"
+      },
+      "tableLine4": {
+        "property": "continueBtnAriaLabel",
+        "attribute": "continue-btn-aria-label",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA pour le bouton Continuer.",
+        "type": "string",
+        "default": "Continue to the next step"
+      },
+      "tableLine5": {
+        "property": "continueBtnText",
+        "attribute": "continue-btn-text",
+        "necessity": "Optionnel",
+        "description": "Texte affiché sur le bouton Continuer.",
+        "type": "string",
+        "default": "Continue"
+      },
+      "tableLine6": {
+        "property": "finishBtnAriaLabel",
+        "attribute": "finish-btn-aria-label",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA pour le bouton Terminer.",
+        "type": "string",
+        "default": "Finish the process"
+      },
+      "tableLine7": {
+        "property": "finishBtnText",
+        "attribute": "finish-btn-text",
+        "necessity": "Optionnel",
+        "description": "Texte affiché sur le bouton Terminer.",
+        "type": "string",
+        "default": "Finish"
+      },
+      "tableLine8": {
+        "property": "indicatorText",
+        "attribute": "indicator-text",
+        "necessity": "Optionnel",
+        "description": "Texte affiché avant l’indicateur d’étape.",
+        "type": "string",
+        "default": "Step"
+      },
+      "tableLine9": {
+        "property": "simulatorAria",
+        "attribute": "simulator-aria",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA utilisé pour la liste des indicateurs d’étapes.",
+        "type": "string",
+        "default": "Simulator progress"
+      },
+      "content": "Contenu de chaque étape",
+      "contentDesc": "Pour définir le contenu de chaque étape, utilisez l’attribut slot avec le nom correspondant à l’étape :",
+      "slot1Desc": "contenu pour l’étape 1",
+      "slot2Desc": "contenu pour l’étape 2",
+      "slot3Desc": "contenu pour l’étape 3",
+      "slot4Desc": "contenu pour l’étape 4",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser le stepper :",
+      "example": "Exemple",
+      "introClasses": "Pour mettre à jour ces valeurs, utilisez le code CSS suivant :",
+      "event": "Écoute des événements",
+      "eventDesc1": "Le composant ip-stepper émet un événement personnalisé lorsque le bouton « Finish » est cliqué.",
+      "eventDesc2": "Cet événement porte le nom finishButtonClick.",
+      "eventDesc3": "Vous pouvez écouter cet événement afin d’exécuter des actions spécifiques lorsque le bouton Finish est activé :"
+    }
+  },
+  "tabpanel": {
+    "title": "Système d'onglets",
+    "intro": "Un panneau à onglets est un composant d’interface utilisateur qui permet aux utilisateurs de passer d’une section de contenu à une autre en cliquant simplement sur des onglets.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-tab-panel  dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-tab-panel  en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc1": "Pour utiliser ce composant, il faut ajouter les propriétés sous forme d’attributs et utiliser des slots pour définir le contenu de chaque onglet.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "tabPanelHeaders",
+        "attribute": "tab-panel-headers",
+        "necessity": "Requise",
+        "description": "Définit les en-têtes pour chaque onglet du composant IP Tab Panel en utilisant un tableau JSON.",
+        "type": "TabPanelInterface[] | string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "selectedTab",
+        "attribute": "selected-tab",
+        "necessity": "Optionnel",
+        "description": "Onglet affiché par défaut.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "tabPanelTitle",
+        "attribute": "tab-panel-title",
+        "necessity": "Optionnel",
+        "description": "Titre du panneau à onglets.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine4": {
+        "property": "titleTag",
+        "attribute": "title-tag",
+        "necessity": "Optionnel",
+        "description": "Balise utilisée pour le titre du panneau à onglets ; requis si un titre est ajouté.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "slot1Desc": "Cet attribut est utilisé pour définir le titre d’en-tête du panneau à onglets. Il comporte 4 propriétés :",
+      "prop1desc": "optionnel, correspond au titre du contenu.",
+      "prop2desc": "optionnel, permet d’ajouter une image avec ou à la place du titre.",
+      "prop3desc": "optionnel, image affichée lorsque l’onglet est sélectionné.",
+      "prop4desc": "texte alternatif de l’image, obligatoire pour l’accessibilité si une image est ajoutée.",
+      "content": "Contenu des panneaux",
+      "contentDesc1": "Le contenu de chaque panneau doit utiliser l’attribut suivant :",
+      "contentDesc2": " et la valeur de tab-content-* augmentée en conséquence",
+      "personnalisation": "Personnalisation",
+      "styleDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser le panneau à onglets :",
+      "classes": "Class",
+      "introClasses": "Nous disposons d’un ensemble de classes qui peuvent être utilisées pour personnaliser le composant :",
+      "class1Desc": "pour le conteneur des panneaux.",
+      "class2Desc": "pour le titre du panneau.",
+      "class3Desc": "pour la liste des boutons dans l’en-tête du panneau.",
+      "class4Desc": "pour un bouton dans l’en-tête.",
+      "class5Desc": "pour un bouton dans l’en-tête lorsque son contenu est affiché.",
+      "class6Desc": "pour l’image ou l’icône dans l’en-tête du panneau.",
+      "class7Desc": "pour l’image ou l’icône dans l’en-tête lorsque son contenu est affiché.",
+      "class8Desc": "pour le texte dans l’en-tête.",
+      "example": "Exemple",
+      "introCss": "Pour mettre à jour les valeurs, utilisez le code CSS suivant :"
+    }
+  },
+  "table": {
+    "title": "Tableau",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-table dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-table en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc1": "Pour utiliser ce composant, il faut ajouter les propriétés sous forme d’attribut.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "columns",
+        "attribute": "columns",
+        "necessity": "Requise",
+        "description": "Chaîne JSON représentant un tableau d’objets pour l’en-tête (thead).",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "rows",
+        "attribute": "rows",
+        "necessity": "Requise",
+        "description": "Chaîne JSON représentant un tableau d’objets pour le corps du tableau (tbody).",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "prop1": {
+        "title": "Propriété Columns",
+        "desc1": "La propriété columns est une chaîne JSON représentant un tableau de définitions de colonnes.",
+        "desc2": "Chaque colonne doit contenir deux éléments :",
+        "element1Desc": "une chaîne représentant le nom de la colonne. Elle sera affichée comme en-tête de colonne dans le tableau.",
+        "element2Desc": "Une chaîne qui représente le type de données dans la colonne. Cela devrait être 'string' ou 'number'. Cela est utilisé pour déterminer comment trier la colonne. Les colonnes de type 'string' sont triées par ordre alphabétique, tandis que les colonnes de type 'number' sont triées numériquement."
+      },
+      "prop2": {
+        "title": "Propriété Rows",
+        "desc1": "La propriété rows est une chaîne JSON représentant un tableau d’objets.",
+        "desc2": "Chaque objet de ligne doit contenir des paires clé-valeur où les clés correspond aux en-têtes de colonne et les valeurs représentent les données de la cellule."
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser le tableau :",
+      "introClasses": "Pour mettre à jour ces valeurs, utilisez ce qui suit :"
+    }
+  },
+  "toggle": {
+    "title1": "Bouton à bascule simple",
+    "title2": "Bouton à bascule avec texte",
+    "title3": "Bouton à bascule avec indication",
+    "intro1": "Utilisé dans les interfaces numériques pour activer ou désactiver un paramètre unique. Ressemblant à un interrupteur physique, il offre un repère visuel clair de son état, ce qui le rend très intuitif pour les utilisateurs.",
+    "intro2": "Les boutons à bascule sont couramment utilisés pour des réglages binaires — activer ou désactiver une option — dans les applications et sites web. Ils constituent une alternative plus simple et plus immédiate que les cases à cocher lorsqu’il s’agit de modifier un seul paramètre en un seul geste.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-toggle dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-toggle   en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "ariaLabel",
+        "attribute": "aria-label",
+        "necessity": "Requise",
+        "description": "Libellé ARIA du contenu pour l’accessibilité.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "checked",
+        "attribute": "checked",
+        "necessity": "Optionnel",
+        "description": "État initial de l’interrupteur.",
+        "type": "boolean",
+        "default": "False"
+      },
+      "tableLine3": {
+        "property": "activeLabel",
+        "attribute": "active-label",
+        "necessity": "Optionnel",
+        "description": "Texte affiché lorsque l’interrupteur est actif.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine4": {
+        "property": "inactiveLabel",
+        "attribute": "inactive-label",
+        "necessity": "Optionnel",
+        "description": "Texte affiché lorsque l’interrupteur est inactif.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine5": {
+        "property": "toggleDisabled",
+        "attribute": "toggle-disabled",
+        "necessity": "Optionnel",
+        "description": "Définit si l’interrupteur est désactivé.",
+        "type": "boolean",
+        "default": "False"
+      },
+      "tableLine6": {
+        "property": "size",
+        "attribute": "size",
+        "necessity": "Optionnel",
+        "description": "Trois tailles prédéfinies sont disponibles : large, medium, small.",
+        "type": "string",
+        "default": "medium"
+      },
+      "content": "Contenu",
+      "contentDesc": "Un slot prédéfini est disponible pour ajouter un libellé avant l’interrupteur si nécessaire :",
+      "slotDesc": "ce texte descriptif informe l’utilisateur sur la fonction de l’interrupteur.",
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser le bouton à bascule :",
+      "introClasses": "Pour mettre à jour ces valeurs, utilisez le CSS suivant :",
+      "event": "Écoute des événements",
+      "eventDesc": "cet événement est émis lorsque l’état du toggle change. Le détail de l’événement correspond à la valeur de checked (activé ou désactivé)."
+    }
+  },
+  "tooltip": {
+    "title1": "Infobulle cliquable",
+    "title2": "Infobulle au survol",
+    "intro1": "Un Infobulle est un message bref et informatif qui apparaît lorsqu’un utilisateur survole ou met le focus sur un élément d’une interface graphique.",
+    "intro2": "Il fournit une explication ou un contexte supplémentaire sur l’élément, améliorant ainsi la compréhension, l’orientation et l’utilisabilité.",
+    "docs": {
+      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-tooltip dans votre projet.",
+      "step1": "Étape 1",
+      "step1desc": "Installez le composant ip-tooltip en tant que dépendance dans votre projet :",
+      "step2": "Étape 2",
+      "step2desc": "Importez le module dans votre fichier script :",
+      "usage": "Utilisation",
+      "usageDesc": "Pour utiliser ce composant, ajoutez les propriétés sous forme d’attributs.",
+      "properties": "Propriétés",
+      "propertyTable": {
+        "property": "Propriété",
+        "attribute": "Attribut",
+        "necessity": "Nécessité",
+        "description": "Description",
+        "type": "Type",
+        "default": "Valeur par défaut"
+      },
+      "tableLine1": {
+        "property": "tooltipTrigger",
+        "attribute": "tooltip-trigger",
+        "necessity": "Requise",
+        "description": "Le bouton qui affichera le tooltip.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine2": {
+        "property": "tooltipContent",
+        "attribute": "tooltip-content",
+        "necessity": "Requise",
+        "description": "Le texte qui sera affiché dans le tooltip.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine3": {
+        "property": "type",
+        "attribute": "type",
+        "necessity": "Optionnel",
+        "description": "Texte affiché sur le bouton Retour.",
+        "type": "'click' | 'hover'",
+        "default": "hover"
+      },
+      "tableLine4": {
+        "property": "tooltipBtnClose",
+        "attribute": "tooltip-btn-close",
+        "necessity": "Optionnel",
+        "description": "Si vous devez ajouter un bouton de fermeture dans le tooltip.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine5": {
+        "property": "tooltipTitle",
+        "attribute": "tooltip-title",
+        "necessity": "Optionnel",
+        "description": "Le titre du tooltip si vous souhaitez en ajouter un.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine6": {
+        "property": "tooltipBtn1",
+        "attribute": "tooltip-btn-1",
+        "necessity": "Optionnel",
+        "description": "Si vous devez ajouter un premier bouton dans le tooltip.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine7": {
+        "property": "tooltipBtn2",
+        "attribute": "tooltip-btn-2",
+        "necessity": "Optionnel",
+        "description": "Si vous devez ajouter un second bouton dans le tooltip.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine8": {
+        "property": "btn1AriaLabel",
+        "attribute": "btn-1-aria-label",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA du premier bouton, requis pour l’accessibilité. ",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "tableLine9": {
+        "property": "btn2AriaLabel",
+        "attribute": "btn-2-aria-label",
+        "necessity": "Optionnel",
+        "description": "Libellé ARIA du second bouton, requis pour l’accessibilité.",
+        "type": "string",
+        "default": "Non défini"
+      },
+      "personnalisation": "Personnalisation",
+      "personnalisationDesc": "Nous disposons d’un ensemble de variables prédéfinies permettant de personnaliser l'infobulle' :",
+      "parts": {
+        "intro": "Nous disposons également d’un ensemble de parts qui peuvent être utilisés pour le personnaliser :",
+        "part1Desc": "pour le bouton de fermeture, s’il existe.",
+        "part2Desc": "pour le premier bouton, s’il existe.",
+        "part3Desc": "pour le deuxième bouton, s’il existe.",
+        "part4Desc": "pour le contenu du tooltip.",
+        "part5Desc": "pour le bouton déclencheur.",
+        "exampleDesc": "Pour mettre à jour ces valeurs, utilisez ce qui suit :"
+      },
+      "event": "Écoute des événements",
+      "eventDesc1": "Pour écouter les événements émis par ip-tooltip, ouvrez la console de votre navigateur.",
+      "eventDesc2": "Les détails des événements s’afficheront dans la console lorsque vous interagirez avec les boutons."
+    }
+  }
+}

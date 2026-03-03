@@ -4,13 +4,14 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
   PLATFORM_ID,
-  DOCUMENT
+  DOCUMENT,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocAccordionComponent } from '../doc-accordion/doc-accordion.component';
 import { defineCustomElements as accordionElements } from '@ipedis/accordion/loader';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-accordion1',
@@ -18,14 +19,17 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   imports: [
     CodeSnippetComponent,
     DocAccordionComponent,
-    AccordionComponent
-],
+    AccordionComponent,
+    TranslocoPipe,
+  ],
   templateUrl: './accordion1.component.html',
   styleUrl: './accordion1.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Accordion1Component {
+  private readonly translocoService = inject(TranslocoService);
+
   accordionCode = `
 <ip-accordion
   title-tag="h2"

@@ -1,12 +1,10 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-
 import { Highlight } from 'ngx-highlightjs';
-import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 
 @Component({
   selector: 'app-code-snippet',
   standalone: true,
-  imports: [Highlight, HighlightLineNumbers],
+  imports: [Highlight],
   templateUrl: './code-snippet.component.html',
   styleUrls: ['./code-snippet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

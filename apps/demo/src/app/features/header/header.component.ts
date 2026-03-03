@@ -1,15 +1,27 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-
-import { Router } from '@angular/router';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [TranslocoPipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  private router = inject(Router);
+  private readonly translocoService = inject(TranslocoService);
+
+  get activeLang(): string {
+    return this.translocoService.getActiveLang();
+  }
+
+  get nextLang(): string {
+    return this.activeLang === 'fr' ? 'Anglais' : 'French';
+  }
+
+  toggleLang(): void {
+    const newLang = this.activeLang === 'fr' ? 'en' : 'fr';
+    this.translocoService.setActiveLang(newLang);
+  }
 }

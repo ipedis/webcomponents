@@ -1,0 +1,1501 @@
+{
+  "common": {
+    "label": {
+      "back": "Back",
+      "backAria": "Return to the website of the design system Ipedis",
+      "ipedisAria": "Go to Ipedis Website- New window",
+      "languageSwitcher": "See the website in French",
+      "newWindow": "Opens in a new window"
+    },
+    "components": "COMPONENTS"
+  },
+
+  "app": {
+    "title": "Web Components",
+    "intro1": "Explore a new dimension of web design where accessibility is at the core of every component. With 20 years of unparalleled expertise, we at Ipedis are proud to present a design system crafted to create inclusive digital experiences for all.",
+    "intro2": "Our platform has been meticulously designed to help you develop complex components while adhering to the strictest accessibility standards. Each component you discover here is designed to provide an accessible design, accompanied by detailed guidelines on its optimal use.",
+    "intro3": "At Ipedis, we firmly believe in « Accessibility by Design ». This means integrating accessibility principles from the outset, ensuring a superior and inclusive user experience.",
+    "intro4": "Dive into our interactive demo and see how our components can enrich your web project while meeting the needs of everyone. Whether you're a seasoned developer or a novice, our design system is here to guide you towards accessible solutions without compromising on quality or innovation.",
+    "intro5": "Ready to create accessible web experiences that make a difference? Explore our design system today and start shaping a more inclusive web for all.",
+    "question": "Any questions?",
+    "contact": "Contact us at"
+  },
+  "footer": {
+    "components": {
+      "title": "Web Components",
+      "": ""
+    },
+    "disability": {
+      "title": "Disability Guide",
+      "visual": "Visual",
+      "anosmia": "Anosmia",
+      "deafness": "Deafness",
+      "motor": "Motor",
+      "cognitive": "Cognitive Disorder",
+      "physic": "Physic"
+    },
+    "pdf": {
+      "title": "PDF Accessibility",
+      "tagging": "Tagging Evaluation",
+      "tags": "Tags",
+      "form": "Interactive Form",
+      "completion": "Document Completion",
+      "quality": "PDF Quality Check"
+    },
+    "accessibiliy": "Accessibility Statement: Totally Compliant",
+    "license": "License",
+    "sitemap": "Sitemap",
+    "cookie": "Privacy and cookie policy",
+    "legal": "Legal Notice",
+    "navAria": "Secondary navigation",
+    "navFooter": "Footer navigation"
+  },
+  "accordion": {
+    "title": "Accordion",
+    "intro": "An accordion is an interactive element used on websites and applications to organize content in a compact way. It allows users to click on titles or buttons to show or hide sections of content, saving screen space and making information easily accessible.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-accordion component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-accordion component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use the ip-accordion component, you need to define the properties as attributes and provide slot content for each accordion item.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "accordionHeaders",
+        "attribute": "accordion-headers",
+        "necessity": "Required",
+        "description": "Defines headers for each accordion item using a JSON array",
+        "type": "accordionHeadersInterface[] | string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "isFirstPanelOpen",
+        "attribute": "is-first-panel-open",
+        "necessity": "Optional",
+        "description": "Contrôle si le premier panneau est ouvert par défaut.",
+        "type": "boolean",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "isSingleOpen",
+        "attribute": "is-single-open",
+        "necessity": "Optional",
+        "description": "Détermine si un seul panneau peut être ouvert à la fois.",
+        "type": "boolean",
+        "default": "Undefined"
+      },
+      "tableLine4": {
+        "property": "titleTag",
+        "attribute": "title-tag",
+        "necessity": "Optional",
+        "description": "Spécifie la balise HTML à utiliser pour les en-têtes de l’accordéon.",
+        "type": "string",
+        "default": "h2"
+      },
+
+      "property1": {
+        "title": "accordionHeaders",
+        "desc": "This attribute sets the accordion header details. Each header object can have the following properties:",
+        "prop1": {
+          "name": "title",
+          "description": "The title of the accordion header (optional)"
+        },
+        "prop2": {
+          "name": "iconPath",
+          "description": "Path to the icon image (optional)"
+        },
+        "prop3": {
+          "name": "iconActivePath",
+          "description": "Path to the icon image when the header is active (optional)"
+        },
+        "prop4": {
+          "name": "subtitle",
+          "description": "The subtitle of the accordion header (optional)"
+        },
+        "prop5": {
+          "name": "btnAlt",
+          "description": "The alternative text for the button when the panel is closed (optional)"
+        },
+        "prop6": {
+          "name": "btnAltClose",
+          "description": "The alternative text for the button when the panel is open (optional)"
+        },
+        "prop7": {
+          "name": "id",
+          "description": "Unique ID associated with the button (optional)"
+        },
+        "prop8": {
+          "name": "ariaText ",
+          "description": "Accessible name for the panel (required)"
+        }
+      },
+      "property2": {
+        "title": "Panels Content",
+        "desc": "The content of each panel should be placed inside <div> elements with a slot attribute matching accordion-1, accordion-2, etc."
+      },
+      "example": "Example",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variable used to customize the accordion-panel:",
+      "introClasses": "To update the values use the following:",
+      "classes": {
+        "classesIntro": "We have a set of classes that could be used to customise accordingly:",
+        "class1desc": "for the container of the panels",
+        "class2desc": "for the content of the panel",
+        "class3desc": "for the header of the panel",
+        "class4desc": "for each <div> element representing a panel"
+      }
+    }
+  },
+  "alert": {
+    "titleDanger": "Alert Danger",
+    "titleSuccess": "Alert Success",
+    "titleInfo": "Alert Info",
+    "titleWarning": "Alert Warning",
+    "intro": "Alerts are used to inform users of important information. They can be used to provide feedback on user actions, inform users of system updates, or provide important information.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-alert component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-alert component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module in your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "message",
+        "attribute": "message",
+        "necessity": "Required",
+        "description": "The message for the alert",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "type",
+        "attribute": "type",
+        "necessity": "Required",
+        "description": "The type of alert, which can be 'success', 'error', 'warning' ou 'info'.",
+        "type": "string",
+        "default": "info"
+      },
+      "tableLine3": {
+        "property": "alertTitle",
+        "attribute": "alert-title",
+        "necessity": "Optional",
+        "description": "The title of alert if it exists",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine4": {
+        "property": "closeAriaLabel",
+        "attribute": "close-aria-label",
+        "necessity": "Optional",
+        "description": "The aria-label of the close button",
+        "type": "string",
+        "default": "Close alert"
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the alert:",
+      "example": "Example",
+      "exampleDesc": "Pour modifier ces valeurs, utilisez le code CSS suivant :"
+    }
+  },
+  "breadcrumb": {
+    "title": "Breadcrumb",
+    "intro": "A breadcrumb is a navigation aid used in web interfaces that provides users with a clear path of their journey through a website. It typically appears as a horizontal row of textual links, with each link separated by symbols such as greater than signs (>), indicating the hierarchy of the content.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-breadcrumb component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-breadcrumb component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module in your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "breadcrumbItems",
+        "attribute": "breadcrumb-items",
+        "necessity": "Required",
+        "description": "A JSON string of an array of breadcrumb items, each with a label andoptional link.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "breadcrumbTitle",
+        "attribute": "breadcrumb-title",
+        "necessity": "Optional",
+        "description": "Title of the breadcrumb navigation",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "prefixAriaLabel",
+        "attribute": "prefix-aria-label",
+        "necessity": "Optional",
+        "description": "Aria label prefix for the links",
+        "type": "string",
+        "default": "Link to"
+      },
+      "tableLine4": {
+        "property": "separatorIcon",
+        "attribute": "separator-icon",
+        "necessity": "Optional",
+        "description": "The icon or text used to separate breadcrumb items",
+        "type": "string",
+        "default": ">"
+      },
+      "example": "Example",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "Un ensemble de classes est disponible pour permettre une personnalisation avancée :",
+      "prop1desc": "pour le titre du fil d’Ariane.",
+      "prop2desc": "pour chaque élément du fil d’Ariane.",
+      "prop3desc": "pour l’icône de séparation.",
+      "modifdesc": "Pour modifier les valeurs, utilisez l’exemple suivant :"
+    }
+  },
+  "simpleCheckbox": {
+    "title": "Simple Checkbox",
+    "introPart1": "A checkbox is a component that allows users to make a selection from a set of options. Typically presented as a small square box, it can be either checked (selected) or unchecked (not selected).",
+    "introPart2": "Checkboxes are commonly used in forms and settings where users can indicate their choices or preferences.",
+    "introPart3": "They are particularly useful for options that are not mutually exclusive, allowing multiple selections from a group of choices. When a checkbox is selected, a checkmark  or a tick (✓) appears inside the box, visually indicating the user's choice.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-checkbox component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-checkbox component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module in your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "id",
+        "attribute": "id",
+        "necessity": "Required",
+        "description": "The ID of the input for accessibility",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "name",
+        "attribute": "name",
+        "necessity": "Required",
+        "description": "The name of the input for accessibility",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "defaultChecked",
+        "attribute": "default-checked",
+        "necessity": "Optional",
+        "description": "Sets the checkbox to checked by default",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine4": {
+        "property": "disabled",
+        "attribute": "disabled",
+        "necessity": "Optional",
+        "description": "Disables the checkbox",
+        "type": "boolean",
+        "default": "false"
+      },
+      "content": "Content",
+      "contentDesc": "A predefined label slot is available to display the label text before the checkbox. The content placed in this slot will be rendered inside the component's tag.",
+      "example": "Example",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the checkbox:",
+      "exampleDesc": "To update the values, use the following CSS:",
+      "event": "Listening to Events",
+      "eventDesc1": "To listen to events emitted by the ip-checkbox and ip-checkbox-list components, open your browser's console.",
+      "eventDesc2": "Event details will be displayed in the console when checkboxes are modified.",
+      "jsExample": "Example JavaScript Code"
+    }
+  },
+  "checkboxList": {
+    "title": "Checkbox-list",
+    "introPart1": "A checkbox is a component that allows users to make a selection from a set of options. Typically presented as a small square box, it can be either checked (selected) or unchecked (not selected).",
+    "introPart2": "Checkboxes are commonly used in forms and settings where users can indicate their choices or preferences.",
+    "introPart3": "They are particularly useful for options that are not mutually exclusive, allowing multiple selections from a group of choices. When a checkbox is selected, a checkmark  or a tick (✓) appears inside the box, visually indicating the user's choice.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-checkbox-list component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-checkbox-list component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module in your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "id",
+        "attribute": "id",
+        "necessity": "Required",
+        "description": "L'identifiant du champ pour l’accessibilité.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "options",
+        "attribute": "options",
+        "necessity": "Required",
+        "description": "An array of objects used to pass options as checkboxes.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "defaultChecked",
+        "attribute": "default-checked",
+        "necessity": "Optional",
+        "description": "Sets the checkbox to checked by default.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine4": {
+        "property": "disabled",
+        "attribute": "disabled",
+        "necessity": "Optional",
+        "description": "Disable the checkbox, preventing any interaction.",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine5": {
+        "property": "legend",
+        "attribute": "legend",
+        "necessity": "Optional",
+        "description": "The legend for the list of checkboxes",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "example": "Example",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the checkbox:",
+      "exampleDesc": "To update the values, use the following CSS:",
+      "event": "Listening to Events",
+      "eventDesc1": "To listen to events emitted by the ip-checkbox and ip-checkbox-list components, open your browser's console.",
+      "eventDesc2": "Event details will be displayed in the console when checkboxes are modified.",
+      "jsExample": "Example JavaScript Code"
+    }
+  },
+  "dropdown": {
+    "title": "Dropdown",
+    "intro": "A drop-down menu is a user interface component that allows users to select an option from a list of options. It usually comes in the form of an input field or a button that, when clicked, displays a list of options from which the user can choose.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-dropdown component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-dropdown component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module in your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "itemsOptions",
+        "attribute": "items-options",
+        "necessity": "Required",
+        "description": "It is an array of strings used for items in the dropdown menu.",
+        "type": "string",
+        "default": "[]"
+      },
+      "tableLine2": {
+        "property": "dropdownTitle",
+        "attribute": "dropdown-title",
+        "necessity": "Optional",
+        "description": "Title of dropdown menu.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "placeholder",
+        "attribute": "placeholder",
+        "necessity": "Optional",
+        "description": "The placeholder of dropdown.",
+        "type": "string",
+        "default": "Select an option"
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the dropdown:",
+      "introClasses": "To update the values, use the following CSS:",
+      "event": "Listening to Events",
+      "eventDesc1": "To listen this event emitted,we have definied itemSelected event in this component.",
+      "eventDesc2": "The itemSelected event is fired when a user selects an item in the dropdown.",
+      "eventDesc3": "You can listen to this event in your application to handle the selection."
+    }
+  },
+  "footnote": {
+    "title": "Footnote",
+    "intro": "A footnote is an additional reference or explanation placed at the bottom of a page. It is generally used to provide additional information, quotations, bibliographical references or commentaries that are not essential to the main body of the text, but which may be useful for readers wishing to delve into the subject.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-footnote component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-footnote component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module in your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, you must add the properties as attributes.",
+      "usageDesc2": "The text where you will place the ID of the footnote must have an id=\"ref{this.identifier}\" to allow returning to the text when one is on the footnote.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "identifier",
+        "attribute": "identifier",
+        "necessity": "Required",
+        "description": "The ID of the footnote.",
+        "type": "string",
+        "default": "default-id"
+      },
+      "tableLine2": {
+        "property": "text",
+        "attribute": "text",
+        "necessity": "Required",
+        "description": "The text of the footnote.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "btnAriaLabel",
+        "attribute": "btn-aria-label",
+        "necessity": "Required",
+        "description": "The aria-label of the footnote to return to the text.",
+        "type": "string",
+        "default": "Back to main text"
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the footnote:",
+      "example": "Example",
+      "exampleDesc": "To update the values, use the following CSS code:"
+    }
+  },
+  "login": {
+    "title1": "Login with e-mail",
+    "title2": "Login with username",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-login component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-login component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module in your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add it to your HTML and configure it with the desired properties.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "usernameLabel",
+        "attribute": "username-label",
+        "necessity": "Optional",
+        "description": "Label for the username input field",
+        "type": "string",
+        "default": "Username"
+      },
+      "tableLine2": {
+        "property": "passwordLabel",
+        "attribute": "password-label",
+        "necessity": "Optional",
+        "description": "Label for the password input field",
+        "type": "string",
+        "default": "Password"
+      },
+      "tableLine3": {
+        "property": "submitButtonLabel",
+        "attribute": "submit-button-label",
+        "necessity": "Optional",
+        "description": "Label for the submit button",
+        "type": "string",
+        "default": "Login"
+      },
+      "tableLine4": {
+        "property": "usernameErrorMessage",
+        "attribute": "username-error-message",
+        "necessity": "Optional",
+        "description": "Error message for empty username field",
+        "type": "string",
+        "default": "Username is required"
+      },
+      "tableLine5": {
+        "property": "usernameInvalidEmailMsg",
+        "attribute": "username-invalid-email-message",
+        "necessity": "Optional",
+        "description": "Error message for invalid email format",
+        "type": "string",
+        "default": "The email address is invalid"
+      },
+      "tableLine6": {
+        "property": "passwordLengthErrorMsg",
+        "attribute": "password-length-error-msg",
+        "necessity": "Optional",
+        "description": "Error message for insufficient password length",
+        "type": "string",
+        "default": "The password must contain at least 8 characters"
+      },
+      "tableLine7": {
+        "property": "passwordUppercaseErrorMsg",
+        "attribute": "password-uppercase-error-msg",
+        "necessity": "Optional",
+        "description": "Error message for missing uppercase letter in password",
+        "type": "string",
+        "default": "The Password must contain at least one capital"
+      },
+      "tableLine8": {
+        "property": "passwordLowercaseErrorMsg",
+        "attribute": "password-lowercase-error-msg",
+        "necessity": "Optional",
+        "description": "Error message for missing lowercase letter in password",
+        "type": "string",
+        "default": "The Password must contain at least one lowercase"
+      },
+      "tableLine9": {
+        "property": "passwordDigitErrorMsg",
+        "attribute": "password-digit-error-msg",
+        "necessity": "Optional",
+        "description": "Error message for missing digit in password",
+        "type": "string",
+        "default": "The Password must contain at least one digit"
+      },
+      "tableLine10": {
+        "property": "usernameType",
+        "attribute": "username-type",
+        "necessity": "Optional",
+        "description": "Type of the username input field (text or email)",
+        "type": "text/email",
+        "default": "text"
+      },
+      "tableLine11": {
+        "property": "showPasswordAriaLabel",
+        "attribute": "show-password-aria-label",
+        "necessity": "Optional",
+        "description": "Aria label for the button to show password",
+        "type": "string",
+        "default": "Show password"
+      },
+      "tableLine12": {
+        "property": "hidePasswordAriaLabel",
+        "attribute": "hide-password-aria-label",
+        "necessity": "Optional",
+        "description": "Aria label for the button to hide password",
+        "type": "string",
+        "default": "Hide password"
+      },
+      "tableLine13": {
+        "property": "usernameRequired",
+        "attribute": "username-required",
+        "necessity": "Optional",
+        "description": "Whether the username field is required",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine14": {
+        "property": "pwdPlaceholder",
+        "attribute": "pwd-placeholder",
+        "necessity": "Optional",
+        "description": "Placeholder text for the password field",
+        "type": "string",
+        "default": "Type your password here..."
+      },
+      "tableLine15": {
+        "property": "usernamePlaceholder",
+        "attribute": "username-placeholder",
+        "necessity": "Optional",
+        "description": "Placeholder text for the username field",
+        "type": "string",
+        "default": "Type your username here..."
+      },
+      "tableLine16": {
+        "property": "forgotPasswordLink",
+        "attribute": "forgot-password-link",
+        "necessity": "Optional",
+        "description": "URL for the forgot password link",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine17": {
+        "property": "forgotPasswordLabel",
+        "attribute": "forgot-password-label",
+        "necessity": "Optional",
+        "description": "Label text for the forgot password link",
+        "type": "string",
+        "default": "Forgot password?"
+      },
+      "tableLine18": {
+        "property": "loginTitle",
+        "attribute": "login-title",
+        "necessity": "Optional",
+        "description": "Title of the login form",
+        "type": "string",
+        "default": "Login"
+      },
+      "tableLine19": {
+        "property": "indicationLabel",
+        "attribute": "indication-label",
+        "necessity": "Optional",
+        "description": "Label indicating required fields",
+        "type": "string",
+        "default": "Required fields"
+      },
+      "tableLine20": {
+        "property": "submitBtnAriaLabel",
+        "attribute": "submit-btn-aria-label",
+        "necessity": "Optional",
+        "description": "Aria-label of submit button",
+        "type": "string",
+        "default": "Submit the form"
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "You can customize the appearance of the login-form component using CSS variables and part selectors:",
+      "varCSS": "CSS variables",
+      "selectors": "Parts Selectors",
+      "selector1Desc": "For the title section",
+      "selector2Desc": "For the required indication label",
+      "selector3Desc": " For the username label",
+      "selector4Desc": "For the username input field",
+      "selector5Desc": "For the password label",
+      "selector6Desc": "For the password input field",
+      "selector7Desc": "For the button to toggle password visibility",
+      "selector8Desc": "For error message",
+      "selector9Desc": "For the forgot password link",
+      "selector10Desc": "For the submit button",
+      "example": "Example",
+      "introClasses": "To update the values, use the following CSS:",
+      "event": "Listening to Events",
+      "eventDesc1": "The login-form component emits a formSubmitted event when the form is successfully submitted.",
+      "eventDesc2": "You can listen to this event in your JavaScript code:"
+    }
+  },
+  "menu": {
+    "title": "Menu burger",
+    "intro1": "A burger main menu is usually represented by three stacked lines, forming an icon that signifies a hidden menu.",
+    "intro2": "When users click or tap on these lines, a menu slides into view or a drawer appears, revealing a list of navigation items or other elements that users can interact with.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-burger-menu component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-burger-menu component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "    To use the ip-burger-menu component, you need to set the properties as attributes and use slots for additional content.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "string",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "menuData",
+        "attribute": "menu-data",
+        "necessity": "Required",
+        "description": "JSON string to define menu items.",
+        "type": "string",
+        "default": "[ ]"
+      },
+      "tableLine2": {
+        "property": "closeMenuAriaLabel",
+        "attribute": "close-menu-aria-label",
+        "necessity": "Optional",
+        "description": "ARIA label for the button that closes the menu.",
+        "type": "string",
+        "default": "Close menu"
+      },
+      "tableLine3": {
+        "property": "openMenuAriaLabel",
+        "attribute": "open-menu-aria-label",
+        "necessity": "Optional",
+        "description": "ARIA label for the button that opens the menu.",
+        "type": "string",
+        "default": "Open menu"
+      },
+      "tableLine4": {
+        "property": "pathToArrowRightIcon",
+        "attribute": "path-to-arrow-right-icon",
+        "necessity": "Optional",
+        "description": "Path to the icon image used for menu item arrows.",
+        "type": "string",
+        "default": "../../assets/images/arrow-right.svg"
+      },
+      "tableLine5": {
+        "property": "pathToCloseIcon",
+        "attribute": "path-to-close-icon",
+        "necessity": "Optional",
+        "description": "Path to the icon image used to close the menu.",
+        "type": "string",
+        "default": "../../assets/images/x-icon.svg"
+      },
+      "tableLine6": {
+        "property": "pathToOpenIcon",
+        "attribute": "path-to-open-icon",
+        "necessity": "Optional",
+        "description": "Path to the icon image used to open the menu.",
+        "type": "string",
+        "default": "../../assets/images/icon-list.svg"
+      },
+      "interface": {
+        "title": "Menu-item Interface",
+        "desc": "    The items property is an array of MenuItem objects with the following structure:",
+        "item1desc": "The text label of the menu item.",
+        "item2desc": "URL to navigate to when the item is clicked.",
+        "item3desc": "Optional boolean to disable the menu item."
+      },
+      "slots": {
+        "title": "Slots",
+        "desc": "The ip-burger-menu component supports the following slots for additional content:",
+        "slot1desc": "Content to be displayed on the left side of the header.",
+        "slot2desc": "Content to be displayed before the toggle menu button.",
+        "slot3desc": "Content to be displayed on the left side of the menu."
+      },
+      "personnalisation": "Customization",
+      "introClasses": "We have a set of predefined CSS variables used to customize the burger-menu:",
+      "parts": {
+        "title": "Part selectors",
+        "desc": "We have a set of classes that could be used to customise accordingly:",
+        "part1desc": "the nav for the menu content",
+        "part2desc": "The button that toggles the menu",
+        "part3desc": "The content of the menu",
+        "part4desc": "The list of elements in the menu"
+      }
+    }
+  },
+  "modale": {
+    "title": "Modal window",
+    "intro1": "A modal window, also known as a dialog, is a pop-up window that appears on top of the main content of a website or application.",
+    "intro2": "It typically requires user interaction before the user can return to the main content.",
+    "intro3": "Modalbwindows are commonly used for displaying important messages, alerts, or interactive forms.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-modal component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-modal component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "string",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "buttonText",
+        "attribute": "button-text",
+        "necessity": "Required",
+        "description": "The text to display on the trigger button",
+        "type": "string",
+        "default": "Open modal"
+      },
+      "tableLine2": {
+        "property": "closeAriaLabel",
+        "attribute": "close-aria-label",
+        "necessity": "Required",
+        "description": "The aria-label text for the close button",
+        "type": "string",
+        "default": "Close the dialog"
+      },
+      "content": "Content",
+      "contentDesc": "The content of the modal should be inserted with the slot=\"content\" attribute.",
+      "varCSS": "Style",
+      "personnalisation": "Customization",
+      "varCSSDesc": "We have a set of predefined CSS variables used to customize the modal:",
+      "classes": "Class",
+      "introClasses": "We have a set of classes that can be used for further customization:",
+      "class1Desc": "for the container of the modal",
+      "class2Desc": "for the trigger button"
+    }
+  },
+  "pagination": {
+    "title": "Pagination",
+    "intro": "Pagination is a tool used to navigate through extended content on multiple pages. Generally placed at the bottom of the page, it offers links to move between the following, previous, numbered and sometimes the first or last pages, thus making large sets of content more accessible and manageable, improving user experience and use.",
+    "docs": {
+      "installation": "Follow these steps to install and use the le composant ip-pagination dans votre projet.",
+      "step1": "Step 1",
+      "step1desc": "    Install the ip-pagination component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "totalPages",
+        "attribute": "total-pages",
+        "necessity": "Required",
+        "description": "The total number of pages.",
+        "type": "number",
+        "default": "10"
+      },
+      "tableLine2": {
+        "property": "currentPage",
+        "attribute": "current-page",
+        "necessity": "Optional",
+        "description": "The current active page.",
+        "type": "number",
+        "default": "1"
+      },
+      "tableLine3": {
+        "property": "visiblePages",
+        "attribute": "visible-pages",
+        "necessity": "Optional",
+        "description": "The number of pages to display in the pagination controls.",
+        "type": "number",
+        "default": "5"
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the pagination:",
+      "introClasses": "To update the values, use the following CSS:",
+      "event": "Event listening",
+      "eventDesc1": "To listen this event emitted,we have definied pageChanged event in this component.",
+      "eventDesc2": "The pageChanged event is fired when the current page changes.",
+      "eventDesc3": "You can listen to this event to handle page changes."
+    }
+  },
+  "boutonRadio": {
+    "title": "Bouton radio",
+    "intro": "Radio buttons allow users to select one option from a set of mutually exclusive choices. They're ideal for forms where users must make a single choice; they're easily navigable via mouse or keyboard and are screen-reader friendly with proper labeling.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-radio component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-radio component as a dependency in the project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "options",
+        "attribute": "options",
+        "necessity": "Required",
+        "description": "This is a stringifird JSON array of radio options",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "labelPosition",
+        "attribute": "label-position",
+        "necessity": "Optional",
+        "description": "To determine where the label of the radio button will be positioned.",
+        "type": "before | after",
+        "default": "after"
+      },
+      "tableLine3": {
+        "property": "defaultOptionId",
+        "attribute": "default-option-id",
+        "necessity": "Optional",
+        "description": "If we need to set an option checked as default",
+        "type": "string | nombre",
+        "default": "Undefined"
+      },
+      "prop1desc": "    This is a stringified JSON arary of option. Each option is an object with an id, a label, and an optional disabledproperty.",
+      "opt1Desc": "this is the id of the input.",
+      "opt2Desc": "this is the label for radio option.",
+      "opt3Desc": "when we need to set the option to disable, this is boolean and as default it's false",
+      "example": "Example",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "The elements are encapsulated in a fieldset.",
+      "introClasses": "We have a set of predefined variable used to customisation the radio-button:",
+      "classDesc": "To update the values use the following:",
+      "event": "Listening to Events",
+      "eventDesc1": "selectionChanged: This event is emitted when a radio button",
+      "eventDesc2": "The event detail is the selected option."
+    }
+  },
+  "searchBar": {
+    "title": "Search Bar",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-search-bar component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-search-bar component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "suggestionsData",
+        "attribute": "suggestions-data",
+        "necessity": "Required",
+        "description": "JSON string of suggestions used for autocomplete",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "labelButton",
+        "attribute": "label-button",
+        "necessity": "Optional",
+        "description": "Label for the search button",
+        "type": "string",
+        "default": "Search"
+      },
+      "tableLine3": {
+        "property": "placeholder",
+        "attribute": "placeholder",
+        "necessity": "Optional",
+        "description": "Placeholder text for the input field",
+        "type": "string",
+        "default": "Search..."
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the search-bar:",
+      "example": "Example",
+      "introClasses": "To update the values, use the following CSS code:",
+      "event": "Listening to Events",
+      "eventDesc1": "The ip-search-bar component emits the following event:",
+      "eventDesc2": "fired when the search button is clicked. ",
+      "eventDesc3": "To listen to this event, add an event listener to your component:"
+    }
+  },
+  "showMore": {
+    "title": "Show more button",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-show-more component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-show-more component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc1": "To use the ip-show-more component, use this tag",
+      "usageDesc2": "and use a slot for the content.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "showLessText",
+        "attribute": "show-less-text",
+        "necessity": "Optional",
+        "description": "The text for 'Show Less'",
+        "type": "string",
+        "default": "Show Less"
+      },
+      "tableLine2": {
+        "property": "showMoreText",
+        "attribute": "show-more-text",
+        "necessity": "Optional",
+        "description": "The text for 'Show More'",
+        "type": "string",
+        "default": "Show More"
+      },
+      "slotDesc": "The component uses a slot named « content » for the expanded content.",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the « show-more » button:",
+      "example": "Example",
+      "introClasses": "To update the values, use the following CSS code:"
+    }
+  },
+  "stepper": {
+    "title": "Stepper",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-stepper component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-stepper component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc1": "The ip-stepper component facilitates step-by-step navigation. ",
+      "usageDesc2": "To use this component, configure it by setting the properties as attributes and use slot attribute for the content for each step.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "steps",
+        "attribute": "steps",
+        "necessity": "Required",
+        "description": "Total number of steps in the stepper",
+        "type": "number",
+        "default": "0"
+      },
+      "tableLine2": {
+        "property": "backBtnAriaLabel",
+        "attribute": "back-btn-aria-label",
+        "necessity": "Optional",
+        "description": "ARIA label for the back button",
+        "type": "string",
+        "default": "Go back to the previous step"
+      },
+      "tableLine3": {
+        "property": "backBtnText",
+        "attribute": "back-btn-text",
+        "necessity": "Optional",
+        "description": "Text displayed on the back button",
+        "type": "string",
+        "default": "Back"
+      },
+      "tableLine4": {
+        "property": "continueBtnAriaLabel",
+        "attribute": "continue-btn-aria-label",
+        "necessity": "Optional",
+        "description": "ARIA label for the continue button",
+        "type": "string",
+        "default": "Continue to the next step"
+      },
+      "tableLine5": {
+        "property": "continueBtnText",
+        "attribute": "continue-btn-text",
+        "necessity": "Optional",
+        "description": "Text displayed on the continue button",
+        "type": "string",
+        "default": "Continue"
+      },
+      "tableLine6": {
+        "property": "finishBtnAriaLabel",
+        "attribute": "finish-btn-aria-label",
+        "necessity": "Optional",
+        "description": "ARIA label for the finish button",
+        "type": "string",
+        "default": "Finish the process"
+      },
+      "tableLine7": {
+        "property": "finishBtnText",
+        "attribute": "finish-btn-text",
+        "necessity": "Optional",
+        "description": "Text displayed on the finish button",
+        "type": "string",
+        "default": "Finish"
+      },
+      "tableLine8": {
+        "property": "indicatorText",
+        "attribute": "indicator-text",
+        "necessity": "Optional",
+        "description": "Text displayed before the step indicator",
+        "type": "string",
+        "default": "Step"
+      },
+      "tableLine9": {
+        "property": "simulatorAria",
+        "attribute": "simulator-aria",
+        "necessity": "Optional",
+        "description": "The aria label is used for the list of step indicators",
+        "type": "string",
+        "default": "Simulator progress"
+      },
+      "content": "Step Content",
+      "contentDesc": "To provide content for each step, use the slot attribute with the corresponding step name:",
+      "slot1Desc": "content for step 1",
+      "slot2Desc": "content for step 2",
+      "slot3Desc": "content for step 3",
+      "slot4Desc": "content for step 4",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variable used to customisation the stepper:",
+      "example": "Example",
+      "introClasses": "To update the values, use the following CSS code:",
+      "event": "Listening to Events",
+      "eventDesc1": "The ip-stepper component emits a custom event when the « Finish » button is clicked.",
+      "eventDesc2": "The event is named finishButtonClick.",
+      "eventDesc3": " You can listen for this event to perform specific actions when the `Finish` button is clicked:"
+    }
+  },
+  "tabpanel": {
+    "title": "Tab-panel",
+    "intro": " A tab panel is a component in the user interface that enables users to switch between various content sections simply by clicking on tabs.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-tab-panel in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-tab-panel component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc1": "To use this component, we must add the properties as attributes and use slot for each content of tab.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "tabPanelHeaders",
+        "attribute": "tab-panel-headers",
+        "necessity": "Required",
+        "description": "It defines headers for each tab in the IP Tab Panel component using a JSON array",
+        "type": "TabPanelInterface[] | string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "selectedTab",
+        "attribute": "selected-tab",
+        "necessity": "Optional",
+        "description": "This is the tab that displayed by default",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "tabPanelTitle",
+        "attribute": "tab-panel-title",
+        "necessity": "Optional",
+        "description": "This is the title of the tap-panel",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine4": {
+        "property": "titleTag",
+        "attribute": "title-tag",
+        "necessity": "Optional",
+        "description": "It represents the tag we want to use for the tab-panel-title; it's required if you add title",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "slot1Desc": "This is used to set the tab-panel header title. It has 4 properties:",
+      "prop1desc": "this is optional for the content title",
+      "prop2desc": "this is optional if you want to add an image with or as a title",
+      "prop3desc": "this is optional for the image that will be displayed when it is selected",
+      "prop4desc": "this is the alt of the image that is required for accessibility if you add image",
+      "content": "Panels content",
+      "contentDesc1": "The contents of the panel should have as attribute",
+      "contentDesc2": " and value of tab-content-* incremented accordingly",
+      "personnalisation": "Customization",
+      "styleDesc": "We have a set of predefined variable used to customize the tab-panel:",
+      "classes": "Class",
+      "introClasses": "We have a set of classes that could be used to customise accordingly:",
+      "class1Desc": "for the container of the panels",
+      "class2Desc": "for the title of the panel",
+      "class3Desc": "for the list of the button in the header of the panel",
+      "class4Desc": "for button in the header",
+      "class5Desc": "for button in the header if its content is displayed",
+      "class6Desc": "for the image or icon in the header of the panel",
+      "class7Desc": "for the image or icon in the header if its content is displayed",
+      "class8Desc": "for the text in the header",
+      "example": "Example",
+      "introCss": "To update the values, use the following CSS code:"
+    }
+  },
+  "table": {
+    "title": "Table",
+    "docs": {
+      "step1": "Step 1",
+      "step1desc": "Install the ip-table component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc1": "To use this component, we must add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "columns",
+        "attribute": "columns",
+        "necessity": "Required",
+        "description": "This is a JSON string representing an array of objects for thead.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "rows",
+        "attribute": "rows",
+        "necessity": "Required",
+        "description": "This is a JSON string representing an array of objects for tbody.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "prop1": {
+        "title": "Columns Property",
+        "desc1": "The columns property is a JSON string representing an array of column definitions.",
+        "desc2": "Each column must have a header and a type:",
+        "element1Desc": "A string that represents the name of the column. This will be displayed as the column header in the table.",
+        "element2Desc": "A string that represents the type of data in the column. This should be either 'string' or 'number'. This is used to determine how to sort the column. 'string' type columns are sorted alphabetically, while 'number' type columns are sorted numerically."
+      },
+      "prop2": {
+        "title": "Rows Property",
+        "desc1": "The rows property is a JSON string representing an array of row objects.",
+        "desc2": "Each row object should contain key-value pairs where keys correspond to the column headers and values represent the cell data."
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the table:",
+      "introClasses": "To update the values use the following:"
+    }
+  },
+  "toggle": {
+    "title1": "Simple Toggle",
+    "title2": "Toggle with text",
+    "title3": "Toggle with indication",
+    "intro1": "Used in digital interfaces to switch a single setting or option on and off. Resembling a physical switch, it provides a clear visual cue of its state, making it intuitive for users. ",
+    "intro2": "Toggles are commonly employed for binary settings like turning options on or off in applications and websites, offering a simpler alternative to checkboxes for immediate, single-action settings.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-toggle in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-toggle component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "ariaLabel",
+        "attribute": "aria-label",
+        "necessity": "Required",
+        "description": "It is the aria-label of content for accessibility.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "checked",
+        "attribute": "checked",
+        "necessity": "Optional",
+        "description": "It is the initial state of checked.",
+        "type": "boolean",
+        "default": "False"
+      },
+      "tableLine3": {
+        "property": "activeLabel",
+        "attribute": "active-label",
+        "necessity": "Optional",
+        "description": "This is the text that will be displayed when the toggle is active.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine4": {
+        "property": "inactiveLabel",
+        "attribute": "inactive-label",
+        "necessity": "Optional",
+        "description": "This is the text that will be displayed when the toggle is inactive.",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine5": {
+        "property": "toggleDisabled",
+        "attribute": "toggle-disabled",
+        "necessity": "Optional",
+        "description": "When we need to set the toggle to disabled.",
+        "type": "boolean",
+        "default": "False"
+      },
+      "tableLine6": {
+        "property": "size",
+        "attribute": "size",
+        "necessity": "Optional",
+        "description": "We have three predefined sizes: large, medium, small.",
+        "type": "string",
+        "default": "medium"
+      },
+      "content": "Content",
+      "contentDesc": "We have predefined a slot for the label before the switch of the toggle if necessary:",
+      "slotDesc": "This descriptive text informs the user about the function of the checkbox.",
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the toggle:",
+      "introClasses": "To update the values, use the following CSS:",
+      "event": "Listening to Events",
+      "eventDesc": "This event is emitted when the toggle state changes. The event detail is the state of checked."
+    }
+  },
+  "tooltip": {
+    "title1": "Clickable tooltip",
+    "title2": "Hover tooltip",
+    "intro1": "A tooltip is a brief, informative message that appears when a user hovers over or focuses on an element within a graphical user interface.",
+    "intro2": "It provides explanations or extra context for the item, enhancing usability and guidance.",
+    "docs": {
+      "installation": "Follow these steps to install and use the ip-tooltip component in your project.",
+      "step1": "Step 1",
+      "step1desc": "Install the ip-tooltip component as a dependency in your project:",
+      "step2": "Step 2",
+      "step2desc": "Import the module into your script file:",
+      "usage": "Usage",
+      "usageDesc": "To use this component, add the properties as attributes.",
+      "properties": "Properties",
+      "propertyTable": {
+        "property": "Property",
+        "attribute": "Attribute",
+        "necessity": "Necessity",
+        "description": "Description",
+        "type": "Type",
+        "default": "Default"
+      },
+      "tableLine1": {
+        "property": "tooltipTrigger",
+        "attribute": "tooltip-trigger",
+        "necessity": "Required",
+        "description": "The button that will display the tooltip",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine2": {
+        "property": "tooltipContent",
+        "attribute": "tooltip-content",
+        "necessity": "Required",
+        "description": "The text that will be displayed in the tooltip",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine3": {
+        "property": "type",
+        "attribute": "type",
+        "necessity": "Optional",
+        "description": "Determines if the tooltip should appear on click or hover",
+        "type": "'click' | 'hover'",
+        "default": "hover"
+      },
+      "tableLine4": {
+        "property": "tooltipBtnClose",
+        "attribute": "tooltip-btn-close",
+        "necessity": "Optional",
+        "description": "If you need to add a close button in the tooltip",
+        "type": "boolean",
+        "default": "false"
+      },
+      "tableLine5": {
+        "property": "tooltipTitle",
+        "attribute": "tooltip-title",
+        "necessity": "Optional",
+        "description": "The title of the tooltip if you want to add a title",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine6": {
+        "property": "tooltipBtn1",
+        "attribute": "tooltip-btn-1",
+        "necessity": "Optional",
+        "description": "If you need to add a button in the tooltip",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine7": {
+        "property": "tooltipBtn2",
+        "attribute": "tooltip-btn-2",
+        "necessity": "Optional",
+        "description": "If you need to add a second button in the tooltip",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine8": {
+        "property": "btn1AriaLabel",
+        "attribute": "btn-1-aria-label",
+        "necessity": "Optional",
+        "description": "ARIA label for the first button, required for accessibility",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "tableLine9": {
+        "property": "btn2AriaLabel",
+        "attribute": "btn-2-aria-label",
+        "necessity": "Optional",
+        "description": "ARIA label for the second button, required for accessibility",
+        "type": "string",
+        "default": "Undefined"
+      },
+      "personnalisation": "Customization",
+      "personnalisationDesc": "We have a set of predefined variables used to customize the tooltip:",
+      "parts": {
+        "intro": "Also, We have a set of parts that could be used to customize accordingly:",
+        "part1Desc": "for the close button if it exist",
+        "part2Desc": "for the first button if it exist",
+        "part3Desc": "for the second button if it exist",
+        "part4Desc": "for tooltip-content",
+        "part5Desc": "for the trigger button",
+        "exampleDesc": "To update the values use the following:"
+      },
+      "event": "Listening to Events",
+      "eventDesc1": "To listen to events emitted by ip-tooltip, open your browser's console.",
+      "eventDesc2": "Event details will be displayed in the console when the buttons are interacted with."
+    }
+  }
+}

@@ -3,10 +3,10 @@
     <div class="back-wrapper">
       <a
         href="https://design.ipedis.com/"
-        aria-label="Back to Ipedis Design system"
+        [attr.aria-label]="'common.label.backAria' | transloco"
       >
         <img src="assets/images/back-arrow.png" alt="" />
-        <span>Back</span>
+        <span>{{ 'common.label.back' | transloco }}</span>
       </a>
     </div>
 
@@ -14,9 +14,23 @@
       class="title-link"
       href="https://www.ipedis.com"
       target="_blank"
-      aria-label="Go to Ipedis Website- New window"
+      [attr.aria-label]="'common.label.ipedisAria' | transloco"
     >
       <img class="logo" src="assets/logo/logoIpedis.png" alt="Logo Ipedis" />
     </a>
+  </div>
+  <div class="lang">
+    <button
+      (click)="toggleLang()"
+      [attr.aria-label]="'common.label.languageSwitcher' | transloco"
+    >
+      {{ nextLang }}
+      @if (nextLang === 'French') {
+        <img src="../../../assets/images/french-flag.png" alt="" />
+      }
+      @if (nextLang === 'Anglais') {
+        <img src="../../../assets/images/en-flag.png" alt="" />
+      }
+    </button>
   </div>
 </header>
