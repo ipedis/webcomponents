@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Highlight } from 'ngx-highlightjs';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-doc-radio',
   standalone: true,
-  imports: [CommonModule, Highlight, TranslocoPipe],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-radio.component.html',
   styleUrl: './doc-radio.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
