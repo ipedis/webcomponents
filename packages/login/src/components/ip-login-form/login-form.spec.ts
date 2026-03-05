@@ -23,7 +23,7 @@ describe('ip-login', () => {
             </div>
             <form part="login-form">
               <div class="input">
-                <label htmlFor="username" class="input__label" part="username-label">
+                <label for="username" class="input__label" part="username-label">
                   Username
                 </label>
                 <div class="input_btn">
@@ -31,7 +31,7 @@ describe('ip-login', () => {
                 </div>
               </div>
               <div class="input">
-                <label class="input__label" htmlFor="password" part="password-label">
+                <label class="input__label" for="password" part="password-label">
                   Password
                   <span aria-hidden="true" class="required-asterisk">*</span>
                 </label>

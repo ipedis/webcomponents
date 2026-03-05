@@ -11,7 +11,7 @@ describe('ip-password', () => {
             <ip-password>
                 <mock:shadow-root>
                     <div class="input">
-                        <label htmlfor="password" class="input__label" part="input-label">
+                        <label for="password" class="input__label" part="input-label">
                                 Password
                             <span aria-hidden="true" class="required-asterisk">
                                 *

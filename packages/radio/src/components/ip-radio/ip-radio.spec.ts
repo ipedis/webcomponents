@@ -21,7 +21,7 @@ describe('IpRadio Component', () => {
             value="1"
              
             aria-checked="false"
-          /><label htmlfor="1">Option 1</label>
+          /><label for="1">Option 1</label>
         </div>
         <div class="">
           <input
@@ -31,7 +31,7 @@ describe('IpRadio Component', () => {
             value="2"
              
             aria-checked="false"
-          /><label htmlfor="2">Option 2</label>
+          /><label for="2">Option 2</label>
         </div>
       </div>
     </fieldset>
@@ -66,7 +66,7 @@ describe('IpRadio Component', () => {
             value="1"
               checked
             aria-checked="true"
-          /><label htmlfor="1">Option 1</label>
+          /><label for="1">Option 1</label>
         </div>
         <div class="">
           <input
@@ -76,7 +76,7 @@ describe('IpRadio Component', () => {
             value="2"
              
             aria-checked="false"
-          /><label htmlfor="2">Option 2</label>
+          /><label for="2">Option 2</label>
         </div>
       </div>
     </fieldset>
@@ -104,7 +104,7 @@ describe('IpRadio Component', () => {
             value="1"
              
             aria-checked="false"
-          /><label htmlfor="1">Option 1</label>
+          /><label for="1">Option 1</label>
         </div>
       </div>
     </fieldset>
@@ -134,7 +134,7 @@ describe('IpRadio Component', () => {
             value="1"
              
             aria-checked="false"
-          /><label htmlfor="1">Option 1</label>
+          /><label for="1">Option 1</label>
         </div>
         <div class="">
           <input
@@ -144,7 +144,7 @@ describe('IpRadio Component', () => {
             value="2"
              
             aria-checked="false"
-          /><label htmlfor="2">Option 2</label>
+          /><label for="2">Option 2</label>
         </div>
       </div>
     </fieldset>

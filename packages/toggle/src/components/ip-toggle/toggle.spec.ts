@@ -11,7 +11,7 @@ describe('ip-toggle', () => {
       <ip-toggle>
         <mock:shadow-root>
         <div class="switch-container">
-        <label htmlFor="switch-label">
+        <label for="switch-label">
         <slot name="switch-label"></slot>
       </label>
            <div class="switch-button">
@@ -34,7 +34,7 @@ describe('ip-toggle', () => {
     <ip-toggle active-label="Oui" inactive-label="Non">
         <mock:shadow-root>
           <div class="switch-container">
-          <label htmlFor="switch-label">
+          <label for="switch-label">
           <slot name="switch-label"></slot>
         </label>
             <div class="switch-button">            

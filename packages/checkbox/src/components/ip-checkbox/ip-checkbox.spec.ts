@@ -32,7 +32,7 @@ describe('ip-checkbox', () => {
      <ip-checkbox checked="true" identifier="check me">
        <mock:shadow-root>
          <div class="checkbox-content">          
-           <label class="checkbox-label" htmlfor="check me">
+           <label class="checkbox-label" for="check me">
            <input defaultchecked="" class="checkbox-input" id="check me" type="checkbox">
              <slot></slot>
            </label>

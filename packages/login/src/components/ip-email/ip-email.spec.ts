@@ -11,7 +11,7 @@ describe('ip-email', () => {
             <ip-email required>
                 <mock:shadow-root>
                     <div class="input">
-                        <label htmlfor="email" class="input__label" part="input-label" >
+                        <label for="email" class="input__label" part="input-label" >
                             Email
                             <span aria-hidden="true" class="required-asterisk">
                                 *
@@ -35,7 +35,7 @@ describe('ip-email', () => {
                 <ip-email input-label="Username">
                     <mock:shadow-root>
                         <div class="input">
-                            <label htmlfor="email" class="input__label" part="input-label">
+                            <label for="email" class="input__label" part="input-label">
                             Username
                             </label>
                             <div class="input_btn">
