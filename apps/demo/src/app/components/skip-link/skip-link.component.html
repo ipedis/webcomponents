@@ -1,4 +1,4 @@
-<nav>
+<nav [attr.aria-label]="'skiplink.aria-label' | transloco">
   <ul>
     <li>
       <a
@@ -6,7 +6,7 @@
         class="skip-link"
         (click)="skipToTargetId($event, 'overview')"
       >
-        Skip to the main navigation</a
+        {{ 'skiplink.menu' | transloco }}</a
       >
     </li>
     <li>
@@ -15,7 +15,7 @@
         class="skip-link"
         (click)="skipToTargetId($event, 'mainContent')"
       >
-        Skip to the main content
+        {{ 'skiplink.content' | transloco }}
       </a>
     </li>
   </ul>
