@@ -39,7 +39,7 @@
           "entry": "apps/demo/server.ts"
         },
         "security": {
-          "allowedHosts": ["localhost", "*.iepdis.com"]
+          "allowedHosts": ["localhost", "*.ipedis.com"]
         }
       },
       "configurations": {
