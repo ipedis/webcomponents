@@ -32,10 +32,14 @@
           "includePaths": ["apps/demo/src/styles"]
         },
         "scripts": [],
+        "baseHref": "/webcomponents/",
         "server": "apps/demo/src/main.server.ts",
         "outputMode": "server",
         "ssr": {
           "entry": "apps/demo/server.ts"
+        },
+        "security": {
+          "allowedHosts": ["localhost", "*.ipedis.com"]
         }
       },
       "configurations": {

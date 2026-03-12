@@ -17,9 +17,9 @@ export class DocMenuComponent {
   example = `<ip-burger-menu
   open-menu-aria-label="Ouvrir le menu"
   close-menu-aria-label="Fermer le menu"
-  path-to-close-icon="../../assets/images/x-icon.svg"
-  path-to-open-icon="../../assets/images/icon-list.svg"
-  path-to-arrow-right-icon="../../assets/images/arrow-right.svg"
+  path-to-close-icon="assets/images/x-icon.svg"
+  path-to-open-icon="assets/images/icon-list.svg"
+  path-to-arrow-right-icon="assets/images/arrow-right.svg"
   menu-data='[
       {"label":"Home", "href":"/home"},
       {"label":"About", "href":"/about"},
@@ -28,14 +28,14 @@ export class DocMenuComponent {
     ]'
 >
   <div slot="left-head-content">
-    <img src="../../assets/images/logo.png" alt="" />
+    <img src="assets/images/logo.png" alt="" />
   </div>
   <div slot="before-toggle-menu-content">
     <button>Votre pays</button>
     <button>Contactez-nous</button>
   </div>
   <div slot="left-menu-content">
-    <img src="../../assets/images/image1.png" alt="" />
+    <img src="assets/images/image1.png" alt="" />
   </div>
 </ip-burger-menu>`;
   css = `ip-burger-menu::part(nav-bar) {

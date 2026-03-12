@@ -1,5 +1,7 @@
 import { Route } from '@angular/router';
-export const appRoutes: Route[] = [
+import { langGuard } from './core/guards/lang.guard';
+
+const childRoutes: Route[] = [
   {
     path: '',
     loadComponent: () =>
@@ -18,7 +20,6 @@ export const appRoutes: Route[] = [
       import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
     data: { title: 'Tooltip' },
   },
-
   {
     path: 'dropdown',
     loadChildren: () =>
@@ -65,7 +66,6 @@ export const appRoutes: Route[] = [
       import('./pages/table/table.routing').then((m) => m.tableRoutes),
     data: { title: 'Table' },
   },
-
   {
     path: 'tab-panel',
     loadChildren: () =>
@@ -136,5 +136,28 @@ export const appRoutes: Route[] = [
       import('./pages/stepper/stepper.routing').then((m) => m.stepperRouting),
     data: { title: 'Stepper' },
   },
-  { path: '**', redirectTo: '' },
+];
+
+export const appRoutes: Route[] = [
+  {
+    path: '',
+    redirectTo: 'fr',
+    pathMatch: 'full',
+  },
+  {
+    path: 'not-found',
+    loadComponent: () =>
+      import('./pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent,
+      ),
+  },
+  {
+    path: ':lang',
+    canActivate: [langGuard],
+    children: childRoutes,
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+  },
 ];

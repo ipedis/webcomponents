@@ -17,22 +17,26 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
-  server.use('/assets', express.static(join(browserDistFolder, 'assets')));
-
+  // Serve static assets under /webcomponents/ prefix (matching baseHref)
+  server.use('/webcomponents/assets', express.static(join(browserDistFolder, 'assets')));
   server.use(
+    '/webcomponents',
     express.static(browserDistFolder, {
       maxAge: '1y',
-      index: 'index.html',
-    })
+      index: false,
+    }),
   );
 
   // All regular routes use the Angular engine
   server.use((req, res, next) => {
-    angularNodeAppEngine.handle(req, {
-      server: 'express',
-    }).then((response: Response | null) => {
-      return response ? writeResponseToNodeResponse(response, res) : next();
-    }).catch((err: unknown) => next(err));
+    angularNodeAppEngine
+      .handle(req, {
+        server: 'express',
+      })
+      .then((response: Response | null) => {
+        return response ? writeResponseToNodeResponse(response, res) : next();
+      })
+      .catch((err: unknown) => next(err));
   });
 
   return server;
@@ -44,7 +48,7 @@ if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] ? parseInt(process.env['PORT']) : 4000;
   const ip = process.env['IP'] || '0.0.0.0';
 
-  server.listen(port,ip, () => {
+  server.listen(port, ip, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }

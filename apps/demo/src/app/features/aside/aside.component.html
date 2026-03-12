@@ -7,7 +7,7 @@
   <ul class="menu-list">
     <li class="item" [class.open]="isOpen['intro']">
       <a
-        routerLink="/"
+        [routerLink]="'/' + activeLang"
         routerLinkActive="active"
         aria-label="Go to Introduction"
         (click)="onLinkClick()"
@@ -17,7 +17,7 @@
     </li>
     <li class="item" [class.open]="isOpen['accordion']">
       <a
-        routerLink="/accordion/accordion1"
+        [routerLink]="'/' + activeLang + '/accordion/accordion1'"
         routerLinkActive="active"
         aria-label="Go to Accordion component"
         (click)="onLinkClick()"
@@ -48,7 +48,7 @@
       <ul class="sub-menu" role="list" [class.open]="isOpen['alert']">
         <li>
           <a
-            routerLink="/alert/info-alert"
+            [routerLink]="'/' + activeLang + '/alert/info-alert'"
             routerLinkActive="active"
             aria-label="Go to Alert info preview"
             (click)="onLinkClick()"
@@ -57,7 +57,7 @@
         </li>
         <li>
           <a
-            routerLink="/alert/success-alert"
+            [routerLink]="'/' + activeLang + '/alert/success-alert'"
             routerLinkActive="active"
             aria-label="Go to Alert success preview"
             (click)="onLinkClick()"
@@ -66,7 +66,7 @@
         </li>
         <li>
           <a
-            routerLink="/alert/warning-alert"
+            [routerLink]="'/' + activeLang + '/alert/warning-alert'"
             routerLinkActive="active"
             aria-label="Go to Alert Warning preview"
             (click)="onLinkClick()"
@@ -75,7 +75,7 @@
         </li>
         <li>
           <a
-            routerLink="/alert/danger-alert"
+            [routerLink]="'/' + activeLang + '/alert/danger-alert'"
             routerLinkActive="active"
             aria-label="Go to Alert Danger preview"
             (click)="onLinkClick()"
@@ -86,7 +86,7 @@
     </li>
     <li class="item" [class.open]="isOpen['breadcrumb']">
       <a
-        routerLink="/breadcrumb/breadcrumb1"
+        [routerLink]="'/' + activeLang + '/breadcrumb/breadcrumb1'"
         routerLinkActive="active"
         aria-label="Go to breadcrumbcomponent"
         (click)="onLinkClick()"
@@ -117,7 +117,7 @@
       <ul class="sub-menu" role="list" [class.open]="isOpen['checkbox']">
         <li>
           <a
-            routerLink="/checkbox/checkbox1"
+            [routerLink]="'/' + activeLang + '/checkbox/checkbox1'"
             routerLinkActive="active"
             aria-label="Go to Simple Checkbox"
             (click)="onLinkClick()"
@@ -127,7 +127,7 @@
         </li>
         <li>
           <a
-            routerLink="/checkbox/checkbox-list"
+            [routerLink]="'/' + activeLang + '/checkbox/checkbox-list'"
             routerLinkActive="active"
             aria-label="Go to Checkbox list"
             (click)="onLinkClick()"
@@ -140,7 +140,7 @@
 
     <li class="item" [class.open]="isOpen['dropdown']">
       <a
-        routerLink="/dropdown/dropdown1"
+        [routerLink]="'/' + activeLang + '/dropdown/dropdown1'"
         routerLinkActive="active"
         aria-label="Go to Dropdown component"
         (click)="onLinkClick()"
@@ -151,7 +151,7 @@
 
     <li class="item" [class.open]="isOpen['footnote']">
       <a
-        routerLink="/footnote/footnote1"
+        [routerLink]="'/' + activeLang + '/footnote/footnote1'"
         routerLinkActive="active"
         aria-label="Go to Footnote component"
         (click)="onLinkClick()"
@@ -181,7 +181,7 @@
       <ul class="sub-menu" role="list" [class.open]="isOpen['login']">
         <li>
           <a
-            routerLink="/login/login1"
+            [routerLink]="'/' + activeLang + '/login/login1'"
             routerLinkActive="active"
             aria-label="Go to Login with email"
             (click)="onLinkClick()"
@@ -191,7 +191,7 @@
         </li>
         <li>
           <a
-            routerLink="/login/login2"
+            [routerLink]="'/' + activeLang + '/login/login2'"
             routerLinkActive="active"
             aria-label="Go to Login with username"
             (click)="onLinkClick()"
@@ -203,7 +203,7 @@
     </li>
     <li class="item" [class.open]="isOpen['menu']">
       <a
-        routerLink="/menu/burger-menu"
+        [routerLink]="'/' + activeLang + '/menu/burger-menu'"
         routerLinkActive="active"
         aria-label="Go to menu component"
         (click)="onLinkClick()"
@@ -214,7 +214,7 @@
 
     <li class="item" [class.open]="isOpen['modal']">
       <a
-        routerLink="/modal/modal1"
+        [routerLink]="'/' + activeLang + '/modal/modal1'"
         routerLinkActive="active"
         aria-label="Go to Modal component"
         (click)="onLinkClick()"
@@ -225,7 +225,7 @@
 
     <li class="item" [class.open]="isOpen['pagination']">
       <a
-        routerLink="/pagination/pagination1"
+        [routerLink]="'/' + activeLang + '/pagination/pagination1'"
         routerLinkActive="active"
         aria-label="Go to Pagination component"
         (click)="onLinkClick()"
@@ -236,7 +236,7 @@
 
     <li class="item" [class.open]="isOpen['radio-button']">
       <a
-        routerLink="/radio-button/radio-button1"
+        [routerLink]="'/' + activeLang + '/radio-button/radio-button1'"
         aria-label="Go to Radio-button component"
         routerLinkActive="active"
         (click)="onLinkClick()"
@@ -247,7 +247,7 @@
 
     <li class="item" [class.open]="isOpen['search-bar']">
       <a
-        routerLink="/search-bar/search-bar1"
+        [routerLink]="'/' + activeLang + '/search-bar/search-bar1'"
         routerLinkActive="active"
         aria-label="Go to search-bar component"
         (click)="onLinkClick()"
@@ -258,7 +258,7 @@
 
     <li class="item" [class.open]="isOpen['show-more']">
       <a
-        routerLink="/show-more/show-more1"
+        [routerLink]="'/' + activeLang + '/show-more/show-more1'"
         routerLinkActive="active"
         aria-label="Go to Show-more component"
         (click)="onLinkClick()"
@@ -268,7 +268,7 @@
     </li>
     <li class="item" [class.open]="isOpen['stepper']">
       <a
-        routerLink="/stepper/stepper1"
+        [routerLink]="'/' + activeLang + '/stepper/stepper1'"
         routerLinkActive="active"
         aria-label="Go to Stepper component"
         (click)="onLinkClick()"
@@ -279,7 +279,7 @@
 
     <li class="item" [class.open]="isOpen['tab-panel']">
       <a
-        routerLink="/tab-panel/tab-panel1"
+        [routerLink]="'/' + activeLang + '/tab-panel/tab-panel1'"
         routerLinkActive="active"
         aria-label="Go to Tab-panel component"
         (click)="onLinkClick()"
@@ -289,7 +289,7 @@
     </li>
     <li class="item" [class.open]="isOpen['table']">
       <a
-        routerLink="/table/table1"
+        [routerLink]="'/' + activeLang + '/table/table1'"
         routerLinkActive="active"
         aria-label="Go to Table component"
         (click)="onLinkClick()"
@@ -318,7 +318,7 @@
       <ul class="sub-menu" role="list" [class.open]="isOpen['toggle']">
         <li>
           <a
-            routerLink="/toggle/toggle1"
+            [routerLink]="'/' + activeLang + '/toggle/toggle1'"
             routerLinkActive="active"
             aria-label="Go to Simple Toggle"
             (click)="onLinkClick()"
@@ -328,7 +328,7 @@
         </li>
         <li>
           <a
-            routerLink="/toggle/toggle2"
+            [routerLink]="'/' + activeLang + '/toggle/toggle2'"
             routerLinkActive="active"
             aria-label="Go to Toggle With text"
             (click)="onLinkClick()"
@@ -338,7 +338,7 @@
         </li>
         <li>
           <a
-            routerLink="/toggle/toggle3"
+            [routerLink]="'/' + activeLang + '/toggle/toggle3'"
             routerLinkActive="active"
             aria-label="Go to Toggle With indication"
             (click)="onLinkClick()"
@@ -372,7 +372,7 @@
       <ul class="sub-menu" role="list" [class.open]="isOpen['tooltip']">
         <li>
           <a
-            routerLink="/tooltip/tooltip1"
+            [routerLink]="'/' + activeLang + '/tooltip/tooltip1'"
             routerLinkActive="active"
             aria-label="Go to Tooltip Clickable"
             (click)="onLinkClick()"
@@ -382,7 +382,7 @@
         </li>
         <li>
           <a
-            routerLink="/tooltip/tooltip2"
+            [routerLink]="'/' + activeLang + '/tooltip/tooltip2'"
             routerLinkActive="active"
             aria-label="Go to Tooltip Hover"
             (click)="onLinkClick()"

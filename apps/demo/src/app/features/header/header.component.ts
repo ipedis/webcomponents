@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
@@ -11,6 +12,7 @@ import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 })
 export class HeaderComponent {
   private readonly translocoService = inject(TranslocoService);
+  private readonly router = inject(Router);
 
   get activeLang(): string {
     return this.translocoService.getActiveLang();
@@ -22,6 +24,8 @@ export class HeaderComponent {
 
   toggleLang(): void {
     const newLang = this.activeLang === 'fr' ? 'en' : 'fr';
-    this.translocoService.setActiveLang(newLang);
+    const currentUrl = this.router.url;
+    const newUrl = currentUrl.replace(/^\/(fr|en)/, `/${newLang}`);
+    this.router.navigateByUrl(newUrl);
   }
 }
