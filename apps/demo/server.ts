@@ -27,6 +27,10 @@ export function app(): express.Express {
     }),
   );
 
+  server.get('/_infra/healthcheck', (req, res) => {
+    res.status(200).send('ok');
+  });
+
   // All regular routes use the Angular engine
   server.use((req, res, next) => {
     angularNodeAppEngine
