@@ -6,13 +6,22 @@ export const checkboxRoutes: Route[] = [
   {
     path: '',
     component: Checkbox1Component,
+    data: {
+      title: 'pages.checkbox.simple.title',
+    },
   },
   {
     path: 'checkbox1',
     component: Checkbox1Component,
+    data: {
+      title: 'pages.checkbox.simple.title',
+    },
   },
   {
     path: 'checkbox-list',
     component: CheckboxListComponent,
+    data: {
+      title: 'pages.checkbox.list.title',
+    },
   },
 ];

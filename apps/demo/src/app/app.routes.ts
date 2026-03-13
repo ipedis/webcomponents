@@ -4,29 +4,26 @@ import { langGuard } from './core/guards/lang.guard';
 const childRoutes: Route[] = [
   {
     path: '',
-    loadChildren: () =>
-      import('./pages/accordion/accordion.routing').then(
-        (m) => m.accordionRoutes,
-      ),
-    data: { title: 'Accordion | Demo Web components Ipedis' },
+    redirectTo: 'https://design.ipedis.com',
+    pathMatch: 'full',
   },
   {
     path: 'tooltip',
     loadChildren: () =>
       import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
-    data: { title: 'Tooltip | Demo Web components Ipedis' },
+    data: { title: 'pages.tooltip.title' },
   },
   {
     path: 'dropdown',
     loadChildren: () =>
       import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
-    data: { title: 'Dropdown | Demo Web components Ipedis' },
+    data: { title: 'pages.dropdown.title' },
   },
   {
     path: 'toggle',
     loadChildren: () =>
       import('./pages/toggle/toggle.routing').then((m) => m.toggleRoues),
-    data: { title: 'Toggle | Demo Web components Ipedis' },
+    data: { title: 'pages.toggle.title' },
   },
   {
     path: 'radio-button',
@@ -34,19 +31,19 @@ const childRoutes: Route[] = [
       import('./pages/radio-button/radio-button.routing').then(
         (m) => m.radioButtonRoutes,
       ),
-    data: { title: 'Radio-button | Demo Web components Ipedis' },
+    data: { title: 'pages.radio-button.title' },
   },
   {
     path: 'checkbox',
     loadChildren: () =>
       import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
-    data: { title: 'Checkbox | Demo Web components Ipedis' },
+    data: { title: 'pages.checkbox.title' },
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.routing').then((m) => m.loginRoutes),
-    data: { title: 'Login | Demo Web components Ipedis' },
+    data: { title: 'pages.login.title' },
   },
   {
     path: 'pagination',
@@ -54,13 +51,13 @@ const childRoutes: Route[] = [
       import('./pages/pagination/pagination.routing').then(
         (m) => m.paginationRoutes,
       ),
-    data: { title: 'Pagination | Demo Web components Ipedis' },
+    data: { title: 'pages.pagination.title' },
   },
   {
     path: 'table',
     loadChildren: () =>
       import('./pages/table/table.routing').then((m) => m.tableRoutes),
-    data: { title: 'Table | Demo Web components Ipedis' },
+    data: { title: 'pages.table.title' },
   },
   {
     path: 'tab-panel',
@@ -68,7 +65,7 @@ const childRoutes: Route[] = [
       import('./pages/tab-panel/tab-panel.routing').then(
         (m) => m.tabPanelRoutes,
       ),
-    data: { title: 'Tab-panel | Demo Web components Ipedis' },
+    data: { title: 'pages.tab-panel.title' },
   },
   {
     path: 'accordion',
@@ -76,19 +73,19 @@ const childRoutes: Route[] = [
       import('./pages/accordion/accordion.routing').then(
         (m) => m.accordionRoutes,
       ),
-    data: { title: 'Accordion | Demo Web components Ipedis' },
+    data: { title: 'pages.accordion.title' },
   },
   {
     path: 'modal',
     loadChildren: () =>
       import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
-    data: { title: 'Modal | Demo Web components Ipedis' },
+    data: { title: 'pages.modal.title' },
   },
   {
     path: 'footnote',
     loadChildren: () =>
       import('./pages/footnote/footnote.routing').then((m) => m.footnoteRoutes),
-    data: { title: 'Footnote | Demo Web components Ipedis' },
+    data: { title: 'pages.footnote.title' },
   },
   {
     path: 'show-more',
@@ -96,13 +93,13 @@ const childRoutes: Route[] = [
       import('./pages/show-more/show-more.routing').then(
         (m) => m.showMoreRoutes,
       ),
-    data: { title: 'Show-more | Demo Web components Ipedis' },
+    data: { title: 'pages.show-more.title' },
   },
   {
     path: 'alert',
     loadChildren: () =>
       import('./pages/alert/alert.routing').then((m) => m.alertRouting),
-    data: { title: 'Alert | Demo Web components Ipedis' },
+    data: { title: 'pages.alert.title' },
   },
   {
     path: 'search-bar',
@@ -110,7 +107,7 @@ const childRoutes: Route[] = [
       import('./pages/search-bar/search-bar.routing').then(
         (m) => m.searchBarRouting,
       ),
-    data: { title: 'Search-bar | Demo Web components Ipedis' },
+    data: { title: 'pages.search-bar.title' },
   },
   {
     path: 'breadcrumb',
@@ -118,19 +115,19 @@ const childRoutes: Route[] = [
       import('./pages/breadcrumb/breadcrumb.routing').then(
         (m) => m.breadcrumbRouting,
       ),
-    data: { title: 'Breadcrumb | Demo Web components Ipedis' },
+    data: { title: 'pages.breadcrumb.title' },
   },
   {
     path: 'menu',
     loadChildren: () =>
       import('./pages/menu/menu.routing').then((m) => m.menuRoutes),
-    data: { title: 'Menu | Demo Web components Ipedis' },
+    data: { title: 'pages.menu.title' },
   },
   {
     path: 'stepper',
     loadChildren: () =>
       import('./pages/stepper/stepper.routing').then((m) => m.stepperRouting),
-    data: { title: 'Stepper | Demo Web components Ipedis' },
+    data: { title: 'pages.stepper.title' },
   },
 ];
 

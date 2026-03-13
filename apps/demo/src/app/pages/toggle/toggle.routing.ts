@@ -7,17 +7,29 @@ export const toggleRoues: Route[] = [
   {
     path: '',
     component: Toogle1Component,
+    data: {
+      title: 'pages.toggle.simple.title',
+    },
   },
   {
     path: 'toggle1',
     component: Toogle1Component,
+    data: {
+      title: 'pages.toggle.simple.title',
+    },
   },
   {
     path: 'toggle2',
     component: Toogle2Component,
+    data: {
+      title: 'pages.toggle.with-text.title',
+    },
   },
   {
     path: 'toggle3',
     component: Toogle3Component,
+    data: {
+      title: 'pages.toggle.with-indication.title',
+    },
   },
 ];

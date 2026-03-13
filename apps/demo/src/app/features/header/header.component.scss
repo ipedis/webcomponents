@@ -1,10 +1,15 @@
 @use '../../../assets/styles/index.scss' as *;
 header {
-  width: 95%;
+  width: 100%;
   position: fixed;
   overflow: hidden;
+  top: 0;
+  left: 0;
+
   z-index: 1000;
-  margin: 0 40px;
+  padding: 0;
+}
+.wrapper {
   border: 0.5px solid #eff7ff;
   border-radius: 0px 0px 20px 20px;
   box-shadow: 0px 0px 8px 0px rgba(32, 114, 183, 0.1);
@@ -13,6 +18,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 0 40px;
 }
 .lang {
   margin: 25px;
@@ -46,11 +52,11 @@ header {
   }
 }
 .head {
+  padding: 0 40px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: rem(10) rem(32);
   box-sizing: border-box;
   position: sticky;
   font-family: 'Mulish-regular';
@@ -81,7 +87,9 @@ header {
       display: none;
     }
   }
-
+  header {
+    position: relative;
+  }
   .lang button {
     font-size: 14px;
     padding: 6px 10px;

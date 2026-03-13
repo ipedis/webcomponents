@@ -6,13 +6,22 @@ export const loginRoutes: Route[] = [
   {
     path: '',
     component: Login1Component,
+    data: {
+      title: 'pages.login.email.title',
+    },
   },
   {
     path: 'login1',
     component: Login1Component,
+    data: {
+      title: 'pages.login.email.title',
+    },
   },
   {
     path: 'login2',
     component: Login2Component,
+    data: {
+      title: 'pages.login.username.title',
+    },
   },
 ];
