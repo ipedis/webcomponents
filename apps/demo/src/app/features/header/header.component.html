@@ -11,27 +11,28 @@
         </a>
       </div>
 
-    <a
-      class="title-link"
-      href="https://www.ipedis.com"
-      target="_blank"
-      [attr.aria-label]="'common.label.ipedisAria' | transloco"
-    >
-      <img class="logo" src="assets/logo/logoIpedis.png" alt="Logo Ipedis" />
-    </a>
-  </div>
-  <div class="lang">
-    <button
-      (click)="toggleLang()"
-      [attr.aria-label]="'common.label.languageSwitcher' | transloco"
-    >
-      {{ nextLang }}
-      @if (nextLang === 'French') {
-        <img src="assets/images/french-flag.png" alt="" />
-      }
-      @if (nextLang === 'Anglais') {
-        <img src="assets/images/en-flag.png" alt="" />
-      }
-    </button>
+      <a
+        class="title-link"
+        href="https://www.ipedis.com"
+        target="_blank"
+        [attr.aria-label]="'common.label.ipedisAria' | transloco"
+      >
+        <img class="logo" src="assets/logo/logoIpedis.png" alt="Logo Ipedis" />
+      </a>
+    </div>
+    <div class="lang">
+      <button
+        (click)="toggleLang()"
+        [attr.aria-label]="'common.label.languageSwitcher' | transloco"
+      >
+        {{ nextLang }}
+        @if (nextLang === 'French') {
+          <img src="../../../assets/images/french-flag.png" alt="" />
+        }
+        @if (nextLang === 'Anglais') {
+          <img src="../../../assets/images/en-flag.png" alt="" />
+        }
+      </button>
+    </div>
   </div>
 </header>
