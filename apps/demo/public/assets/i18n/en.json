@@ -9,46 +9,103 @@
     },
     "components": "COMPONENTS"
   },
-
-  "app": {
-    "title": "Web Components",
-    "intro1": "Explore a new dimension of web design where accessibility is at the core of every component. With 20 years of unparalleled expertise, we at Ipedis are proud to present a design system crafted to create inclusive digital experiences for all.",
-    "intro2": "Our platform has been meticulously designed to help you develop complex components while adhering to the strictest accessibility standards. Each component you discover here is designed to provide an accessible design, accompanied by detailed guidelines on its optimal use.",
-    "intro3": "At Ipedis, we firmly believe in « Accessibility by Design ». This means integrating accessibility principles from the outset, ensuring a superior and inclusive user experience.",
-    "intro4": "Dive into our interactive demo and see how our components can enrich your web project while meeting the needs of everyone. Whether you're a seasoned developer or a novice, our design system is here to guide you towards accessible solutions without compromising on quality or innovation.",
-    "intro5": "Ready to create accessible web experiences that make a difference? Explore our design system today and start shaping a more inclusive web for all.",
-    "question": "Any questions?",
-    "contact": "Contact us at"
+  "pages": {
+    "accordion": {
+      "title": "Accordion Demo | A11Y Design System | Ipedis"
+    },
+    "tooltip": {
+      "title": "Tooltip Demo | A11Y Design System | Ipedis",
+      "click": {
+        "title": "Clickable tooltip Demo | A11Y Design System | Ipedis"
+      },
+      "hover": {
+        "title": "Hover tooltip Demo | A11Y Design System | Ipedis"
+      }
+    },
+    "dropdown": {
+      "title": "Dropdown Demo | A11Y Design System | Ipedis"
+    },
+    "toggle": {
+      "title": "Toggle Demo | A11Y Design System | Ipedis",
+      "simple": {
+        "title": "Toggle Demo | A11Y Design System | Ipedis"
+      },
+      "with-text": {
+        "title": "Toggle with text Demo | A11Y Design System | Ipedis"
+      },
+      "with-indication": {
+        "title": "Toggle with indication Demo | A11Y Design System | Ipedis"
+      }
+    },
+    "radio-button": {
+      "title": "Radio-button Demo | A11Y Design System | Ipedis"
+    },
+    "login": {
+      "title": "Login Demo | A11Y Design System | Ipedis",
+      "email": {
+        "title": "Password Input Email Demo | A11Y Design System | Ipedis"
+      },
+      "username": {
+        "title": "Password Input Username Demo | A11Y Design System | Ipedis"
+      }
+    },
+    "pagination": {
+      "title": "Pagination Demo | A11Y Design System | Ipedis"
+    },
+    "table": {
+      "title": "Table Demo | A11Y Design System | Ipedis"
+    },
+    "tab-panel": {
+      "title": "Tab-panel Demo | A11Y Design System | Ipedis"
+    },
+    "modal": {
+      "title": "Modal window Demo | A11Y Design System | Ipedis"
+    },
+    "footnote": {
+      "title": "Footnote Demo | A11Y Design System | Ipedis"
+    },
+    "show-more": {
+      "title": "Show-more button Demo | A11Y Design System | Ipedis"
+    },
+    "alert": {
+      "title": "Alert Demo | A11Y Design System | Ipedis"
+    },
+    "search-bar": {
+      "title": "Search-bar Demo | A11Y Design System | Ipedis"
+    },
+    "breadcrumb": {
+      "title": "Breadcrumb Demo | A11Y Design System | Ipedis"
+    },
+    "menu": {
+      "title": "Burger Menu Demo | A11Y Design System | Ipedis"
+    },
+    "stepper": {
+      "title": "Stepper Demo | A11Y Design System | Ipedis"
+    },
+    "checkbox": {
+      "title": "Checkbox Demo | A11Y Design System | Ipedis",
+      "simple": {
+        "title": "Checkbox Demo | A11Y Design System | Ipedis"
+      },
+      "list": {
+        "title": "Checkbox List Demo | A11Y Design System | Ipedis"
+      }
+    }
   },
+
   "footer": {
-    "components": {
-      "title": "Web Components",
-      "": ""
-    },
-    "disability": {
-      "title": "Disability Guide",
-      "visual": "Visual",
-      "anosmia": "Anosmia",
-      "deafness": "Deafness",
-      "motor": "Motor",
-      "cognitive": "Cognitive Disorder",
-      "physic": "Physic"
-    },
-    "pdf": {
-      "title": "PDF Accessibility",
-      "tagging": "Tagging Evaluation",
-      "tags": "Tags",
-      "form": "Interactive Form",
-      "completion": "Document Completion",
-      "quality": "PDF Quality Check"
-    },
-    "accessibiliy": "Accessibility Statement: Totally Compliant",
-    "license": "License",
-    "sitemap": "Sitemap",
     "cookie": "Privacy and cookie policy",
     "legal": "Legal Notice",
-    "navAria": "Secondary navigation",
-    "navFooter": "Footer navigation"
+    "navFooter": "Footer navigation",
+    "href": {
+      "cookie": "https://www.ipedis.com/politique-confidentialite/",
+      "legal": "https://www.ipedis.com/mentions-legales/"
+    }
+  },
+  "skiplink": {
+    "aria-label": "Skip Link",
+    "menu": "Skip to the menu",
+    "content": "Skip to the main content"
   },
   "accordion": {
     "title": "Accordion",

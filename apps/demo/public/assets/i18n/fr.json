@@ -9,7 +9,89 @@
     },
     "components": "COMPOSANTS"
   },
-
+  "pages": {
+    "accordion": {
+      "title": "Démo Accordéon | A11Y Design System | Ipedis"
+    },
+    "tooltip": {
+      "title": "Démo Infobulle | A11Y Design System | Ipedis",
+      "click": {
+        "title": "Démo Infobulle cliquable | A11Y Design System | Ipedis"
+      },
+      "hover": {
+        "title": "Démo Infobulle au survol | A11Y Design System | Ipedis"
+      }
+    },
+    "dropdown": {
+      "title": "Démo Liste déroulante | A11Y Design System | Ipedis"
+    },
+    "toggle": {
+      "title": "Démo Bouton à bascule | A11Y Design System | Ipedis",
+      "simple": {
+        "title": "Démo Bouton à bascule | A11Y Design System | Ipedis"
+      },
+      "with-text": {
+        "title": "Démo Bouton à bascule avec texte | A11Y Design System | Ipedis"
+      },
+      "with-indication": {
+        "title": "Démo Bouton à bascule avec indication | A11Y Design System | Ipedis"
+      }
+    },
+    "radio-button": {
+      "title": "Démo Bouton radio | A11Y Design System | Ipedis"
+    },
+    "login": {
+      "title": "Démo Page de connexion | A11Y Design System | Ipedis",
+      "email": {
+        "title": "Démo Champ de mot de passe Email | A11Y Design System | Ipedis"
+      },
+      "username": {
+        "title": "Démo Mot de passe nom d'utilisateur | A11Y Design System | Ipedis"
+      }
+    },
+    "pagination": {
+      "title": "Démo Pagination | A11Y Design System | Ipedis"
+    },
+    "table": {
+      "title": "Démo Tableau | A11Y Design System | Ipedis"
+    },
+    "tab-panel": {
+      "title": "Démo Système d'onglets | A11Y Design System | Ipedis"
+    },
+    "modal": {
+      "title": "Démo Fenêtre modale | A11Y Design System | Ipedis"
+    },
+    "footnote": {
+      "title": "Démo Note de pied de page | A11Y Design System | Ipedis"
+    },
+    "show-more": {
+      "title": "Démo Bouton Afficher Plus | A11Y Design System | Ipedis"
+    },
+    "alert": {
+      "title": "Démo Alertes | A11Y Design System | Ipedis"
+    },
+    "search-bar": {
+      "title": "Démo Barre de recherche | A11Y Design System | Ipedis"
+    },
+    "breadcrumb": {
+      "title": "Démo Fil d'ariane | A11Y Design System | Ipedis"
+    },
+    "menu": {
+      "title": "Démo Menu de navigation | A11Y Design System | Ipedis"
+    },
+    "stepper": {
+      "title": "Démo Indicateur d'étapes | A11Y Design System | Ipedis"
+    },
+    "checkbox": {
+      "title": "Démo Case à cocher | A11Y Design System | Ipedis",
+      "simple": {
+        "title": "Démo Case à cocher | A11Y Design System | Ipedis"
+      },
+      "list": {
+        "title": "Démo Liste de cases à cocher | A11Y Design System | Ipedis"
+      }
+    }
+  },
   "app": {
     "title": "Composants Web",
     "intro1": "Explorez une nouvelle dimension de la conception web où l’accessibilité est au cœur de chaque composant. Avec 20 ans d’expertise inégalée, nous sommes fiers chez Ipedis de présenter un système de design conçu pour créer des expériences numériques inclusives pour tous.",
@@ -21,34 +103,19 @@
     "contact": "Contactez nous à"
   },
   "footer": {
-    "components": {
-      "title": "Composants Web",
-      "": ""
-    },
-    "disability": {
-      "title": "Guide d'handicap",
-      "visual": "Visuel",
-      "anosmia": "Anosmie",
-      "deafness": "Malentendant",
-      "motor": "Moteur",
-      "cognitive": "Trouble cognitif",
-      "physic": "Physique"
-    },
-    "pdf": {
-      "title": "Accessibilité des PDF",
-      "tagging": "Évaluation du marquage",
-      "tags": "Balisages",
-      "form": "Formulaire interactif",
-      "completion": "Complétion du document",
-      "quality": "Vérification de la qualité PDF"
-    },
-    "accessibiliy": "Déclaration d’accessibilité : Totalement conforme",
-    "license": "Licene",
-    "sitemap": "Plan du site",
     "cookie": "Politique de confidentialité et cookies",
     "legal": "Mentions légales",
-    "navAria": "Navigation secondaire",
-    "navFooter": "Navigation du pied de page"
+    "navFooter": "Navigation du pied de page",
+    "href": {
+      "sitemap": "https://design.ipedis.com/plan-du-site/",
+      "cookie": "https://www.ipedis.com/politique-confidentialite/",
+      "legal": "https://www.ipedis.com/mentions-legales/"
+    }
+  },
+  "skiplink": {
+    "aria-label": "Lien d'évitement",
+    "menu": "Aller au menu",
+    "content": "Aller au contenu principal"
   },
   "accordion": {
     "title": "Accordéon",

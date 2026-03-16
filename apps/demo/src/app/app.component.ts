@@ -10,25 +10,23 @@ import { HeaderComponent } from './features/header/header.component';
 import { FooterComponent } from './features/footer/footer.component';
 import { SkipLinkComponent } from './components/skip-link/skip-link.component';
 import { TitleService } from './core/services/title.service';
-
+import { TranslocoService } from '@jsverse/transloco';
 @Component({
   standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    SkipLinkComponent
-],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, SkipLinkComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   private titleService = inject<TitleService>(TitleService);
-
+  private transloco = inject(TranslocoService);
   ngOnInit() {
     this.titleService.init();
+    this.transloco.langChanges$.subscribe((lang) => {
+      document.documentElement.lang = lang;
+    });
   }
 }

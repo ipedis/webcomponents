@@ -1,94 +1,9 @@
 <footer role="contentinfo">
-  <div class="menu">
-    <nav [attr.aria-label]="'footer.navAria' | transloco">
-      <div class="wrapper components">
-        <div class="title">
-          <span>{{ 'footer.components.title' | transloco }}</span>
-        </div>
-        <div class="list">
-          <ul class="two-columns">
-            <li><a href="#">Accordion</a></li>
-            <li><a href="#">Breadcrumb</a></li>
-            <li><a href="#">Buttons</a></li>
-            <li><a href="#">Checkbox</a></li>
-            <li><a href="#">Links</a></li>
-            <li><a href="#">Modal</a></li>
-            <li><a href="#">Pagination</a></li>
-            <li><a href="#">Radio Button</a></li>
-            <li><a href="#">Select</a></li>
-            <li><a href="#">Skip Link</a></li>
-            <li><a href="#">Text Input</a></li>
-            <li><a href="#">Sr-only</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="wrapper disability">
-        <div class="title">
-          <span>{{ 'footer.disability.title' | transloco }}</span>
-        </div>
-        <div class="list">
-          <ul>
-            <li>
-              <a href="#">{{ 'footer.disability.visual' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.disability.anosmia' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.disability.deafness' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.disability.motor' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.disability.cognitive' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.disability.physic' | transloco }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="wrapper pdf">
-        <div class="title">
-          <span>{{ 'footer.pdf.title' | transloco }}</span>
-        </div>
-        <div class="list">
-          <ul>
-            <li>
-              <a href="#">{{ 'footer.pdf.tagging' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.pdf.tags' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.pdf.form' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.pdf.completion' | transloco }}</a>
-            </li>
-            <li>
-              <a href="#">{{ 'footer.pdf.quality' | transloco }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
   <div class="footer">
     <nav [attr.aria-label]="'footer.navFooter' | transloco">
       <ul class="list">
-        <li>
-          <a href="#">{{ 'footer.accessibiliy' | transloco }}</a>
-        </li>
-        <li>
-          <a href="#">{{ 'footer.license' | transloco }}</a>
-        </li>
-        <li>
-          <a href="#">{{ 'footer.sitemap' | transloco }}</a>
-        </li>
         <li class="new-window">
-          <a href="#" target="_blank"
+          <a [href]="'footer.href.cookie' | transloco" target="_blank"
             >{{ 'footer.cookie' | transloco }}
             <img
               src="assets/images/new-window-icon.png"
@@ -96,14 +11,14 @@
           /></a>
         </li>
         <li class="new-window">
-          <a href="#" target="_blank"
+          <a [href]="'footer.href.legal' | transloco" target="_blank"
             >{{ 'footer.legal' | transloco }}
             <img
               src="assets/images/new-window-icon.png"
               [attr.alt]="'common.label.newWindow' | transloco"
           /></a>
         </li>
-        <li class="new-window">
+        <li class="ipedis new-window">
           <a href="https://www.ipedis.com" target="_blank"
             >Ipedis.com
             <img

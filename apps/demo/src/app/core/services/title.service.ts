@@ -1,34 +1,31 @@
 import { Injectable, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap } from 'rxjs/operators';
+import { TranslocoService } from '@jsverse/transloco';
+import { filter, map, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TitleService {
   private router = inject(Router);
-  private titleService = inject(Title);
-
+  private title = inject(Title);
+  private transloco = inject(TranslocoService);
 
   init() {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
-        map(() => this.router.routerState.root),
-        map((route) => {
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
+        map(() => {
+          let route = this.router.routerState.root;
+          while (route.firstChild) route = route.firstChild;
+          return route.snapshot.data['title'];
         }),
-        mergeMap((route) => route.data),
+        switchMap((titleKey) =>
+          titleKey ? this.transloco.selectTranslate(titleKey) : of(''),
+        ),
       )
-      .subscribe((event) => {
-        const title = event['title'];
-        if (title) {
-          this.titleService.setTitle(title);
-        }
-      });
+      .subscribe((title) => title && this.title.setTitle(title));
   }
 }
