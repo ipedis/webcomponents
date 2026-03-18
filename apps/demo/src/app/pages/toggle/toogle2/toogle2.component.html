@@ -1,42 +1,40 @@
 <div class="modal-content">
   <div class="component-intro">
     <div class="title">
-      <div class="title">
-        <p>{{ 'common.components' | transloco }}</p>
-        <h2>{{ 'toggle.title2' | transloco }}</h2>
-      </div>
-      <p>
-        {{ 'toggle.intro1' | transloco }}
-        {{ 'toggle.intro2' | transloco }}
-      </p>
+      <p>{{ 'common.components' | transloco }}</p>
+      <h2>{{ 'toggle.title2' | transloco }}</h2>
     </div>
-    <app-accordion title="Demo" [alwaysOpen]="true">
-      <div class="toggle">
-        <ip-toggle
-          active-label="ON"
-          inactive-label="OFF"
-          aria-label="Toggle notifications on or off"
-          size="small"
-          checked="true"
-        >
-        </ip-toggle>
-
-        <ip-toggle
-          active-label="ON"
-          inactive-label="OFF"
-          aria-label="Toggle notifications on or off"
-          checked="false"
-        >
-        </ip-toggle>
-      </div>
-    </app-accordion>
-
-    <app-accordion title="Code">
-      <app-code-snippet [htmlCode]="toggleWithTextCode"> </app-code-snippet>
-    </app-accordion>
-
-    <app-accordion title="Documentation">
-      <app-doc-toogle></app-doc-toogle>
-    </app-accordion>
+    <p>
+      {{ 'toggle.intro1' | transloco }}
+      {{ 'toggle.intro2' | transloco }}
+    </p>
   </div>
+  <app-accordion title="Demo" [alwaysOpen]="true">
+    <div class="toggle">
+      <ip-toggle
+        active-label="ON"
+        inactive-label="OFF"
+        aria-label="Toggle notifications on or off"
+        size="small"
+        checked="true"
+      >
+      </ip-toggle>
+
+      <ip-toggle
+        active-label="ON"
+        inactive-label="OFF"
+        aria-label="Toggle notifications on or off"
+        checked="false"
+      >
+      </ip-toggle>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="toggleWithTextCode"> </app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-toogle></app-doc-toogle>
+  </app-accordion>
 </div>

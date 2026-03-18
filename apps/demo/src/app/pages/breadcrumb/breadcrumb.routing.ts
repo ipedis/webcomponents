@@ -3,6 +3,10 @@ import { Route } from '@angular/router';
 
 export const breadcrumbRouting: Route[] = [
   {
+    path: '',
+    component: Breadcrumb1Component,
+  },
+  {
     path: 'breadcrumb1',
     component: Breadcrumb1Component,
   },
