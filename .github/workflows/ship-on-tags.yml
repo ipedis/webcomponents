@@ -26,8 +26,8 @@ jobs:
           build-args: |
             APP_VERSION=${{ github.ref_name }}
           tags: |
-            rg.fr-par.scw.cloud/pdfa11y/pdfa11y/webcomponents-demo:${{ github.ref_name }}
-            rg.fr-par.scw.cloud/pdfa11y/pdfa11y/webcomponents-demo:latest
+            rg.fr-par.scw.cloud/pdfa11y/webcomponents-demo:${{ github.ref_name }}
+            rg.fr-par.scw.cloud/pdfa11y/webcomponents-demo:latest
 
   deploy-on-prod:
     runs-on: ubuntu-latest
