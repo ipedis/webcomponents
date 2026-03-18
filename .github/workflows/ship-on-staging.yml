@@ -50,5 +50,5 @@ jobs:
           webhook: ${{ secrets.DEPLOYMENT_SLACK_BOT }}
           payload: |
             {
-              "text": ":rocket: https://staging-webcomponents.ipedis.com has been released on staging ! :tada: ( ${{ github.ref_name }} )"
+              "text": ":rocket: https://staging-webcomponents.ipedis.com/webcomponents has been released on staging ! :tada: ( ${{ github.ref_name }} )"
             }

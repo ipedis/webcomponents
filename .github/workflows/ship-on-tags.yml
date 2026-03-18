@@ -36,7 +36,7 @@ jobs:
       - uses: passeidireto/trigger-external-workflow-action@main
         env:
           PAYLOAD_TAG: ${{ github.ref_name }}
-          PAYLOAD_IMAGE: 'rg.fr-par.scw.cloud/pdfa11y/pdfa11y/webcomponents-demo'
+          PAYLOAD_IMAGE: 'rg.fr-par.scw.cloud/pdfa11y/webcomponents-demo'
           PAYLOAD_SERVICE: 'webcomponents'
         with:
           repository: docaxess/pdfa11y-k8s-webservices
@@ -50,5 +50,5 @@ jobs:
           webhook: ${{ secrets.DEPLOYMENT_SLACK_BOT }}
           payload: |
             {
-              "text": ":rocket: https://webcomponents.ipedis.com has been released on production ! :tada: ( ${{ github.ref_name }} )"
+              "text": ":rocket: https://webcomponents.ipedis.com/webcomponents has been released on production ! :tada: ( ${{ github.ref_name }} )"
             }
