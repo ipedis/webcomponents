@@ -4,6 +4,7 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
+import compression from 'compression';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
@@ -15,10 +16,18 @@ export function app(): express.Express {
 
   const angularNodeAppEngine = new AngularNodeAppEngine();
 
+  server.use(compression());
+
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
   // Serve static assets under /webcomponents/ prefix (matching baseHref)
-  server.use('/webcomponents/assets', express.static(join(browserDistFolder, 'assets')));
+  server.use(
+    '/webcomponents/assets',
+    express.static(join(browserDistFolder, 'assets'), {
+      maxAge: '1y',
+      immutable: true,
+    }),
+  );
   server.use(
     '/webcomponents',
     express.static(browserDistFolder, {

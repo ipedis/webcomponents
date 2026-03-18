@@ -93,6 +93,8 @@
     "@ipedis/tooltip": "^0.0.1",
     "@jsverse/transloco": "^8.2.1",
     "@stencil/router": "^1.0.1",
+    "@types/compression": "^1.8.1",
+    "compression": "^1.8.1",
     "express": "^4.22.1",
     "ngx-highlightjs": "^12.0.0",
     "rxjs": "~7.8.0",

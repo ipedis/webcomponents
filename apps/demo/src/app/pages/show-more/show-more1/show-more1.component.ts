@@ -68,15 +68,15 @@ export class ShowMore1Component {
   moreCards = [
     {
       title: "Nature's Symphony",
-      imageUrl: 'assets/images/eg-sm/Image=04.png',
+      imageUrl: 'assets/images/eg-sm/Image=04.webp',
     },
     {
       title: 'Skybound Serently',
-      imageUrl: 'assets/images/eg-sm/Image=05.png',
+      imageUrl: 'assets/images/eg-sm/Image=05.webp',
     },
     {
       title: 'Infinite Horizons',
-      imageUrl: 'assets/images/eg-sm/Image=06.jpg',
+      imageUrl: 'assets/images/eg-sm/Image=06.webp',
     },
   ];
 }

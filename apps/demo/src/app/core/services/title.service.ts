@@ -1,4 +1,5 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslocoService } from '@jsverse/transloco';
@@ -12,8 +13,11 @@ export class TitleService {
   private router = inject(Router);
   private title = inject(Title);
   private transloco = inject(TranslocoService);
+  private platformId = inject(PLATFORM_ID);
 
   init() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),

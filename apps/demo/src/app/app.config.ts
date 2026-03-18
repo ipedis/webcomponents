@@ -14,7 +14,13 @@ import { TranslocoLoader } from './transloco.loader';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHighlightOptions({
-      fullLibraryLoader: () => import('highlight.js'),
+      coreLibraryLoader: () => import('highlight.js/lib/core'),
+      languages: {
+        xml: () => import('highlight.js/lib/languages/xml'),
+        css: () => import('highlight.js/lib/languages/css'),
+        typescript: () => import('highlight.js/lib/languages/typescript'),
+        bash: () => import('highlight.js/lib/languages/bash'),
+      },
     }),
     provideClientHydration(),
     provideZoneChangeDetection({ eventCoalescing: true }),

@@ -3,8 +3,10 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   OnInit,
   inject,
+  PLATFORM_ID,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './features/header/header.component';
 import { FooterComponent } from './features/footer/footer.component';
@@ -23,10 +25,14 @@ import { TranslocoService } from '@jsverse/transloco';
 export class AppComponent implements OnInit {
   private titleService = inject<TitleService>(TitleService);
   private transloco = inject(TranslocoService);
+  private platformId = inject(PLATFORM_ID);
+  private doc = inject(DOCUMENT);
   ngOnInit() {
     this.titleService.init();
-    this.transloco.langChanges$.subscribe((lang) => {
-      document.documentElement.lang = lang;
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.transloco.langChanges$.subscribe((lang) => {
+        this.doc.documentElement.lang = lang;
+      });
+    }
   }
 }

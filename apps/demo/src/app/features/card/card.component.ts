@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class CardComponent {
   @Input() title = 'Card title';
-  @Input() imageUrl = 'assets/images/tab-img-1.png';
+  @Input() imageUrl = 'assets/images/tab-img-1.webp';
   @Input() route = '';
   handleKeydown(event: KeyboardEvent): void {
     if (event.key === 'Enter' || event.key === ' ') {

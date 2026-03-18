@@ -6,7 +6,7 @@ import {
   PLATFORM_ID,
   DOCUMENT,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocAccordionComponent } from '../doc-accordion/doc-accordion.component';
 import { defineCustomElements as accordionElements } from '@ipedis/accordion/loader';
@@ -21,6 +21,7 @@ import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
     DocAccordionComponent,
     AccordionComponent,
     TranslocoPipe,
+    NgOptimizedImage,
   ],
   templateUrl: './accordion1.component.html',
   styleUrl: './accordion1.component.scss',

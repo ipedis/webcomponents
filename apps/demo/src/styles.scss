@@ -2,15 +2,21 @@
 
 @font-face {
   font-family: 'Mulish-regular';
-  src: url('assets/styles/fonts/Mulish-Regular.woff') format('woff');
+  src: url('assets/styles/fonts/Mulish-Regular.woff2') format('woff2'),
+       url('assets/styles/fonts/Mulish-Regular.woff') format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Mulish-bold';
-  src: url('assets/styles/fonts/Mulish-Bold.woff') format('woff');
+  src: url('assets/styles/fonts/Mulish-Bold.woff2') format('woff2'),
+       url('assets/styles/fonts/Mulish-Bold.woff') format('woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Mulish-light';
-  src: url('assets/styles/fonts/Mulish-Light.woff') format('woff');
+  src: url('assets/styles/fonts/Mulish-Light.woff2') format('woff2'),
+       url('assets/styles/fonts/Mulish-Light.woff') format('woff');
+  font-display: swap;
 }
 body {
   margin: 0;
