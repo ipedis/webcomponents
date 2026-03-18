@@ -1,7 +1,8 @@
 body {
   font-family: 'Mulish-light';
-  width: 90%;
-  padding: 0 40px;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .main-content {
@@ -53,8 +54,6 @@ body {
     min-height: 100vh;
 
     .container {
-      flex-direction: column;
-      padding: 0;
       gap: 20px;
       height: auto;
       margin: 0;
@@ -84,7 +83,6 @@ body {
         justify-content: space-between;
         .main-wrapper {
           width: 100%;
-          align-items: start;
         }
       }
     }
