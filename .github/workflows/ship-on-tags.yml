@@ -4,7 +4,7 @@ on:
     tags:
       - v*
 jobs:
-  build-and-release-fpm-image:
+  build-release-image:
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
@@ -31,7 +31,7 @@ jobs:
 
   deploy-on-prod:
     runs-on: ubuntu-latest
-    needs: [build-and-release-fpm-image]
+    needs: [build-release-image]
     steps:
       - uses: passeidireto/trigger-external-workflow-action@main
         env:
