@@ -7,6 +7,7 @@ const childRoutes: Route[] = [
     redirectTo: 'https://design.ipedis.com',
     pathMatch: 'full',
   },
+  // Tooltip
   {
     path: 'tooltip',
     loadChildren: () =>
@@ -20,6 +21,63 @@ const childRoutes: Route[] = [
     },
   },
   {
+    path: 'clickable-tooltip',
+    loadComponent: () =>
+      import('./pages/tooltip/tooltip1/tooltip1.component').then(
+        (m) => m.Tooltip1Component,
+      ),
+    data: {
+      title: 'pages.tooltip.click.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/infobulle/',
+        en: 'https://design.ipedis.com/en/web-components/tooltip/',
+      },
+    },
+  },
+  {
+    path: 'hover-tooltip',
+    loadComponent: () =>
+      import('./pages/tooltip/tooltip2/tooltip2.component').then(
+        (m) => m.Tooltip2Component,
+      ),
+    data: {
+      title: 'pages.tooltip.hover.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/infobulle/',
+        en: 'https://design.ipedis.com/en/web-components/tooltip/',
+      },
+    },
+  },
+  {
+    path: 'infobulle',
+    loadComponent: () =>
+      import('./pages/tooltip/tooltip1/tooltip1.component').then(
+        (m) => m.Tooltip1Component,
+      ),
+    data: {
+      title: 'pages.tooltip.click.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/infobulle/',
+        en: 'https://design.ipedis.com/en/web-components/tooltip/',
+      },
+    },
+  },
+  {
+    path: 'infobulle-survol',
+    loadComponent: () =>
+      import('./pages/tooltip/tooltip2/tooltip2.component').then(
+        (m) => m.Tooltip2Component,
+      ),
+    data: {
+      title: 'pages.tooltip.hover.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/infobulle/',
+        en: 'https://design.ipedis.com/en/web-components/tooltip/',
+      },
+    },
+  },
+  // Dropdown
+  {
     path: 'dropdown',
     loadChildren: () =>
       import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
@@ -31,6 +89,7 @@ const childRoutes: Route[] = [
       },
     },
   },
+  // Toggle
   {
     path: 'toggle',
     loadChildren: () =>
@@ -43,6 +102,91 @@ const childRoutes: Route[] = [
       },
     },
   },
+  {
+    path: 'simple-toggle',
+    loadComponent: () =>
+      import('./pages/toggle/toogle1/toogle1.component').then(
+        (m) => m.Toogle1Component,
+      ),
+    data: {
+      title: 'pages.toggle.simple.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/bascule/',
+        en: 'https://design.ipedis.com/en/web-components/toggle/',
+      },
+    },
+  },
+  {
+    path: 'toggle-text',
+    loadComponent: () =>
+      import('./pages/toggle/toogle2/toogle2.component').then(
+        (m) => m.Toogle2Component,
+      ),
+    data: {
+      title: 'pages.toggle.with-text.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/bascule/',
+        en: 'https://design.ipedis.com/en/web-components/toggle/',
+      },
+    },
+  },
+  {
+    path: 'toggle-indication',
+    loadComponent: () =>
+      import('./pages/toggle/toogle3/toogle3.component').then(
+        (m) => m.Toogle3Component,
+      ),
+    data: {
+      title: 'pages.toggle.with-indication.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/bascule/',
+        en: 'https://design.ipedis.com/en/web-components/toggle/',
+      },
+    },
+  },
+  {
+    path: 'bascule',
+    loadComponent: () =>
+      import('./pages/toggle/toogle1/toogle1.component').then(
+        (m) => m.Toogle1Component,
+      ),
+    data: {
+      title: 'pages.toggle.simple.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/bascule/',
+        en: 'https://design.ipedis.com/en/web-components/toggle/',
+      },
+    },
+  },
+  {
+    path: 'bascule-texte',
+    loadComponent: () =>
+      import('./pages/toggle/toogle2/toogle2.component').then(
+        (m) => m.Toogle2Component,
+      ),
+    data: {
+      title: 'pages.toggle.with-text.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/bascule/',
+        en: 'https://design.ipedis.com/en/web-components/toggle/',
+      },
+    },
+  },
+  {
+    path: 'bascule-indication',
+    loadComponent: () =>
+      import('./pages/toggle/toogle3/toogle3.component').then(
+        (m) => m.Toogle3Component,
+      ),
+    data: {
+      title: 'pages.toggle.with-indication.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/bascule/',
+        en: 'https://design.ipedis.com/en/web-components/toggle/',
+      },
+    },
+  },
+  // Radio button
   {
     path: 'radio-button',
     loadChildren: () =>
@@ -58,6 +202,21 @@ const childRoutes: Route[] = [
     },
   },
   {
+    path: 'bouton-radio',
+    loadChildren: () =>
+      import('./pages/radio-button/radio-button.routing').then(
+        (m) => m.radioButtonRoutes,
+      ),
+    data: {
+      title: 'pages.radio-button.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/bouton-radio/',
+        en: 'https://design.ipedis.com/en/web-components/radio-button/',
+      },
+    },
+  },
+  // Checkbox
+  {
     path: 'checkbox',
     loadChildren: () =>
       import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
@@ -70,6 +229,63 @@ const childRoutes: Route[] = [
     },
   },
   {
+    path: 'simple-checkbox',
+    loadComponent: () =>
+      import('./pages/checkbox/checkbox1/checkbox1.component').then(
+        (m) => m.Checkbox1Component,
+      ),
+    data: {
+      title: 'pages.checkbox.simple.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
+        en: 'https://design.ipedis.com/en/web-components/checkbox/',
+      },
+    },
+  },
+  {
+    path: 'checkbox-list',
+    loadComponent: () =>
+      import('./pages/checkbox/checkbox-list/checkbox-list.component').then(
+        (m) => m.CheckboxListComponent,
+      ),
+    data: {
+      title: 'pages.checkbox.list.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
+        en: 'https://design.ipedis.com/en/web-components/checkbox/',
+      },
+    },
+  },
+  {
+    path: 'case-a-cocher',
+    loadComponent: () =>
+      import('./pages/checkbox/checkbox1/checkbox1.component').then(
+        (m) => m.Checkbox1Component,
+      ),
+    data: {
+      title: 'pages.checkbox.simple.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
+        en: 'https://design.ipedis.com/en/web-components/checkbox/',
+      },
+    },
+  },
+  {
+    path: 'case-a-cocher-liste',
+    loadComponent: () =>
+      import('./pages/checkbox/checkbox-list/checkbox-list.component').then(
+        (m) => m.CheckboxListComponent,
+      ),
+    data: {
+      title: 'pages.checkbox.list.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
+        en: 'https://design.ipedis.com/en/web-components/checkbox/',
+      },
+    },
+  },
+  // Login
+  {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.routing').then((m) => m.loginRoutes),
@@ -81,6 +297,63 @@ const childRoutes: Route[] = [
       },
     },
   },
+  {
+    path: 'login-email',
+    loadComponent: () =>
+      import('./pages/login/login1/login1.component').then(
+        (m) => m.Login1Component,
+      ),
+    data: {
+      title: 'pages.login.email.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
+        en: 'https://design.ipedis.com/en/web-components/password-input/',
+      },
+    },
+  },
+  {
+    path: 'login-username',
+    loadComponent: () =>
+      import('./pages/login/login2/login2.component').then(
+        (m) => m.Login2Component,
+      ),
+    data: {
+      title: 'pages.login.username.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
+        en: 'https://design.ipedis.com/en/web-components/password-input/',
+      },
+    },
+  },
+  {
+    path: 'champ-de-mot-de-passe',
+    loadComponent: () =>
+      import('./pages/login/login1/login1.component').then(
+        (m) => m.Login1Component,
+      ),
+    data: {
+      title: 'pages.login.email.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
+        en: 'https://design.ipedis.com/en/web-components/password-input/',
+      },
+    },
+  },
+  {
+    path: 'champ-de-mot-de-passe-nom',
+    loadComponent: () =>
+      import('./pages/login/login2/login2.component').then(
+        (m) => m.Login2Component,
+      ),
+    data: {
+      title: 'pages.login.username.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
+        en: 'https://design.ipedis.com/en/web-components/password-input/',
+      },
+    },
+  },
+  // Pagination
   {
     path: 'pagination',
     loadChildren: () =>
@@ -95,6 +368,7 @@ const childRoutes: Route[] = [
       },
     },
   },
+  // Table
   {
     path: 'table',
     loadChildren: () =>
@@ -107,6 +381,19 @@ const childRoutes: Route[] = [
       },
     },
   },
+  {
+    path: 'tableaux',
+    loadChildren: () =>
+      import('./pages/table/table.routing').then((m) => m.tableRoutes),
+    data: {
+      title: 'pages.table.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/tableaux/',
+        en: 'https://design.ipedis.com/en/web-components/tables/',
+      },
+    },
+  },
+  // Tab panel
   {
     path: 'tab-panel',
     loadChildren: () =>
@@ -122,6 +409,21 @@ const childRoutes: Route[] = [
     },
   },
   {
+    path: 'panneau-donglet',
+    loadChildren: () =>
+      import('./pages/tab-panel/tab-panel.routing').then(
+        (m) => m.tabPanelRoutes,
+      ),
+    data: {
+      title: 'pages.tab-panel.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/panneau-donglet/',
+        en: 'https://design.ipedis.com/en/web-components/tab-panel/',
+      },
+    },
+  },
+  // Accordion
+  {
     path: 'accordion',
     loadChildren: () =>
       import('./pages/accordion/accordion.routing').then(
@@ -136,6 +438,21 @@ const childRoutes: Route[] = [
     },
   },
   {
+    path: 'accordeon',
+    loadChildren: () =>
+      import('./pages/accordion/accordion.routing').then(
+        (m) => m.accordionRoutes,
+      ),
+    data: {
+      title: 'pages.accordion.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/accordeon/',
+        en: 'https://design.ipedis.com/en/web-components/accordion/',
+      },
+    },
+  },
+  // Modal
+  {
     path: 'modal',
     loadChildren: () =>
       import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
@@ -148,6 +465,19 @@ const childRoutes: Route[] = [
     },
   },
   {
+    path: 'fenetre-modale',
+    loadChildren: () =>
+      import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
+    data: {
+      title: 'pages.modal.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/fenetre-modale/',
+        en: 'https://design.ipedis.com/en/web-components/modal-window/',
+      },
+    },
+  },
+  // Footnote
+  {
     path: 'footnote',
     loadChildren: () =>
       import('./pages/footnote/footnote.routing').then((m) => m.footnoteRoutes),
@@ -159,6 +489,7 @@ const childRoutes: Route[] = [
       },
     },
   },
+  // Show more
   {
     path: 'show-more',
     loadChildren: () =>
@@ -173,6 +504,7 @@ const childRoutes: Route[] = [
       },
     },
   },
+  // Alert
   {
     path: 'alert',
     loadChildren: () =>
@@ -185,6 +517,7 @@ const childRoutes: Route[] = [
       },
     },
   },
+  // Search bar
   {
     path: 'search-bar',
     loadChildren: () =>
@@ -199,6 +532,7 @@ const childRoutes: Route[] = [
       },
     },
   },
+  // Breadcrumb
   {
     path: 'breadcrumb',
     loadChildren: () =>
@@ -214,6 +548,21 @@ const childRoutes: Route[] = [
     },
   },
   {
+    path: 'fil-dariane',
+    loadChildren: () =>
+      import('./pages/breadcrumb/breadcrumb.routing').then(
+        (m) => m.breadcrumbRouting,
+      ),
+    data: {
+      title: 'pages.breadcrumb.title',
+      backlink: {
+        fr: 'https://design.ipedis.com/composants-web/fil-dariane/',
+        en: 'https://design.ipedis.com/en/web-components/breadcrumb/',
+      },
+    },
+  },
+  // Menu
+  {
     path: 'menu',
     loadChildren: () =>
       import('./pages/menu/menu.routing').then((m) => m.menuRoutes),
@@ -225,6 +574,7 @@ const childRoutes: Route[] = [
       },
     },
   },
+  // Stepper
   {
     path: 'stepper',
     loadChildren: () =>
