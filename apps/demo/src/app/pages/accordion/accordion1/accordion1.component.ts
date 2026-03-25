@@ -84,7 +84,7 @@ export class Accordion1Component {
         class="acc-content__btn"
         aria-label="En savoir plus, 6 Bonnes Pratiques pour être
      en Conformité"
-        href="#"
+        href="https://design.ipedis.com/composants-web/accordeon/"
       >
         En savoir plus
       </a>
@@ -113,7 +113,7 @@ export class Accordion1Component {
       <a
         class="acc-content__btn"
         aria-label="En savoir plus sur Comment ont été conçus les PDF ?"
-        href="#"
+        href="https://design.ipedis.com/composants-web/accordeon/"
       >
         En savoir plus
       </a>
@@ -142,7 +142,7 @@ export class Accordion1Component {
       <a
         class="acc-content__btn"
         En savoir plus sur comment gerer efficacement la creation"
-        href="#"
+        href="https://design.ipedis.com/composants-web/accordeon/"
       >
         En savoir plus
       </a>
@@ -171,7 +171,7 @@ export class Accordion1Component {
       <a
         class="acc-content__btn"
         aria-label="En savoir plussur Nos équipes vous accompagnent"
-        href="#"
+        href="https://design.ipedis.com/composants-web/accordeon/"
       >
         En savoir plus
       </a>

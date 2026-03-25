@@ -93,7 +93,7 @@
 
 @media (max-width: 600px) {
   .accordion {
-    width: 85%;
+    width: 100%;
   }
   .header {
     height: auto;
@@ -105,8 +105,11 @@
     font-size: 14px;
   }
 
-  .content.open {
+  .content.is-always-open {
     max-height: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: grid;
   }
 }
 

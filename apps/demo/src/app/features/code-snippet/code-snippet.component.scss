@@ -38,6 +38,10 @@
   }
 
   .tab-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: pre;
+    max-width: 100%;
     .code-container {
       padding: 10px;
       border: none;

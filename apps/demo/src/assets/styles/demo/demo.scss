@@ -4,6 +4,7 @@
 .modal-content {
   width: 100%;
   margin: 0;
+  box-sizing: border-box;
 
   .component-intro {
     color: #2e3243;
@@ -52,7 +53,7 @@
 
 @media (max-width: 1200px) {
   .modal-content {
-    max-width: 95%;
+    max-width: 100%;
   }
 
   .component-intro {
@@ -71,8 +72,8 @@
 
 @media (max-width: 900px) {
   .modal-content {
-    max-width: 95%;
-    padding-left: 10px;
+    max-width: 100%;
+    padding: 0 10px;
   }
 
   .component-intro {
@@ -90,9 +91,13 @@
 }
 
 @media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .modal-content {
-    max-width: 85%;
-    padding-left: 5px;
+    max-width: 100%;
   }
 
   .component-intro {
@@ -192,6 +197,7 @@ pre {
 @media (max-width: 480px) {
   #documentation {
     font-size: rem(14);
+    margin: 0;
 
     h3 {
       font-size: rem(16);

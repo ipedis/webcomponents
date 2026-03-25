@@ -1,10 +1,16 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  inject,
+} from '@angular/core';
 import { Highlight } from 'ngx-highlightjs';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-code-snippet',
   standalone: true,
-  imports: [Highlight],
+  imports: [Highlight, TranslocoPipe],
   templateUrl: './code-snippet.component.html',
   styleUrls: ['./code-snippet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,6 +20,7 @@ export class CodeSnippetComponent {
   @Input() cssCode = '*{font-family: "Mulish";}';
   @Input() jsCode = 'import "./styles.css"';
   selectedTab: 'html' | 'css' = 'html';
+  private readonly translocoService = inject(TranslocoService);
 
   selectTab(tab: 'html' | 'css') {
     this.selectedTab = tab;

@@ -10,7 +10,7 @@
     [attr.aria-controls]="contentId"
   >
     <div class="title-container">
-      @if (title === 'Preview | Demo') {
+      @if (title === 'Demo') {
         <img src="assets/images/eye.png" alt="" width="24" height="24" />
       }
       @if (title === 'Code') {
@@ -46,7 +46,10 @@
   </div>
   <div
     class="content"
-    [ngClass]="{ open: isOpen || alwaysOpen }"
+    [ngClass]="{
+      open: isOpen || alwaysOpen,
+      'is-always-open': alwaysOpen,
+    }"
     role="region"
     [id]="contentId"
     [attr.aria-labelledby]="headerId"

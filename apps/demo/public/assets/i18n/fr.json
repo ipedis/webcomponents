@@ -5,7 +5,8 @@
       "backAria": "Retour sur le site du design system Ipedis",
       "ipedisAria": "Aller sur le site web d’Ipedis - Nouvel onglet",
       "languageSwitcher": "Voir le site en anglais",
-      "newWindow": "Ouvre dans un nouvel onglet"
+      "newWindow": "Ouvre dans un nouvel onglet",
+      "copyCode": "Copier le code"
     },
     "components": "COMPOSANTS"
   },
@@ -415,7 +416,7 @@
     "title": "Liste de Case à cocher",
     "introPart1": "Une case à cocher est un composant qui permet aux utilisateurs de sélectionner une ou plusieurs options dans un ensemble. Généralement présentée sous la forme d’un petit carré, elle peut être cochée (sélectionnée) ou décochée (non sélectionnée).",
     "introPart2": "Les cases à cocher sont souvent utilisées dans des formulaires ou des paramètres pour permettre aux utilisateurs d’exprimer leurs choix ou préférences.",
-    "intropart3": "Elles sont particulièrement adaptées lorsque les options ne sont pas exclusives, car elles autorisent plusieurs sélections au sein d’un même groupe. Lorsqu’une case est cochée, un symbole de validation apparaît à l’intérieur du carré, indiquant visuellement la sélection de l’utilisateur.",
+    "introPart3": "Elles sont particulièrement adaptées lorsque les options ne sont pas exclusives, car elles autorisent plusieurs sélections au sein d’un même groupe. Lorsqu’une case est cochée, un symbole de validation apparaît à l’intérieur du carré, indiquant visuellement la sélection de l’utilisateur.",
     "docs": {
       "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-checkbox-list dans votre projet.",
       "step1": "Étape 1",
