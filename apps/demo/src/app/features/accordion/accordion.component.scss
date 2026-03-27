@@ -104,13 +104,6 @@
   .header h3 {
     font-size: 14px;
   }
-
-  .content.is-always-open {
-    max-height: none;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: grid;
-  }
 }
 
 @media (max-width: 400px) {

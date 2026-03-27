@@ -3,7 +3,7 @@
 .breadcrumb-wrapper {
   display: flex;
   justify-content: center;
-  margin: 70px;
+  padding: 70px;
 }
 ip-breadcrumb {
   &::part(title) {
@@ -12,5 +12,17 @@ ip-breadcrumb {
   }
   &::part(breadcrumb) {
     font-family: 'Mulish-light';
+  }
+}
+@media (max-width: 768px) {
+  ip-breadcrumb::part(title) {
+    font-size: 18px;
+  }
+
+  ip-breadcrumb::part(breadcrumb) {
+    font-size: 16px;
+    flex-wrap: wrap;
+    margin: 0;
+    align-content: center;
   }
 }
