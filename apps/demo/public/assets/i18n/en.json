@@ -5,7 +5,8 @@
       "backAria": "Return to the website of the design system Ipedis",
       "ipedisAria": "Go to Ipedis Website- New window",
       "languageSwitcher": "See the website in French",
-      "newWindow": "Opens in a new window"
+      "newWindow": "Opens in a new window",
+      "copyCode": "Copy Code"
     },
     "components": "COMPONENTS"
   },

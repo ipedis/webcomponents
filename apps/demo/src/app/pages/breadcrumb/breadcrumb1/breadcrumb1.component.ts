@@ -31,14 +31,14 @@ export class Breadcrumb1Component {
   private readonly translocoService = inject(TranslocoService);
 
   codeSnippet = `<ip-breadcrumb
-  breadcrumb-title="LIST OF COMPONENTS"
-  breadcrumb-items='[
-        {"label": "Home", "link": "/"},
-        {"label": "Accessibility", "link": "/Accessibility"},
-        {"label": "List of components"}
-      ]'
-  prefix-aria-label="Link to"
->
+    breadcrumb-title="Démo Fil d'ariane"
+    breadcrumb-items='[
+      {"label": "Composants Web", "link": "https://design.ipedis.com/composants-web/"},
+      {"label": "Fil d&apos;ariane", "link": "https://design.ipedis.com/composants-web/fil-dariane/"},
+      {"label": "Démo"}
+    ]'
+    prefix-aria-label="Lien vers"
+      >
 </ip-breadcrumb>
   `;
   css = `ip-breadcrumb {

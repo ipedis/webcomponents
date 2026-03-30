@@ -12,7 +12,7 @@ ip-accordion {
 }
 .accordion-wrapper {
   padding: rem(30);
-  width: 80%;
+  width: 100%;
 }
 
 .ip-accordion {
@@ -63,7 +63,9 @@ a {
     outline-offset: 2px;
   }
 }
-
+.acc-content__desc-wrapper {
+  margin: 0 10px;
+}
 .ip-accordion .ip-accordion-panel {
   visibility: visible;
   opacity: 1;

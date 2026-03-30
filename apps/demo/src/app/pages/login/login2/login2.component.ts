@@ -39,25 +39,25 @@ export class Login2Component {
       <div class="logo-list">
         <a
           class="twitter"
-          href="#"
+          href="https://design.ipedis.com/composants-web/champ-de-mot-de-passe/"
           target="_blank"
-          aria-label="Sign up with twitter"
+          aria-label="Sign up with twitter, new tab"
         >
           <img src="assets/images/twitter.svg" alt="Twitter" />
         </a>
         <a
           class="google"
-          href="#"
+          href="https://design.ipedis.com/composants-web/champ-de-mot-de-passe/"
           target="_blank"
-          aria-label="Sign up with google"
+          aria-label="Sign up with google, new tab"
         >
           <img src="assets/images/google.svg" alt="Google" />
         </a>
         <a
           class="facebook"
-          href="#"
+          href="https://design.ipedis.com/composants-web/champ-de-mot-de-passe/"
           target="_blank"
-          aria-label="Sign up with facebook"
+          aria-label="Sign up with facebook, new tab"
         >
           <img src="assets/images/facebook.svg" alt="Facebook" />
         </a>
@@ -65,7 +65,7 @@ export class Login2Component {
     </div>
     <div class="create-account">
       <span>Don't have an account ? </span>
-      <a href="#">Create Account</a>
+      <a href="https://design.ipedis.com/composants-web/champ-de-mot-de-passe/">Create Account</a>
     </div>
   </ip-login>`;
   cssCode = `.social-media {

@@ -36,6 +36,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    .lang-mobile {
+      display: none;
+    }
+    .lang-desktop {
+      display: inline;
+    }
   }
 }
 
@@ -81,17 +87,29 @@ header {
 }
 
 @media (max-width: 768px) {
+  header {
+    height: auto;
+  }
   .head {
     padding: rem(5) rem(20);
     .title-link {
       display: none;
     }
   }
+  .wrapper {
+    margin: 0 15px;
+  }
   header {
-    position: relative;
+    background-color: #fff;
   }
   .lang button {
     font-size: 14px;
     padding: 6px 10px;
+    .lang-desktop {
+      display: none;
+    }
+    .lang-mobile {
+      display: inline;
+    }
   }
 }

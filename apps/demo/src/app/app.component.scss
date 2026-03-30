@@ -45,7 +45,6 @@ body {
 @media (max-width: 1200px) {
   .main-wrapper {
     padding: 0;
-    margin: 30px;
   }
 }
 
@@ -57,6 +56,7 @@ body {
       gap: 20px;
       height: auto;
       margin: 0;
+      padding: 0;
 
       .sidebar-menu {
         width: 100%;
@@ -77,12 +77,18 @@ body {
       }
 
       .main {
+        padding: 0;
         margin: 0;
         width: 100%;
         height: 100%;
         justify-content: space-between;
         .main-wrapper {
           width: 100%;
+          margin: 70px 0 0 0;
+          gap: 30px;
+        }
+        .footer {
+          margin: 0 10px;
         }
       }
     }

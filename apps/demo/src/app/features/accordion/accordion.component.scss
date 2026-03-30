@@ -93,7 +93,7 @@
 
 @media (max-width: 600px) {
   .accordion {
-    width: 85%;
+    width: 100%;
   }
   .header {
     height: auto;
@@ -103,10 +103,6 @@
 
   .header h3 {
     font-size: 14px;
-  }
-
-  .content.open {
-    max-height: none;
   }
 }
 
