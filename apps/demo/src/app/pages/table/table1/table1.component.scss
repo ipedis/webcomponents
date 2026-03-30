@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   padding: 10px;
-  height: 425px;
+  height: auto;
+  overflow-x: auto;
 }
 .code-wrapper {
   width: 100%;

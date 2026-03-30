@@ -3,7 +3,10 @@
     <nav [attr.aria-label]="'footer.navFooter' | transloco">
       <ul class="list">
         <li class="new-window">
-          <a [href]="'footer.href.cookie' | transloco" target="_blank"
+          <a
+            [href]="'footer.href.cookie' | transloco"
+            target="_blank"
+            rel="noopener noreferrer"
             >{{ 'footer.cookie' | transloco }}
             <img
               src="assets/images/new-window-icon.png"
@@ -13,7 +16,10 @@
           /></a>
         </li>
         <li class="new-window">
-          <a [href]="'footer.href.legal' | transloco" target="_blank"
+          <a
+            [href]="'footer.href.legal' | transloco"
+            target="_blank"
+            rel="noopener noreferrer"
             >{{ 'footer.legal' | transloco }}
             <img
               src="assets/images/new-window-icon.png"
@@ -23,7 +29,10 @@
           /></a>
         </li>
         <li class="ipedis new-window">
-          <a href="https://www.ipedis.com" target="_blank"
+          <a
+            href="https://www.ipedis.com"
+            target="_blank"
+            rel="noopener noreferrer"
             >Ipedis.com
             <img
               src="assets/images/new-window-icon.png"
