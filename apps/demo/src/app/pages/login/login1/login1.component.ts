@@ -45,7 +45,7 @@ export class Login1Component {
       <a
         class="twitter"
         href="https://design.ipedis.com/composants-web/champ-de-mot-de-passe/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         aria-label="Sign up with twitter, new tab"
       >
         <img src="assets/images/twitter.svg" alt="Twitter" />
@@ -53,7 +53,7 @@ export class Login1Component {
       <a
         class="google"
         href="https://design.ipedis.com/composants-web/champ-de-mot-de-passe/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         aria-label="Sign up with google, new tab"
       >
         <img src="assets/images/google.svg" alt="Google" />
@@ -61,7 +61,7 @@ export class Login1Component {
       <a
         class="facebook"
         href="https://design.ipedis.com/composants-web/champ-de-mot-de-passe/"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         aria-label="Sign up with facebook, new tab"
       >
         <img src="assets/images/facebook.svg" alt="Facebook" />
