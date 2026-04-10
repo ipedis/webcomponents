@@ -68,11 +68,7 @@ ip-modal::part(trigger-button) {
 }
 @media (max-width: 1024px) {
   .modal-wrapper {
-    margin-top: 150px;
-
     .modal-content {
-      width: 350px;
-
       .dialog-contents {
         input {
           width: 300px;
@@ -87,11 +83,7 @@ ip-modal::part(trigger-button) {
 
 @media (max-width: 768px) {
   .modal-wrapper {
-    margin-top: 150px;
-
     .modal-content {
-      width: 250px;
-
       .dialog-contents {
         input {
           width: 240px;
@@ -105,11 +97,7 @@ ip-modal::part(trigger-button) {
 }
 @media (max-width: 1024px) {
   .modal-wrapper {
-    margin-top: 150px;
-
     .modal-content {
-      width: 350px;
-
       .dialog-contents {
         input {
           width: 300px;
@@ -124,11 +112,7 @@ ip-modal::part(trigger-button) {
 
 @media (max-width: 768px) {
   .modal-wrapper {
-    margin-top: 150px;
-
     .modal-content {
-      width: 250px;
-
       .dialog-contents {
         input {
           width: 240px;
@@ -142,9 +126,6 @@ ip-modal::part(trigger-button) {
 }
 
 @media (max-width: 460px) {
-  .modal-wrapper {
-    width: 283px;
-  }
   .dialog-title {
     h1 {
       font-size: 18px;

@@ -5,7 +5,7 @@ header {
   overflow: hidden;
   top: 0;
   left: 0;
-
+  background-color: #fff;
   z-index: 1000;
   padding: 0;
 }
@@ -96,6 +96,11 @@ header {
       display: none;
     }
   }
+  .back-wrapper {
+    a {
+      font-size: 18px;
+    }
+  }
   .wrapper {
     margin: 0 15px;
   }
@@ -103,7 +108,7 @@ header {
     background-color: #fff;
   }
   .lang button {
-    font-size: 14px;
+    font-size: 16px;
     padding: 6px 10px;
     .lang-desktop {
       display: none;
@@ -111,5 +116,8 @@ header {
     .lang-mobile {
       display: inline;
     }
+  }
+  .lang {
+    margin: 16px;
   }
 }
