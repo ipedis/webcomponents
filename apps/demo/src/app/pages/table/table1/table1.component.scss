@@ -14,3 +14,8 @@ ip-table {
   --font-family: 'Mulish-light';
   --primary-color: #b00057;
 }
+@media (max-width: 450px) {
+  .table-wrapper {
+    justify-content: flex-start;
+  }
+}

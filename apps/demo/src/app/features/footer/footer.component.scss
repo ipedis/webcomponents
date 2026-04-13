@@ -9,7 +9,6 @@ ul {
   list-style: none;
   color: #132c54;
   font-weight: 600;
-  letter-spacing: 0.15px;
 }
 a {
   text-decoration: none;
@@ -88,9 +87,14 @@ a {
   }
 
   .footer nav .list {
+    border-right: none;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    gap: 18px;
+  }
+  .footer nav .list li {
+    border-right: none;
+    padding: 4px 0;
   }
 }
 @media (max-width: 360px) {
