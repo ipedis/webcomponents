@@ -24,20 +24,15 @@ nx g @nxext/stencil:lib $PROJECT_NAME --buildable --name=$PROJECT_NAME --style=s
 ## remove unused files
 rm -rf packages/$PROJECT_NAME/LICENSE
 
-## copy linter config
-cp bin/template/.eslintrc.json packages/$PROJECT_NAME
+## copy linter config (ESLint v9 flat config; lint target is inferred by @nx/eslint/plugin)
+cp bin/template/eslint.config.mjs packages/$PROJECT_NAME
 cp bin/template/stencil.config.ts packages/$PROJECT_NAME
 
 ## change on stencil config the TEMPLATE_NAMESPACE
 sed -i -e "s|TEMPLATE_NAMESPACE|${PROJECT_NAME}|g" "packages/${PROJECT_NAME}/stencil.config.ts" && rm "packages/${PROJECT_NAME}/stencil.config.ts-e"
 
-## we update the project.json to patch the linting
-jq '.targets.lint = {
-  "executor": "@nx/eslint:lint",
-  "options": {
-    "lintFilePatterns": ["packages/'${PROJECT_NAME}'/src/**/*.{ts,tsx,json}", "packages/'${PROJECT_NAME}'/*.{ts,tsx,json}"]
-  }
-}' "packages/${PROJECT_NAME}/project.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/project.json"
+## remove any generated lint target so the inferred @nx/eslint/plugin target is used
+jq 'del(.targets.lint)' "packages/${PROJECT_NAME}/project.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/project.json"
 
 ## we update the package.json to add the homepage and issues url
 jq '.homepage = "https://github.com/docaxess/webcomponents"' "packages/${PROJECT_NAME}/package.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/package.json"

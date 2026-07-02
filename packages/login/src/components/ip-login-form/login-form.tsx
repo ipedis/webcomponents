@@ -6,36 +6,36 @@ import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
   shadow: true,
 })
 export class LoginForm {
-  @Prop() usernameLabel: string = 'Username';
-  @Prop() passwordLabel: string = 'Password';
-  @Prop() submitButtonLabel: string = 'Login';
-  @Prop() usernameErrorMsg: string = 'Username is required';
-  @Prop() usernameInvalidEmailMsg: string = 'The email address is invalid';
-  @Prop() passwordLengthErrorMsg: string =
+  @Prop() usernameLabel = 'Username';
+  @Prop() passwordLabel = 'Password';
+  @Prop() submitButtonLabel = 'Login';
+  @Prop() usernameErrorMsg = 'Username is required';
+  @Prop() usernameInvalidEmailMsg = 'The email address is invalid';
+  @Prop() passwordLengthErrorMsg =
     'The password must contain at least 8 characters';
-  @Prop() passwordUppercaseErrorMsg: string =
+  @Prop() passwordUppercaseErrorMsg =
     'Password must contain at least one capital';
-  @Prop() passwordLowercaseErrorMsg: string =
+  @Prop() passwordLowercaseErrorMsg =
     'The password must contain at least a lower case';
-  @Prop() passwordDigitErrorMsg: string =
+  @Prop() passwordDigitErrorMsg =
     'The password must contain at least one digit';
   @Prop() usernameType: 'text' | 'email' = 'text';
-  @Prop() showPasswordAriaLabel: string = 'Show password';
-  @Prop() hidePasswordAriaLabel: string = 'Hide password';
-  @Prop({ reflect: true, mutable: true }) usernameRequired: boolean = false;
-  @Prop() pwdPlaceholder: string = 'Type your password here...';
-  @Prop() usernamePlaceholder: string = 'Type your username here...';
-  @Prop() forgotPasswordLink: string = '';
-  @Prop() forgotPasswordLabel: string = 'Forgot password?';
-  @Prop() loginTitle: string = 'Login';
-  @Prop() indicationLabel: string = 'Required fields';
-  @Prop() submitBtnAriaLabel: string = 'Submit the form';
+  @Prop() showPasswordAriaLabel = 'Show password';
+  @Prop() hidePasswordAriaLabel = 'Hide password';
+  @Prop({ reflect: true, mutable: true }) usernameRequired = false;
+  @Prop() pwdPlaceholder = 'Type your password here...';
+  @Prop() usernamePlaceholder = 'Type your username here...';
+  @Prop() forgotPasswordLink = '';
+  @Prop() forgotPasswordLabel = 'Forgot password?';
+  @Prop() loginTitle = 'Login';
+  @Prop() indicationLabel = 'Required fields';
+  @Prop() submitBtnAriaLabel = 'Submit the form';
 
-  @State() username: string = '';
-  @State() password: string = '';
-  @State() usernameError: string = '';
-  @State() passwordError: string = '';
-  @State() passwordVisible: boolean = false;
+  @State() username = '';
+  @State() password = '';
+  @State() usernameError = '';
+  @State() passwordError = '';
+  @State() passwordVisible = false;
 
   @Event() formSubmitted: EventEmitter;
   usernameInput: HTMLInputElement;

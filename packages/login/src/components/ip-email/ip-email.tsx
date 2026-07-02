@@ -17,13 +17,13 @@ import {
 export class IpEmail {
   @Element() el: HTMLElement;
   @Prop() errorMessage: string;
-  @Prop({ mutable: true }) invalid: boolean = false;
-  @Prop() inputLabel: string = 'Email';
-  @Prop() emptyFieldErrorMessage: string = 'Email field cannot be empty';
-  @Prop({ reflect: true, mutable: true }) required: boolean = false;
-  @Prop() inputPlaceholder: string = 'Type your email here...';
+  @Prop({ mutable: true }) invalid = false;
+  @Prop() inputLabel = 'Email';
+  @Prop() emptyFieldErrorMessage = 'Email field cannot be empty';
+  @Prop({ reflect: true, mutable: true }) required = false;
+  @Prop() inputPlaceholder = 'Type your email here...';
 
-  @State() value: string = '';
+  @State() value = '';
 
   @Event({ eventName: 'inputChange' }) inputChange: EventEmitter<string>;
 

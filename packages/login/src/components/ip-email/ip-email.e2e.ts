@@ -8,11 +8,10 @@ test.describe('ip-email', () => {
   });
 
   test('renders', async ({ page }) => {
-    /* eslint-disable no-undef */
     await page.evaluate(() => {
       document.body.innerHTML = '<ip-email></ip-email>';
     });
-    /* eslint-enable no-undef */
+
     await page.waitForChanges();
 
     const element = page.locator('ip-email');
@@ -23,12 +22,11 @@ test.describe('ip-email', () => {
   });
 
   test('renders with values', async ({ page }) => {
-    /* eslint-disable no-undef */
     await page.evaluate(() => {
       document.body.innerHTML =
         '<ip-email input-label="Username" required></ip-email>';
     });
-    /* eslint-enable no-undef */
+
     await page.waitForChanges();
 
     const element = page.locator('ip-email');
