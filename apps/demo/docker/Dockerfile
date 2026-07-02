@@ -2,7 +2,9 @@ FROM node:24-alpine AS build
 WORKDIR /app/src
 RUN apk add --no-cache --virtual .build-deps alpine-sdk python3
 
-COPY package*.json ./
+# Copy .npmrc alongside the manifests so `legacy-peer-deps=true` applies here:
+# the Nx 23.1.0-beta prerelease trips npm's strict peer-dependency semver.
+COPY package*.json .npmrc ./
 RUN npm install
 
 COPY . ./
