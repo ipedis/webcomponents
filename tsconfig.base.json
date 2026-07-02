@@ -73,7 +73,11 @@
       "@ipedis/tooltip": ["dist/packages/tooltip"],
       "@ipedis/tooltip/*": ["dist/packages/tooltip/dist/components/*"],
       "@ipedis/tooltip/loader": ["dist/packages/tooltip/loader"]
-    }
+    },
+    "ignoreDeprecations": "6.0",
+    "strict": false,
+    "noUncheckedSideEffectImports": false,
+    "types": ["*"]
   },
   "exclude": ["node_modules", "tmp"]
 }

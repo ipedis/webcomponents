@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { Highlight } from 'ngx-highlightjs';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
@@ -8,6 +8,7 @@ import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
   standalone: true,
   imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-footnote.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './doc-footnote.component.scss',
 })
 export class DocFootnoteComponent {
