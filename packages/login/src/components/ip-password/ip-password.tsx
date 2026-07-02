@@ -17,14 +17,14 @@ import {
 export class IpPassword {
   @Element() el: HTMLElement;
   @Prop() errorMessage: string;
-  @Prop({ mutable: true }) invalid: boolean = false;
+  @Prop({ mutable: true }) invalid = false;
   @Prop() forgotPasswordLink: string;
-  @Prop() emptyFieldErrorMessage: string = 'Password field cannot be empty';
-  @Prop() inputPlaceholder: string = 'Type your password here...';
-  @Prop() hidePasswordAriaLabel: string = 'Hide password';
-  @Prop() showPasswordAriaLabel: string = 'Show password';
-  @State() value: string = '';
-  @State() passwordVisible: boolean = false;
+  @Prop() emptyFieldErrorMessage = 'Password field cannot be empty';
+  @Prop() inputPlaceholder = 'Type your password here...';
+  @Prop() hidePasswordAriaLabel = 'Hide password';
+  @Prop() showPasswordAriaLabel = 'Show password';
+  @State() value = '';
+  @State() passwordVisible = false;
 
   @Event({ eventName: 'passwordChange' }) passwordChange: EventEmitter<string>;
 

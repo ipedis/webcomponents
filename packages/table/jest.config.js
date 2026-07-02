@@ -4,8 +4,5 @@ module.exports = {
   ...preset,
   displayName: 'table',
   rootDir: __dirname,
-  collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.d.ts',
-  ]
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
 };
