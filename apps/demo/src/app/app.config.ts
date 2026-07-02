@@ -5,9 +5,9 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, withNoIncrementalHydration } from '@angular/platform-browser';
 import { provideHighlightOptions } from 'ngx-highlightjs';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 import { TranslocoLoader } from './transloco.loader';
 
@@ -22,10 +22,10 @@ export const appConfig: ApplicationConfig = {
         bash: () => import('highlight.js/lib/languages/bash'),
       },
     }),
-    provideClientHydration(),
+    provideClientHydration(withNoIncrementalHydration()),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
     provideTransloco({
       config: {
         availableLangs: ['en', 'fr'],

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { Highlight } from 'ngx-highlightjs';
@@ -8,6 +8,7 @@ import { Highlight } from 'ngx-highlightjs';
   standalone: true,
   imports: [Highlight, TranslocoPipe],
   templateUrl: './doc-show-more.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './doc-show-more.component.scss',
 })
 export class DocShowMoreComponent {

@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Renderer2, AfterViewInit, OnInit, inject } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, AfterViewInit, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './accordion.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./accordion.component.scss'],
 })
 export class AccordionComponent implements AfterViewInit, OnInit {
