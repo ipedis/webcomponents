@@ -33,7 +33,7 @@ export class Stepper1Component {
   stepperHtml = `
   <ip-stepper steps="4">
   <div slot="step1">
-    <h2>Please select your plan</h2>
+    <h3>Please select your plan</h3>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid
       cupiditate nihil quae pariatur, beatae eum voluptas optio quia dolorum
@@ -45,7 +45,7 @@ export class Stepper1Component {
     </p>
   </div>
   <div slot="step2">
-    <h2>Create your contact details</h2>
+    <h3>Create your contact details</h3>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa enim
       aspernatur iste, ducimus hic quisquam, tenetur accusantium beatae
@@ -57,7 +57,7 @@ export class Stepper1Component {
     </p>
   </div>
   <div slot="step3">
-    <h2>Create your password</h2>
+    <h3>Create your password</h3>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid enim
       dignissimos modi fugiat sint iste fugit quas eum autem excepturi atque
@@ -68,7 +68,7 @@ export class Stepper1Component {
     </p>
   </div>
   <div slot="step4">
-    <h2>Payment and deliveery details</h2>
+    <h3>Payment and delivery details</h3>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid
       cupiditate nihil quae pariatur, beatae eum voluptas optio quia dolorum

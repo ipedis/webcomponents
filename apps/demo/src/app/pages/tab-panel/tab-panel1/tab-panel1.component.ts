@@ -62,10 +62,10 @@ export class TabPanel1Component {
       <div class="ip-content" slot="tab-content-1">
         <img src="assets/images/tab-img-1.png" alt="" />
         <div class="ip-content-desc">
-          <h2 class="ip-content-title">Accessibilité</h2>
-          <h3 class="ip-content-subtitle">
+          <h3 class="ip-content-title">Accessibilité</h3>
+          <h4 class="ip-content-subtitle">
             6 Bonnes Pratiques pour être en Conformité
-          </h3>
+          </h4>
           <p class="ip-content-text">
         Aujourd’hui, encore beaucoup de sites Web et d’applications
         mobiles sont conçus sans penser à la navigation des
@@ -90,9 +90,9 @@ export class TabPanel1Component {
       <div class="ip-content" slot="tab-content-2">
         <img src="./assets/images/tab-img-2.png" alt="" />
         <div class="ip-content-desc">
-          <h2 class="ip-content-title">DOCUMENT PDF</h2>
-          <h3 class="ip-content-subtitle">
-          Comment ont été conçus les PDF ?</h3>
+          <h3 class="ip-content-title">DOCUMENT PDF</h3>
+          <h4 class="ip-content-subtitle">
+          Comment ont été conçus les PDF ?</h4>
           <p class="ip-content-text">
         À l’origine, les documents PDF
         n’étaient pas conçus pour être lus
@@ -119,9 +119,9 @@ export class TabPanel1Component {
       <div class="ip-content" slot="tab-content-3">
         <img src="./assets/images/tab-img-3.png" alt="" />
         <div class="ip-content-desc">
-          <h2 class="ip-content-title">Statistical</h2>
-          <h3 class="ip-content-subtitle">
-          Gérer efficacement la création</h3>
+          <h3 class="ip-content-title">Statistical</h3>
+          <h4 class="ip-content-subtitle">
+          Gérer efficacement la création</h4>
           <p class="ip-content-text">
         PubliSpeak a été pensé pour vous faciliter
         la gestion de vos publications. Toutes les informations
@@ -143,9 +143,9 @@ export class TabPanel1Component {
       <div class="ip-content" slot="tab-content-4">
         <img src="./assets/images/tab-img-4.jpeg" alt="" />
         <div class="ip-content-desc">
-          <h2 class="ip-content-title">Certification</h2>
-          <h3 class="ip-content-subtitle">
-          Nos équipes vous accompagnent</h3>
+          <h3 class="ip-content-title">Certification</h3>
+          <h4 class="ip-content-subtitle">
+          Nos équipes vous accompagnent</h4>
           <p class="ip-content-text">
         Notre plateforme de publications digitales répond à vos
         besoins mais vous n’êtes pas à l'aise avec l’accessibilité
@@ -166,10 +166,10 @@ export class TabPanel1Component {
       <div class="ip-content" slot="tab-content-5">
         <img src="./assets/images/tab-img-5.jpg" alt="" />
         <div class="ip-content-desc">
-          <h2 class="ip-content-title">Legislation</h2>
-          <h3 class="ip-content-subtitle">
+          <h3 class="ip-content-title">Legislation</h3>
+          <h4 class="ip-content-subtitle">
             Valider votre travail auprès de vos clients
-          </h3>
+          </h4>
           <p class="ip-content-text">
         PubliSpeak est un SaaS prêt à l’emploi.
         Il permet de charger votre
