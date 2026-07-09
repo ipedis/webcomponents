@@ -14,7 +14,17 @@ export function app(): express.Express {
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
 
-  const angularNodeAppEngine = new AngularNodeAppEngine();
+  // The app is served behind a reverse proxy (design.ipedis.com), which sets
+  // X-Forwarded-* headers; without this they are stripped with a warning.
+  const angularNodeAppEngine = new AngularNodeAppEngine({
+    trustProxyHeaders: [
+      'x-forwarded-for',
+      'x-forwarded-host',
+      'x-forwarded-proto',
+      'x-forwarded-port',
+      'x-forwarded-prefix',
+    ],
+  });
 
   server.use(compression());
 
