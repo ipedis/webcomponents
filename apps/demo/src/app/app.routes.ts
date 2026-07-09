@@ -4,8 +4,11 @@ import { langGuard } from './core/guards/lang.guard';
 const childRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'https://design.ipedis.com',
     pathMatch: 'full',
+    loadComponent: () =>
+      import('./pages/external-redirect/external-redirect.component').then(
+        (m) => m.ExternalRedirectComponent,
+      ),
   },
   // Tooltip
   {
@@ -609,6 +612,9 @@ export const appRoutes: Route[] = [
   },
   {
     path: '**',
-    redirectTo: 'not-found',
+    loadComponent: () =>
+      import('./pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent,
+      ),
   },
 ];

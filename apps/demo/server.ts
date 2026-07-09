@@ -50,6 +50,16 @@ export function app(): express.Express {
     res.status(200).send('ok');
   });
 
+  // The Angular router cannot redirect to an external URL, so the "home"
+  // routes that bounce visitors back to the design system site are handled
+  // here, before the SSR engine.
+  server.get(
+    ['/webcomponents', '/webcomponents/fr', '/webcomponents/en'],
+    (req, res) => {
+      res.redirect(302, 'https://design.ipedis.com');
+    },
+  );
+
   // All regular routes use the Angular engine
   server.use((req, res, next) => {
     angularNodeAppEngine
@@ -57,7 +67,18 @@ export function app(): express.Express {
         server: 'express',
       })
       .then((response: Response | null) => {
-        return response ? writeResponseToNodeResponse(response, res) : next();
+        if (!response) {
+          return next();
+        }
+        // The engine emits body-less chunked 3xx responses, which the
+        // reverse proxy in front of this app turns into bare 500s. Convert
+        // them to regular Express redirects (Content-Length + body).
+        const location = response.headers.get('location');
+        if (response.status >= 300 && response.status < 400 && location) {
+          res.redirect(response.status, location);
+          return;
+        }
+        return writeResponseToNodeResponse(response, res);
       })
       .catch((err: unknown) => next(err));
   });
