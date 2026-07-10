@@ -12,84 +12,111 @@
   },
   "pages": {
     "accordion": {
-      "title": "Démo Accordéon | A11Y Design System | Ipedis"
+      "title": "Démo Accordéon | A11Y Design System ",
+      "description": "Testez notre composant accordéon accessible : conforme RGAA et WCAG 2.2, navigable au clavier et compatible lecteurs d'écran."
     },
     "tooltip": {
-      "title": "Démo Infobulle | A11Y Design System | Ipedis",
+      "title": "Démo Infobulle | A11Y Design System ",
+      "description": "Découvrez une infobulle accessible, navigable au clavier et conforme aux normes RGAA et WCAG 2.2.",
       "click": {
-        "title": "Démo Infobulle cliquable | A11Y Design System | Ipedis"
+        "title": "Démo Infobulle cliquable | A11Y Design System ",
+        "description": "Découvrez une infobulle accessible déclenchée au clic, navigable au clavier et conforme aux normes RGAA et WCAG 2.2."
       },
       "hover": {
-        "title": "Démo Infobulle au survol | A11Y Design System | Ipedis"
+        "title": "Démo Infobulle au survol | A11Y Design System ",
+        "description": "Testez une infobulle accessible déclenchée au survol, compatible clavier et lecteurs d'écran, conforme RGAA et WCAG 2.2."
       }
     },
     "dropdown": {
-      "title": "Démo Liste déroulante | A11Y Design System | Ipedis"
+      "title": "Démo Liste déroulante | A11Y Design System ",
+      "description": "Testez notre composant liste déroulante accessible : conforme RGAA et WCAG 2.2, navigable au clavier et compatible lecteurs d'écran."
     },
     "toggle": {
-      "title": "Démo Bouton à bascule | A11Y Design System | Ipedis",
+      "title": "Démo Bascule Accessible | A11Y Design System",
+      "description": "Essayez notre composant bascule (switch) accessible : navigation clavier, indication d'état claire, conformité RGAA/WCAG 2.2.",
       "simple": {
-        "title": "Démo Bouton à bascule | A11Y Design System | Ipedis"
+        "title": "Démo Bascule Accessible | A11Y Design System",
+        "description": "Essayez notre composant bascule (switch) accessible : navigation clavier, indication d'état claire, conformité RGAA/WCAG 2.2."
       },
       "with-text": {
-        "title": "Démo Bouton à bascule avec texte | A11Y Design System | Ipedis"
+        "title": "Démo Bascule avec Libellé Texte | A11Y Design System",
+        "description": "Testez une bascule accessible dont l'état est annoncé par un libellé texte explicite, conforme aux normes RGAA et WCAG 2.2."
       },
       "with-indication": {
-        "title": "Démo Bouton à bascule avec indication | A11Y Design System | Ipedis"
+        "title": "Démo Bascule avec indication | A11Y Design System ",
+        "description": "Découvrez une bascule accessible avec indication visuelle et textuelle de son état, navigable au clavier, conforme RGAA/WCAG 2.2."
       }
     },
     "radio-button": {
-      "title": "Démo Bouton radio | A11Y Design System | Ipedis"
+      "title": "Démo Bouton radio Accessible | A11Y Design System ",
+      "description": "Découvrez un groupe de boutons radio accessible, navigable au clavier et compatible lecteurs d'écran, conforme RGAA et WCAG 2.2."
     },
     "login": {
-      "title": "Démo Page de connexion | A11Y Design System | Ipedis",
+      "title": "Démo Page de connexion | A11Y Design System ",
+      "description": "Découvrez un formulaire de connexion accessible, avec gestion des erreurs et conformité RGAA et WCAG 2.2.",
       "email": {
-        "title": "Démo Champ de mot de passe Email | A11Y Design System | Ipedis"
+        "title": "Démo Connexion par E-mail | A11Y Design System",
+        "description": "Découvrez un formulaire de connexion accessible par e-mail, avec gestion des erreurs et conformité RGAA et WCAG 2.2."
       },
       "username": {
-        "title": "Démo Mot de passe nom d'utilisateur | A11Y Design System | Ipedis"
+        "title": "Démo Connexion par Identifiant | A11Y Design System ",
+        "description": "Testez un formulaire de connexion accessible par identifiant : libellés clairs, navigation clavier, conformité RGAA/WCAG 2.2."
       }
     },
     "pagination": {
-      "title": "Démo Pagination | A11Y Design System | Ipedis"
+      "title": "Démo Pagination Accessible | A11Y Design System ",
+      "description": "Testez un composant de pagination accessible, navigable au clavier et compatible lecteurs d'écran, conforme RGAA/WCAG 2.2."
     },
     "table": {
-      "title": "Démo Tableau | A11Y Design System | Ipedis"
+      "title": "Démo Tableau Accessible | A11Y Design System ",
+      "description": "Découvrez un tableau de données accessible avec en-têtes correctement structurés, conforme aux normes RGAA et WCAG 2.2."
     },
     "tab-panel": {
-      "title": "Démo Système d'onglets | A11Y Design System | Ipedis"
+      "title": "Démo Panneau d'Onglets | A11Y Design System",
+      "description": "Explorez un panneau d'onglets accessible : navigation clavier, attributs ARIA et conformité aux normes RGAA et WCAG 2.2."
     },
     "modal": {
-      "title": "Démo Fenêtre modale | A11Y Design System | Ipedis"
+      "title": "Démo Fenêtre modale | A11Y Design System ",
+      "description": "Testez une fenêtre modale accessible : navigation clavier, attributs ARIA, conformité RGAA/WCAG 2.2."
     },
     "footnote": {
-      "title": "Démo Note de pied de page | A11Y Design System | Ipedis"
+      "title": "Démo Note de pied de page | A11Y Design System ",
+      "description": "Découvrez une note de pied de page accessible : structure sémantique, navigation clavier, conformité RGAA/WCAG 2.2."
     },
     "show-more": {
-      "title": "Démo Bouton Afficher Plus | A11Y Design System | Ipedis"
+      "title": "Démo Bouton Afficher Plus | A11Y Design System ",
+      "description": "Testez le composant \"Afficher plus\" accessible : navigation clavier, conformité RGAA/WCAG 2.2."
     },
     "alert": {
-      "title": "Démo Alertes | A11Y Design System | Ipedis"
+      "title": "Démo Alertes | A11Y Design System ",
+      "description": "Testez les alertes accessibles : structure sémantique, navigation clavier, conformité RGAA/WCAG 2.2."
     },
     "search-bar": {
-      "title": "Démo Barre de recherche | A11Y Design System | Ipedis"
+      "title": "Démo Barre de recherche | A11Y Design System ",
+      "description": "Testez notre barre de recherche accessible : conforme RGAA et WCAG 2.2, navigable au clavier et compatible lecteurs d'écran."
     },
     "breadcrumb": {
-      "title": "Démo Fil d'ariane | A11Y Design System | Ipedis"
+      "title": "Démo Fil d'ariane Accessible | A11Y Design System ",
+      "description": "Explorez un fil d'Ariane accessible avec repères ARIA, navigable au clavier et conforme aux normes RGAA et WCAG 2.2."
     },
     "menu": {
-      "title": "Démo Menu de navigation | A11Y Design System | Ipedis"
+      "title": "Démo Menu de navigation accessible| A11Y Design System ",
+      "description": "Découvrez un menu de navigation accessible : navigation clavier, attributs ARIA et conformité aux normes RGAA et WCAG 2.2."
     },
     "stepper": {
-      "title": "Démo Indicateur d'étapes | A11Y Design System | Ipedis"
+      "title": "Démo Indicateur d'étapes accessible | A11Y Design System ",
+      "description": "Découvrez un indicateur d'étapes accessible : navigation clavier, attributs ARIA et conformité aux normes RGAA et WCAG 2.2."
     },
     "checkbox": {
-      "title": "Démo Case à cocher | A11Y Design System | Ipedis",
+      "title": "Démo Case à cocher | A11Y Design System ",
+      "description": "Découvrez une case à cocher accessible simple, navigable au clavier et conforme aux normes RGAA et WCAG 2.2.",
       "simple": {
-        "title": "Démo Case à cocher | A11Y Design System | Ipedis"
+        "title": "Démo Case à cocher | A11Y Design System ",
+        "description": "Découvrez une case à cocher accessible simple, navigable au clavier et conforme aux normes RGAA et WCAG 2.2."
       },
       "list": {
-        "title": "Démo Liste de cases à cocher | A11Y Design System | Ipedis"
+        "title": "Démo Liste de cases à cocher | A11Y Design System ",
+        "description": "Testez une liste de cases à cocher accessible : navigation clavier, compatibilité lecteurs d'écran, conformité RGAA/WCAG 2.2."
       }
     }
   },
