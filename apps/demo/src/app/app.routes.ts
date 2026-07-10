@@ -17,6 +17,7 @@ const childRoutes: Route[] = [
       import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
     data: {
       title: 'pages.tooltip.title',
+      description: 'pages.tooltip.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/infobulle/',
         en: 'https://design.ipedis.com/en/web-components/tooltip/',
@@ -31,6 +32,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.tooltip.click.title',
+      description: 'pages.tooltip.click.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/infobulle/',
         en: 'https://design.ipedis.com/en/web-components/tooltip/',
@@ -45,6 +47,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.tooltip.hover.title',
+      description: 'pages.tooltip.hover.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/infobulle/',
         en: 'https://design.ipedis.com/en/web-components/tooltip/',
@@ -59,6 +62,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.tooltip.click.title',
+      description: 'pages.tooltip.click.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/infobulle/',
         en: 'https://design.ipedis.com/en/web-components/tooltip/',
@@ -73,6 +77,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.tooltip.hover.title',
+      description: 'pages.tooltip.hover.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/infobulle/',
         en: 'https://design.ipedis.com/en/web-components/tooltip/',
@@ -86,6 +91,7 @@ const childRoutes: Route[] = [
       import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
     data: {
       title: 'pages.dropdown.title',
+      description: 'pages.dropdown.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/',
         en: 'https://design.ipedis.com/en/web-components/',
@@ -99,6 +105,7 @@ const childRoutes: Route[] = [
       import('./pages/toggle/toggle.routing').then((m) => m.toggleRoues),
     data: {
       title: 'pages.toggle.title',
+      description: 'pages.toggle.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bascule/',
         en: 'https://design.ipedis.com/en/web-components/toggle/',
@@ -113,6 +120,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.toggle.simple.title',
+      description: 'pages.toggle.simple.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bascule/',
         en: 'https://design.ipedis.com/en/web-components/toggle/',
@@ -127,6 +135,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.toggle.with-text.title',
+      description: 'pages.toggle.with-text.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bascule/',
         en: 'https://design.ipedis.com/en/web-components/toggle/',
@@ -141,6 +150,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.toggle.with-indication.title',
+      description: 'pages.toggle.with-indication.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bascule/',
         en: 'https://design.ipedis.com/en/web-components/toggle/',
@@ -155,6 +165,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.toggle.simple.title',
+      description: 'pages.toggle.simple.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bascule/',
         en: 'https://design.ipedis.com/en/web-components/toggle/',
@@ -169,6 +180,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.toggle.with-text.title',
+      description: 'pages.toggle.with-text.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bascule/',
         en: 'https://design.ipedis.com/en/web-components/toggle/',
@@ -183,6 +195,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.toggle.with-indication.title',
+      description: 'pages.toggle.with-indication.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bascule/',
         en: 'https://design.ipedis.com/en/web-components/toggle/',
@@ -198,6 +211,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.radio-button.title',
+      description: 'pages.radio-button.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bouton-radio/',
         en: 'https://design.ipedis.com/en/web-components/radio-button/',
@@ -212,6 +226,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.radio-button.title',
+      description: 'pages.radio-button.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/bouton-radio/',
         en: 'https://design.ipedis.com/en/web-components/radio-button/',
@@ -225,6 +240,7 @@ const childRoutes: Route[] = [
       import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
     data: {
       title: 'pages.checkbox.title',
+      description: 'pages.checkbox.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
         en: 'https://design.ipedis.com/en/web-components/checkbox/',
@@ -239,6 +255,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.checkbox.simple.title',
+      description: 'pages.checkbox.simple.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
         en: 'https://design.ipedis.com/en/web-components/checkbox/',
@@ -253,6 +270,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.checkbox.list.title',
+      description: 'pages.checkbox.list.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
         en: 'https://design.ipedis.com/en/web-components/checkbox/',
@@ -267,6 +285,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.checkbox.simple.title',
+      description: 'pages.checkbox.simple.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
         en: 'https://design.ipedis.com/en/web-components/checkbox/',
@@ -281,6 +300,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.checkbox.list.title',
+      description: 'pages.checkbox.list.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/case-a-cocher/',
         en: 'https://design.ipedis.com/en/web-components/checkbox/',
@@ -294,6 +314,7 @@ const childRoutes: Route[] = [
       import('./pages/login/login.routing').then((m) => m.loginRoutes),
     data: {
       title: 'pages.login.title',
+      description: 'pages.login.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
         en: 'https://design.ipedis.com/en/web-components/password-input/',
@@ -308,6 +329,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.login.email.title',
+      description: 'pages.login.email.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
         en: 'https://design.ipedis.com/en/web-components/password-input/',
@@ -322,6 +344,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.login.username.title',
+      description: 'pages.login.username.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
         en: 'https://design.ipedis.com/en/web-components/password-input/',
@@ -336,6 +359,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.login.email.title',
+      description: 'pages.login.email.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
         en: 'https://design.ipedis.com/en/web-components/password-input/',
@@ -350,6 +374,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.login.username.title',
+      description: 'pages.login.username.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/champ-de-mot-de-passe/',
         en: 'https://design.ipedis.com/en/web-components/password-input/',
@@ -365,6 +390,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.pagination.title',
+      description: 'pages.pagination.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/pagination/',
         en: 'https://design.ipedis.com/en/web-components/pagination/',
@@ -378,6 +404,7 @@ const childRoutes: Route[] = [
       import('./pages/table/table.routing').then((m) => m.tableRoutes),
     data: {
       title: 'pages.table.title',
+      description: 'pages.table.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/tableaux/',
         en: 'https://design.ipedis.com/en/web-components/tables/',
@@ -390,6 +417,7 @@ const childRoutes: Route[] = [
       import('./pages/table/table.routing').then((m) => m.tableRoutes),
     data: {
       title: 'pages.table.title',
+      description: 'pages.table.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/tableaux/',
         en: 'https://design.ipedis.com/en/web-components/tables/',
@@ -405,6 +433,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.tab-panel.title',
+      description: 'pages.tab-panel.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/panneau-donglet/',
         en: 'https://design.ipedis.com/en/web-components/tab-panel/',
@@ -419,6 +448,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.tab-panel.title',
+      description: 'pages.tab-panel.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/panneau-donglet/',
         en: 'https://design.ipedis.com/en/web-components/tab-panel/',
@@ -434,6 +464,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.accordion.title',
+      description: 'pages.accordion.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/accordeon/',
         en: 'https://design.ipedis.com/en/web-components/accordion/',
@@ -448,6 +479,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.accordion.title',
+      description: 'pages.accordion.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/accordeon/',
         en: 'https://design.ipedis.com/en/web-components/accordion/',
@@ -461,6 +493,7 @@ const childRoutes: Route[] = [
       import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
     data: {
       title: 'pages.modal.title',
+      description: 'pages.modal.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/fenetre-modale/',
         en: 'https://design.ipedis.com/en/web-components/modal-window/',
@@ -473,6 +506,7 @@ const childRoutes: Route[] = [
       import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
     data: {
       title: 'pages.modal.title',
+      description: 'pages.modal.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/fenetre-modale/',
         en: 'https://design.ipedis.com/en/web-components/modal-window/',
@@ -486,6 +520,7 @@ const childRoutes: Route[] = [
       import('./pages/footnote/footnote.routing').then((m) => m.footnoteRoutes),
     data: {
       title: 'pages.footnote.title',
+      description: 'pages.footnote.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/',
         en: 'https://design.ipedis.com/en/web-components/',
@@ -501,6 +536,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.show-more.title',
+      description: 'pages.show-more.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/',
         en: 'https://design.ipedis.com/en/web-components/',
@@ -514,6 +550,7 @@ const childRoutes: Route[] = [
       import('./pages/alert/alert.routing').then((m) => m.alertRouting),
     data: {
       title: 'pages.alert.title',
+      description: 'pages.alert.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/',
         en: 'https://design.ipedis.com/en/web-components/',
@@ -529,6 +566,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.search-bar.title',
+      description: 'pages.search-bar.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/',
         en: 'https://design.ipedis.com/en/web-components/',
@@ -544,6 +582,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.breadcrumb.title',
+      description: 'pages.breadcrumb.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/fil-dariane/',
         en: 'https://design.ipedis.com/en/web-components/breadcrumb/',
@@ -558,6 +597,7 @@ const childRoutes: Route[] = [
       ),
     data: {
       title: 'pages.breadcrumb.title',
+      description: 'pages.breadcrumb.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/fil-dariane/',
         en: 'https://design.ipedis.com/en/web-components/breadcrumb/',
@@ -571,6 +611,7 @@ const childRoutes: Route[] = [
       import('./pages/menu/menu.routing').then((m) => m.menuRoutes),
     data: {
       title: 'pages.menu.title',
+      description: 'pages.menu.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/menu-burger/',
         en: 'https://design.ipedis.com/en/web-components/burger-menu/',
@@ -584,6 +625,7 @@ const childRoutes: Route[] = [
       import('./pages/stepper/stepper.routing').then((m) => m.stepperRouting),
     data: {
       title: 'pages.stepper.title',
+      description: 'pages.stepper.description',
       backlink: {
         fr: 'https://design.ipedis.com/composants-web/',
         en: 'https://design.ipedis.com/en/web-components/',

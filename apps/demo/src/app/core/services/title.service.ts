@@ -1,10 +1,10 @@
 import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslocoService } from '@jsverse/transloco';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,7 @@ import { of } from 'rxjs';
 export class TitleService {
   private router = inject(Router);
   private title = inject(Title);
+  private meta = inject(Meta);
   private transloco = inject(TranslocoService);
   private platformId = inject(PLATFORM_ID);
 
@@ -24,12 +25,23 @@ export class TitleService {
         map(() => {
           let route = this.router.routerState.root;
           while (route.firstChild) route = route.firstChild;
-          return route.snapshot.data['title'];
+          return {
+            title: route.snapshot.data['title'],
+            description: route.snapshot.data['description'],
+          };
         }),
-        switchMap((titleKey) =>
-          titleKey ? this.transloco.selectTranslate(titleKey) : of(''),
+        switchMap(({ title, description }) =>
+          combineLatest([
+            title ? this.transloco.selectTranslate(title) : of(''),
+            description ? this.transloco.selectTranslate(description) : of(''),
+          ]),
         ),
       )
-      .subscribe((title) => title && this.title.setTitle(title));
+      .subscribe(([title, description]) => {
+        if (title) this.title.setTitle(title);
+        if (description) {
+          this.meta.updateTag({ name: 'description', content: description });
+        }
+      });
   }
 }

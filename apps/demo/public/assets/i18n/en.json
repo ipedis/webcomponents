@@ -12,84 +12,111 @@
   },
   "pages": {
     "accordion": {
-      "title": "Accordion Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Accordion Demo | A11Y Design System",
+      "description": "Try our live, keyboard-navigable accordion component with full ARIA support, built to meet WCAG 2.2 and RGAA accessibility standards."
     },
     "tooltip": {
-      "title": "Tooltip Demo | A11Y Design System | Ipedis",
+      "title": "Accessible Tooltip Demo | A11Y Design System ",
+      "description": "Explore our accessible tooltip component, designed for keyboard and screen reader users, compliant with WCAG 2.2 and RGAA accessibility standards.",
       "click": {
-        "title": "Clickable tooltip Demo | A11Y Design System | Ipedis"
+        "title": "Clickable tooltip Demo | A11Y Design System ",
+        "description": "Try our accessible clickable tooltip: keyboard-triggered and screen reader-friendly, built to WCAG 2.2 and RGAA standards."
       },
       "hover": {
-        "title": "Hover tooltip Demo | A11Y Design System | Ipedis"
+        "title": "Hover tooltip Demo | A11Y Design System ",
+        "description": "Test an accessible hover tooltip with keyboard and screen reader support, designed to meet WCAG 2.2 and RGAA criteria."
       }
     },
     "dropdown": {
-      "title": "Dropdown Demo | A11Y Design System | Ipedis"
+      "title": "Dropdown Demo  | A11Y Design System",
+      "description": "Explore an accessible dropdown menu with keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA accessibility standards."
     },
     "toggle": {
-      "title": "Toggle Demo | A11Y Design System | Ipedis",
+      "title": "Accessible Toggle Switch Demo | A11Y Design System",
+      "description": "Try an accessible toggle switch with clear state indication and keyboard support, fully compliant with WCAG 2.2 and RGAA.",
       "simple": {
-        "title": "Toggle Demo | A11Y Design System | Ipedis"
+        "title": "Accessible Toggle Switch Demo | A11Y Design System",
+        "description": "Try an accessible toggle switch with clear state indication and keyboard support, fully compliant with WCAG 2.2 and RGAA."
       },
       "with-text": {
-        "title": "Toggle with text Demo | A11Y Design System | Ipedis"
+        "title": "Toggle with Text Label Demo | A11Y Design System",
+        "description": "Explore an accessible toggle with an explicit text label for its state, built to meet WCAG 2.2 and RGAA standards."
       },
       "with-indication": {
-        "title": "Toggle with indication Demo | A11Y Design System | Ipedis"
+        "title": "Toggle with indication Demo  | A11Y Design System",
+        "description": "Try an accessible toggle with a clear visual and textual state indication, keyboard-operable and WCAG 2.2 / RGAA compliant."
       }
     },
     "radio-button": {
-      "title": "Radio-button Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Radio Button Demo | A11Y Design System",
+      "description": "Try an accessible radio button group: keyboard-operable and screen reader-friendly, compliant with WCAG 2.2 and RGAA guidelines."
     },
     "login": {
-      "title": "Login Demo | A11Y Design System | Ipedis",
+      "title": "Login Demo  | A11Y Design System",
+      "description": "Explore accessible login forms with clear labels, error handling, and keyboard navigation, fully compliant with WCAG 2.2 and RGAA standards.",
       "email": {
-        "title": "Password Input Email Demo | A11Y Design System | Ipedis"
+        "title": "Accessible Email Login Demo | A11Y Design System",
+        "description": "Try an accessible email login form with clear labels and error handling, keyboard-navigable and compliant with WCAG 2.2 and RGAA."
       },
       "username": {
-        "title": "Password Input Username Demo | A11Y Design System | Ipedis"
+        "title": "Accessible Username Login Demo | A11Y Design System",
+        "description": "See an accessible username login form in action: clear labelling, keyboard navigation, full WCAG 2.2 and RGAA compliance."
       }
     },
     "pagination": {
-      "title": "Pagination Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Pagination Demo | A11Y Design System",
+      "description": "Explore an accessible pagination component with keyboard navigation and screen reader support, built to WCAG 2.2 and RGAA."
     },
     "table": {
-      "title": "Table Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Table Demo  | A11Y Design System",
+      "description": "See an accessible data table in action, with proper headers and keyboard navigation, fully compliant with WCAG 2.2 and RGAA."
     },
     "tab-panel": {
-      "title": "Tab-panel Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Tab Panel Demo | A11Y Design System",
+      "description": "Explore an accessible tab panel component: keyboard-navigable and ARIA-compliant, built to WCAG 2.2 and RGAA standards."
     },
     "modal": {
-      "title": "Modal window Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Modal window Demo | A11Y Design System",
+      "description": "See an accessible modal window in action, with proper keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA."
     },
     "footnote": {
-      "title": "Footnote Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Footnote Demo | A11Y Design System",
+      "description": "See an accessible footnote component in action, with proper keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA."
     },
     "show-more": {
-      "title": "Show-more button Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Show-more button Demo  | A11Y Design System",
+      "description": "See an accessible show-more button in action, with proper keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA."
     },
     "alert": {
-      "title": "Alert Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Alert Demo  | A11Y Design System",
+      "description": "See an accessible alert component in action, with proper keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA."
     },
     "search-bar": {
-      "title": "Search-bar Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Search-bar Demo  | A11Y Design System",
+      "description": "See an accessible search bar component in action, with proper keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA."
     },
     "breadcrumb": {
-      "title": "Breadcrumb Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Breadcrumb Demo  | A11Y Design System",
+      "description": "Explore an interactive breadcrumb component with proper ARIA landmarks and keyboard navigation, compliant with WCAG 2.2 and RGAA."
     },
     "menu": {
-      "title": "Burger Menu Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Burger Menu Demo  | A11Y Design System",
+      "description": "See an accessible burger menu component in action, with proper keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA."
     },
     "stepper": {
-      "title": "Stepper Demo | A11Y Design System | Ipedis"
+      "title": "Accessible Stepper Demo  | A11Y Design System",
+      "description": "See an accessible stepper component in action, with proper keyboard navigation and screen reader support, fully compliant with WCAG 2.2 and RGAA."
     },
     "checkbox": {
-      "title": "Checkbox Demo | A11Y Design System | Ipedis",
+      "title": "Accessible Checkbox Demo  | A11Y Design System",
+      "description": "See an accessible checkbox component in action, keyboard-friendly and compliant with WCAG 2.2 and RGAA standards.",
       "simple": {
-        "title": "Checkbox Demo | A11Y Design System | Ipedis"
+        "title": "Accessible Checkbox Demo | A11Y Design System",
+        "description": "See a simple, accessible checkbox component in action, keyboard-friendly and compliant with WCAG 2.2 and RGAA standards."
       },
       "list": {
-        "title": "Checkbox List Demo | A11Y Design System | Ipedis"
+        "title": "Accessible Checkbox List Demo  | A11Y Design System",
+        "description": "See an accessible checkbox list in action, screen reader-friendly and keyboard-operable, compliant with WCAG 2.2 and RGAA."
       }
     }
   },
