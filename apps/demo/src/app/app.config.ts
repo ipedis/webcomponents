@@ -3,8 +3,9 @@ import {
   isDevMode,
   provideZoneChangeDetection,
 } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, TitleStrategy } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { SeoTitleStrategy } from './core/services/seo-title-strategy';
 import { provideClientHydration, withNoIncrementalHydration } from '@angular/platform-browser';
 import { provideHighlightOptions } from 'ngx-highlightjs';
 import { provideHttpClient, withXhr } from '@angular/common/http';
@@ -25,6 +26,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withNoIncrementalHydration()),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
+    { provide: TitleStrategy, useClass: SeoTitleStrategy },
     provideHttpClient(withXhr()),
     provideTransloco({
       config: {
