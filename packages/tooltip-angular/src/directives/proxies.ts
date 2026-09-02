@@ -2,7 +2,7 @@
 /* auto-generated angular directive proxies */
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, NgZone } from '@angular/core';
 
-import { ProxyCmp } from './angular-component-lib/utils';
+import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import type { Components } from 'tooltip/components';
 
@@ -26,6 +26,7 @@ export class IpTooltip {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['btn1Click', 'btn2Click']);
   }
 }
 
@@ -38,5 +39,4 @@ export declare interface IpTooltip extends Components.IpTooltip {
 
   btn2Click: EventEmitter<IpTooltipCustomEvent<any>>;
 }
-
 

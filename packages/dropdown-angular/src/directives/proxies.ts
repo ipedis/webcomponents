@@ -2,7 +2,7 @@
 /* auto-generated angular directive proxies */
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, NgZone } from '@angular/core';
 
-import { ProxyCmp } from './angular-component-lib/utils';
+import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import type { Components } from 'dropdown/components';
 
@@ -25,6 +25,7 @@ export class IpDropdown {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['itemSelected']);
   }
 }
 
@@ -35,5 +36,4 @@ export declare interface IpDropdown extends Components.IpDropdown {
 
   itemSelected: EventEmitter<IpDropdownCustomEvent<string>>;
 }
-
 

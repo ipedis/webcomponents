@@ -23,8 +23,6 @@
   },
   "private": false,
   "devDependencies": {
-    "@babel/core": "7.29.7",
-    "@angular-devkit/build-angular": "22.1.6",
     "@angular-devkit/core": "22.1.6",
     "@angular-devkit/schematics": "22.1.6",
     "@angular-eslint/eslint-plugin": "22.2.0",
@@ -34,7 +32,9 @@
     "@angular/cli": "22.1.6",
     "@angular/compiler-cli": "22.1.4",
     "@angular/language-service": "22.1.4",
+    "@angular/localize": "^22.1.4",
     "@angular/ssr": "22.1.6",
+    "@babel/core": "7.29.7",
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "10.0.1",
     "@nx/angular": "23.1.3",

@@ -1,6 +1,6 @@
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
-import { extname, join, normalize, resolve } from 'node:path';
+import { extname, join, resolve, sep } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 const port = Number.parseInt(process.argv[2], 10);
@@ -23,6 +23,7 @@ if (build.status !== 0) {
 }
 
 const publicRoot = resolve(process.cwd(), 'www');
+const publicRootPrefix = `${publicRoot}${sep}`;
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
   '.html': 'text/html; charset=utf-8',
@@ -43,10 +44,10 @@ createServer((request, response) => {
     return;
   }
 
-  const relativePath = normalize(pathname).replace(/^[/\\]+/, '');
-  let filePath = join(publicRoot, relativePath || 'index.html');
+  const relativePath = pathname.replace(/^[/\\]+/, '');
+  let filePath = resolve(publicRoot, relativePath || 'index.html');
 
-  if (!filePath.startsWith(`${publicRoot}/`)) {
+  if (filePath !== publicRoot && !filePath.startsWith(publicRootPrefix)) {
     response.writeHead(403).end();
     return;
   }
