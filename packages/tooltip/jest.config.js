@@ -1,8 +1,7 @@
-const preset = require('jest-stencil-runner/preset');
+const { createJestStencilPreset } = require('jest-stencil-runner/preset');
 
-module.exports = {
-  ...preset,
+module.exports = createJestStencilPreset({
   displayName: 'tooltip',
   rootDir: __dirname,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
-};
+});

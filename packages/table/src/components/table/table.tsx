@@ -46,7 +46,9 @@ export class IpTable {
         );
       }
     } catch (error) {
-      throw new Error(`Invalid columns: ${error}`);
+      throw Object.assign(new Error(`Invalid columns: ${error}`), {
+        cause: error,
+      });
     }
   }
 
@@ -62,7 +64,9 @@ export class IpTable {
         ),
       );
     } catch (error) {
-      throw new Error(`Invalid rows: ${error}`);
+      throw Object.assign(new Error(`Invalid rows: ${error}`), {
+        cause: error,
+      });
     }
   }
 
