@@ -2,7 +2,8 @@ import { Config } from '@stencil/core';
 
 import { sass } from '@stencil/sass';
 
-import { angularOutputTarget } from '@stencil/angular-output-target';
+// eslint-disable-next-line @nx/enforce-module-boundaries -- shared Stencil output adapter
+import { angularOutputTargetWithEventForwarding } from '../../tools/stencil-angular-output-target.mjs';
 
 export const config: Config = {
   namespace: 'checkbox',
@@ -21,7 +22,7 @@ export const config: Config = {
   },
 
   outputTargets: [
-    angularOutputTarget({
+    angularOutputTargetWithEventForwarding({
       componentCorePackage: 'checkbox',
       directivesProxyFile: '../checkbox-angular/src/directives/proxies.ts',
       valueAccessorConfigs: [],
@@ -35,6 +36,7 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      dir: 'dist/docs',
     },
     {
       type: 'www',

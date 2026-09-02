@@ -15,12 +15,12 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   use: {
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: `http://127.0.0.1:${PORT}`,
   },
   webServer: {
-    command: `npx stencil build --dev --watch --serve --no-open --port ${PORT}`,
+    command: `node ../../tools/serve-stencil-e2e.mjs ${PORT}`,
     cwd: packageDir,
-    url: `http://localhost:${PORT}/ping`,
+    url: `http://127.0.0.1:${PORT}/ping`,
     reuseExistingServer: !process.env.CI,
   },
 });

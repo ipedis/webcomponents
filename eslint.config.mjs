@@ -45,6 +45,6 @@ export default [
       },
     })),
   {
-    ignores: ['**/dist', '**/.angular', '**/www'],
+    ignores: ['**/dist', '**/.angular', '**/www', '**/loader'],
   },
 ];

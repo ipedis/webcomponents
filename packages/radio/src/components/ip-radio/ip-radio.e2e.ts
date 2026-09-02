@@ -81,7 +81,6 @@ test.describe('ip-radio', () => {
       .locator('ip-radio')
       .locator('input[disabled]');
 
-    let eventFired = false;
     await page.evaluate(() => {
       const radioComponent = document.querySelector('ip-radio');
       radioComponent.addEventListener('selectionChanged', () => {
@@ -92,7 +91,9 @@ test.describe('ip-radio', () => {
     await disabledRadioInput.click({ force: true });
     await page.waitForTimeout(100);
 
-    eventFired = await page.evaluate(() => (window as any).eventFired || false);
+    const eventFired = await page.evaluate(
+      () => (window as any).eventFired || false,
+    );
     expect(eventFired).toBe(false);
 
     const isDisabled = await disabledRadioInput.evaluate(

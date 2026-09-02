@@ -53,6 +53,10 @@ export class IpTabPanel {
 
   componentWillLoad() {
     setTimeout(() => {
+      if (!this.selectedTab) {
+        return;
+      }
+
       const currentItem = this.selectedTab.substring(
         this.selectedTab.length - 1,
       );
