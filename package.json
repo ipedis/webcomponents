@@ -2,6 +2,9 @@
   "name": "ipedis",
   "version": "1.0.0",
   "license": "CC0-1.0",
+  "engines": {
+    "node": "24.22.1"
+  },
   "homepage": "https://github.com/docaxess/webcomponents",
   "bugs": {
     "url": "https://github.com/docaxess/webcomponents/issues",
