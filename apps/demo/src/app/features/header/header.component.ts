@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { filter } from 'rxjs/operators';
@@ -24,7 +29,8 @@ export class HeaderComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly designSystemUrl = inject(APP_CONFIG).designSystemUrl;
 
-  backLink = '/';
+  // A signal, so the OnPush view refreshes when a navigation updates it.
+  readonly backLink = signal('/');
 
   constructor() {
     this.router.events
@@ -33,7 +39,7 @@ export class HeaderComponent {
         const child = this.getDeepestChild(this.route);
         const backlink = child.snapshot.data?.['backlink'] as
           Backlink | undefined;
-        this.backLink = this.resolveBackLink(backlink);
+        this.backLink.set(this.resolveBackLink(backlink));
       });
   }
 

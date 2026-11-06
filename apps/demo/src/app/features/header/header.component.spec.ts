@@ -57,25 +57,25 @@ describe('HeaderComponent back link', () => {
 
   it('points to the French page of the design system', async () => {
     const header = await headerAt('/fr/tooltip');
-    expect(header.backLink).toBe(
+    expect(header.backLink()).toBe(
       `${DESIGN_SYSTEM_URL}/composants-web/infobulle/`,
     );
   });
 
   it('points to the English page of the design system', async () => {
     const header = await headerAt('/en/tooltip', 'en');
-    expect(header.backLink).toBe(
+    expect(header.backLink()).toBe(
       `${DESIGN_SYSTEM_URL}/en/web-components/tooltip/`,
     );
   });
 
   it('falls back to the web components index without backlink', async () => {
     const header = await headerAt('/fr/no-backlink');
-    expect(header.backLink).toBe(`${DESIGN_SYSTEM_URL}/composants-web/`);
+    expect(header.backLink()).toBe(`${DESIGN_SYSTEM_URL}/composants-web/`);
   });
 
   it('falls back to the app root when the language has no backlink', async () => {
     const header = await headerAt('/en/fr-only', 'en');
-    expect(header.backLink).toBe('/');
+    expect(header.backLink()).toBe('/');
   });
 });
