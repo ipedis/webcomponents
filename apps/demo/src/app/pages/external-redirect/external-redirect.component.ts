@@ -7,6 +7,7 @@ import {
   PLATFORM_ID,
   inject,
 } from '@angular/core';
+import { APP_CONFIG } from '../../core/config/app-config.providers';
 
 // The Angular router cannot express an external redirect, so the language
 // root routes render this component instead. In production the Express
@@ -17,7 +18,7 @@ import {
   standalone: true,
   template: `
     <p>
-      <a href="https://design.ipedis.com">design.ipedis.com</a>
+      <a [href]="designSystemUrl">{{ designSystemHost }}</a>
     </p>
   `,
   changeDetection: ChangeDetectionStrategy.Eager,
@@ -26,9 +27,12 @@ export class ExternalRedirectComponent implements OnInit {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly document = inject(DOCUMENT);
 
+  protected readonly designSystemUrl = inject(APP_CONFIG).designSystemUrl;
+  protected readonly designSystemHost = new URL(this.designSystemUrl).host;
+
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.document.location.replace('https://design.ipedis.com');
+      this.document.location.replace(this.designSystemUrl);
     }
   }
 }
