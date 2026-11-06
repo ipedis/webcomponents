@@ -6,16 +6,21 @@ import {
 import { provideRouter, TitleStrategy } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { SeoTitleStrategy } from './core/services/seo-title-strategy';
-import { provideClientHydration, withNoIncrementalHydration } from '@angular/platform-browser';
+import {
+  provideClientHydration,
+  withNoIncrementalHydration,
+} from '@angular/platform-browser';
 import { provideHighlightOptions } from 'ngx-highlightjs';
 import { provideHttpClient, withXhr } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 import { TranslocoLoader } from './transloco.loader';
 import { provideAppConfig } from './core/config/app-config.providers';
+import { provideMatomo } from './core/analytics/matomo';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAppConfig(),
+    provideMatomo(),
     provideHighlightOptions({
       coreLibraryLoader: () => import('highlight.js/lib/core'),
       languages: {

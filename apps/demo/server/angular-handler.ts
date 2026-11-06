@@ -10,9 +10,9 @@ import type {
 import { getCspNonce } from './security';
 
 /**
- * Placeholder written in `index.html` (on `<app-root ngCspNonce>` and on the
- * inline Matomo snippet). It is swapped for a per-request nonce before the
- * rendered HTML is sent, so inline scripts can run under a strict CSP.
+ * Placeholder written in `index.html` on `<app-root ngCspNonce>`. It is
+ * swapped for a per-request nonce before the rendered HTML is sent, so the
+ * inline styles and scripts Angular emits can run under a strict CSP.
  */
 const CSP_NONCE_PLACEHOLDER = '__CSP_NONCE__';
 
