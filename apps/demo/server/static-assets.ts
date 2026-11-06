@@ -2,6 +2,29 @@ import express, { Router } from 'express';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
+/**
+ * Path prefix of the build, read from the `<base href>` of the built index
+ * (`baseHref` in project.json), without the trailing slash: "/webcomponents".
+ * Reading it here instead of from a variable means the server can never
+ * serve the files under another path than the one the HTML points to.
+ *
+ * Returns null when there is no build: under `ng serve`, Vite serves the
+ * files and strips the base path itself.
+ */
+export function readBuiltBasePath(browserDistFolder: string): string | null {
+  const indexPath = join(browserDistFolder, 'index.csr.html');
+  if (!existsSync(indexPath)) {
+    return null;
+  }
+  const baseHref = /<base href="([^"]*)"/.exec(
+    readFileSync(indexPath, 'utf8'),
+  )?.[1];
+  if (baseHref === undefined || !baseHref.startsWith('/')) {
+    throw new Error(`${indexPath} has no absolute <base href>.`);
+  }
+  return baseHref.replace(/\/+$/, '');
+}
+
 /** Serves the browser build under the base path (hashed files, cached 1 year). */
 export function staticAssets(
   browserDistFolder: string,
@@ -16,33 +39,11 @@ export function staticAssets(
     }),
   );
   router.use(
-    basePath,
+    basePath || '/',
     express.static(browserDistFolder, {
       maxAge: '1y',
       index: false,
     }),
   );
   return router;
-}
-
-/**
- * `baseHref` is fixed at build time while BASE_PATH is read at startup. When
- * they differ, every asset 404s, so say it loudly in the logs. The check is
- * skipped when there is no built index (dev server).
- */
-export function checkBaseHref(
-  browserDistFolder: string,
-  basePath: string,
-): void {
-  const indexPath = join(browserDistFolder, 'index.csr.html');
-  if (!existsSync(indexPath)) {
-    return;
-  }
-  const expected = `<base href="${basePath}/"`;
-  if (!readFileSync(indexPath, 'utf8').includes(expected)) {
-    console.error(
-      `BASE_PATH is "${basePath}" but the build was made with another baseHref ` +
-        `(${expected}> not found in index.csr.html). Assets will not load.`,
-    );
-  }
 }

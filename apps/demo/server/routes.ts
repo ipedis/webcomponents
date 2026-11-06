@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import type { ServerConfig } from './config';
 
 /** Liveness probe used by the Kubernetes deployment. */
 export function healthcheck(): Router {
@@ -15,11 +14,16 @@ export function healthcheck(): Router {
  * that bounce visitors back to the design system site are handled here,
  * before the SSR engine.
  */
-export function designSystemRedirects(config: ServerConfig): Router {
-  const { basePath, designSystemUrl } = config;
+export function designSystemRedirects(
+  basePath: string,
+  designSystemUrl: string,
+): Router {
   const router = Router();
-  router.get([basePath, `${basePath}/fr`, `${basePath}/en`], (_req, res) => {
-    res.redirect(302, designSystemUrl);
-  });
+  router.get(
+    [basePath || '/', `${basePath}/fr`, `${basePath}/en`],
+    (_req, res) => {
+      res.redirect(302, designSystemUrl);
+    },
+  );
   return router;
 }

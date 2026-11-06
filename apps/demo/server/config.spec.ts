@@ -22,7 +22,6 @@ describe('loadServerConfig', () => {
   it('treats empty values as unset', () => {
     expect(
       loadServerConfig({
-        BASE_PATH: '',
         DESIGN_SYSTEM_URL: '  ',
         MATOMO_ENABLED: '',
         MATOMO_URL: '',
@@ -34,14 +33,12 @@ describe('loadServerConfig', () => {
   it('reads every variable', () => {
     expect(
       loadServerConfig({
-        BASE_PATH: '/demo',
         DESIGN_SYSTEM_URL: 'https://staging-design.example.com',
         MATOMO_ENABLED: 'false',
         MATOMO_URL: 'https://matomo.example.com',
         MATOMO_SITE_ID: '12',
       }),
     ).toEqual({
-      basePath: '/demo',
       designSystemUrl: 'https://staging-design.example.com',
       matomo: {
         enabled: false,
@@ -51,13 +48,11 @@ describe('loadServerConfig', () => {
     });
   });
 
-  it('removes trailing slashes from URLs and the base path', () => {
+  it('removes trailing slashes from URLs', () => {
     const config = loadServerConfig({
-      BASE_PATH: '/webcomponents/',
       DESIGN_SYSTEM_URL: 'https://design.ipedis.com/',
       MATOMO_URL: 'https://ipedis.matomo.cloud//',
     });
-    expect(config.basePath).toBe('/webcomponents');
     expect(config.designSystemUrl).toBe('https://design.ipedis.com');
     expect(config.matomo.url).toBe('https://ipedis.matomo.cloud');
   });
@@ -81,8 +76,6 @@ describe('loadServerConfig', () => {
     [{ MATOMO_URL: 'not a url' }, /MATOMO_URL/],
     [{ MATOMO_ENABLED: 'yes' }, /MATOMO_ENABLED/],
     [{ MATOMO_SITE_ID: 'abc' }, /MATOMO_SITE_ID/],
-    [{ BASE_PATH: 'webcomponents' }, /BASE_PATH/],
-    [{ BASE_PATH: '/' }, /BASE_PATH/],
   ])('rejects %j', (env, message) => {
     expect(() => loadServerConfig(env)).toThrow(message);
   });

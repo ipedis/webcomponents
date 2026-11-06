@@ -78,7 +78,6 @@ Variables already set in the environment take precedence over `.env`. An invalid
 | ------------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `PORT`              | `4000`                        | Port of the Node server (`npm run demo:ssr`, Docker image)                                                                                   |
 | `IP`                | `0.0.0.0`                     | Interface the Node server listens on                                                                                                         |
-| `BASE_PATH`         | `/webcomponents`              | Path prefix of the app. Must match `baseHref` in `apps/demo/project.json`, which is fixed at build time; a mismatch is logged at startup     |
 | `DESIGN_SYSTEM_URL` | `https://design.ipedis.com`   | "Back" links, home redirects and CSP `frame-ancestors`                                                                                       |
 | `MATOMO_ENABLED`    | `true`                        | `false` loads no tracker and removes Matomo from the CSP                                                                                     |
 | `MATOMO_URL`        | `https://ipedis.matomo.cloud` | Matomo instance, for the tracker and the CSP                                                                                                 |
@@ -87,3 +86,7 @@ Variables already set in the environment take precedence over `.env`. An invalid
 
 `DESIGN_SYSTEM_URL` and the Matomo settings are written into the rendered HTML for the
 browser (`APP_CONFIG`): only public values belong there.
+
+The path prefix (`/webcomponents`) is not a variable: the server reads it from the
+`<base href>` of the build, set by `baseHref` in `apps/demo/project.json`. To serve the
+demo under another path, change `baseHref` and rebuild.

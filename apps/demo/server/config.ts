@@ -9,18 +9,16 @@ import {
  * Every default is the current production value, so a deployment that sets
  * nothing behaves exactly as before. Invalid values stop the server at
  * startup instead of producing a broken CSP or redirect at runtime.
+ *
+ * Server-only settings would be added to this type; toPublicAppConfig()
+ * keeps them out of the HTML. The path prefix is not a setting: it is read
+ * from the build (see readBuiltBasePath).
  */
-export interface ServerConfig extends PublicAppConfig {
-  /** Path prefix the app is served under; must match `baseHref` in project.json. */
-  basePath: string;
-}
+export type ServerConfig = PublicAppConfig;
 
 type Env = Record<string, string | undefined>;
 
-export const DEFAULT_SERVER_CONFIG: ServerConfig = {
-  ...DEFAULT_APP_CONFIG,
-  basePath: '/webcomponents',
-};
+export const DEFAULT_SERVER_CONFIG: ServerConfig = DEFAULT_APP_CONFIG;
 
 /**
  * The part of the configuration sent to the browser. Fields are copied one
@@ -40,7 +38,6 @@ export function toPublicAppConfig(config: ServerConfig): PublicAppConfig {
 export function loadServerConfig(env: Env = process.env): ServerConfig {
   const defaults = DEFAULT_SERVER_CONFIG;
   return {
-    basePath: readBasePath(env, 'BASE_PATH', defaults.basePath),
     designSystemUrl: readUrl(
       env,
       'DESIGN_SYSTEM_URL',
@@ -86,16 +83,6 @@ function readUrl(env: Env, name: string, fallback: string): string {
     throw new Error(`${name} must use http or https, got "${value}".`);
   }
   return value.replace(/\/+$/, '');
-}
-
-function readBasePath(env: Env, name: string, fallback: string): string {
-  const value = (read(env, name) ?? fallback).replace(/\/+$/, '');
-  if (!/^\/[\w\-/]+$/.test(value)) {
-    throw new Error(
-      `${name} must be a path such as "/webcomponents", got "${value}".`,
-    );
-  }
-  return value;
 }
 
 function readBoolean(env: Env, name: string, fallback: boolean): boolean {

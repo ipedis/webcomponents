@@ -12,7 +12,7 @@ import {
 } from './server/config';
 import { designSystemRedirects, healthcheck } from './server/routes';
 import { cspNonce, securityHeaders } from './server/security';
-import { checkBaseHref, staticAssets } from './server/static-assets';
+import { readBuiltBasePath, staticAssets } from './server/static-assets';
 
 export function app(
   config: ServerConfig = loadServerConfig(),
@@ -21,16 +21,20 @@ export function app(
   server.disable('x-powered-by');
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
-  checkBaseHref(browserDistFolder, config.basePath);
+  const basePath = readBuiltBasePath(browserDistFolder);
 
   // Order matters: the nonce must exist before the CSP header is built, and
   // the external redirects must run before the Angular engine.
   server.use(cspNonce());
   server.use(securityHeaders(config));
   server.use(compression());
-  server.use(staticAssets(browserDistFolder, config.basePath));
   server.use(healthcheck());
-  server.use(designSystemRedirects(config));
+  // Without a build (`ng serve`), Vite serves the files and strips the base
+  // path, so neither the static files nor the redirects apply.
+  if (basePath !== null) {
+    server.use(staticAssets(browserDistFolder, basePath));
+    server.use(designSystemRedirects(basePath, config.designSystemUrl));
+  }
   server.use(angularHandler(createAngularEngine(), toPublicAppConfig(config)));
 
   return server;
