@@ -9,6 +9,7 @@ describe('toPublicAppConfig', () => {
     const config = { ...DEFAULT_SERVER_CONFIG, secret: 'do-not-leak' };
     expect(toPublicAppConfig(config)).toEqual({
       designSystemUrl: DEFAULT_SERVER_CONFIG.designSystemUrl,
+      homeRedirect: DEFAULT_SERVER_CONFIG.homeRedirect,
       matomo: DEFAULT_SERVER_CONFIG.matomo,
     });
   });
@@ -23,6 +24,7 @@ describe('loadServerConfig', () => {
     expect(
       loadServerConfig({
         DESIGN_SYSTEM_URL: '  ',
+        HOME_REDIRECT: '',
         MATOMO_ENABLED: '',
         MATOMO_URL: '',
         MATOMO_SITE_ID: '',
@@ -34,12 +36,14 @@ describe('loadServerConfig', () => {
     expect(
       loadServerConfig({
         DESIGN_SYSTEM_URL: 'https://staging-design.example.com',
+        HOME_REDIRECT: 'false',
         MATOMO_ENABLED: 'false',
         MATOMO_URL: 'https://matomo.example.com',
         MATOMO_SITE_ID: '12',
       }),
     ).toEqual({
       designSystemUrl: 'https://staging-design.example.com',
+      homeRedirect: false,
       matomo: {
         enabled: false,
         url: 'https://matomo.example.com',
@@ -75,6 +79,7 @@ describe('loadServerConfig', () => {
     [{ DESIGN_SYSTEM_URL: 'ftp://design.ipedis.com' }, /http or https/],
     [{ MATOMO_URL: 'not a url' }, /MATOMO_URL/],
     [{ MATOMO_ENABLED: 'yes' }, /MATOMO_ENABLED/],
+    [{ HOME_REDIRECT: 'no' }, /HOME_REDIRECT/],
     [{ MATOMO_SITE_ID: 'abc' }, /MATOMO_SITE_ID/],
   ])('rejects %j', (env, message) => {
     expect(() => loadServerConfig(env)).toThrow(message);

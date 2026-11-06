@@ -27,6 +27,7 @@ export const DEFAULT_SERVER_CONFIG: ServerConfig = DEFAULT_APP_CONFIG;
 export function toPublicAppConfig(config: ServerConfig): PublicAppConfig {
   return {
     designSystemUrl: config.designSystemUrl,
+    homeRedirect: config.homeRedirect,
     matomo: {
       enabled: config.matomo.enabled,
       url: config.matomo.url,
@@ -43,6 +44,7 @@ export function loadServerConfig(env: Env = process.env): ServerConfig {
       'DESIGN_SYSTEM_URL',
       defaults.designSystemUrl,
     ),
+    homeRedirect: readBoolean(env, 'HOME_REDIRECT', defaults.homeRedirect),
     matomo: {
       enabled: readBoolean(env, 'MATOMO_ENABLED', defaults.matomo.enabled),
       url: readUrl(env, 'MATOMO_URL', defaults.matomo.url),

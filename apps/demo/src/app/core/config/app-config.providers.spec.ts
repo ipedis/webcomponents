@@ -11,6 +11,7 @@ const STATE_KEY = makeStateKey<PublicAppConfig>('appConfig');
 
 const STAGING_CONFIG: PublicAppConfig = {
   designSystemUrl: 'https://staging-design.example.com',
+  homeRedirect: false,
   matomo: { enabled: false, url: 'https://matomo.example.com', siteId: '12' },
 };
 

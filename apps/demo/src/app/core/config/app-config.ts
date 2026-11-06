@@ -7,6 +7,11 @@
  */
 export interface PublicAppConfig {
   designSystemUrl: string;
+  /**
+   * When true (production), the home routes redirect to the design system.
+   * When false, they show the list of demos, for local testing.
+   */
+  homeRedirect: boolean;
   matomo: {
     enabled: boolean;
     url: string;
@@ -17,6 +22,7 @@ export interface PublicAppConfig {
 /** Production values, used when no environment variable overrides them. */
 export const DEFAULT_APP_CONFIG: PublicAppConfig = {
   designSystemUrl: 'https://design.ipedis.com',
+  homeRedirect: true,
   matomo: {
     enabled: true,
     url: 'https://ipedis.matomo.cloud',

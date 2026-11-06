@@ -33,7 +33,9 @@ export function app(
   // path, so neither the static files nor the redirects apply.
   if (basePath !== null) {
     server.use(staticAssets(browserDistFolder, basePath));
-    server.use(designSystemRedirects(basePath, config.designSystemUrl));
+    if (config.homeRedirect) {
+      server.use(designSystemRedirects(basePath, config.designSystemUrl));
+    }
   }
   server.use(angularHandler(createAngularEngine(), toPublicAppConfig(config)));
 

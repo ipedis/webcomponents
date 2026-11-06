@@ -1,14 +1,32 @@
+import { inject } from '@angular/core';
 import { Route } from '@angular/router';
+import { APP_CONFIG } from './core/config/app-config.providers';
 import { langGuard } from './core/guards/lang.guard';
 
 const childRoutes: Route[] = [
+  // Language root: redirect to the design system (production), or list the
+  // demos when HOME_REDIRECT=false (local testing).
+  // Both routes share the same path: the router tries them in order and
+  // canMatch skips the first one when homeRedirect is false. Keep the
+  // guarded route first, or the home page would always win.
   {
     path: '',
     pathMatch: 'full',
+    canMatch: [() => inject(APP_CONFIG).homeRedirect],
     loadComponent: () =>
       import('./pages/external-redirect/external-redirect.component').then(
         (m) => m.ExternalRedirectComponent,
       ),
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
+    data: {
+      title: 'pages.home.title',
+      description: 'pages.home.description',
+    },
   },
   // Tooltip
   {

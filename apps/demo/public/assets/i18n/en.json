@@ -11,6 +11,12 @@
     "components": "COMPONENTS"
   },
   "pages": {
+    "home": {
+      "title": "Component demos | A11Y Design System",
+      "description": "List of the Ipedis accessible web component demos.",
+      "heading": "Component demos",
+      "intro": "This home page is for local testing. In production, this address redirects to the design system."
+    },
     "accordion": {
       "title": "Accessible Accordion Demo | A11Y Design System",
       "description": "Try our live, keyboard-navigable accordion component with full ARIA support, built to meet WCAG 2.2 and RGAA accessibility standards."

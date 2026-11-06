@@ -11,6 +11,12 @@
     "components": "COMPOSANTS"
   },
   "pages": {
+    "home": {
+      "title": "Démos des composants | A11Y Design System",
+      "description": "Liste des démos des composants web accessibles Ipedis.",
+      "heading": "Démos des composants",
+      "intro": "Cette page d'accueil sert aux tests en local. En production, cette adresse redirige vers le design system."
+    },
     "accordion": {
       "title": "Démo Accordéon | A11Y Design System ",
       "description": "Testez notre composant accordéon accessible : conforme RGAA et WCAG 2.2, navigable au clavier et compatible lecteurs d'écran."

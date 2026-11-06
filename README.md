@@ -63,7 +63,8 @@ The demo (`apps/demo`) is an Angular SSR app served by Express. Its server reads
 environment variables below at startup (`apps/demo/server/config.ts`). Every default is
 the production value, so staging and production need no variable at all.
 
-For local development, copy the example file. It disables Matomo, so your visits are not
+For local development, copy the example file. It shows a home page listing the demos
+instead of redirecting to the design system, and disables Matomo so your visits are not
 tracked:
 
 ```bash
@@ -79,6 +80,7 @@ Variables already set in the environment take precedence over `.env`. An invalid
 | `PORT`              | `4000`                        | Port of the Node server (`npm run demo:ssr`, Docker image)                                                                                   |
 | `IP`                | `0.0.0.0`                     | Interface the Node server listens on                                                                                                         |
 | `DESIGN_SYSTEM_URL` | `https://design.ipedis.com`   | "Back" links, home redirects and CSP `frame-ancestors`                                                                                       |
+| `HOME_REDIRECT`     | `true`                        | `true`: the home routes (`/webcomponents`, `/fr`, `/en`) redirect to `DESIGN_SYSTEM_URL`. `false`: they list the demos                       |
 | `MATOMO_ENABLED`    | `true`                        | `false` loads no tracker and removes Matomo from the CSP                                                                                     |
 | `MATOMO_URL`        | `https://ipedis.matomo.cloud` | Matomo instance, for the tracker and the CSP                                                                                                 |
 | `MATOMO_SITE_ID`    | `71`                          | Matomo site id                                                                                                                               |
