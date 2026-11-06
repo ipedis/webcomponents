@@ -3,8 +3,14 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import type { RequestHandler, Response as ExpressResponse } from 'express';
-import { CSP_NONCE_PLACEHOLDER } from './constants';
 import { getCspNonce } from './security';
+
+/**
+ * Placeholder written in `index.html` (on `<app-root ngCspNonce>` and on the
+ * inline Matomo snippet). It is swapped for a per-request nonce before the
+ * rendered HTML is sent, so inline scripts can run under a strict CSP.
+ */
+const CSP_NONCE_PLACEHOLDER = '__CSP_NONCE__';
 
 /** Headers recomputed by Express when the HTML body is rewritten. */
 const SKIPPED_HTML_HEADERS = new Set(['content-length', 'transfer-encoding']);

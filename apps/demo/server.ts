@@ -4,29 +4,38 @@ import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { angularHandler, createAngularEngine } from './server/angular-handler';
+import {
+  loadLocalEnvFile,
+  loadServerConfig,
+  type ServerConfig,
+} from './server/config';
 import { designSystemRedirects, healthcheck } from './server/routes';
 import { cspNonce, securityHeaders } from './server/security';
-import { staticAssets } from './server/static-assets';
+import { checkBaseHref, staticAssets } from './server/static-assets';
 
-export function app(): express.Express {
+export function app(
+  config: ServerConfig = loadServerConfig(),
+): express.Express {
   const server = express();
   server.disable('x-powered-by');
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
+  checkBaseHref(browserDistFolder, config.basePath);
 
   // Order matters: the nonce must exist before the CSP header is built, and
   // the external redirects must run before the Angular engine.
   server.use(cspNonce());
-  server.use(securityHeaders());
+  server.use(securityHeaders(config));
   server.use(compression());
-  server.use(staticAssets(browserDistFolder));
+  server.use(staticAssets(browserDistFolder, config.basePath));
   server.use(healthcheck());
-  server.use(designSystemRedirects());
+  server.use(designSystemRedirects(config));
   server.use(angularHandler(createAngularEngine()));
 
   return server;
 }
 
+loadLocalEnvFile();
 const server = app();
 
 if (isMainModule(import.meta.url)) {
