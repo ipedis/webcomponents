@@ -11,9 +11,11 @@ import { provideHighlightOptions } from 'ngx-highlightjs';
 import { provideHttpClient, withXhr } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 import { TranslocoLoader } from './transloco.loader';
+import { provideAppConfig } from './core/config/app-config.providers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAppConfig(),
     provideHighlightOptions({
       coreLibraryLoader: () => import('highlight.js/lib/core'),
       languages: {

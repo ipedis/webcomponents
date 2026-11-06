@@ -3,6 +3,10 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import type { RequestHandler, Response as ExpressResponse } from 'express';
+import type {
+  AppRequestContext,
+  PublicAppConfig,
+} from '../src/app/core/config/app-config';
 import { getCspNonce } from './security';
 
 /**
@@ -32,12 +36,20 @@ export function createAngularEngine(): AngularNodeAppEngine {
 }
 
 /**
- * Renders every remaining route with Angular SSR. Express 5 forwards a
- * rejected promise to the error handler, so no try/catch is needed here.
+ * Renders every remaining route with Angular SSR. The public configuration
+ * goes through the request context (`REQUEST_CONTEXT` in Angular). Express 5
+ * forwards a rejected promise to the error handler, so no try/catch is needed.
  */
-export function angularHandler(engine: AngularNodeAppEngine): RequestHandler {
+export function angularHandler(
+  engine: AngularNodeAppEngine,
+  appConfig: PublicAppConfig,
+): RequestHandler {
+  const context: AppRequestContext & { server: string } = {
+    server: 'express',
+    appConfig,
+  };
   return async (req, res, next) => {
-    const response = await engine.handle(req, { server: 'express' });
+    const response = await engine.handle(req, context);
     if (!response) {
       next();
       return;

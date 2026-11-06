@@ -1,4 +1,18 @@
-import { DEFAULT_SERVER_CONFIG, loadServerConfig } from './config';
+import {
+  DEFAULT_SERVER_CONFIG,
+  loadServerConfig,
+  toPublicAppConfig,
+} from './config';
+
+describe('toPublicAppConfig', () => {
+  it('keeps only the fields meant for the browser', () => {
+    const config = { ...DEFAULT_SERVER_CONFIG, secret: 'do-not-leak' };
+    expect(toPublicAppConfig(config)).toEqual({
+      designSystemUrl: DEFAULT_SERVER_CONFIG.designSystemUrl,
+      matomo: DEFAULT_SERVER_CONFIG.matomo,
+    });
+  });
+});
 
 describe('loadServerConfig', () => {
   it('returns the production values when nothing is set', () => {

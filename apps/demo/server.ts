@@ -7,6 +7,7 @@ import { angularHandler, createAngularEngine } from './server/angular-handler';
 import {
   loadLocalEnvFile,
   loadServerConfig,
+  toPublicAppConfig,
   type ServerConfig,
 } from './server/config';
 import { designSystemRedirects, healthcheck } from './server/routes';
@@ -30,7 +31,7 @@ export function app(
   server.use(staticAssets(browserDistFolder, config.basePath));
   server.use(healthcheck());
   server.use(designSystemRedirects(config));
-  server.use(angularHandler(createAngularEngine()));
+  server.use(angularHandler(createAngularEngine(), toPublicAppConfig(config)));
 
   return server;
 }

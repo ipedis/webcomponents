@@ -1,3 +1,8 @@
+import {
+  DEFAULT_APP_CONFIG,
+  type PublicAppConfig,
+} from '../src/app/core/config/app-config';
+
 /**
  * Server configuration, read from environment variables.
  *
@@ -5,28 +10,32 @@
  * nothing behaves exactly as before. Invalid values stop the server at
  * startup instead of producing a broken CSP or redirect at runtime.
  */
-export interface ServerConfig {
+export interface ServerConfig extends PublicAppConfig {
   /** Path prefix the app is served under; must match `baseHref` in project.json. */
   basePath: string;
-  designSystemUrl: string;
-  matomo: {
-    enabled: boolean;
-    url: string;
-    siteId: string;
-  };
 }
 
 type Env = Record<string, string | undefined>;
 
 export const DEFAULT_SERVER_CONFIG: ServerConfig = {
+  ...DEFAULT_APP_CONFIG,
   basePath: '/webcomponents',
-  designSystemUrl: 'https://design.ipedis.com',
-  matomo: {
-    enabled: true,
-    url: 'https://ipedis.matomo.cloud',
-    siteId: '71',
-  },
 };
+
+/**
+ * The part of the configuration sent to the browser. Fields are copied one
+ * by one so a server-only field can never leak into the HTML by accident.
+ */
+export function toPublicAppConfig(config: ServerConfig): PublicAppConfig {
+  return {
+    designSystemUrl: config.designSystemUrl,
+    matomo: {
+      enabled: config.matomo.enabled,
+      url: config.matomo.url,
+      siteId: config.matomo.siteId,
+    },
+  };
+}
 
 export function loadServerConfig(env: Env = process.env): ServerConfig {
   const defaults = DEFAULT_SERVER_CONFIG;
