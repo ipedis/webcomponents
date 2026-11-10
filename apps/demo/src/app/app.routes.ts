@@ -24,6 +24,8 @@ const childRoutes: Route[] = [
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
     data: {
+      // Read by the header: the "Back" link of this page is not the list itself.
+      home: true,
       title: 'pages.home.title',
       description: 'pages.home.description',
     },

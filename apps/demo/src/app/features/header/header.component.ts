@@ -79,10 +79,12 @@ export class HeaderComponent {
     return path ? this.config.designSystemUrl + path : '/';
   }
 
-  /** The language root (`/fr`, `/en`): the list of demos. */
+  /**
+   * The list of demos, flagged by its route (`home` data). Counting URL
+   * segments would also match single-segment pages such as `/not-found`.
+   */
   private isHomePage(): boolean {
-    const url = this.router.parseUrl(this.router.url);
-    return (url.root.children['primary']?.segments.length ?? 0) <= 1;
+    return this.getDeepestChild(this.route).snapshot.data['home'] === true;
   }
 
   get activeLang(): string {

@@ -114,6 +114,13 @@ describe('HeaderComponent back link', () => {
       );
     });
 
+    it('goes back to the list of demos from the not-found page', async () => {
+      setUp('fr', false);
+      expect(await backLinkAfterNavigatingTo('/not-found')).toBe(
+        '/webcomponents/fr',
+      );
+    });
+
     it('keeps the design system link on the list of demos', async () => {
       setUp('fr', false);
       expect(await backLinkAfterNavigatingTo('/fr')).toBe(
