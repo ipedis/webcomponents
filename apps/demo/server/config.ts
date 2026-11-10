@@ -85,13 +85,16 @@ function readUrl(env: Env, name: string, fallback: string): string {
     throw new Error(`${name} must use http or https, got "${value}".`);
   }
   // Paths are appended to these URLs (back links, matomo.js), which a query,
-  // a fragment or credentials would break without any error.
-  if (url.search || url.hash || url.username || url.password) {
+  // a fragment or credentials would break without any error. The normalized
+  // href is checked, not url.search and url.hash: those are empty for a bare
+  // "?" or "#", which would still swallow the appended path.
+  if (/[?#]/.test(url.href) || url.username || url.password) {
     throw new Error(
       `${name} must not contain a query, a fragment or credentials, got "${value}".`,
     );
   }
-  return value.replace(/\/+$/, '');
+  // The normalized form, as validated: "https:host" becomes "https://host/".
+  return url.href.replace(/\/+$/, '');
 }
 
 function readBoolean(env: Env, name: string, fallback: boolean): boolean {

@@ -61,6 +61,15 @@ describe('loadServerConfig', () => {
     expect(config.matomo.url).toBe('https://ipedis.matomo.cloud');
   });
 
+  it('returns URLs in their normalized form', () => {
+    const config = loadServerConfig({
+      DESIGN_SYSTEM_URL: 'https://Design.Ipedis.com/a b/',
+      MATOMO_URL: 'https:stats.example.com',
+    });
+    expect(config.designSystemUrl).toBe('https://design.ipedis.com/a%20b');
+    expect(config.matomo.url).toBe('https://stats.example.com');
+  });
+
   it.each([
     ['true', true],
     ['TRUE', true],
@@ -80,6 +89,8 @@ describe('loadServerConfig', () => {
     [{ MATOMO_URL: 'not a url' }, /MATOMO_URL/],
     [{ DESIGN_SYSTEM_URL: 'https://design.ipedis.com?a=1' }, /query/],
     [{ MATOMO_URL: 'https://ipedis.matomo.cloud/#x' }, /fragment/],
+    [{ MATOMO_URL: 'https://stats.example.com/#' }, /fragment/],
+    [{ DESIGN_SYSTEM_URL: 'https://design.ipedis.com/?' }, /query/],
     [{ MATOMO_URL: 'https://user:pass@ipedis.matomo.cloud' }, /credentials/],
     [{ MATOMO_ENABLED: 'yes' }, /MATOMO_ENABLED/],
     [{ HOME_REDIRECT: 'no' }, /HOME_REDIRECT/],
