@@ -42,8 +42,25 @@ export function app(
   return server;
 }
 
+/**
+ * An invalid variable stops the server. Thrown from the bundle, the error
+ * would be printed after a line of minified code, so print the message alone.
+ * Under the dev server (not the main module), let it throw as usual.
+ */
+function startupConfig(): ServerConfig {
+  try {
+    return loadServerConfig();
+  } catch (error) {
+    if (!isMainModule(import.meta.url)) {
+      throw error;
+    }
+    console.error(`Invalid configuration: ${(error as Error).message}`);
+    process.exit(1);
+  }
+}
+
 loadLocalEnvFile();
-const server = app();
+const server = app(startupConfig());
 
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] ? parseInt(process.env['PORT']) : 4000;
