@@ -1,7 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
 // Alternative config without automatic server startup
-// Use this if you want to manually start the server first
+// Use this if you want to manually start the server first (`nx serve demo`,
+// or `npm run demo:ssr` with E2E_BASE_URL), with HOME_REDIRECT=false.
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
@@ -10,7 +11,8 @@ export default defineConfig({
   workers: process.env['CI'] ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:4200',
+    baseURL:
+      process.env['E2E_BASE_URL'] ?? 'http://localhost:4200/webcomponents/',
     trace: 'on-first-retry',
   },
 
