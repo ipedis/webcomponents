@@ -1,7 +1,8 @@
 import {
   ApplicationConfig,
   isDevMode,
-  provideZoneChangeDetection,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import { provideRouter, TitleStrategy } from '@angular/router';
 import { appRoutes } from './app.routes';
@@ -19,6 +20,11 @@ import { provideMatomo } from './core/analytics/matomo';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    // Without zone.js, uncaught errors (timers, promises) reach the
+    // ErrorHandler through these listeners.
+    provideBrowserGlobalErrorListeners(),
+    // The default since Angular 21, written out: the app runs without zone.js.
+    provideZonelessChangeDetection(),
     provideAppConfig(),
     provideMatomo(),
     provideHighlightOptions({
@@ -31,7 +37,6 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideClientHydration(withNoIncrementalHydration()),
-    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
     { provide: TitleStrategy, useClass: SeoTitleStrategy },
     provideHttpClient(withXhr()),
