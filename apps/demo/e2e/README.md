@@ -6,6 +6,8 @@ End-to-end tests of the demo application, with Playwright.
 
 - `home.spec.ts` - Home page: root redirect, title, links
 - `demo-basic.spec.ts` - Main component pages load with their web component
+- `interactions.spec.ts` - Focus of the alerts, language switch, code tabs,
+  translated server HTML: what change detection must keep working
 - `accessibility.spec.ts` - Audit on axe Developer Hub (see `axe.md`), skipped
   without `AXE_DEVELOPER_HUB_API_KEY`
 
