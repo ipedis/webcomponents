@@ -84,6 +84,13 @@ function readUrl(env: Env, name: string, fallback: string): string {
   if (url.protocol !== 'https:' && url.protocol !== 'http:') {
     throw new Error(`${name} must use http or https, got "${value}".`);
   }
+  // Paths are appended to these URLs (back links, matomo.js), which a query,
+  // a fragment or credentials would break without any error.
+  if (url.search || url.hash || url.username || url.password) {
+    throw new Error(
+      `${name} must not contain a query, a fragment or credentials, got "${value}".`,
+    );
+  }
   return value.replace(/\/+$/, '');
 }
 

@@ -33,4 +33,24 @@ describe('cspDirectives', () => {
       'https://staging-design.example.com',
     ]);
   });
+
+  it('uses origins, so URLs with a path still match their files', () => {
+    const directives = cspDirectives({
+      ...DEFAULT_SERVER_CONFIG,
+      designSystemUrl: 'https://example.com/design-system',
+      matomo: {
+        ...DEFAULT_SERVER_CONFIG.matomo,
+        url: 'https://stats.example.com/matomo',
+      },
+    });
+    expect(directives['frame-ancestors']).toEqual([
+      "'self'",
+      'https://example.com',
+    ]);
+    expect(directives['script-src']).toContain('https://stats.example.com');
+    expect(directives['connect-src']).toEqual([
+      "'self'",
+      'https://stats.example.com',
+    ]);
+  });
 });

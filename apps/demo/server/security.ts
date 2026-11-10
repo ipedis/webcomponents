@@ -39,10 +39,18 @@ export function securityHeaders(config: ServerConfig): RequestHandler[] {
   ];
 }
 
+/**
+ * CSP sources are origins: a source with a path but no trailing slash only
+ * matches that exact path, so a Matomo served under `/matomo` would be blocked.
+ */
+function origin(url: string): string {
+  return new URL(url).origin;
+}
+
 export function cspDirectives(config: ServerConfig) {
   // When Matomo is disabled its host is left out, so the browser blocks any
   // tracking call instead of sending it.
-  const matomo = config.matomo.enabled ? [config.matomo.url] : [];
+  const matomo = config.matomo.enabled ? [origin(config.matomo.url)] : [];
   return {
     'default-src': ["'self'"],
     'base-uri': ["'self'"],
@@ -50,7 +58,7 @@ export function cspDirectives(config: ServerConfig) {
     'form-action': ["'self'"],
     // The demos are reverse-proxied under the design system site; allow it
     // to frame them as well, should it ever embed them directly.
-    'frame-ancestors': ["'self'", config.designSystemUrl],
+    'frame-ancestors': ["'self'", origin(config.designSystemUrl)],
     'frame-src': ["'self'"],
     'script-src': [
       "'self'",
