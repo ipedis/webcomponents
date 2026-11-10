@@ -2,10 +2,7 @@
   <div class="wrapper">
     <div id="lp-content" class="head">
       <div class="back-wrapper">
-        <a
-          [href]="backLink()"
-          [attr.aria-label]="'common.label.backAria' | transloco"
-        >
+        <a [href]="back().href" [attr.aria-label]="back().ariaKey | transloco">
           <img
             src="assets/images/back-arrow.png"
             alt=""

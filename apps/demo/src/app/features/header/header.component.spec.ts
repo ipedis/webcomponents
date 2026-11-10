@@ -1,3 +1,4 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { Router, provideRouter } from '@angular/router';
@@ -12,7 +13,11 @@ class DummyComponent {}
 const DESIGN_SYSTEM_URL = 'https://staging-design.example.com';
 
 describe('HeaderComponent back link', () => {
-  async function headerAt(url: string, lang = 'fr'): Promise<HeaderComponent> {
+  async function headerAt(
+    url: string,
+    lang = 'fr',
+    homeRedirect = true,
+  ): Promise<HeaderComponent> {
     TestBed.configureTestingModule({
       imports: [
         HeaderComponent,
@@ -39,12 +44,15 @@ describe('HeaderComponent back link', () => {
             data: { backlink: { fr: '/composants-web/' } },
           },
           { path: ':lang/no-backlink', component: DummyComponent },
+          { path: ':lang', component: DummyComponent },
         ]),
+        { provide: APP_BASE_HREF, useValue: '/webcomponents/' },
         {
           provide: APP_CONFIG,
           useValue: {
             ...DEFAULT_APP_CONFIG,
             designSystemUrl: DESIGN_SYSTEM_URL,
+            homeRedirect,
           },
         },
       ],
@@ -57,25 +65,39 @@ describe('HeaderComponent back link', () => {
 
   it('points to the French page of the design system', async () => {
     const header = await headerAt('/fr/tooltip');
-    expect(header.backLink()).toBe(
+    expect(header.back().href).toBe(
       `${DESIGN_SYSTEM_URL}/composants-web/infobulle/`,
     );
   });
 
   it('points to the English page of the design system', async () => {
     const header = await headerAt('/en/tooltip', 'en');
-    expect(header.backLink()).toBe(
+    expect(header.back().href).toBe(
       `${DESIGN_SYSTEM_URL}/en/web-components/tooltip/`,
     );
   });
 
   it('falls back to the web components index without backlink', async () => {
     const header = await headerAt('/fr/no-backlink');
-    expect(header.backLink()).toBe(`${DESIGN_SYSTEM_URL}/composants-web/`);
+    expect(header.back().href).toBe(`${DESIGN_SYSTEM_URL}/composants-web/`);
   });
 
   it('falls back to the app root when the language has no backlink', async () => {
     const header = await headerAt('/en/fr-only', 'en');
-    expect(header.backLink()).toBe('/');
+    expect(header.back().href).toBe('/');
+  });
+
+  describe('without the home redirect (local testing)', () => {
+    it('goes back to the list of demos from a demo page', async () => {
+      const header = await headerAt('/en/tooltip', 'en', false);
+      expect(header.back().href).toBe('/webcomponents/en');
+      expect(header.back().ariaKey).toBe('common.label.backToDemosAria');
+    });
+
+    it('keeps the design system link on the list of demos', async () => {
+      const header = await headerAt('/fr', 'fr', false);
+      expect(header.back().href).toBe(`${DESIGN_SYSTEM_URL}/composants-web/`);
+      expect(header.back().ariaKey).toBe('common.label.backAria');
+    });
   });
 });
