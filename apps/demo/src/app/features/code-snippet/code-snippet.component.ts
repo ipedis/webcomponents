@@ -3,6 +3,7 @@ import {
   Component,
   Input,
   inject,
+  signal,
 } from '@angular/core';
 import { Highlight } from 'ngx-highlightjs';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
@@ -19,11 +20,11 @@ export class CodeSnippetComponent {
   @Input() htmlCode = '';
   @Input() cssCode = '*{font-family: "Mulish";}';
   @Input() jsCode = 'import "./styles.css"';
-  selectedTab: 'html' | 'css' = 'html';
+  readonly selectedTab = signal<'html' | 'css'>('html');
   private readonly translocoService = inject(TranslocoService);
 
   selectTab(tab: 'html' | 'css') {
-    this.selectedTab = tab;
+    this.selectedTab.set(tab);
   }
   handleKeyDown(event: KeyboardEvent, tab: 'html' | 'css') {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -33,12 +34,13 @@ export class CodeSnippetComponent {
   }
 
   copyCode() {
+    const selectedTab = this.selectedTab();
     let codeToCopy = '';
-    if (this.selectedTab === 'html') {
+    if (selectedTab === 'html') {
       codeToCopy = this.htmlCode;
-    } else if (this.selectedTab === 'css') {
+    } else if (selectedTab === 'css') {
       codeToCopy = this.cssCode;
-    } else if (this.selectedTab === 'js') {
+    } else if (selectedTab === 'js') {
       codeToCopy = this.jsCode;
     }
 

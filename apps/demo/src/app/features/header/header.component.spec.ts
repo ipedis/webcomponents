@@ -103,6 +103,30 @@ describe('HeaderComponent back link', () => {
     );
   });
 
+  describe('language switch', () => {
+    function label(): string {
+      return fixture.nativeElement
+        .querySelector('.lang-desktop')
+        .textContent.trim();
+    }
+
+    it('offers the other language', () => {
+      setUp('fr');
+      fixture.detectChanges();
+      expect(label()).toBe('Anglais');
+    });
+
+    it('follows a change of the active language', () => {
+      setUp('fr');
+      fixture.detectChanges();
+
+      TestBed.inject(TranslocoService).setActiveLang('en');
+      fixture.detectChanges();
+
+      expect(label()).toBe('French');
+    });
+  });
+
   describe('without the home redirect (local testing)', () => {
     it('goes back to the list of demos from a demo page', async () => {
       setUp('en', false);

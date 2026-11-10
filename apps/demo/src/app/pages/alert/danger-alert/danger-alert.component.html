@@ -12,7 +12,7 @@
 
   <app-accordion title="Demo" [alwaysOpen]="true">
     <div class="alert-wrapper" lang="en">
-      @if (isAlertVisible) {
+      @if (isAlertVisible()) {
         <ip-alert
           type="danger"
           alert-title="Danger"
@@ -22,7 +22,7 @@
         >
         </ip-alert>
       }
-      @if (!isAlertVisible) {
+      @if (!isAlertVisible()) {
         <button (click)="displayAlert()" #showAlertButton>Show alert</button>
       }
     </div>

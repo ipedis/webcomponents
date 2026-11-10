@@ -2,9 +2,11 @@ import { LocationStrategy } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   signal,
 } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { filter } from 'rxjs/operators';
@@ -42,6 +44,14 @@ export class HeaderComponent {
     href: '/',
     ariaKey: 'common.label.backAria',
   });
+
+  // Signals, so the OnPush view refreshes when the language changes.
+  private readonly lang = toSignal(this.translocoService.langChanges$, {
+    initialValue: this.translocoService.getActiveLang(),
+  });
+  readonly nextLang = computed(() =>
+    this.lang() === 'fr' ? 'Anglais' : 'French',
+  );
 
   constructor() {
     this.router.events
@@ -89,10 +99,6 @@ export class HeaderComponent {
 
   get activeLang(): string {
     return this.translocoService.getActiveLang();
-  }
-
-  get nextLang(): string {
-    return this.activeLang === 'fr' ? 'Anglais' : 'French';
   }
 
   toggleLang(): void {

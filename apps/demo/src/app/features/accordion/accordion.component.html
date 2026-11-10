@@ -6,7 +6,7 @@
     (click)="toggle()"
     (keydown)="handleKeyDown($event)"
     role="button"
-    [attr.aria-expanded]="isOpen || alwaysOpen ? 'true' : 'false'"
+    [attr.aria-expanded]="isOpen() || alwaysOpen ? 'true' : 'false'"
     [attr.aria-controls]="contentId"
   >
     <div class="title-container">
@@ -25,7 +25,7 @@
     </div>
 
     @if (!alwaysOpen) {
-      <div class="icon" [ngClass]="{ open: isOpen }" aria-hidden="true">
+      <div class="icon" [ngClass]="{ open: isOpen() }" aria-hidden="true">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -47,12 +47,12 @@
   <div
     class="content"
     [ngClass]="{
-      open: isOpen || alwaysOpen,
+      open: isOpen() || alwaysOpen,
     }"
     role="region"
     [id]="contentId"
     [attr.aria-labelledby]="headerId"
-    [attr.aria-hidden]="!(isOpen || alwaysOpen)"
+    [attr.aria-hidden]="!(isOpen() || alwaysOpen)"
   >
     <ng-content></ng-content>
   </div>
