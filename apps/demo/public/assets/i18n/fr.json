@@ -3,6 +3,7 @@
     "label": {
       "back": "Retour",
       "backAria": "Retour sur le site du design system Ipedis",
+      "backToDemosAria": "Retour à la liste des démos",
       "ipedisAria": "Aller sur le site web d’Ipedis - Nouvel onglet",
       "languageSwitcher": "Voir le site en anglais",
       "newWindow": "Ouvre dans un nouvel onglet",
@@ -11,6 +12,12 @@
     "components": "COMPOSANTS"
   },
   "pages": {
+    "home": {
+      "title": "Démos des composants | A11Y Design System",
+      "description": "Liste des démos des composants web accessibles Ipedis.",
+      "heading": "Démos des composants",
+      "intro": "Cette page d'accueil sert aux tests en local. En production, cette adresse redirige vers le design system."
+    },
     "accordion": {
       "title": "Démo Accordéon | A11Y Design System ",
       "description": "Testez notre composant accordéon accessible : conforme RGAA et WCAG 2.2, navigable au clavier et compatible lecteurs d'écran."
@@ -120,22 +127,11 @@
       }
     }
   },
-  "app": {
-    "title": "Composants Web",
-    "intro1": "Explorez une nouvelle dimension de la conception web où l’accessibilité est au cœur de chaque composant. Avec 20 ans d’expertise inégalée, nous sommes fiers chez Ipedis de présenter un système de design conçu pour créer des expériences numériques inclusives pour tous.",
-    "intro2": "Notre plateforme a été minutieusement conçue pour vous aider à développer des composants complexes tout en respectant les normes d’accessibilité les plus strictes. Chaque composant que vous découvrez ici est conçu pour fournir un design accessible, accompagné de directives détaillées sur son utilisation optimale.",
-    "intro3": "Chez Ipedis, nous croyons fermement en « l’accessibilité par la conception ». Cela signifie intégrer les principes d’accessibilité dès le départ, en assurant une expérience utilisateur supérieure et inclusive.",
-    "intro4": "Plongez dans notre démo interactive et voyez comment nos composants peuvent enrichir votre projet web tout en répondant aux besoins de chacun. Que vous soyez un développeur chevronné ou un novice, notre système de conception est là pour vous guider vers des solutions accessibles sans compromettre la qualité ou l’innovation.",
-    "intro5": "Prêt à créer des expériences web accessibles qui font la différence ? Explorez notre système de conception aujourd’hui et commencez à façonner un web plus inclusif pour tous.",
-    "question": "Vous avez des questions ?",
-    "contact": "Contactez nous à"
-  },
   "footer": {
     "cookie": "Politique de confidentialité et cookies",
     "legal": "Mentions légales",
     "navFooter": "Navigation du pied de page",
     "href": {
-      "sitemap": "https://design.ipedis.com/plan-du-site/",
       "cookie": "https://www.ipedis.com/politique-confidentialite/",
       "legal": "https://www.ipedis.com/mentions-legales/"
     }
@@ -197,7 +193,6 @@
         "type": "string",
         "default": "h2"
       },
-
       "property1": {
         "title": "accordionHeaders",
         "desc": "Cet attribut permet de définir les informations des en-têtes de l’accordéon. Chaque objet d’en-tête peut contenir les propriétés suivantes :",
@@ -501,8 +496,6 @@
         "type": "string",
         "default": "Non défini"
       },
-      "content": "Contenu",
-      "contentDesc": "Un emplacement (slot) de libellé prédéfini est disponible pour afficher le texte du label avant la case à cocher. Le contenu placé dans ce slot sera rendu à l’intérieur de la balise du composant.",
       "example": "Exemple",
       "personnalisation": "Personnalisation",
       "personnalisationDesc": "Un ensemble de variables prédéfinies permet de personnaliser la case à cocher :",
@@ -1356,7 +1349,6 @@
   "table": {
     "title": "Tableau",
     "docs": {
-      "installation": "Suivez les étapes ci-dessous pour installer et utiliser le composant ip-table dans votre projet.",
       "step1": "Étape 1",
       "step1desc": "Installez le composant ip-table en tant que dépendance dans votre projet :",
       "step2": "Étape 2",

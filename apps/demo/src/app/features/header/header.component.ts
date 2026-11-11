@@ -1,7 +1,26 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LocationStrategy } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { filter } from 'rxjs/operators';
+import { APP_CONFIG } from '../../core/config/app-config.providers';
+
+/** Path of the page on the design system site, per language (route data). */
+export type Backlink = Record<string, string>;
+
+/** Used when the route declares no backlink: the web components index. */
+const DEFAULT_BACKLINK_PATH = '/composants-web/';
+
+/** Target and accessible label (translation key) of the "Back" link. */
+export interface BackButton {
+  href: string;
+  ariaKey: string;
+}
 
 @Component({
   selector: 'app-header',
@@ -15,22 +34,57 @@ export class HeaderComponent {
   private readonly translocoService = inject(TranslocoService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
+  private readonly locationStrategy = inject(LocationStrategy);
+  private readonly config = inject(APP_CONFIG);
 
-  backLink = '/';
+  // A signal, so the OnPush view refreshes when a navigation updates it.
+  readonly back = signal<BackButton>({
+    href: '/',
+    ariaKey: 'common.label.backAria',
+  });
 
   constructor() {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        const child = this.getDeepestChild(this.route);
-        const data = child.snapshot.data;
-        if (data?.['backlink']) {
-          const lang = this.activeLang;
-          this.backLink = data['backlink'][lang] || '/';
-        } else {
-          this.backLink = 'https://design.ipedis.com/composants-web/';
-        }
-      });
+      .subscribe(() => this.back.set(this.resolveBackButton()));
+  }
+
+  /**
+   * Locally (HOME_REDIRECT=false), the demo pages go back to the list of
+   * demos. Otherwise, and on the list itself, back to the design system.
+   */
+  private resolveBackButton(): BackButton {
+    if (!this.config.homeRedirect && !this.isHomePage()) {
+      return {
+        href: this.locationStrategy.prepareExternalUrl(`/${this.activeLang}`),
+        ariaKey: 'common.label.backToDemosAria',
+      };
+    }
+
+    return {
+      href: this.designSystemLink(),
+      ariaKey: 'common.label.backAria',
+    };
+  }
+
+  /** Page of the design system declared by the route (`backlink` data). */
+  private designSystemLink(): string {
+    const { data } = this.getDeepestChild(this.route).snapshot;
+    const backlink = data['backlink'] as Backlink | undefined;
+    if (!backlink) {
+      return this.config.designSystemUrl + DEFAULT_BACKLINK_PATH;
+    }
+
+    const path = backlink[this.activeLang];
+    return path ? this.config.designSystemUrl + path : '/';
+  }
+
+  /**
+   * The list of demos, flagged by its route (`home` data). Counting URL
+   * segments would also match single-segment pages such as `/not-found`.
+   */
+  private isHomePage(): boolean {
+    return this.getDeepestChild(this.route).snapshot.data['home'] === true;
   }
 
   get activeLang(): string {
