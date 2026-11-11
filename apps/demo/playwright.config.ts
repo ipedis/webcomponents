@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { resolve } from 'node:path';
 
 export default defineConfig({
   testDir: './e2e',
@@ -26,6 +27,10 @@ export default defineConfig({
 
   webServer: {
     command: 'npx nx serve demo --port 4201 --host localhost',
+    // `nx e2e demo` runs Playwright from apps/demo. The server starts from the
+    // workspace root, like `npm run serve`: it reads the translation files
+    // from there (see transloco.server.loader.ts).
+    cwd: resolve(__dirname, '../..'),
     url: 'http://localhost:4201/webcomponents/',
     // The tests need the list of demos (not the production redirect to the
     // design system) and no Matomo tracking, with or without a local .env.
