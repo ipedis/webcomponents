@@ -1,106 +1,75 @@
-import { BrowserContext, chromium, test } from '@playwright/test';
+import { BrowserContext, Page, chromium, test } from '@playwright/test';
 import {
   wrapPlaywrightPage,
   playwrightConfig,
-  PlaywrightController
-} from '@axe-core/watcher';
-import * as dotenv from 'dotenv';
+  PlaywrightController,
+} from '@axe-core/watcher/playwright';
+import { loadLocalEnvFile } from '../server/config';
 
-// Load environment variables
-dotenv.config();
+// Reads AXE_DEVELOPER_HUB_API_KEY from a local .env, like the SSR server.
+loadLocalEnvFile();
 
 const API_KEY = process.env['AXE_DEVELOPER_HUB_API_KEY'];
 
-if (!API_KEY) {
-  console.warn('AXE_DEVELOPER_HUB_API_KEY not found in environment variables');
-}
+/** Pages audited on axe Developer Hub. */
+const PAGES = [
+  { name: 'home page', path: 'fr' },
+  { name: 'accordion page', path: 'fr/accordion' },
+  { name: 'alert page', path: 'fr/alert' },
+  { name: 'table page', path: 'fr/table' },
+  { name: 'form components', path: 'fr/checkbox' },
+];
 
 test.describe('Accessibility Tests', () => {
+  // The results go to axe Developer Hub, which needs an API key.
+  test.skip(!API_KEY, 'AXE_DEVELOPER_HUB_API_KEY is not set');
+
+  let browserContext: BrowserContext;
+  // The page axe watches: the tests navigate with it, not with the `page`
+  // fixture, which lives in another browser context.
+  let axePage: Page;
   let controller: PlaywrightController;
 
-  test.beforeEach(async ({ page, browser }) => {
-    const browserContext: BrowserContext = await chromium.launchPersistentContext(
-      '',
-      playwrightConfig({
-      axe: {
-        apiKey: API_KEY || '',
-        timeout: {
-          flush: 10000
-        }
-      },
-      channel: 'chromium',
-      args: ['--headless=new']
-    }));
-    const p = await browserContext.newPage();
-    controller = new PlaywrightController(p);
+  test.beforeEach(async ({ baseURL }) => {
+    browserContext = await chromium.launchPersistentContext('', {
+      ...playwrightConfig({
+        axe: {
+          apiKey: API_KEY ?? '',
+          timeout: {
+            flush: 10000,
+          },
+        },
+        channel: 'chromium',
+        args: ['--headless=new'],
+      }),
+      // A context created by hand does not inherit the config's baseURL.
+      baseURL,
+    });
+    axePage = await browserContext.newPage();
+    controller = new PlaywrightController(axePage);
 
-    // Wrap the page for axe monitoring
-    wrapPlaywrightPage(p, controller);
+    wrapPlaywrightPage(axePage, controller);
   });
 
   test.afterEach(async () => {
     // Flush test results to axe Developer Hub
-    if (controller) {
-      try {
-        await controller.flush();
-      } catch (error) {
-        console.warn('Failed to flush accessibility results:', error);
-      }
+    try {
+      await controller.flush();
+    } catch (error) {
+      console.warn('Failed to flush accessibility results:', error);
     }
+    await browserContext.close();
   });
 
-  test('should pass accessibility audit on home page', async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
+  for (const { name, path } of PAGES) {
+    test(`should pass accessibility audit on ${name}`, async () => {
+      await axePage.goto(path);
+      await axePage.waitForLoadState('networkidle');
+      await axePage.getByRole('heading', { level: 1 }).waitFor();
 
-    // The axe-watcher automatically scans the page for accessibility issues
-    // We just need to interact with the page normally
-
-    // Wait a bit to ensure all content is loaded
-    await page.waitForTimeout(2000);
-  });
-
-  test('should pass accessibility audit on accordion page', async ({ page }) => {
-    await page.goto('/accordion');
-    await page.waitForLoadState('networkidle');
-
-    // Check that the page has loaded
-    await page.locator('h2:has-text("Accordion")').first().waitFor();
-
-    // Wait for component to be fully rendered
-    await page.waitForTimeout(2000);
-  });
-
-  test('should pass accessibility audit on alert page', async ({ page }) => {
-    await page.goto('/alert');
-    await page.waitForLoadState('networkidle');
-
-    // Check that the page has loaded
-    await page.locator('h2:has-text("Alert")').first().waitFor();
-
-    // Wait for component to be fully rendered
-    await page.waitForTimeout(2000);
-  });
-
-  test('should pass accessibility audit on table page', async ({ page }) => {
-    await page.goto('/table');
-    await page.waitForLoadState('networkidle');
-
-    // Check that the page has loaded
-    await page.locator('h2:has-text("Table")').first().waitFor();
-
-    // Wait for component to be fully rendered
-    await page.waitForTimeout(2000);
-  });
-
-  test('should pass accessibility audit on form components', async ({ page }) => {
-    await page.goto('/checkbox');
-    await page.waitForLoadState('networkidle');
-
-    // Check that the page has loaded
-    await page.locator('h1, h2').first().waitFor();
-
-    // Wait for component to be fully rendered
-    await page.waitForTimeout(2000);
-  });
+      // The axe-watcher scans the page automatically: wait until the web
+      // components are rendered.
+      await axePage.waitForTimeout(2000);
+    });
+  }
 });

@@ -60,10 +60,13 @@ describe('HeaderComponent back link', () => {
     fixture = TestBed.createComponent(HeaderComponent);
   }
 
-  /** Navigates, then reads the link as rendered (the view is OnPush). */
+  /**
+   * Navigates, then reads the link as rendered. No detectChanges(): Angular
+   * refreshes the OnPush view on its own, as in the app.
+   */
   async function backLinkAfterNavigatingTo(url: string): Promise<string> {
     await TestBed.inject(Router).navigateByUrl(url);
-    fixture.detectChanges();
+    await fixture.whenStable();
     const link: HTMLAnchorElement =
       fixture.nativeElement.querySelector('.back-wrapper a');
     return link.getAttribute('href') ?? '';
@@ -101,6 +104,30 @@ describe('HeaderComponent back link', () => {
     expect(await backLinkAfterNavigatingTo('/fr/no-backlink')).toBe(
       `${DESIGN_SYSTEM_URL}/composants-web/`,
     );
+  });
+
+  describe('language switch', () => {
+    function label(): string {
+      return fixture.nativeElement
+        .querySelector('.lang-desktop')
+        .textContent.trim();
+    }
+
+    it('offers the other language', async () => {
+      setUp('fr');
+      await fixture.whenStable();
+      expect(label()).toBe('Anglais');
+    });
+
+    it('follows a change of the active language', async () => {
+      setUp('fr');
+      await fixture.whenStable();
+
+      TestBed.inject(TranslocoService).setActiveLang('en');
+      await fixture.whenStable();
+
+      expect(label()).toBe('French');
+    });
   });
 
   describe('without the home redirect (local testing)', () => {

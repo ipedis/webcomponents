@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { resolve } from 'node:path';
 
 export default defineConfig({
   testDir: './e2e',
@@ -8,7 +9,11 @@ export default defineConfig({
   workers: process.env['CI'] ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:4201',
+    // The app is served under its base href: test paths are relative to it
+    // (`fr/alert`, not `/fr/alert`). E2E_BASE_URL points the suite at another
+    // server, such as the production build (`npm run demo:ssr`).
+    baseURL:
+      process.env['E2E_BASE_URL'] ?? 'http://localhost:4201/webcomponents/',
     trace: 'on-first-retry',
   },
   timeout: 45000,
@@ -17,12 +22,19 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'], channel: 'chromium' },
-    }
+    },
   ],
 
   webServer: {
     command: 'npx nx serve demo --port 4201 --host localhost',
-    url: 'http://localhost:4201',
+    // `nx e2e demo` runs Playwright from apps/demo. The server starts from the
+    // workspace root, like `npm run serve`: it reads the translation files
+    // from there (see transloco.server.loader.ts).
+    cwd: resolve(__dirname, '../..'),
+    url: 'http://localhost:4201/webcomponents/',
+    // The tests need the list of demos (not the production redirect to the
+    // design system) and no Matomo tracking, with or without a local .env.
+    env: { HOME_REDIRECT: 'false', MATOMO_ENABLED: 'false' },
     reuseExistingServer: !process.env['CI'],
     timeout: 120 * 1000,
     stdout: 'pipe',

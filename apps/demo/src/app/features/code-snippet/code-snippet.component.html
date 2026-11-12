@@ -3,21 +3,21 @@
     <div class="code-btn">
       <button
         role="tab"
-        [attr.aria-selected]="selectedTab === 'html' ? 'true' : 'false'"
+        [attr.aria-selected]="selectedTab() === 'html' ? 'true' : 'false'"
         aria-controls="html-tab"
         (click)="selectTab('html')"
         (keydown)="handleKeyDown($event, 'html')"
-        [class.active]="selectedTab === 'html'"
+        [class.active]="selectedTab() === 'html'"
       >
         HTML
       </button>
       <button
         role="tab"
-        [attr.aria-selected]="selectedTab === 'css' ? 'true' : 'false'"
+        [attr.aria-selected]="selectedTab() === 'css' ? 'true' : 'false'"
         aria-controls="css-tab"
         (click)="selectTab('css')"
         (keydown)="handleKeyDown($event, 'css')"
-        [class.active]="selectedTab === 'css'"
+        [class.active]="selectedTab() === 'css'"
       >
         CSS
       </button>
@@ -68,12 +68,12 @@
     </div>
   </div>
   <div class="tab-content">
-    @if (selectedTab === 'html') {
+    @if (selectedTab() === 'html') {
       <div id="html-tab" role="tabpanel" class="code-container">
         <pre><code [highlight]="htmlCode" language="html" highlightLineNumbers></code></pre>
       </div>
     }
-    @if (selectedTab === 'css') {
+    @if (selectedTab() === 'css') {
       <div id="css-tab" role="tabpanel" class="code-container">
         <pre><code [highlight]="cssCode" language="css" highlightLineNumbers></code></pre>
       </div>

@@ -34,12 +34,12 @@
         (click)="toggleLang()"
         [attr.aria-label]="'common.label.languageSwitcher' | transloco"
       >
-        <span class="lang-desktop">{{ nextLang }}</span>
+        <span class="lang-desktop">{{ nextLang() }}</span>
 
         <span class="lang-mobile">
-          {{ nextLang === 'French' ? 'FR' : 'EN' }}
+          {{ nextLang() === 'French' ? 'FR' : 'EN' }}
         </span>
-        @if (nextLang === 'French') {
+        @if (nextLang() === 'French') {
           <img
             src="assets/images/french-flag.png"
             alt=""
@@ -47,7 +47,7 @@
             height="16"
           />
         }
-        @if (nextLang === 'Anglais') {
+        @if (nextLang() === 'Anglais') {
           <img src="assets/images/en-flag.png" alt="" width="16" height="16" />
         }
       </button>

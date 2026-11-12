@@ -1,10 +1,10 @@
 import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
-  OnInit,
   inject,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './features/header/header.component';
@@ -20,12 +20,14 @@ import { TranslocoService } from '@jsverse/transloco';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   private transloco = inject(TranslocoService);
   private doc = inject(DOCUMENT);
-  ngOnInit() {
-    this.transloco.langChanges$.subscribe((lang) => {
-      this.doc.documentElement.lang = lang;
-    });
+  constructor() {
+    this.transloco.langChanges$
+      .pipe(takeUntilDestroyed())
+      .subscribe((lang) => {
+        this.doc.documentElement.lang = lang;
+      });
   }
 }

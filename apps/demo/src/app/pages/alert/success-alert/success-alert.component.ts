@@ -4,6 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   inject,
+  Injector,
+  afterNextRender,
+  signal,
   PLATFORM_ID,
   ViewChild,
   AfterViewInit,
@@ -16,6 +19,7 @@ import { DocAlertComponent } from '../doc-alert/doc-alert.component';
 import { defineCustomElements as AlertElements } from '@ipedis/alert/loader';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
+import { AlertElement, focusCloseButton } from '../alert-focus';
 
 @Component({
   selector: 'app-success-alert',
@@ -37,32 +41,30 @@ export class SuccessAlertComponent implements AfterViewInit {
   @ViewChild('showAlertButton') showAlertButton:
     | ElementRef<HTMLButtonElement>
     | undefined;
-  @ViewChild('alertComponent') alertComponent: ElementRef | undefined;
-  isAlertVisible = true;
+  @ViewChild('alertComponent') alertComponent:
+    | ElementRef<AlertElement>
+    | undefined;
+  readonly isAlertVisible = signal(true);
+  private readonly injector = inject(Injector);
 
   displayAlert() {
-    this.isAlertVisible = true;
-    setTimeout(() => {
-      if (this.alertComponent?.nativeElement?.shadowRoot) {
-        const closeButton =
-          this.alertComponent.nativeElement.shadowRoot.querySelector(
-            '.close-button',
-          ) as HTMLElement;
-        closeButton.focus();
-      }
-    });
+    this.isAlertVisible.set(true);
+    // Once Angular has rendered the alert back.
+    afterNextRender(
+      () => focusCloseButton(this.alertComponent?.nativeElement),
+      { injector: this.injector },
+    );
   }
   hideAlert() {
-    this.isAlertVisible = false;
-    setTimeout(() => {
-      if (this.showAlertButton?.nativeElement) {
-        this.showAlertButton.nativeElement.focus();
-      }
+    this.isAlertVisible.set(false);
+    // Once Angular has rendered the "Show alert" button.
+    afterNextRender(() => this.showAlertButton?.nativeElement.focus(), {
+      injector: this.injector,
     });
   }
 
   ngAfterViewInit(): void {
-    if (this.isAlertVisible && this.alertComponent?.nativeElement?.shadowRoot) {
+    if (this.isAlertVisible() && this.alertComponent?.nativeElement?.shadowRoot) {
       const closeButton =
         this.alertComponent.nativeElement.shadowRoot.querySelector(
           '.close-button',

@@ -1,55 +1,45 @@
-# Demo App E2E Tests - Minimal Setup
+# Demo App E2E Tests
 
-Simple, reliable e2e tests for the demo application.
+End-to-end tests of the demo application, with Playwright.
 
 ## Test Files
 
-- `home.spec.ts` - Basic home page tests
-- `demo-basic.spec.ts` - Navigation tests for main component pages
+- `home.spec.ts` - Home page: root redirect, title, links
+- `demo-basic.spec.ts` - Main component pages load with their web component
+- `interactions.spec.ts` - Focus of the alerts, language switch, code tabs,
+  translated server HTML: what change detection must keep working
+- `resources.spec.ts` - Every file the pages ask for loads (run it against
+  the production build too: it inlines the critical CSS)
+- `accessibility.spec.ts` - Audit on axe Developer Hub (see `axe.md`), skipped
+  without `AXE_DEVELOPER_HUB_API_KEY`
 
 ## Running Tests
 
-### Local Development
 ```bash
-# Run demo e2e tests
+# Starts the dev server on port 4201, then runs the tests
 npm run e2e:demo
 
-# Manual run (if server already running)
-npm run demo:e2e:manual
+# Against a server already running on port 4200 (`npm run serve`)
+npx playwright test -c apps/demo/playwright.config.manual.ts
 
-# Build and test (full local CI simulation)
-npm run ci:demo
+# Against the production build (`HOME_REDIRECT=false npm run demo:ssr`)
+E2E_BASE_URL=http://localhost:4000/webcomponents/ \
+  npx playwright test -c apps/demo/playwright.config.manual.ts
 ```
 
-### CI Pipeline
-```bash
-# Basic CI (no e2e)
-npm run ci:basic
+`npm run e2e:demo` waits forever when `nx serve demo` already runs on this
+machine (Nx does not run the same serve task twice): stop it, or use the
+manual config.
 
-# Full CI with e2e
-npm run build && npm run e2e:demo
-```
+In CI, `npm run e2e:demo` runs after the build (`.github/workflows/test.yml`,
+`npm run run:ci`).
 
 ## Configuration
 
-- **Browser**: Chromium only (for speed and reliability)
-- **Auto-server**: Starts demo app automatically on port 4201
-- **Timeout**: 5s per test
-- **Parallelization**: All tests run in parallel
-
-## Test Strategy
-
-**Minimal and Focused:**
-- ✅ Page loads successfully  
-- ✅ Basic navigation works
-- ✅ Components render on their pages
-- ✅ No complex interactions (to avoid flakiness)
-
-**What's NOT tested:**
-- ❌ Complex component interactions
-- ❌ Form submissions
-- ❌ Animation states
-- ❌ Mobile menu toggles
-- ❌ Tooltips/dropdowns
-
-This keeps tests fast, reliable, and focused on critical functionality.
+- **Browser**: Chromium only
+- **Base URL**: the app's base href, `http://localhost:4201/webcomponents/`.
+  Test paths are relative to it: `page.goto('fr/alert')`, not `'/fr/alert'`.
+  `E2E_BASE_URL` overrides it.
+- **Server**: started with `HOME_REDIRECT=false` (the list of demos instead of
+  the production redirect) and `MATOMO_ENABLED=false`
+- **Retries**: 2 in CI

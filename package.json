@@ -17,12 +17,13 @@
     "sync:stencil-outputs": "node tools/sync-stencil-outputs.mjs",
     "lint": "nx run-many --target=lint --all",
     "e2e": "nx run-many --target=e2e --all --exclude=demo",
+    "e2e:demo": "nx e2e demo",
     "test": "nx run-many --target=test --all",
     "demo:ssr": "nx run demo:build:production && node dist/demo/server/server.mjs",
     "migrate": "nx migrate latest && nx migrate --run-migrations --if-exists",
-    "run:ci": "npm run lint && npm run test && npm run e2e && npm run build",
+    "run:ci": "npm run lint && npm run test && npm run e2e && npm run build && npm run e2e:demo",
     "serve": "nx serve demo",
-    "full": "npm run lint && npm run test && npm run e2e && npm run build"
+    "full": "npm run lint && npm run test && npm run e2e && npm run build && npm run e2e:demo"
   },
   "private": false,
   "devDependencies": {
@@ -37,6 +38,7 @@
     "@angular/language-service": "22.2.4",
     "@angular/localize": "^22.2.4",
     "@angular/ssr": "22.2.6",
+    "@axe-core/watcher": "4.7.0",
     "@babel/core": "7.29.7",
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "10.0.1",
@@ -109,8 +111,7 @@
     "helmet": "^8.3.0",
     "ngx-highlightjs": "14.0.1",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "0.16.3"
+    "tslib": "^2.3.0"
   },
   "optionalDependencies": {
     "@nx/nx-darwin-arm64": "23.3.1",

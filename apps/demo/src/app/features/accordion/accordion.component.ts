@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, Renderer2, AfterViewInit, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, AfterViewInit, OnInit, inject, ChangeDetectionStrategy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ export class AccordionComponent implements AfterViewInit, OnInit {
 
   @Input() title = '';
   @Input() alwaysOpen = false;
-  isOpen = false;
+  readonly isOpen = signal(false);
   contentId = '';
   headerId = '';
 
@@ -29,7 +29,7 @@ export class AccordionComponent implements AfterViewInit, OnInit {
   }
 
   toggle() {
-    this.isOpen = !this.isOpen;
+    this.isOpen.update((isOpen) => !isOpen);
     this.updateFocusability();
   }
 
@@ -47,7 +47,7 @@ export class AccordionComponent implements AfterViewInit, OnInit {
     );
 
     focusableElements.forEach((element: HTMLElement) => {
-      if (this.isOpen || this.alwaysOpen) {
+      if (this.isOpen() || this.alwaysOpen) {
         this.renderer.removeAttribute(element, 'tabindex');
         this.renderer.setAttribute(element, 'aria-hidden', 'false');
       } else {

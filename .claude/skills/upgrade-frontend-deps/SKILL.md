@@ -84,7 +84,7 @@ Follow the Nx guide, one major at a time.
 1. List candidates without changing anything: `$N npm outdated --long` (or `$N npx npm-check-updates --format group`).
 2. For each candidate, the version to install is the **highest version whose peer and engine ranges accept what step 2 installed**. Read them, do not guess: `$N npm view <pkg>@<version> peerDependencies engines --json`. Constraints to always check:
    - `typescript` against `@angular/compiler-cli`, `@angular/build`, `typescript-eslint` and `@stencil/core`;
-   - `rxjs` and `zone.js` against `@angular/core`;
+   - `rxjs` against `@angular/core` (the demo runs without zone.js: do not add it back);
    - Stencil family: `@stencil/core`, `@stencil/sass`, `@stencil/playwright`, `@stencil/angular-output-target` against `@nxext/stencil`. `@stencil/angular-output-target` is wrapped by `tools/stencil-angular-output-target.mjs` (event forwarding workaround): read its changelog, and check whether the workaround is still needed or still works;
    - Jest family together: `jest`, `jest-cli`, `jest-util`, `jest-environment-jsdom`, `@types/jest`, against `jest-preset-angular`, `ts-jest`, `@nx/jest` and `jest-stencil-runner`;
    - `@playwright/test` against `@nx/playwright` and `@stencil/playwright`;

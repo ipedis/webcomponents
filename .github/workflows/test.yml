@@ -30,12 +30,17 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Demo e2e tests
+      - name: Packages e2e tests
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 3
           max_attempts: 3
           command:  npx nx run-many --target=e2e --all --exclude=demo
+
+      # Playwright retries a failed test twice in CI (playwright.config.ts).
+      # Without AXE_DEVELOPER_HUB_API_KEY, accessibility.spec.ts is skipped.
+      - name: Demo e2e tests
+        run: npm run e2e:demo
   #
   #      - name: Demo Axe tests
   #        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts
