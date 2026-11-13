@@ -1006,7 +1006,7 @@
       "introClasses": "To update the values, use the following CSS:",
       "event": "Event listening",
       "eventDesc1": "To listen this event emitted,we have definied pageChanged event in this component.",
-      "eventDesc2": "The pageChanged event is fired when the current page changes.",
+      "eventDesc2": "The pageChanged event is fired when the user changes the page from the component. It is not fired when current-page is set by your code.",
       "eventDesc3": "You can listen to this event to handle page changes."
     }
   },

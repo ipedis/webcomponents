@@ -72,7 +72,9 @@ The `ip-pagination` component emits the following event:
 
 ### `pageChanged`
 
-The `pageChanged` event is fired when the current page changes. You can listen to this event to handle page changes.
+The `pageChanged` event is fired when the user changes the page from the component (click or keyboard). The event detail is the new page number.
+
+It is not fired when `currentPage` (or `totalPages`) is set by your code, so you can update `currentPage` from a listener without creating a loop.
 
 _e.g:_
 
