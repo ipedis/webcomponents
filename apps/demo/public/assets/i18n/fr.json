@@ -1004,7 +1004,7 @@
       "introClasses": "Pour mettre à jour ces valeurs, utilisez le CSS suivant :",
       "event": "Écoute des événements",
       "eventDesc1": "Pour écouter l’événement émis par ce composant, un événement pageChanged a été défini.",
-      "eventDesc2": "L’événement pageChanged est déclenché lorsque la page actuelle change.",
+      "eventDesc2": "L'événement pageChanged est déclenché lorsque l'utilisateur change de page depuis le composant. Il n'est pas émis lorsque current-page est modifié par votre code.",
       "eventDesc3": "Vous pouvez écouter cet événement afin de gérer les changements de page."
     }
   },

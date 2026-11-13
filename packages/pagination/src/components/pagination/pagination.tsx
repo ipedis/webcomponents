@@ -7,8 +7,10 @@ import {
   EventEmitter,
   Watch,
   Element,
-  Listen,
 } from '@stencil/core';
+
+const COMPACT_MEDIA_QUERY = '(max-width: 460px)';
+const COMPACT_VISIBLE_PAGES = 3;
 
 @Component({
   tag: 'ip-pagination',
@@ -27,16 +29,28 @@ export class Pagination {
   @Prop() lastPageAriaLabel = 'Go to the last page';
 
   @State() pages: number[] = [];
+  @State() isCompact = false;
 
+  private shouldRestoreFocus = false;
+  private compactQuery?: MediaQueryList;
+
+  /**
+   * Emitted when the user changes the page from the component (click or
+   * keyboard). Not emitted when `currentPage` is set by the application,
+   * so a listener can update `currentPage` without creating a loop.
+   * The detail is the new page number.
+   */
   @Event() pageChanged: EventEmitter<number>;
 
   @Watch('currentPage')
   handlePageChange(newPage: number) {
-    if (newPage >= 1 && newPage <= this.totalPages) {
-      this.currentPage = newPage;
-      this.updatePages();
-      this.pageChanged.emit(newPage);
+    const page = this.clampPage(newPage);
+    if (page !== newPage) {
+      // Triggers this watcher again with a valid value.
+      this.currentPage = page;
+      return;
     }
+    this.updatePages();
   }
 
   @Watch('totalPages')
@@ -47,28 +61,53 @@ export class Pagination {
     this.updatePages();
   }
 
+  @Watch('visiblePages')
+  handleVisiblePagesChange() {
+    this.updatePages();
+  }
+
+  connectedCallback() {
+    // matchMedia is missing in some server-side (hydrate) environments.
+    if (typeof window === 'undefined' || !window.matchMedia) {
+      return;
+    }
+    this.compactQuery = window.matchMedia(COMPACT_MEDIA_QUERY);
+    this.isCompact = this.compactQuery.matches;
+    this.compactQuery.addEventListener('change', this.handleCompactChange);
+  }
+
+  disconnectedCallback() {
+    this.compactQuery?.removeEventListener('change', this.handleCompactChange);
+    this.compactQuery = undefined;
+  }
+
   componentWillLoad() {
-    this.updateVisiblePages();
+    this.currentPage = this.clampPage(this.currentPage);
     this.updatePages();
   }
 
   componentDidUpdate() {
-    this.focusCurrentPage();
+    this.restoreFocusIfLost();
   }
 
-  @Listen('resize', { target: 'window' })
-  handleResize() {
-    this.updateVisiblePages();
-  }
-
-  private updateVisiblePages() {
-    const isMobile = window.matchMedia('(max-width: 460px)').matches;
-    this.visiblePages = isMobile ? 3 : this.visiblePages;
+  /** Only fires when the breakpoint is crossed, not on every resize. */
+  private handleCompactChange = (event: MediaQueryListEvent) => {
+    this.isCompact = event.matches;
     this.updatePages();
+  };
+
+  /**
+   * Number of page buttons actually displayed. Derived from the
+   * `visiblePages` prop without mutating it, so the value set by the
+   * consumer is restored when the viewport becomes wide again.
+   */
+  private get displayedPageCount() {
+    const count = Math.max(1, this.visiblePages);
+    return this.isCompact ? Math.min(COMPACT_VISIBLE_PAGES, count) : count;
   }
 
   updatePages() {
-    const totalVisiblePages = this.visiblePages;
+    const totalVisiblePages = this.displayedPageCount;
     let startPage = Math.max(
       1,
       this.currentPage - Math.floor(totalVisiblePages / 2),
@@ -89,40 +128,66 @@ export class Pagination {
   }
 
   handlePageClick(page: number) {
-    if (page !== this.currentPage) {
-      this.currentPage = page;
-    }
+    this.goTo(page);
   }
 
   handleNextPage() {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage++;
-    }
+    this.goTo(this.currentPage + 1);
   }
 
   handlePrevPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-    }
+    this.goTo(this.currentPage - 1);
   }
 
   handleFirstPage() {
-    if (this.currentPage > 1) {
-      this.currentPage = 1;
-    }
+    this.goTo(1);
   }
 
   handleLastPage() {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage = this.totalPages;
-    }
+    this.goTo(this.totalPages);
   }
 
-  private focusCurrentPage() {
-    const currentButton = this.element.shadowRoot?.querySelector(
-      'button.current',
-    ) as HTMLButtonElement;
-    currentButton?.focus();
+  /**
+   * Navigation triggered by the user from inside the component.
+   * Flags the next render so focus can be restored if the activated
+   * button is no longer focusable (e.g. "next" disabled on the last page).
+   */
+  private goTo(page: number) {
+    if (page < 1 || page > this.totalPages || page === this.currentPage) {
+      return;
+    }
+    this.shouldRestoreFocus = true;
+    this.currentPage = page;
+    this.pageChanged.emit(page);
+  }
+
+  /** Keeps a page number between 1 and totalPages. */
+  private clampPage(page: number) {
+    const lastPage = Math.max(1, this.totalPages);
+    const value = Math.trunc(Number(page)) || 1;
+    return Math.min(Math.max(1, value), lastPage);
+  }
+
+  /**
+   * Only moves focus when the button the user activated lost it
+   * (it became disabled). Programmatic changes, resizes and totalPages
+   * updates never move focus.
+   */
+  private restoreFocusIfLost() {
+    if (!this.shouldRestoreFocus) {
+      return;
+    }
+    this.shouldRestoreFocus = false;
+
+    const root = this.element.shadowRoot;
+    const active = root?.activeElement as HTMLButtonElement | null;
+    if (active && !active.disabled) {
+      return;
+    }
+
+    root
+      ?.querySelector<HTMLButtonElement>('button[aria-current="page"]')
+      ?.focus();
   }
 
   render() {
@@ -161,9 +226,6 @@ export class Pagination {
                 onClick={() => this.handlePageClick(page)}
               >
                 {page}
-                <span class="sr-only">
-                  {this.currentPage === page ? 'Current page' : ''}
-                </span>
               </button>
             </li>
           ))}

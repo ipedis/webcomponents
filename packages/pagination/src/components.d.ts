@@ -81,6 +81,9 @@ declare namespace LocalJSX {
           * @default 'Go to the next page'
          */
         "nextPageAriaLabel"?: string;
+        /**
+          * Emitted when the user changes the page from the component (click or keyboard). Not emitted when `currentPage` is set by the application, so a listener can update `currentPage` without creating a loop. The detail is the new page number.
+         */
         "onPageChanged"?: (event: IpPaginationCustomEvent<number>) => void;
         /**
           * @default 'Go to the previous page'
