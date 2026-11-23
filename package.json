@@ -51,7 +51,7 @@
     "@nxext/stencil": "23.0.0",
     "@playwright/test": "1.65.1",
     "@schematics/angular": "22.3.0",
-    "@stencil/angular-output-target": "1.5.3",
+    "@stencil/angular-output-target": "1.6.0",
     "@stencil/core": "4.45.0",
     "@stencil/playwright": "0.6.1",
     "@stencil/sass": "3.3.3",
